@@ -1,0 +1,27 @@
+[
+  {
+    "id": "pkg_41ae07144220",
+    "name": "perfume",
+    "slug": "perfume",
+    "description": "Top Notes: Bergamot, Coconut, Orange\nMiddle Notes: Berry, Orchid, Vanilla\nBase Notes: Caramel, Moss, Musk\n\nNote: Fragrances are currently available for delivery worldwide",
+    "price": 5000,
+    "currency": "USD",
+    "pageLimit": 5,
+    "includedPages": [
+      "home, service, contact ,orders"
+    ],
+    "features": [
+      "SSl"
+    ],
+    "revisionLimit": 3,
+    "deliveryDays": 14,
+    "supportLevel": "standard",
+    "isActive": true,
+    "featured": true,
+    "sortOrder": 1,
+    "createdBy": "usr_admin_01",
+    "createdByName": "Muqaddas Aslam",
+    "createdAt": "2026-09-17T22:02:41.010Z",
+    "updatedAt": "2026-09-17T22:02:41.010Z"
+  }
+]

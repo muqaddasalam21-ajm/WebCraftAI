@@ -1,0 +1,2527 @@
+[
+  {
+    "eventId": "evt_1789663679609_zp8261j",
+    "eventType": "USER_REGISTERED",
+    "actorUserId": "user-uuid-1",
+    "referenceType": "USER",
+    "referenceId": "user-uuid-1",
+    "createdAt": "2026-09-17T16:47:59.608Z",
+    "payload": {
+      "userId": "user-uuid-1",
+      "name": "Jane Tester",
+      "email": "jane@example.com",
+      "role": "user",
+      "createdAt": "2026-09-17T12:00:00.000Z"
+    }
+  },
+  {
+    "eventId": "evt_1789663679712_v4o1r1u",
+    "eventType": "ORDER_CREATED",
+    "actorUserId": "user-uuid-1",
+    "referenceType": "ORDER",
+    "referenceId": "ord-uuid-1",
+    "createdAt": "2026-09-17T16:47:59.712Z",
+    "payload": {
+      "orderId": "ord-uuid-1",
+      "orderNumber": "ORD-1001",
+      "customerId": "user-uuid-1",
+      "orderType": "CUSTOM_WEBSITE",
+      "amount": 2999,
+      "currency": "USD",
+      "createdAt": "2026-09-17T12:05:00.000Z"
+    }
+  },
+  {
+    "eventId": "evt_1789663679769_cvnpuhd",
+    "eventType": "TEMPLATE_PURCHASED",
+    "actorUserId": "user-uuid-1",
+    "referenceType": "ORDER",
+    "referenceId": "ord-uuid-2",
+    "createdAt": "2026-09-17T16:47:59.769Z",
+    "payload": {
+      "orderId": "ord-uuid-2",
+      "orderNumber": "ORD-1002",
+      "templateId": "tmpl-starter-1",
+      "templateName": "SaaS Launchpad Pro",
+      "customerId": "user-uuid-1",
+      "vendorId": "vendor-uuid-1",
+      "amount": 149,
+      "currency": "USD",
+      "createdAt": "2026-09-17T12:10:00.000Z"
+    }
+  },
+  {
+    "eventId": "evt_1789663679888_2vfavij",
+    "eventType": "CUSTOM_WEBSITE_ORDER_CREATED",
+    "actorUserId": "user-uuid-1",
+    "referenceType": "ORDER",
+    "referenceId": "ord-uuid-3",
+    "createdAt": "2026-09-17T16:47:59.888Z",
+    "payload": {
+      "orderId": "ord-uuid-3",
+      "orderNumber": "ORD-1003",
+      "customWebsiteOrderId": "cwo-uuid-3",
+      "customerId": "user-uuid-1",
+      "businessName": "Nexus AI Labs",
+      "packageId": "pkg-enterprise",
+      "packageName": "Enterprise Digital Portal",
+      "amount": 4999,
+      "currency": "USD",
+      "createdAt": "2026-09-17T12:15:00.000Z"
+    }
+  },
+  {
+    "eventId": "evt_1789663679947_uzvc2jk",
+    "eventType": "PROJECT_ASSIGNED",
+    "actorUserId": "admin-uuid-1",
+    "referenceType": "PROJECT",
+    "referenceId": "proj-uuid-1",
+    "createdAt": "2026-09-17T16:47:59.947Z",
+    "payload": {
+      "projectId": "proj-uuid-1",
+      "projectNumber": "PRJ-5001",
+      "customerId": "user-uuid-1",
+      "assignedTo": "staff-uuid-1",
+      "assignedBy": "Admin Lead",
+      "assignedAt": "2026-09-17T12:20:00.000Z"
+    }
+  },
+  {
+    "eventId": "evt_1789663679968_tthfjxl",
+    "eventType": "PROJECT_STATUS_CHANGED",
+    "actorUserId": "staff-uuid-1",
+    "referenceType": "PROJECT",
+    "referenceId": "proj-uuid-1",
+    "createdAt": "2026-09-17T16:47:59.968Z",
+    "payload": {
+      "projectId": "proj-uuid-1",
+      "projectNumber": "PRJ-5001",
+      "customerId": "user-uuid-1",
+      "previousStatus": "ASSIGNED",
+      "newStatus": "IN_PROGRESS",
+      "changedBy": "Staff Lead",
+      "note": "Beginning frontend UI development.",
+      "changedAt": "2026-09-17T12:25:00.000Z"
+    }
+  },
+  {
+    "eventId": "evt_1789663680004_1nmdbfy",
+    "eventType": "TASK_ASSIGNED",
+    "actorUserId": "staff-uuid-1",
+    "referenceType": "TASK",
+    "referenceId": "task-uuid-1",
+    "createdAt": "2026-09-17T16:48:00.004Z",
+    "payload": {
+      "taskId": "task-uuid-1",
+      "projectId": "proj-uuid-1",
+      "title": "Design responsive navigation navbar",
+      "assignedTo": "staff-uuid-2",
+      "assignedBy": "Staff Lead",
+      "dueDate": "2026-09-25T18:00:00.000Z",
+      "assignedAt": "2026-09-17T12:30:00.000Z"
+    }
+  },
+  {
+    "eventId": "evt_1789663680034_v6bim5f",
+    "eventType": "CUSTOMER_APPROVED",
+    "actorUserId": "user-uuid-1",
+    "referenceType": "PROJECT",
+    "referenceId": "proj-uuid-1",
+    "createdAt": "2026-09-17T16:48:00.034Z",
+    "payload": {
+      "projectId": "proj-uuid-1",
+      "projectNumber": "PRJ-5001",
+      "customerId": "user-uuid-1",
+      "approvedBy": "Jane Tester",
+      "approvedAt": "2026-09-17T12:35:00.000Z"
+    }
+  },
+  {
+    "eventId": "evt_1789663680066_5gv93n2",
+    "eventType": "PROJECT_DELIVERED",
+    "actorUserId": "staff-uuid-1",
+    "referenceType": "PROJECT",
+    "referenceId": "proj-uuid-1",
+    "createdAt": "2026-09-17T16:48:00.066Z",
+    "payload": {
+      "projectId": "proj-uuid-1",
+      "projectNumber": "PRJ-5001",
+      "customerId": "user-uuid-1",
+      "deliveredBy": "Staff Lead",
+      "deliveredAt": "2026-09-17T12:40:00.000Z"
+    }
+  },
+  {
+    "eventId": "evt_1789663680092_j6ojkes",
+    "eventType": "PAYMENT_SUCCESSFUL",
+    "actorUserId": "user-uuid-1",
+    "referenceType": "PAYMENT",
+    "referenceId": "pay-uuid-1",
+    "createdAt": "2026-09-17T16:48:00.092Z",
+    "payload": {
+      "paymentId": "pay-uuid-1",
+      "orderId": "ord-uuid-1",
+      "orderNumber": "ORD-1001",
+      "customerId": "user-uuid-1",
+      "amount": 2999,
+      "currency": "USD",
+      "provider": "stripe",
+      "providerPaymentId": "pi_3Nabcdef12345678",
+      "paidAt": "2026-09-17T12:45:00.000Z"
+    }
+  },
+  {
+    "eventId": "evt_1789663680133_mbknn0q",
+    "eventType": "PAYMENT_FAILED",
+    "actorUserId": "user-uuid-1",
+    "referenceType": "PAYMENT",
+    "referenceId": "pay-uuid-2",
+    "createdAt": "2026-09-17T16:48:00.133Z",
+    "payload": {
+      "paymentId": "pay-uuid-2",
+      "orderId": "ord-uuid-1",
+      "orderNumber": "ORD-1001",
+      "customerId": "user-uuid-1",
+      "amount": 2999,
+      "currency": "USD",
+      "provider": "stripe",
+      "failureCode": "CARD_DECLINED_INSUFFICIENT_FUNDS",
+      "failedAt": "2026-09-17T12:50:00.000Z"
+    }
+  },
+  {
+    "eventId": "evt_1789663680158_exrx2d2",
+    "eventType": "PAYMENT_REFUNDED",
+    "actorUserId": "admin-uuid-1",
+    "referenceType": "PAYMENT",
+    "referenceId": "pay-uuid-1",
+    "createdAt": "2026-09-17T16:48:00.157Z",
+    "payload": {
+      "paymentId": "pay-uuid-1",
+      "orderId": "ord-uuid-1",
+      "orderNumber": "ORD-1001",
+      "customerId": "user-uuid-1",
+      "amount": 2999,
+      "currency": "USD",
+      "refundId": "ref_987654321",
+      "refundedAt": "2026-09-17T12:55:00.000Z"
+    }
+  },
+  {
+    "eventId": "evt_idempotent_test_9999",
+    "eventType": "ORDER_CREATED",
+    "actorUserId": "user-uuid-1",
+    "referenceType": "ORDER",
+    "referenceId": "ord-idemp-1",
+    "createdAt": "2026-09-17T16:48:00.198Z",
+    "payload": {
+      "orderId": "ord-idemp-1",
+      "orderNumber": "ORD-IDEMP-01",
+      "customerId": "user-uuid-1",
+      "orderType": "PRODUCT",
+      "amount": 250,
+      "currency": "USD",
+      "createdAt": "2026-09-17T12:00:00.000Z"
+    }
+  },
+  {
+    "eventId": "evt_1789663688762_rdhleka",
+    "eventType": "USER_REGISTERED",
+    "actorUserId": "usr_1789663688761_809xr",
+    "referenceType": "USER",
+    "referenceId": "usr_1789663688761_809xr",
+    "createdAt": "2026-09-17T16:48:08.762Z",
+    "payload": {
+      "userId": "usr_1789663688761_809xr",
+      "name": "Test Signup 63688",
+      "email": "newuser_63688@example.com",
+      "role": "user",
+      "createdAt": "2026-09-17T16:48:08.761Z"
+    }
+  },
+  {
+    "eventId": "evt_1789663688830_rprq7mk",
+    "eventType": "TEMPLATE_PURCHASED",
+    "actorUserId": "usr_customer_01",
+    "referenceType": "ORDER",
+    "referenceId": "ord_tpl_1789663688827_b9d1wb",
+    "createdAt": "2026-09-17T16:48:08.830Z",
+    "payload": {
+      "orderId": "ord_tpl_1789663688827_b9d1wb",
+      "orderNumber": "TPL-2026-0010",
+      "templateId": "tpl_1789547390826_crso0",
+      "templateName": "Modern Restaurant Website",
+      "customerId": "usr_customer_01",
+      "vendorId": "usr_vendor_01",
+      "amount": 59,
+      "currency": "USD",
+      "createdAt": "2026-09-17T16:48:08.827Z"
+    }
+  },
+  {
+    "eventId": "evt_1789663689076_ekkaqw3",
+    "eventType": "PAYMENT_SUCCESSFUL",
+    "actorUserId": "usr_customer_01",
+    "referenceType": "PAYMENT",
+    "referenceId": "pay_1789663689020_1c4bd9b2",
+    "createdAt": "2026-09-17T16:48:09.076Z",
+    "payload": {
+      "paymentId": "pay_1789663689020_1c4bd9b2",
+      "orderId": "ord_tpl_1789663688827_b9d1wb",
+      "orderNumber": "TPL-2026-0010",
+      "customerId": "usr_customer_01",
+      "amount": 59,
+      "currency": "USD",
+      "provider": "webcraft_pay",
+      "providerPaymentId": "pi_webcraft_pay_1789663689020_7cb7d3d51690",
+      "paidAt": "2026-09-17T16:48:09.031Z"
+    }
+  },
+  {
+    "eventId": "evt_1789663689142_ev5vmrr",
+    "eventType": "CUSTOM_WEBSITE_ORDER_CREATED",
+    "actorUserId": "usr_customer_01",
+    "referenceType": "ORDER",
+    "referenceId": "ord_1789663689139_l8wv73",
+    "createdAt": "2026-09-17T16:48:09.142Z",
+    "payload": {
+      "orderId": "ord_1789663689139_l8wv73",
+      "orderNumber": "WCW-2026-0011",
+      "customWebsiteOrderId": "ord_1789663689139_l8wv73",
+      "customerId": "usr_customer_01",
+      "businessName": "Apex Dynamics 63688",
+      "packageId": "pkg_starter",
+      "packageName": "Starter Launch",
+      "amount": 299,
+      "currency": "USD",
+      "createdAt": "2026-09-17T16:48:09.139Z"
+    }
+  },
+  {
+    "eventId": "evt_1789663689267_yjoyq3n",
+    "eventType": "PROJECT_ASSIGNED",
+    "actorUserId": "usr_admin_01",
+    "referenceType": "PROJECT",
+    "referenceId": "prj_1789663689255_731cc869",
+    "createdAt": "2026-09-17T16:48:09.267Z",
+    "payload": {
+      "projectId": "prj_1789663689255_731cc869",
+      "projectNumber": "PRJ-2026-0003",
+      "customerId": "usr_customer_01",
+      "assignedTo": "usr_manager_01",
+      "assignedBy": "Alexander Wright",
+      "assignedAt": "2026-09-17T16:48:09.255Z"
+    }
+  },
+  {
+    "eventId": "evt_1789663689353_7qe0y0f",
+    "eventType": "PROJECT_STATUS_CHANGED",
+    "actorUserId": "usr_admin_01",
+    "referenceType": "PROJECT",
+    "referenceId": "prj_1789663689255_731cc869",
+    "createdAt": "2026-09-17T16:48:09.353Z",
+    "payload": {
+      "projectId": "prj_1789663689255_731cc869",
+      "projectNumber": "PRJ-2026-0003",
+      "customerId": "usr_customer_01",
+      "previousStatus": "ASSIGNED",
+      "newStatus": "IN_PROGRESS",
+      "changedBy": "Alexander Wright",
+      "note": "Wireframing completed; initial layouts are underway.",
+      "changedAt": "2026-09-17T16:48:09.339Z"
+    }
+  },
+  {
+    "eventId": "evt_1789663689409_2bj5pgo",
+    "eventType": "TASK_ASSIGNED",
+    "actorUserId": "usr_admin_01",
+    "referenceType": "TASK",
+    "referenceId": "tsk_1789663689402_a37e59f5",
+    "createdAt": "2026-09-17T16:48:09.409Z",
+    "payload": {
+      "taskId": "tsk_1789663689402_a37e59f5",
+      "projectId": "prj_1789663689255_731cc869",
+      "title": "Build Navigation and Responsive Header",
+      "assignedTo": "usr_manager_01",
+      "assignedBy": "usr_admin_01",
+      "dueDate": "2026-09-22",
+      "assignedAt": "2026-09-17T16:48:09.402Z"
+    }
+  },
+  {
+    "eventId": "evt_1789663689474_urarljz",
+    "eventType": "CUSTOMER_APPROVED",
+    "actorUserId": "usr_customer_01",
+    "referenceType": "ORDER",
+    "referenceId": "ord_1789663689139_l8wv73",
+    "createdAt": "2026-09-17T16:48:09.474Z",
+    "payload": {
+      "projectId": "ord_1789663689139_l8wv73",
+      "projectNumber": "WCW-2026-0011",
+      "customerId": "usr_customer_01",
+      "approvedBy": "Sarah Jenkins",
+      "approvedAt": "2026-09-17T16:48:09.470Z"
+    }
+  },
+  {
+    "eventId": "evt_1789663689569_ug4gcql",
+    "eventType": "PROJECT_STATUS_CHANGED",
+    "actorUserId": "usr_admin_01",
+    "referenceType": "PROJECT",
+    "referenceId": "prj_1789663689255_731cc869",
+    "createdAt": "2026-09-17T16:48:09.569Z",
+    "payload": {
+      "projectId": "prj_1789663689255_731cc869",
+      "projectNumber": "PRJ-2026-0003",
+      "customerId": "usr_customer_01",
+      "previousStatus": "IN_PROGRESS",
+      "newStatus": "COMPLETED",
+      "changedBy": "Alexander Wright",
+      "note": "Production deployed, DNS configured, delivered to client.",
+      "changedAt": "2026-09-17T16:48:09.562Z"
+    }
+  },
+  {
+    "eventId": "evt_1789663689629_uo75opv",
+    "eventType": "PROJECT_DELIVERED",
+    "actorUserId": "usr_admin_01",
+    "referenceType": "PROJECT",
+    "referenceId": "prj_1789663689255_731cc869",
+    "createdAt": "2026-09-17T16:48:09.629Z",
+    "payload": {
+      "projectId": "prj_1789663689255_731cc869",
+      "projectNumber": "PRJ-2026-0003",
+      "customerId": "usr_customer_01",
+      "deliveredBy": "Alexander Wright",
+      "deliveredAt": "2026-09-17T16:48:09.562Z"
+    }
+  },
+  {
+    "eventId": "evt_1789663711988_0rrcpn7",
+    "eventType": "TEMPLATE_PURCHASED",
+    "actorUserId": "usr_customer_01",
+    "referenceType": "ORDER",
+    "referenceId": "ord_tpl_1789663711986_zhpo50",
+    "createdAt": "2026-09-17T16:48:31.988Z",
+    "payload": {
+      "orderId": "ord_tpl_1789663711986_zhpo50",
+      "orderNumber": "TPL-2026-0012",
+      "templateId": "tpl_1789547390826_crso0",
+      "templateName": "Modern Restaurant Website",
+      "customerId": "usr_customer_01",
+      "vendorId": "usr_vendor_01",
+      "amount": 59,
+      "currency": "USD",
+      "createdAt": "2026-09-17T16:48:31.986Z"
+    }
+  },
+  {
+    "eventId": "evt_1789663712206_del72dw",
+    "eventType": "PAYMENT_FAILED",
+    "actorUserId": "usr_customer_01",
+    "referenceType": "PAYMENT",
+    "referenceId": "pay_1789663712047_b8cb2e50",
+    "createdAt": "2026-09-17T16:48:32.206Z",
+    "payload": {
+      "paymentId": "pay_1789663712047_b8cb2e50",
+      "orderId": "ord_tpl_1789663711986_zhpo50",
+      "orderNumber": "TPL-2026-0012",
+      "customerId": "usr_customer_01",
+      "amount": 59,
+      "currency": "USD",
+      "provider": "webcraft_pay",
+      "failureCode": "Payment failed: The transaction was declined by the card issuer.",
+      "failedAt": "2026-09-17T16:48:32.205Z"
+    }
+  },
+  {
+    "eventId": "evt_1789663712323_r3ik76b",
+    "eventType": "PAYMENT_SUCCESSFUL",
+    "actorUserId": "usr_customer_01",
+    "referenceType": "PAYMENT",
+    "referenceId": "pay_1789663712223_dcc0c4fe",
+    "createdAt": "2026-09-17T16:48:32.323Z",
+    "payload": {
+      "paymentId": "pay_1789663712223_dcc0c4fe",
+      "orderId": "ord_tpl_1789663711986_zhpo50",
+      "orderNumber": "TPL-2026-0012",
+      "customerId": "usr_customer_01",
+      "amount": 59,
+      "currency": "USD",
+      "provider": "webcraft_pay",
+      "providerPaymentId": "pi_webcraft_pay_1789663712223_da5708020873",
+      "paidAt": "2026-09-17T16:48:32.231Z"
+    }
+  },
+  {
+    "eventId": "evt_1789663848238_wskynmk",
+    "eventType": "TEMPLATE_PURCHASED",
+    "actorUserId": "usr_customer_01",
+    "referenceType": "ORDER",
+    "referenceId": "ord_tpl_1789663848235_1y5b0w",
+    "createdAt": "2026-09-17T16:50:48.238Z",
+    "payload": {
+      "orderId": "ord_tpl_1789663848235_1y5b0w",
+      "orderNumber": "TPL-2026-0013",
+      "templateId": "tpl_1789547390826_crso0",
+      "templateName": "Modern Restaurant Website",
+      "customerId": "usr_customer_01",
+      "vendorId": "usr_vendor_01",
+      "amount": 59,
+      "currency": "USD",
+      "createdAt": "2026-09-17T16:50:48.235Z"
+    }
+  },
+  {
+    "eventId": "evt_1789663848451_0hxcv9w",
+    "eventType": "PAYMENT_FAILED",
+    "actorUserId": "usr_customer_01",
+    "referenceType": "PAYMENT",
+    "referenceId": "pay_1789663848303_2bdec5b0",
+    "createdAt": "2026-09-17T16:50:48.451Z",
+    "payload": {
+      "paymentId": "pay_1789663848303_2bdec5b0",
+      "orderId": "ord_tpl_1789663848235_1y5b0w",
+      "orderNumber": "TPL-2026-0013",
+      "customerId": "usr_customer_01",
+      "amount": 59,
+      "currency": "USD",
+      "provider": "webcraft_pay",
+      "failureCode": "Payment failed: The transaction was declined by the card issuer.",
+      "failedAt": "2026-09-17T16:50:48.451Z"
+    }
+  },
+  {
+    "eventId": "evt_1789663848524_creagic",
+    "eventType": "PAYMENT_SUCCESSFUL",
+    "actorUserId": "usr_customer_01",
+    "referenceType": "PAYMENT",
+    "referenceId": "pay_1789663848466_5b9eadf2",
+    "createdAt": "2026-09-17T16:50:48.524Z",
+    "payload": {
+      "paymentId": "pay_1789663848466_5b9eadf2",
+      "orderId": "ord_tpl_1789663848235_1y5b0w",
+      "orderNumber": "TPL-2026-0013",
+      "customerId": "usr_customer_01",
+      "amount": 59,
+      "currency": "USD",
+      "provider": "webcraft_pay",
+      "providerPaymentId": "pi_webcraft_pay_1789663848466_9e3f3ca2f13a",
+      "paidAt": "2026-09-17T16:50:48.481Z"
+    }
+  },
+  {
+    "eventId": "evt_1789665025088_wnkbk0u",
+    "eventType": "CUSTOM_WEBSITE_ORDER_CREATED",
+    "actorUserId": "usr_customer_01",
+    "referenceType": "ORDER",
+    "referenceId": "ord_1789665025085_91lhle",
+    "createdAt": "2026-09-17T17:10:25.088Z",
+    "payload": {
+      "orderId": "ord_1789665025085_91lhle",
+      "orderNumber": "WCW-2026-0014",
+      "customWebsiteOrderId": "ord_1789665025085_91lhle",
+      "customerId": "usr_customer_01",
+      "businessName": "Phase 13 Test Co 1789665025",
+      "packageId": "pkg_starter",
+      "packageName": "Starter Launch",
+      "amount": 299,
+      "currency": "USD",
+      "createdAt": "2026-09-17T17:10:25.085Z"
+    }
+  },
+  {
+    "eventId": "evt_1789665025306_glen4rz",
+    "eventType": "PROJECT_STATUS_CHANGED",
+    "actorUserId": "usr_admin_01",
+    "referenceType": "PROJECT",
+    "referenceId": "prj_1789665025241_8800d4f6",
+    "createdAt": "2026-09-17T17:10:25.306Z",
+    "payload": {
+      "projectId": "prj_1789665025241_8800d4f6",
+      "projectNumber": "PRJ-2026-0004",
+      "customerId": "usr_customer_01",
+      "previousStatus": "PLANNING",
+      "newStatus": "ASSIGNED",
+      "changedBy": "Alexander Wright",
+      "note": "",
+      "changedAt": "2026-09-17T17:10:25.295Z"
+    }
+  },
+  {
+    "eventId": "evt_1789665025397_5c7qg9z",
+    "eventType": "PROJECT_STATUS_CHANGED",
+    "actorUserId": "usr_admin_01",
+    "referenceType": "PROJECT",
+    "referenceId": "prj_1789665025241_8800d4f6",
+    "createdAt": "2026-09-17T17:10:25.397Z",
+    "payload": {
+      "projectId": "prj_1789665025241_8800d4f6",
+      "projectNumber": "PRJ-2026-0004",
+      "customerId": "usr_customer_01",
+      "previousStatus": "ASSIGNED",
+      "newStatus": "IN_PROGRESS",
+      "changedBy": "Alexander Wright",
+      "note": "",
+      "changedAt": "2026-09-17T17:10:25.362Z"
+    }
+  },
+  {
+    "eventId": "evt_1789665025448_v9hb8e8",
+    "eventType": "PROJECT_STATUS_CHANGED",
+    "actorUserId": "usr_admin_01",
+    "referenceType": "PROJECT",
+    "referenceId": "prj_1789665025241_8800d4f6",
+    "createdAt": "2026-09-17T17:10:25.447Z",
+    "payload": {
+      "projectId": "prj_1789665025241_8800d4f6",
+      "projectNumber": "PRJ-2026-0004",
+      "customerId": "usr_customer_01",
+      "previousStatus": "IN_PROGRESS",
+      "newStatus": "ON_HOLD",
+      "changedBy": "Alexander Wright",
+      "note": "Waiting for client assets",
+      "changedAt": "2026-09-17T17:10:25.425Z"
+    }
+  },
+  {
+    "eventId": "evt_1789665025522_657sm1p",
+    "eventType": "PROJECT_STATUS_CHANGED",
+    "actorUserId": "usr_admin_01",
+    "referenceType": "PROJECT",
+    "referenceId": "prj_1789665025241_8800d4f6",
+    "createdAt": "2026-09-17T17:10:25.522Z",
+    "payload": {
+      "projectId": "prj_1789665025241_8800d4f6",
+      "projectNumber": "PRJ-2026-0004",
+      "customerId": "usr_customer_01",
+      "previousStatus": "ON_HOLD",
+      "newStatus": "IN_PROGRESS",
+      "changedBy": "Alexander Wright",
+      "note": "Client assets received",
+      "changedAt": "2026-09-17T17:10:25.499Z"
+    }
+  },
+  {
+    "eventId": "evt_1789665025601_9pd6k0n",
+    "eventType": "PROJECT_STATUS_CHANGED",
+    "actorUserId": "usr_admin_01",
+    "referenceType": "PROJECT",
+    "referenceId": "prj_1789665025241_8800d4f6",
+    "createdAt": "2026-09-17T17:10:25.601Z",
+    "payload": {
+      "projectId": "prj_1789665025241_8800d4f6",
+      "projectNumber": "PRJ-2026-0004",
+      "customerId": "usr_customer_01",
+      "previousStatus": "IN_PROGRESS",
+      "newStatus": "REVIEW",
+      "changedBy": "Alexander Wright",
+      "note": "Version 1 (\"Alpha Design v1\") submitted for customer review.",
+      "changedAt": "2026-09-17T17:10:25.581Z"
+    }
+  },
+  {
+    "eventId": "evt_1789665025693_mfm433s",
+    "eventType": "PROJECT_STATUS_CHANGED",
+    "actorUserId": "usr_customer_01",
+    "referenceType": "PROJECT",
+    "referenceId": "prj_1789665025241_8800d4f6",
+    "createdAt": "2026-09-17T17:10:25.693Z",
+    "payload": {
+      "projectId": "prj_1789665025241_8800d4f6",
+      "projectNumber": "PRJ-2026-0004",
+      "customerId": "usr_customer_01",
+      "previousStatus": "REVIEW",
+      "newStatus": "IN_PROGRESS",
+      "changedBy": "Sarah Jenkins",
+      "note": "Revision #1 requested by customer: Please change header typography and primary color to blue.",
+      "changedAt": "2026-09-17T17:10:25.677Z"
+    }
+  },
+  {
+    "eventId": "evt_1789665025793_x1ba3m8",
+    "eventType": "PROJECT_STATUS_CHANGED",
+    "actorUserId": "usr_admin_01",
+    "referenceType": "PROJECT",
+    "referenceId": "prj_1789665025241_8800d4f6",
+    "createdAt": "2026-09-17T17:10:25.793Z",
+    "payload": {
+      "projectId": "prj_1789665025241_8800d4f6",
+      "projectNumber": "PRJ-2026-0004",
+      "customerId": "usr_customer_01",
+      "previousStatus": "IN_PROGRESS",
+      "newStatus": "REVIEW",
+      "changedBy": "Alexander Wright",
+      "note": "Version 2 (\"Alpha Design v2 (Color Updates)\") submitted for customer review.",
+      "changedAt": "2026-09-17T17:10:25.779Z"
+    }
+  },
+  {
+    "eventId": "evt_1789665025880_ob80h3k",
+    "eventType": "PROJECT_STATUS_CHANGED",
+    "actorUserId": "usr_customer_01",
+    "referenceType": "PROJECT",
+    "referenceId": "prj_1789665025241_8800d4f6",
+    "createdAt": "2026-09-17T17:10:25.880Z",
+    "payload": {
+      "projectId": "prj_1789665025241_8800d4f6",
+      "projectNumber": "PRJ-2026-0004",
+      "customerId": "usr_customer_01",
+      "previousStatus": "REVIEW",
+      "newStatus": "COMPLETED",
+      "changedBy": "Sarah Jenkins",
+      "note": "Project approved by customer (Version v2). Feedback: Everything looks outstanding! Ready for production deployment.",
+      "changedAt": "2026-09-17T17:10:25.857Z"
+    }
+  },
+  {
+    "eventId": "evt_1789665025984_a8akuth",
+    "eventType": "PROJECT_STATUS_CHANGED",
+    "actorUserId": "usr_admin_01",
+    "referenceType": "PROJECT",
+    "referenceId": "prj_1789665025241_8800d4f6",
+    "createdAt": "2026-09-17T17:10:25.984Z",
+    "payload": {
+      "projectId": "prj_1789665025241_8800d4f6",
+      "projectNumber": "PRJ-2026-0004",
+      "customerId": "usr_customer_01",
+      "previousStatus": "COMPLETED",
+      "newStatus": "DELIVERED",
+      "changedBy": "Alexander Wright",
+      "note": "Project delivered. Live URL: https://production.webcraft.ai/phase13-client-site. Notes: Domain mapped and SSL certificates provisioned.",
+      "changedAt": "2026-09-17T17:10:25.972Z"
+    }
+  },
+  {
+    "eventId": "evt_1789665026034_5dfgz8r",
+    "eventType": "PROJECT_DELIVERED",
+    "actorUserId": "usr_admin_01",
+    "referenceType": "PROJECT",
+    "referenceId": "prj_1789665025241_8800d4f6",
+    "createdAt": "2026-09-17T17:10:26.034Z",
+    "payload": {
+      "projectId": "prj_1789665025241_8800d4f6",
+      "projectNumber": "PRJ-2026-0004",
+      "customerId": "usr_customer_01",
+      "deliveredBy": "Alexander Wright",
+      "deliveredAt": "2026-09-17T17:10:25.972Z"
+    }
+  },
+  {
+    "eventId": "evt_1789665026185_r1jszje",
+    "eventType": "CUSTOM_WEBSITE_ORDER_CREATED",
+    "actorUserId": "usr_customer_01",
+    "referenceType": "ORDER",
+    "referenceId": "ord_1789665026183_iwn65a",
+    "createdAt": "2026-09-17T17:10:26.185Z",
+    "payload": {
+      "orderId": "ord_1789665026183_iwn65a",
+      "orderNumber": "WCW-2026-0015",
+      "customWebsiteOrderId": "ord_1789665026183_iwn65a",
+      "customerId": "usr_customer_01",
+      "businessName": "Cancellation Test Co",
+      "packageId": "pkg_starter",
+      "packageName": "Starter Launch",
+      "amount": 299,
+      "currency": "USD",
+      "createdAt": "2026-09-17T17:10:26.183Z"
+    }
+  },
+  {
+    "eventId": "evt_1789665026351_auaxjpt",
+    "eventType": "PROJECT_STATUS_CHANGED",
+    "actorUserId": "usr_admin_01",
+    "referenceType": "PROJECT",
+    "referenceId": "prj_1789665026293_11af767d",
+    "createdAt": "2026-09-17T17:10:26.351Z",
+    "payload": {
+      "projectId": "prj_1789665026293_11af767d",
+      "projectNumber": "PRJ-2026-0005",
+      "customerId": "usr_customer_01",
+      "previousStatus": "PLANNING",
+      "newStatus": "CANCELLED",
+      "changedBy": "Alexander Wright",
+      "note": "Customer decided not to proceed",
+      "changedAt": "2026-09-17T17:10:26.328Z"
+    }
+  },
+  {
+    "eventId": "evt_1789665036942_g69alyp",
+    "eventType": "TEMPLATE_PURCHASED",
+    "actorUserId": "usr_customer_01",
+    "referenceType": "ORDER",
+    "referenceId": "ord_tpl_1789665036939_rqtuf2",
+    "createdAt": "2026-09-17T17:10:36.942Z",
+    "payload": {
+      "orderId": "ord_tpl_1789665036939_rqtuf2",
+      "orderNumber": "TPL-2026-0016",
+      "templateId": "tpl_1789547390826_crso0",
+      "templateName": "Modern Restaurant Website",
+      "customerId": "usr_customer_01",
+      "vendorId": "usr_vendor_01",
+      "amount": 59,
+      "currency": "USD",
+      "createdAt": "2026-09-17T17:10:36.939Z"
+    }
+  },
+  {
+    "eventId": "evt_1789665037213_29rmf84",
+    "eventType": "PAYMENT_FAILED",
+    "actorUserId": "usr_customer_01",
+    "referenceType": "PAYMENT",
+    "referenceId": "pay_1789665037032_810be484",
+    "createdAt": "2026-09-17T17:10:37.213Z",
+    "payload": {
+      "paymentId": "pay_1789665037032_810be484",
+      "orderId": "ord_tpl_1789665036939_rqtuf2",
+      "orderNumber": "TPL-2026-0016",
+      "customerId": "usr_customer_01",
+      "amount": 59,
+      "currency": "USD",
+      "provider": "webcraft_pay",
+      "failureCode": "Payment failed: The transaction was declined by the card issuer.",
+      "failedAt": "2026-09-17T17:10:37.213Z"
+    }
+  },
+  {
+    "eventId": "evt_1789665037284_e1yxw3j",
+    "eventType": "PAYMENT_SUCCESSFUL",
+    "actorUserId": "usr_customer_01",
+    "referenceType": "PAYMENT",
+    "referenceId": "pay_1789665037229_a3185bef",
+    "createdAt": "2026-09-17T17:10:37.284Z",
+    "payload": {
+      "paymentId": "pay_1789665037229_a3185bef",
+      "orderId": "ord_tpl_1789665036939_rqtuf2",
+      "orderNumber": "TPL-2026-0016",
+      "customerId": "usr_customer_01",
+      "amount": 59,
+      "currency": "USD",
+      "provider": "webcraft_pay",
+      "providerPaymentId": "pi_webcraft_pay_1789665037229_a3f33c7abafe",
+      "paidAt": "2026-09-17T17:10:37.242Z"
+    }
+  },
+  {
+    "eventId": "evt_1789665044015_s4z6pax",
+    "eventType": "USER_REGISTERED",
+    "actorUserId": "usr_1789665044013_d11no",
+    "referenceType": "USER",
+    "referenceId": "usr_1789665044013_d11no",
+    "createdAt": "2026-09-17T17:10:44.015Z",
+    "payload": {
+      "userId": "usr_1789665044013_d11no",
+      "name": "Test Signup 65043",
+      "email": "newuser_65043@example.com",
+      "role": "user",
+      "createdAt": "2026-09-17T17:10:44.013Z"
+    }
+  },
+  {
+    "eventId": "evt_1789665044121_qss35ju",
+    "eventType": "TEMPLATE_PURCHASED",
+    "actorUserId": "usr_customer_01",
+    "referenceType": "ORDER",
+    "referenceId": "ord_tpl_1789665044118_h6afvh",
+    "createdAt": "2026-09-17T17:10:44.121Z",
+    "payload": {
+      "orderId": "ord_tpl_1789665044118_h6afvh",
+      "orderNumber": "TPL-2026-0017",
+      "templateId": "tpl_1789547390826_crso0",
+      "templateName": "Modern Restaurant Website",
+      "customerId": "usr_customer_01",
+      "vendorId": "usr_vendor_01",
+      "amount": 59,
+      "currency": "USD",
+      "createdAt": "2026-09-17T17:10:44.118Z"
+    }
+  },
+  {
+    "eventId": "evt_1789665044366_6zf7sps",
+    "eventType": "PAYMENT_SUCCESSFUL",
+    "actorUserId": "usr_customer_01",
+    "referenceType": "PAYMENT",
+    "referenceId": "pay_1789665044322_a4dec0e2",
+    "createdAt": "2026-09-17T17:10:44.366Z",
+    "payload": {
+      "paymentId": "pay_1789665044322_a4dec0e2",
+      "orderId": "ord_tpl_1789665044118_h6afvh",
+      "orderNumber": "TPL-2026-0017",
+      "customerId": "usr_customer_01",
+      "amount": 59,
+      "currency": "USD",
+      "provider": "webcraft_pay",
+      "providerPaymentId": "pi_webcraft_pay_1789665044322_db11996340a6",
+      "paidAt": "2026-09-17T17:10:44.332Z"
+    }
+  },
+  {
+    "eventId": "evt_1789665044425_wdig6yf",
+    "eventType": "CUSTOM_WEBSITE_ORDER_CREATED",
+    "actorUserId": "usr_customer_01",
+    "referenceType": "ORDER",
+    "referenceId": "ord_1789665044424_byn65n",
+    "createdAt": "2026-09-17T17:10:44.425Z",
+    "payload": {
+      "orderId": "ord_1789665044424_byn65n",
+      "orderNumber": "WCW-2026-0018",
+      "customWebsiteOrderId": "ord_1789665044424_byn65n",
+      "customerId": "usr_customer_01",
+      "businessName": "Apex Dynamics 65043",
+      "packageId": "pkg_starter",
+      "packageName": "Starter Launch",
+      "amount": 299,
+      "currency": "USD",
+      "createdAt": "2026-09-17T17:10:44.424Z"
+    }
+  },
+  {
+    "eventId": "evt_1789665044568_s30jd95",
+    "eventType": "PROJECT_ASSIGNED",
+    "actorUserId": "usr_admin_01",
+    "referenceType": "PROJECT",
+    "referenceId": "prj_1789665044552_dc5df389",
+    "createdAt": "2026-09-17T17:10:44.568Z",
+    "payload": {
+      "projectId": "prj_1789665044552_dc5df389",
+      "projectNumber": "PRJ-2026-0006",
+      "customerId": "usr_customer_01",
+      "assignedTo": "usr_manager_01",
+      "assignedBy": "Alexander Wright",
+      "assignedAt": "2026-09-17T17:10:44.552Z"
+    }
+  },
+  {
+    "eventId": "evt_1789665044669_xrmez98",
+    "eventType": "PROJECT_STATUS_CHANGED",
+    "actorUserId": "usr_admin_01",
+    "referenceType": "PROJECT",
+    "referenceId": "prj_1789665044552_dc5df389",
+    "createdAt": "2026-09-17T17:10:44.669Z",
+    "payload": {
+      "projectId": "prj_1789665044552_dc5df389",
+      "projectNumber": "PRJ-2026-0006",
+      "customerId": "usr_customer_01",
+      "previousStatus": "ASSIGNED",
+      "newStatus": "IN_PROGRESS",
+      "changedBy": "Alexander Wright",
+      "note": "Wireframing completed; initial layouts are underway.",
+      "changedAt": "2026-09-17T17:10:44.657Z"
+    }
+  },
+  {
+    "eventId": "evt_1789665044756_tuo4myq",
+    "eventType": "TASK_ASSIGNED",
+    "actorUserId": "usr_admin_01",
+    "referenceType": "TASK",
+    "referenceId": "tsk_1789665044744_484b219f",
+    "createdAt": "2026-09-17T17:10:44.756Z",
+    "payload": {
+      "taskId": "tsk_1789665044744_484b219f",
+      "projectId": "prj_1789665044552_dc5df389",
+      "title": "Build Navigation and Responsive Header",
+      "assignedTo": "usr_manager_01",
+      "assignedBy": "usr_admin_01",
+      "dueDate": "2026-09-22",
+      "assignedAt": "2026-09-17T17:10:44.744Z"
+    }
+  },
+  {
+    "eventId": "evt_1789665044841_y1tuz1m",
+    "eventType": "CUSTOMER_APPROVED",
+    "actorUserId": "usr_customer_01",
+    "referenceType": "ORDER",
+    "referenceId": "ord_1789665044424_byn65n",
+    "createdAt": "2026-09-17T17:10:44.841Z",
+    "payload": {
+      "projectId": "ord_1789665044424_byn65n",
+      "projectNumber": "WCW-2026-0018",
+      "customerId": "usr_customer_01",
+      "approvedBy": "Sarah Jenkins",
+      "approvedAt": "2026-09-17T17:10:44.836Z"
+    }
+  },
+  {
+    "eventId": "evt_1789665143860_o7nrmz4",
+    "eventType": "USER_REGISTERED",
+    "actorUserId": "usr_1789665143858_sjyzx",
+    "referenceType": "USER",
+    "referenceId": "usr_1789665143858_sjyzx",
+    "createdAt": "2026-09-17T17:12:23.860Z",
+    "payload": {
+      "userId": "usr_1789665143858_sjyzx",
+      "name": "Test Signup 65143",
+      "email": "newuser_65143@example.com",
+      "role": "user",
+      "createdAt": "2026-09-17T17:12:23.858Z"
+    }
+  },
+  {
+    "eventId": "evt_1789665144017_pd3wes1",
+    "eventType": "TEMPLATE_PURCHASED",
+    "actorUserId": "usr_customer_01",
+    "referenceType": "ORDER",
+    "referenceId": "ord_tpl_1789665144013_l1y7fe",
+    "createdAt": "2026-09-17T17:12:24.017Z",
+    "payload": {
+      "orderId": "ord_tpl_1789665144013_l1y7fe",
+      "orderNumber": "TPL-2026-0019",
+      "templateId": "tpl_1789547390826_crso0",
+      "templateName": "Modern Restaurant Website",
+      "customerId": "usr_customer_01",
+      "vendorId": "usr_vendor_01",
+      "amount": 59,
+      "currency": "USD",
+      "createdAt": "2026-09-17T17:12:24.013Z"
+    }
+  },
+  {
+    "eventId": "evt_1789665144364_4c6bzwe",
+    "eventType": "PAYMENT_SUCCESSFUL",
+    "actorUserId": "usr_customer_01",
+    "referenceType": "PAYMENT",
+    "referenceId": "pay_1789665144288_d63490ba",
+    "createdAt": "2026-09-17T17:12:24.364Z",
+    "payload": {
+      "paymentId": "pay_1789665144288_d63490ba",
+      "orderId": "ord_tpl_1789665144013_l1y7fe",
+      "orderNumber": "TPL-2026-0019",
+      "customerId": "usr_customer_01",
+      "amount": 59,
+      "currency": "USD",
+      "provider": "webcraft_pay",
+      "providerPaymentId": "pi_webcraft_pay_1789665144288_11ff9aa64386",
+      "paidAt": "2026-09-17T17:12:24.300Z"
+    }
+  },
+  {
+    "eventId": "evt_1789665144438_jhep8tu",
+    "eventType": "CUSTOM_WEBSITE_ORDER_CREATED",
+    "actorUserId": "usr_customer_01",
+    "referenceType": "ORDER",
+    "referenceId": "ord_1789665144436_8tlyfr",
+    "createdAt": "2026-09-17T17:12:24.438Z",
+    "payload": {
+      "orderId": "ord_1789665144436_8tlyfr",
+      "orderNumber": "WCW-2026-0020",
+      "customWebsiteOrderId": "ord_1789665144436_8tlyfr",
+      "customerId": "usr_customer_01",
+      "businessName": "Apex Dynamics 65143",
+      "packageId": "pkg_starter",
+      "packageName": "Starter Launch",
+      "amount": 299,
+      "currency": "USD",
+      "createdAt": "2026-09-17T17:12:24.436Z"
+    }
+  },
+  {
+    "eventId": "evt_1789665144604_wxneda8",
+    "eventType": "PROJECT_ASSIGNED",
+    "actorUserId": "usr_admin_01",
+    "referenceType": "PROJECT",
+    "referenceId": "prj_1789665144585_f8a4f248",
+    "createdAt": "2026-09-17T17:12:24.604Z",
+    "payload": {
+      "projectId": "prj_1789665144585_f8a4f248",
+      "projectNumber": "PRJ-2026-0007",
+      "customerId": "usr_customer_01",
+      "assignedTo": "usr_manager_01",
+      "assignedBy": "Alexander Wright",
+      "assignedAt": "2026-09-17T17:12:24.585Z"
+    }
+  },
+  {
+    "eventId": "evt_1789665144712_8w2kv16",
+    "eventType": "PROJECT_STATUS_CHANGED",
+    "actorUserId": "usr_admin_01",
+    "referenceType": "PROJECT",
+    "referenceId": "prj_1789665144585_f8a4f248",
+    "createdAt": "2026-09-17T17:12:24.712Z",
+    "payload": {
+      "projectId": "prj_1789665144585_f8a4f248",
+      "projectNumber": "PRJ-2026-0007",
+      "customerId": "usr_customer_01",
+      "previousStatus": "ASSIGNED",
+      "newStatus": "IN_PROGRESS",
+      "changedBy": "Alexander Wright",
+      "note": "Wireframing completed; initial layouts are underway.",
+      "changedAt": "2026-09-17T17:12:24.700Z"
+    }
+  },
+  {
+    "eventId": "evt_1789665144826_rm5twhk",
+    "eventType": "TASK_ASSIGNED",
+    "actorUserId": "usr_admin_01",
+    "referenceType": "TASK",
+    "referenceId": "tsk_1789665144810_40191d49",
+    "createdAt": "2026-09-17T17:12:24.826Z",
+    "payload": {
+      "taskId": "tsk_1789665144810_40191d49",
+      "projectId": "prj_1789665144585_f8a4f248",
+      "title": "Build Navigation and Responsive Header",
+      "assignedTo": "usr_manager_01",
+      "assignedBy": "usr_admin_01",
+      "dueDate": "2026-09-22",
+      "assignedAt": "2026-09-17T17:12:24.810Z"
+    }
+  },
+  {
+    "eventId": "evt_1789665144925_krzxyjs",
+    "eventType": "CUSTOMER_APPROVED",
+    "actorUserId": "usr_customer_01",
+    "referenceType": "ORDER",
+    "referenceId": "ord_1789665144436_8tlyfr",
+    "createdAt": "2026-09-17T17:12:24.925Z",
+    "payload": {
+      "projectId": "ord_1789665144436_8tlyfr",
+      "projectNumber": "WCW-2026-0020",
+      "customerId": "usr_customer_01",
+      "approvedBy": "Sarah Jenkins",
+      "approvedAt": "2026-09-17T17:12:24.921Z"
+    }
+  },
+  {
+    "eventId": "evt_1789665145058_92ccums",
+    "eventType": "PROJECT_STATUS_CHANGED",
+    "actorUserId": "usr_admin_01",
+    "referenceType": "PROJECT",
+    "referenceId": "prj_1789665144585_f8a4f248",
+    "createdAt": "2026-09-17T17:12:25.058Z",
+    "payload": {
+      "projectId": "prj_1789665144585_f8a4f248",
+      "projectNumber": "PRJ-2026-0007",
+      "customerId": "usr_customer_01",
+      "previousStatus": "IN_PROGRESS",
+      "newStatus": "REVIEW",
+      "changedBy": "Alexander Wright",
+      "note": "Version 1 (\"Release Candidate\") submitted for customer review.",
+      "changedAt": "2026-09-17T17:12:25.047Z"
+    }
+  },
+  {
+    "eventId": "evt_1789665145195_rtjdhdk",
+    "eventType": "PROJECT_STATUS_CHANGED",
+    "actorUserId": "usr_customer_01",
+    "referenceType": "PROJECT",
+    "referenceId": "prj_1789665144585_f8a4f248",
+    "createdAt": "2026-09-17T17:12:25.195Z",
+    "payload": {
+      "projectId": "prj_1789665144585_f8a4f248",
+      "projectNumber": "PRJ-2026-0007",
+      "customerId": "usr_customer_01",
+      "previousStatus": "REVIEW",
+      "newStatus": "COMPLETED",
+      "changedBy": "Sarah Jenkins",
+      "note": "Project approved by customer (Version v1). Feedback: Approved for launch!",
+      "changedAt": "2026-09-17T17:12:25.147Z"
+    }
+  },
+  {
+    "eventId": "evt_1789665145245_yr85m9j",
+    "eventType": "CUSTOMER_APPROVED",
+    "actorUserId": "usr_customer_01",
+    "referenceType": "PROJECT",
+    "referenceId": "prj_1789665144585_f8a4f248",
+    "createdAt": "2026-09-17T17:12:25.245Z",
+    "payload": {
+      "projectId": "prj_1789665144585_f8a4f248",
+      "projectNumber": "PRJ-2026-0007",
+      "customerId": "usr_customer_01",
+      "approvedBy": "Sarah Jenkins",
+      "approvedAt": "2026-09-17T17:12:25.147Z"
+    }
+  },
+  {
+    "eventId": "evt_1789665145357_gb387px",
+    "eventType": "PROJECT_STATUS_CHANGED",
+    "actorUserId": "usr_admin_01",
+    "referenceType": "PROJECT",
+    "referenceId": "prj_1789665144585_f8a4f248",
+    "createdAt": "2026-09-17T17:12:25.357Z",
+    "payload": {
+      "projectId": "prj_1789665144585_f8a4f248",
+      "projectNumber": "PRJ-2026-0007",
+      "customerId": "usr_customer_01",
+      "previousStatus": "COMPLETED",
+      "newStatus": "DELIVERED",
+      "changedBy": "Alexander Wright",
+      "note": "Project delivered. Live URL: https://client-production.com. Notes: Production deployed, DNS configured, delivered to client.",
+      "changedAt": "2026-09-17T17:12:25.328Z"
+    }
+  },
+  {
+    "eventId": "evt_1789665145415_fmurcwx",
+    "eventType": "PROJECT_DELIVERED",
+    "actorUserId": "usr_admin_01",
+    "referenceType": "PROJECT",
+    "referenceId": "prj_1789665144585_f8a4f248",
+    "createdAt": "2026-09-17T17:12:25.415Z",
+    "payload": {
+      "projectId": "prj_1789665144585_f8a4f248",
+      "projectNumber": "PRJ-2026-0007",
+      "customerId": "usr_customer_01",
+      "deliveredBy": "Alexander Wright",
+      "deliveredAt": "2026-09-17T17:12:25.328Z"
+    }
+  },
+  {
+    "eventId": "evt_1789665152096_q1gpgom",
+    "eventType": "USER_REGISTERED",
+    "actorUserId": "user-uuid-1",
+    "referenceType": "USER",
+    "referenceId": "user-uuid-1",
+    "createdAt": "2026-09-17T17:12:32.096Z",
+    "payload": {
+      "userId": "user-uuid-1",
+      "name": "Jane Tester",
+      "email": "jane@example.com",
+      "role": "user",
+      "createdAt": "2026-09-17T12:00:00.000Z"
+    }
+  },
+  {
+    "eventId": "evt_1789665152109_xz6ldk8",
+    "eventType": "ORDER_CREATED",
+    "actorUserId": "user-uuid-1",
+    "referenceType": "ORDER",
+    "referenceId": "ord-uuid-1",
+    "createdAt": "2026-09-17T17:12:32.109Z",
+    "payload": {
+      "orderId": "ord-uuid-1",
+      "orderNumber": "ORD-1001",
+      "customerId": "user-uuid-1",
+      "orderType": "CUSTOM_WEBSITE",
+      "amount": 2999,
+      "currency": "USD",
+      "createdAt": "2026-09-17T12:05:00.000Z"
+    }
+  },
+  {
+    "eventId": "evt_1789665152150_0659rh4",
+    "eventType": "TEMPLATE_PURCHASED",
+    "actorUserId": "user-uuid-1",
+    "referenceType": "ORDER",
+    "referenceId": "ord-uuid-2",
+    "createdAt": "2026-09-17T17:12:32.150Z",
+    "payload": {
+      "orderId": "ord-uuid-2",
+      "orderNumber": "ORD-1002",
+      "templateId": "tmpl-starter-1",
+      "templateName": "SaaS Launchpad Pro",
+      "customerId": "user-uuid-1",
+      "vendorId": "vendor-uuid-1",
+      "amount": 149,
+      "currency": "USD",
+      "createdAt": "2026-09-17T12:10:00.000Z"
+    }
+  },
+  {
+    "eventId": "evt_1789665152212_g1dbc9l",
+    "eventType": "CUSTOM_WEBSITE_ORDER_CREATED",
+    "actorUserId": "user-uuid-1",
+    "referenceType": "ORDER",
+    "referenceId": "ord-uuid-3",
+    "createdAt": "2026-09-17T17:12:32.212Z",
+    "payload": {
+      "orderId": "ord-uuid-3",
+      "orderNumber": "ORD-1003",
+      "customWebsiteOrderId": "cwo-uuid-3",
+      "customerId": "user-uuid-1",
+      "businessName": "Nexus AI Labs",
+      "packageId": "pkg-enterprise",
+      "packageName": "Enterprise Digital Portal",
+      "amount": 4999,
+      "currency": "USD",
+      "createdAt": "2026-09-17T12:15:00.000Z"
+    }
+  },
+  {
+    "eventId": "evt_1789665152269_eshab20",
+    "eventType": "PROJECT_ASSIGNED",
+    "actorUserId": "admin-uuid-1",
+    "referenceType": "PROJECT",
+    "referenceId": "proj-uuid-1",
+    "createdAt": "2026-09-17T17:12:32.269Z",
+    "payload": {
+      "projectId": "proj-uuid-1",
+      "projectNumber": "PRJ-5001",
+      "customerId": "user-uuid-1",
+      "assignedTo": "staff-uuid-1",
+      "assignedBy": "Admin Lead",
+      "assignedAt": "2026-09-17T12:20:00.000Z"
+    }
+  },
+  {
+    "eventId": "evt_1789665152292_ame2r7h",
+    "eventType": "PROJECT_STATUS_CHANGED",
+    "actorUserId": "staff-uuid-1",
+    "referenceType": "PROJECT",
+    "referenceId": "proj-uuid-1",
+    "createdAt": "2026-09-17T17:12:32.292Z",
+    "payload": {
+      "projectId": "proj-uuid-1",
+      "projectNumber": "PRJ-5001",
+      "customerId": "user-uuid-1",
+      "previousStatus": "ASSIGNED",
+      "newStatus": "IN_PROGRESS",
+      "changedBy": "Staff Lead",
+      "note": "Beginning frontend UI development.",
+      "changedAt": "2026-09-17T12:25:00.000Z"
+    }
+  },
+  {
+    "eventId": "evt_1789665152317_rr9te4c",
+    "eventType": "TASK_ASSIGNED",
+    "actorUserId": "staff-uuid-1",
+    "referenceType": "TASK",
+    "referenceId": "task-uuid-1",
+    "createdAt": "2026-09-17T17:12:32.317Z",
+    "payload": {
+      "taskId": "task-uuid-1",
+      "projectId": "proj-uuid-1",
+      "title": "Design responsive navigation navbar",
+      "assignedTo": "staff-uuid-2",
+      "assignedBy": "Staff Lead",
+      "dueDate": "2026-09-25T18:00:00.000Z",
+      "assignedAt": "2026-09-17T12:30:00.000Z"
+    }
+  },
+  {
+    "eventId": "evt_1789665152347_re8ed9s",
+    "eventType": "CUSTOMER_APPROVED",
+    "actorUserId": "user-uuid-1",
+    "referenceType": "PROJECT",
+    "referenceId": "proj-uuid-1",
+    "createdAt": "2026-09-17T17:12:32.347Z",
+    "payload": {
+      "projectId": "proj-uuid-1",
+      "projectNumber": "PRJ-5001",
+      "customerId": "user-uuid-1",
+      "approvedBy": "Jane Tester",
+      "approvedAt": "2026-09-17T12:35:00.000Z"
+    }
+  },
+  {
+    "eventId": "evt_1789665152437_kw5ev0y",
+    "eventType": "PROJECT_DELIVERED",
+    "actorUserId": "staff-uuid-1",
+    "referenceType": "PROJECT",
+    "referenceId": "proj-uuid-1",
+    "createdAt": "2026-09-17T17:12:32.437Z",
+    "payload": {
+      "projectId": "proj-uuid-1",
+      "projectNumber": "PRJ-5001",
+      "customerId": "user-uuid-1",
+      "deliveredBy": "Staff Lead",
+      "deliveredAt": "2026-09-17T12:40:00.000Z"
+    }
+  },
+  {
+    "eventId": "evt_1789665152448_zd102an",
+    "eventType": "PAYMENT_SUCCESSFUL",
+    "actorUserId": "user-uuid-1",
+    "referenceType": "PAYMENT",
+    "referenceId": "pay-uuid-1",
+    "createdAt": "2026-09-17T17:12:32.448Z",
+    "payload": {
+      "paymentId": "pay-uuid-1",
+      "orderId": "ord-uuid-1",
+      "orderNumber": "ORD-1001",
+      "customerId": "user-uuid-1",
+      "amount": 2999,
+      "currency": "USD",
+      "provider": "stripe",
+      "providerPaymentId": "pi_3Nabcdef12345678",
+      "paidAt": "2026-09-17T12:45:00.000Z"
+    }
+  },
+  {
+    "eventId": "evt_1789665152487_35u9wke",
+    "eventType": "PAYMENT_FAILED",
+    "actorUserId": "user-uuid-1",
+    "referenceType": "PAYMENT",
+    "referenceId": "pay-uuid-2",
+    "createdAt": "2026-09-17T17:12:32.487Z",
+    "payload": {
+      "paymentId": "pay-uuid-2",
+      "orderId": "ord-uuid-1",
+      "orderNumber": "ORD-1001",
+      "customerId": "user-uuid-1",
+      "amount": 2999,
+      "currency": "USD",
+      "provider": "stripe",
+      "failureCode": "CARD_DECLINED_INSUFFICIENT_FUNDS",
+      "failedAt": "2026-09-17T12:50:00.000Z"
+    }
+  },
+  {
+    "eventId": "evt_1789665152507_50h6lwx",
+    "eventType": "PAYMENT_REFUNDED",
+    "actorUserId": "admin-uuid-1",
+    "referenceType": "PAYMENT",
+    "referenceId": "pay-uuid-1",
+    "createdAt": "2026-09-17T17:12:32.507Z",
+    "payload": {
+      "paymentId": "pay-uuid-1",
+      "orderId": "ord-uuid-1",
+      "orderNumber": "ORD-1001",
+      "customerId": "user-uuid-1",
+      "amount": 2999,
+      "currency": "USD",
+      "refundId": "ref_987654321",
+      "refundedAt": "2026-09-17T12:55:00.000Z"
+    }
+  },
+  {
+    "eventId": "evt_1789665160001_sil1pin",
+    "eventType": "CUSTOM_WEBSITE_ORDER_CREATED",
+    "actorUserId": "usr_customer_01",
+    "referenceType": "ORDER",
+    "referenceId": "ord_1789665160000_pxifcb",
+    "createdAt": "2026-09-17T17:12:40.001Z",
+    "payload": {
+      "orderId": "ord_1789665160000_pxifcb",
+      "orderNumber": "WCW-2026-0021",
+      "customWebsiteOrderId": "ord_1789665160000_pxifcb",
+      "customerId": "usr_customer_01",
+      "businessName": "Phase 13 Test Co 1789665160",
+      "packageId": "pkg_starter",
+      "packageName": "Starter Launch",
+      "amount": 299,
+      "currency": "USD",
+      "createdAt": "2026-09-17T17:12:40.000Z"
+    }
+  },
+  {
+    "eventId": "evt_1789665160163_5oz3esf",
+    "eventType": "PROJECT_STATUS_CHANGED",
+    "actorUserId": "usr_admin_01",
+    "referenceType": "PROJECT",
+    "referenceId": "prj_1789665160098_6438abb8",
+    "createdAt": "2026-09-17T17:12:40.163Z",
+    "payload": {
+      "projectId": "prj_1789665160098_6438abb8",
+      "projectNumber": "PRJ-2026-0008",
+      "customerId": "usr_customer_01",
+      "previousStatus": "PLANNING",
+      "newStatus": "ASSIGNED",
+      "changedBy": "Alexander Wright",
+      "note": "",
+      "changedAt": "2026-09-17T17:12:40.150Z"
+    }
+  },
+  {
+    "eventId": "evt_1789665160252_jpa4ikv",
+    "eventType": "PROJECT_STATUS_CHANGED",
+    "actorUserId": "usr_admin_01",
+    "referenceType": "PROJECT",
+    "referenceId": "prj_1789665160098_6438abb8",
+    "createdAt": "2026-09-17T17:12:40.252Z",
+    "payload": {
+      "projectId": "prj_1789665160098_6438abb8",
+      "projectNumber": "PRJ-2026-0008",
+      "customerId": "usr_customer_01",
+      "previousStatus": "ASSIGNED",
+      "newStatus": "IN_PROGRESS",
+      "changedBy": "Alexander Wright",
+      "note": "",
+      "changedAt": "2026-09-17T17:12:40.227Z"
+    }
+  },
+  {
+    "eventId": "evt_1789665160344_wzhssrh",
+    "eventType": "PROJECT_STATUS_CHANGED",
+    "actorUserId": "usr_admin_01",
+    "referenceType": "PROJECT",
+    "referenceId": "prj_1789665160098_6438abb8",
+    "createdAt": "2026-09-17T17:12:40.344Z",
+    "payload": {
+      "projectId": "prj_1789665160098_6438abb8",
+      "projectNumber": "PRJ-2026-0008",
+      "customerId": "usr_customer_01",
+      "previousStatus": "IN_PROGRESS",
+      "newStatus": "ON_HOLD",
+      "changedBy": "Alexander Wright",
+      "note": "Waiting for client assets",
+      "changedAt": "2026-09-17T17:12:40.321Z"
+    }
+  },
+  {
+    "eventId": "evt_1789665160435_pupd847",
+    "eventType": "PROJECT_STATUS_CHANGED",
+    "actorUserId": "usr_admin_01",
+    "referenceType": "PROJECT",
+    "referenceId": "prj_1789665160098_6438abb8",
+    "createdAt": "2026-09-17T17:12:40.435Z",
+    "payload": {
+      "projectId": "prj_1789665160098_6438abb8",
+      "projectNumber": "PRJ-2026-0008",
+      "customerId": "usr_customer_01",
+      "previousStatus": "ON_HOLD",
+      "newStatus": "IN_PROGRESS",
+      "changedBy": "Alexander Wright",
+      "note": "Client assets received",
+      "changedAt": "2026-09-17T17:12:40.412Z"
+    }
+  },
+  {
+    "eventId": "evt_1789665160527_pv24lf9",
+    "eventType": "PROJECT_STATUS_CHANGED",
+    "actorUserId": "usr_admin_01",
+    "referenceType": "PROJECT",
+    "referenceId": "prj_1789665160098_6438abb8",
+    "createdAt": "2026-09-17T17:12:40.527Z",
+    "payload": {
+      "projectId": "prj_1789665160098_6438abb8",
+      "projectNumber": "PRJ-2026-0008",
+      "customerId": "usr_customer_01",
+      "previousStatus": "IN_PROGRESS",
+      "newStatus": "REVIEW",
+      "changedBy": "Alexander Wright",
+      "note": "Version 1 (\"Alpha Design v1\") submitted for customer review.",
+      "changedAt": "2026-09-17T17:12:40.497Z"
+    }
+  },
+  {
+    "eventId": "evt_1789665160636_hvwl176",
+    "eventType": "PROJECT_STATUS_CHANGED",
+    "actorUserId": "usr_customer_01",
+    "referenceType": "PROJECT",
+    "referenceId": "prj_1789665160098_6438abb8",
+    "createdAt": "2026-09-17T17:12:40.636Z",
+    "payload": {
+      "projectId": "prj_1789665160098_6438abb8",
+      "projectNumber": "PRJ-2026-0008",
+      "customerId": "usr_customer_01",
+      "previousStatus": "REVIEW",
+      "newStatus": "IN_PROGRESS",
+      "changedBy": "Sarah Jenkins",
+      "note": "Revision #1 requested by customer: Please change header typography and primary color to blue.",
+      "changedAt": "2026-09-17T17:12:40.616Z"
+    }
+  },
+  {
+    "eventId": "evt_1789665160734_baktdch",
+    "eventType": "PROJECT_STATUS_CHANGED",
+    "actorUserId": "usr_admin_01",
+    "referenceType": "PROJECT",
+    "referenceId": "prj_1789665160098_6438abb8",
+    "createdAt": "2026-09-17T17:12:40.734Z",
+    "payload": {
+      "projectId": "prj_1789665160098_6438abb8",
+      "projectNumber": "PRJ-2026-0008",
+      "customerId": "usr_customer_01",
+      "previousStatus": "IN_PROGRESS",
+      "newStatus": "REVIEW",
+      "changedBy": "Alexander Wright",
+      "note": "Version 2 (\"Alpha Design v2 (Color Updates)\") submitted for customer review.",
+      "changedAt": "2026-09-17T17:12:40.719Z"
+    }
+  },
+  {
+    "eventId": "evt_1789665160839_wnz2cgt",
+    "eventType": "PROJECT_STATUS_CHANGED",
+    "actorUserId": "usr_customer_01",
+    "referenceType": "PROJECT",
+    "referenceId": "prj_1789665160098_6438abb8",
+    "createdAt": "2026-09-17T17:12:40.839Z",
+    "payload": {
+      "projectId": "prj_1789665160098_6438abb8",
+      "projectNumber": "PRJ-2026-0008",
+      "customerId": "usr_customer_01",
+      "previousStatus": "REVIEW",
+      "newStatus": "COMPLETED",
+      "changedBy": "Sarah Jenkins",
+      "note": "Project approved by customer (Version v2). Feedback: Everything looks outstanding! Ready for production deployment.",
+      "changedAt": "2026-09-17T17:12:40.814Z"
+    }
+  },
+  {
+    "eventId": "evt_1789665160908_xksinr4",
+    "eventType": "CUSTOMER_APPROVED",
+    "actorUserId": "usr_customer_01",
+    "referenceType": "PROJECT",
+    "referenceId": "prj_1789665160098_6438abb8",
+    "createdAt": "2026-09-17T17:12:40.908Z",
+    "payload": {
+      "projectId": "prj_1789665160098_6438abb8",
+      "projectNumber": "PRJ-2026-0008",
+      "customerId": "usr_customer_01",
+      "approvedBy": "Sarah Jenkins",
+      "approvedAt": "2026-09-17T17:12:40.814Z"
+    }
+  },
+  {
+    "eventId": "evt_1789665161030_wajqrlm",
+    "eventType": "PROJECT_STATUS_CHANGED",
+    "actorUserId": "usr_admin_01",
+    "referenceType": "PROJECT",
+    "referenceId": "prj_1789665160098_6438abb8",
+    "createdAt": "2026-09-17T17:12:41.030Z",
+    "payload": {
+      "projectId": "prj_1789665160098_6438abb8",
+      "projectNumber": "PRJ-2026-0008",
+      "customerId": "usr_customer_01",
+      "previousStatus": "COMPLETED",
+      "newStatus": "DELIVERED",
+      "changedBy": "Alexander Wright",
+      "note": "Project delivered. Live URL: https://production.webcraft.ai/phase13-client-site. Notes: Domain mapped and SSL certificates provisioned.",
+      "changedAt": "2026-09-17T17:12:41.019Z"
+    }
+  },
+  {
+    "eventId": "evt_1789665161094_ibtx3sp",
+    "eventType": "PROJECT_DELIVERED",
+    "actorUserId": "usr_admin_01",
+    "referenceType": "PROJECT",
+    "referenceId": "prj_1789665160098_6438abb8",
+    "createdAt": "2026-09-17T17:12:41.094Z",
+    "payload": {
+      "projectId": "prj_1789665160098_6438abb8",
+      "projectNumber": "PRJ-2026-0008",
+      "customerId": "usr_customer_01",
+      "deliveredBy": "Alexander Wright",
+      "deliveredAt": "2026-09-17T17:12:41.019Z"
+    }
+  },
+  {
+    "eventId": "evt_1789665161258_jmk1s2l",
+    "eventType": "CUSTOM_WEBSITE_ORDER_CREATED",
+    "actorUserId": "usr_customer_01",
+    "referenceType": "ORDER",
+    "referenceId": "ord_1789665161256_zbq93z",
+    "createdAt": "2026-09-17T17:12:41.258Z",
+    "payload": {
+      "orderId": "ord_1789665161256_zbq93z",
+      "orderNumber": "WCW-2026-0022",
+      "customWebsiteOrderId": "ord_1789665161256_zbq93z",
+      "customerId": "usr_customer_01",
+      "businessName": "Cancellation Test Co",
+      "packageId": "pkg_starter",
+      "packageName": "Starter Launch",
+      "amount": 299,
+      "currency": "USD",
+      "createdAt": "2026-09-17T17:12:41.256Z"
+    }
+  },
+  {
+    "eventId": "evt_1789665161418_vhlvj7v",
+    "eventType": "PROJECT_STATUS_CHANGED",
+    "actorUserId": "usr_admin_01",
+    "referenceType": "PROJECT",
+    "referenceId": "prj_1789665161371_e1288466",
+    "createdAt": "2026-09-17T17:12:41.418Z",
+    "payload": {
+      "projectId": "prj_1789665161371_e1288466",
+      "projectNumber": "PRJ-2026-0009",
+      "customerId": "usr_customer_01",
+      "previousStatus": "PLANNING",
+      "newStatus": "CANCELLED",
+      "changedBy": "Alexander Wright",
+      "note": "Customer decided not to proceed",
+      "changedAt": "2026-09-17T17:12:41.402Z"
+    }
+  },
+  {
+    "eventId": "evt_1789666382689_hf2bunu",
+    "eventType": "USER_REGISTERED",
+    "actorUserId": "usr_1789666382685_w3t0i",
+    "referenceType": "USER",
+    "referenceId": "usr_1789666382685_w3t0i",
+    "createdAt": "2026-09-17T17:33:02.689Z",
+    "payload": {
+      "userId": "usr_1789666382685_w3t0i",
+      "name": "muqaddas aslam",
+      "email": "muqaddasaslam198@gmail.com",
+      "role": "user",
+      "createdAt": "2026-09-17T17:33:02.685Z"
+    }
+  },
+  {
+    "eventId": "evt_1789682644916_692hfy9",
+    "eventType": "USER_REGISTERED",
+    "actorUserId": "usr_1789682644914_xgfe4",
+    "referenceType": "USER",
+    "referenceId": "usr_1789682644914_xgfe4",
+    "createdAt": "2026-09-17T22:04:04.916Z",
+    "payload": {
+      "userId": "usr_1789682644914_xgfe4",
+      "name": "Ahmed Javed",
+      "email": "customer@webcraft.ai",
+      "role": "user",
+      "createdAt": "2026-09-17T22:04:04.914Z"
+    }
+  },
+  {
+    "eventId": "evt_1789683287743_t09ppqm",
+    "eventType": "USER_REGISTERED",
+    "actorUserId": "usr_1789683287735_pdi8q",
+    "referenceType": "USER",
+    "referenceId": "usr_1789683287735_pdi8q",
+    "createdAt": "2026-09-17T22:14:47.743Z",
+    "payload": {
+      "userId": "usr_1789683287735_pdi8q",
+      "name": "QA Tester",
+      "email": "qa_audit_1789683287@webcraft.ai",
+      "role": "user",
+      "createdAt": "2026-09-17T22:14:47.734Z"
+    }
+  },
+  {
+    "eventId": "evt_1789683601265_dm7kmhs",
+    "eventType": "USER_REGISTERED",
+    "actorUserId": "usr_1789683601262_ih561",
+    "referenceType": "USER",
+    "referenceId": "usr_1789683601262_ih561",
+    "createdAt": "2026-09-17T22:20:01.265Z",
+    "payload": {
+      "userId": "usr_1789683601262_ih561",
+      "name": "QA Tester",
+      "email": "qa_audit_1789683600@webcraft.ai",
+      "role": "user",
+      "createdAt": "2026-09-17T22:20:01.262Z"
+    }
+  },
+  {
+    "eventId": "evt_1789683602891_t8bnugm",
+    "eventType": "TEMPLATE_PURCHASED",
+    "actorUserId": "usr_1789683601262_ih561",
+    "referenceType": "ORDER",
+    "referenceId": "ord_tpl_1789683602885_rtgrho",
+    "createdAt": "2026-09-17T22:20:02.891Z",
+    "payload": {
+      "orderId": "ord_tpl_1789683602885_rtgrho",
+      "orderNumber": "TPL-2026-0023",
+      "templateId": "tpl_estate_haven07",
+      "templateName": "Haven & Horizon Luxury Real Estate",
+      "customerId": "usr_1789683601262_ih561",
+      "vendorId": "usr_vendor_01",
+      "amount": 95,
+      "currency": "USD",
+      "createdAt": "2026-09-17T22:20:02.885Z"
+    }
+  },
+  {
+    "eventId": "evt_1789683603562_s2ixruz",
+    "eventType": "PAYMENT_FAILED",
+    "actorUserId": "usr_1789683601262_ih561",
+    "referenceType": "PAYMENT",
+    "referenceId": "pay_1789683603045_c938230c",
+    "createdAt": "2026-09-17T22:20:03.562Z",
+    "payload": {
+      "paymentId": "pay_1789683603045_c938230c",
+      "orderId": "ord_tpl_1789683602885_rtgrho",
+      "orderNumber": "TPL-2026-0023",
+      "customerId": "usr_1789683601262_ih561",
+      "amount": 95,
+      "currency": "USD",
+      "provider": "webcraft_pay",
+      "failureCode": "Payment failed: The transaction was declined by the card issuer.",
+      "failedAt": "2026-09-17T22:20:03.562Z"
+    }
+  },
+  {
+    "eventId": "evt_1789683603766_fm0v0a7",
+    "eventType": "PAYMENT_SUCCESSFUL",
+    "actorUserId": "usr_1789683601262_ih561",
+    "referenceType": "PAYMENT",
+    "referenceId": "pay_1789683603045_c938230c",
+    "createdAt": "2026-09-17T22:20:03.766Z",
+    "payload": {
+      "paymentId": "pay_1789683603045_c938230c",
+      "orderId": "ord_tpl_1789683602885_rtgrho",
+      "orderNumber": "TPL-2026-0023",
+      "customerId": "usr_1789683601262_ih561",
+      "amount": 95,
+      "currency": "USD",
+      "provider": "webcraft_pay",
+      "providerPaymentId": "pi_webcraft_pay_1789683603045_d609ca074dc6",
+      "paidAt": "2026-09-17T22:20:03.635Z"
+    }
+  },
+  {
+    "eventId": "evt_1789683604125_5q3c0a8",
+    "eventType": "CUSTOM_WEBSITE_ORDER_CREATED",
+    "actorUserId": "usr_1789683601262_ih561",
+    "referenceType": "ORDER",
+    "referenceId": "ord_1789683604117_zu4eex",
+    "createdAt": "2026-09-17T22:20:04.125Z",
+    "payload": {
+      "orderId": "ord_1789683604117_zu4eex",
+      "orderNumber": "WCW-2026-0024",
+      "customWebsiteOrderId": "ord_1789683604117_zu4eex",
+      "customerId": "usr_1789683601262_ih561",
+      "businessName": "QA Audit Enterprise 1789683600",
+      "packageId": "pkg_starter",
+      "packageName": "Starter Launch",
+      "amount": 299,
+      "currency": "USD",
+      "createdAt": "2026-09-17T22:20:04.117Z"
+    }
+  },
+  {
+    "eventId": "evt_1789683746648_tzti0f2",
+    "eventType": "CUSTOM_WEBSITE_ORDER_CREATED",
+    "actorUserId": "usr_customer_01",
+    "referenceType": "ORDER",
+    "referenceId": "ord_1789683746647_yh88gz",
+    "createdAt": "2026-09-17T22:22:26.648Z",
+    "payload": {
+      "orderId": "ord_1789683746647_yh88gz",
+      "orderNumber": "WCW-2026-0025",
+      "customWebsiteOrderId": "ord_1789683746647_yh88gz",
+      "customerId": "usr_customer_01",
+      "businessName": "QA Ent",
+      "packageId": "pkg_starter",
+      "packageName": "Starter Launch",
+      "amount": 299,
+      "currency": "USD",
+      "createdAt": "2026-09-17T22:22:26.647Z"
+    }
+  },
+  {
+    "eventId": "evt_1789683788475_1x59g5l",
+    "eventType": "PROJECT_ASSIGNED",
+    "actorUserId": "usr_admin_01",
+    "referenceType": "PROJECT",
+    "referenceId": "prj_1789683788417_91fd143b",
+    "createdAt": "2026-09-17T22:23:08.475Z",
+    "payload": {
+      "projectId": "prj_1789683788417_91fd143b",
+      "projectNumber": "PRJ-2026-0010",
+      "customerId": "usr_customer_01",
+      "assignedTo": "usr_admin_01",
+      "assignedBy": "Muqaddas Aslam",
+      "assignedAt": "2026-09-17T22:23:08.417Z"
+    }
+  },
+  {
+    "eventId": "evt_1789705999547_9zr965f",
+    "eventType": "USER_REGISTERED",
+    "actorUserId": "usr_1789705999540_tuqmu",
+    "referenceType": "USER",
+    "referenceId": "usr_1789705999540_tuqmu",
+    "createdAt": "2026-09-18T04:33:19.547Z",
+    "payload": {
+      "userId": "usr_1789705999540_tuqmu",
+      "name": "QA Tester",
+      "email": "qa_audit_1789705999@webcraft.ai",
+      "role": "user",
+      "createdAt": "2026-09-18T04:33:19.540Z"
+    }
+  },
+  {
+    "eventId": "evt_1789706001202_n6ejih4",
+    "eventType": "TEMPLATE_PURCHASED",
+    "actorUserId": "usr_1789705999540_tuqmu",
+    "referenceType": "ORDER",
+    "referenceId": "ord_tpl_1789706001194_gohwnm",
+    "createdAt": "2026-09-18T04:33:21.202Z",
+    "payload": {
+      "orderId": "ord_tpl_1789706001194_gohwnm",
+      "orderNumber": "TPL-2026-0026",
+      "templateId": "tpl_estate_haven07",
+      "templateName": "Haven & Horizon Luxury Real Estate",
+      "customerId": "usr_1789705999540_tuqmu",
+      "vendorId": "usr_vendor_01",
+      "amount": 95,
+      "currency": "USD",
+      "createdAt": "2026-09-18T04:33:21.194Z"
+    }
+  },
+  {
+    "eventId": "evt_1789706001724_r8qzx92",
+    "eventType": "PAYMENT_FAILED",
+    "actorUserId": "usr_1789705999540_tuqmu",
+    "referenceType": "PAYMENT",
+    "referenceId": "pay_1789706001363_58d9a602",
+    "createdAt": "2026-09-18T04:33:21.724Z",
+    "payload": {
+      "paymentId": "pay_1789706001363_58d9a602",
+      "orderId": "ord_tpl_1789706001194_gohwnm",
+      "orderNumber": "TPL-2026-0026",
+      "customerId": "usr_1789705999540_tuqmu",
+      "amount": 95,
+      "currency": "USD",
+      "provider": "webcraft_pay",
+      "failureCode": "Payment failed: The transaction was declined by the card issuer.",
+      "failedAt": "2026-09-18T04:33:21.724Z"
+    }
+  },
+  {
+    "eventId": "evt_1789706001741_0hvndf6",
+    "eventType": "TEMPLATE_PURCHASED",
+    "actorUserId": "usr_1789705999540_tuqmu",
+    "referenceType": "ORDER",
+    "referenceId": "ord_tpl_1789706001738_h6b76x",
+    "createdAt": "2026-09-18T04:33:21.741Z",
+    "payload": {
+      "orderId": "ord_tpl_1789706001738_h6b76x",
+      "orderNumber": "TPL-2026-0027",
+      "templateId": "tpl_estate_haven07",
+      "templateName": "Haven & Horizon Luxury Real Estate",
+      "customerId": "usr_1789705999540_tuqmu",
+      "vendorId": "usr_vendor_01",
+      "amount": 95,
+      "currency": "USD",
+      "createdAt": "2026-09-18T04:33:21.738Z"
+    }
+  },
+  {
+    "eventId": "evt_1789706002224_8hifkgn",
+    "eventType": "PAYMENT_SUCCESSFUL",
+    "actorUserId": "usr_1789705999540_tuqmu",
+    "referenceType": "PAYMENT",
+    "referenceId": "pay_1789706001850_b174d12b",
+    "createdAt": "2026-09-18T04:33:22.224Z",
+    "payload": {
+      "paymentId": "pay_1789706001850_b174d12b",
+      "orderId": "ord_tpl_1789706001738_h6b76x",
+      "orderNumber": "TPL-2026-0027",
+      "customerId": "usr_1789705999540_tuqmu",
+      "amount": 95,
+      "currency": "USD",
+      "provider": "webcraft_pay",
+      "providerPaymentId": "pi_webcraft_pay_1789706001850_4ee15d36c28a",
+      "paidAt": "2026-09-18T04:33:22.089Z"
+    }
+  },
+  {
+    "eventId": "evt_1789706002447_8qa959u",
+    "eventType": "CUSTOM_WEBSITE_ORDER_CREATED",
+    "actorUserId": "usr_1789705999540_tuqmu",
+    "referenceType": "ORDER",
+    "referenceId": "ord_1789706002445_48f7n4",
+    "createdAt": "2026-09-18T04:33:22.447Z",
+    "payload": {
+      "orderId": "ord_1789706002445_48f7n4",
+      "orderNumber": "WCW-2026-0028",
+      "customWebsiteOrderId": "ord_1789706002445_48f7n4",
+      "customerId": "usr_1789705999540_tuqmu",
+      "businessName": "QA Enterprise 1789705999",
+      "packageId": "pkg_starter",
+      "packageName": "Starter Launch",
+      "amount": 299,
+      "currency": "USD",
+      "createdAt": "2026-09-18T04:33:22.445Z"
+    }
+  },
+  {
+    "eventId": "evt_1789706003001_p8qazpv",
+    "eventType": "PROJECT_STATUS_CHANGED",
+    "actorUserId": "usr_admin_01",
+    "referenceType": "PROJECT",
+    "referenceId": "prj_1789706002669_5e15c45c",
+    "createdAt": "2026-09-18T04:33:23.001Z",
+    "payload": {
+      "projectId": "prj_1789706002669_5e15c45c",
+      "projectNumber": "PRJ-2026-0011",
+      "customerId": "usr_1789705999540_tuqmu",
+      "previousStatus": "PLANNING",
+      "newStatus": "ASSIGNED",
+      "changedBy": "Muqaddas Aslam",
+      "note": "Assigned to development team",
+      "changedAt": "2026-09-18T04:33:22.871Z"
+    }
+  },
+  {
+    "eventId": "evt_1789706003293_movw3i3",
+    "eventType": "PROJECT_STATUS_CHANGED",
+    "actorUserId": "usr_admin_01",
+    "referenceType": "PROJECT",
+    "referenceId": "prj_1789706002669_5e15c45c",
+    "createdAt": "2026-09-18T04:33:23.293Z",
+    "payload": {
+      "projectId": "prj_1789706002669_5e15c45c",
+      "projectNumber": "PRJ-2026-0011",
+      "customerId": "usr_1789705999540_tuqmu",
+      "previousStatus": "ASSIGNED",
+      "newStatus": "IN_PROGRESS",
+      "changedBy": "Muqaddas Aslam",
+      "note": "Development started",
+      "changedAt": "2026-09-18T04:33:23.165Z"
+    }
+  },
+  {
+    "eventId": "evt_1789706003507_chlvu4b",
+    "eventType": "PROJECT_STATUS_CHANGED",
+    "actorUserId": "usr_admin_01",
+    "referenceType": "PROJECT",
+    "referenceId": "prj_1789706002669_5e15c45c",
+    "createdAt": "2026-09-18T04:33:23.507Z",
+    "payload": {
+      "projectId": "prj_1789706002669_5e15c45c",
+      "projectNumber": "PRJ-2026-0011",
+      "customerId": "usr_1789705999540_tuqmu",
+      "previousStatus": "IN_PROGRESS",
+      "newStatus": "ON_HOLD",
+      "changedBy": "Muqaddas Aslam",
+      "note": "Waiting on client brand assets",
+      "changedAt": "2026-09-18T04:33:23.477Z"
+    }
+  },
+  {
+    "eventId": "evt_1789706003651_son2esz",
+    "eventType": "PROJECT_STATUS_CHANGED",
+    "actorUserId": "usr_admin_01",
+    "referenceType": "PROJECT",
+    "referenceId": "prj_1789706002669_5e15c45c",
+    "createdAt": "2026-09-18T04:33:23.651Z",
+    "payload": {
+      "projectId": "prj_1789706002669_5e15c45c",
+      "projectNumber": "PRJ-2026-0011",
+      "customerId": "usr_1789705999540_tuqmu",
+      "previousStatus": "ON_HOLD",
+      "newStatus": "IN_PROGRESS",
+      "changedBy": "Muqaddas Aslam",
+      "note": "Resumed development with client assets",
+      "changedAt": "2026-09-18T04:33:23.619Z"
+    }
+  },
+  {
+    "eventId": "evt_1789706003845_iw8z7yu",
+    "eventType": "PROJECT_STATUS_CHANGED",
+    "actorUserId": "usr_admin_01",
+    "referenceType": "PROJECT",
+    "referenceId": "prj_1789706002669_5e15c45c",
+    "createdAt": "2026-09-18T04:33:23.845Z",
+    "payload": {
+      "projectId": "prj_1789706002669_5e15c45c",
+      "projectNumber": "PRJ-2026-0011",
+      "customerId": "usr_1789705999540_tuqmu",
+      "previousStatus": "IN_PROGRESS",
+      "newStatus": "REVIEW",
+      "changedBy": "Muqaddas Aslam",
+      "note": "Version 1 (\"Version 1.0 - Initial Draft\") submitted for customer review.",
+      "changedAt": "2026-09-18T04:33:23.796Z"
+    }
+  },
+  {
+    "eventId": "evt_1789706004030_isrwc0j",
+    "eventType": "PROJECT_STATUS_CHANGED",
+    "actorUserId": "usr_1789705999540_tuqmu",
+    "referenceType": "PROJECT",
+    "referenceId": "prj_1789706002669_5e15c45c",
+    "createdAt": "2026-09-18T04:33:24.030Z",
+    "payload": {
+      "projectId": "prj_1789706002669_5e15c45c",
+      "projectNumber": "PRJ-2026-0011",
+      "customerId": "usr_1789705999540_tuqmu",
+      "previousStatus": "REVIEW",
+      "newStatus": "IN_PROGRESS",
+      "changedBy": "QA Tester",
+      "note": "Revision #1 requested by customer: Please brighten hero background and refine tagline copy",
+      "changedAt": "2026-09-18T04:33:23.986Z"
+    }
+  },
+  {
+    "eventId": "evt_1789706004257_6c0cava",
+    "eventType": "PROJECT_STATUS_CHANGED",
+    "actorUserId": "usr_admin_01",
+    "referenceType": "PROJECT",
+    "referenceId": "prj_1789706002669_5e15c45c",
+    "createdAt": "2026-09-18T04:33:24.257Z",
+    "payload": {
+      "projectId": "prj_1789706002669_5e15c45c",
+      "projectNumber": "PRJ-2026-0011",
+      "customerId": "usr_1789705999540_tuqmu",
+      "previousStatus": "IN_PROGRESS",
+      "newStatus": "REVIEW",
+      "changedBy": "Muqaddas Aslam",
+      "note": "Version 2 (\"Version 2.0 - Revised Draft\") submitted for customer review.",
+      "changedAt": "2026-09-18T04:33:24.149Z"
+    }
+  },
+  {
+    "eventId": "evt_1789706004575_xcsq5lb",
+    "eventType": "PROJECT_STATUS_CHANGED",
+    "actorUserId": "usr_1789705999540_tuqmu",
+    "referenceType": "PROJECT",
+    "referenceId": "prj_1789706002669_5e15c45c",
+    "createdAt": "2026-09-18T04:33:24.575Z",
+    "payload": {
+      "projectId": "prj_1789706002669_5e15c45c",
+      "projectNumber": "PRJ-2026-0011",
+      "customerId": "usr_1789705999540_tuqmu",
+      "previousStatus": "REVIEW",
+      "newStatus": "COMPLETED",
+      "changedBy": "QA Tester",
+      "note": "Project approved by customer (Version v2). Feedback: Approved! The design looks outstanding.",
+      "changedAt": "2026-09-18T04:33:24.515Z"
+    }
+  },
+  {
+    "eventId": "evt_1789706004944_5k7ugiw",
+    "eventType": "CUSTOMER_APPROVED",
+    "actorUserId": "usr_1789705999540_tuqmu",
+    "referenceType": "PROJECT",
+    "referenceId": "prj_1789706002669_5e15c45c",
+    "createdAt": "2026-09-18T04:33:24.944Z",
+    "payload": {
+      "projectId": "prj_1789706002669_5e15c45c",
+      "projectNumber": "PRJ-2026-0011",
+      "customerId": "usr_1789705999540_tuqmu",
+      "approvedBy": "QA Tester",
+      "approvedAt": "2026-09-18T04:33:24.515Z"
+    }
+  },
+  {
+    "eventId": "evt_1789706005218_begcbac",
+    "eventType": "PROJECT_STATUS_CHANGED",
+    "actorUserId": "usr_admin_01",
+    "referenceType": "PROJECT",
+    "referenceId": "prj_1789706002669_5e15c45c",
+    "createdAt": "2026-09-18T04:33:25.218Z",
+    "payload": {
+      "projectId": "prj_1789706002669_5e15c45c",
+      "projectNumber": "PRJ-2026-0011",
+      "customerId": "usr_1789705999540_tuqmu",
+      "previousStatus": "COMPLETED",
+      "newStatus": "DELIVERED",
+      "changedBy": "Muqaddas Aslam",
+      "note": "Project delivered. Live URL: https://live.webcraftai.com/site-prod. Notes: Production deployment completed and handed over.",
+      "changedAt": "2026-09-18T04:33:25.190Z"
+    }
+  },
+  {
+    "eventId": "evt_1789706005295_8dr5agd",
+    "eventType": "PROJECT_DELIVERED",
+    "actorUserId": "usr_admin_01",
+    "referenceType": "PROJECT",
+    "referenceId": "prj_1789706002669_5e15c45c",
+    "createdAt": "2026-09-18T04:33:25.295Z",
+    "payload": {
+      "projectId": "prj_1789706002669_5e15c45c",
+      "projectNumber": "PRJ-2026-0011",
+      "customerId": "usr_1789705999540_tuqmu",
+      "deliveredBy": "Muqaddas Aslam",
+      "deliveredAt": "2026-09-18T04:33:25.190Z"
+    }
+  },
+  {
+    "eventId": "evt_1789706223056_qzg3s24",
+    "eventType": "TEMPLATE_PURCHASED",
+    "actorUserId": "usr_customer_01",
+    "referenceType": "ORDER",
+    "referenceId": "ord_tpl_1789706223053_3exrdf",
+    "createdAt": "2026-09-18T04:37:03.056Z",
+    "payload": {
+      "orderId": "ord_tpl_1789706223053_3exrdf",
+      "orderNumber": "TPL-2026-0029",
+      "templateId": "tpl_estate_haven07",
+      "templateName": "Haven & Horizon Luxury Real Estate",
+      "customerId": "usr_customer_01",
+      "vendorId": "usr_vendor_01",
+      "amount": 95,
+      "currency": "USD",
+      "createdAt": "2026-09-18T04:37:03.053Z"
+    }
+  },
+  {
+    "eventId": "evt_1789706223513_biw3vvd",
+    "eventType": "PAYMENT_SUCCESSFUL",
+    "actorUserId": "usr_customer_01",
+    "referenceType": "PAYMENT",
+    "referenceId": "pay_1789706223185_de855c8d",
+    "createdAt": "2026-09-18T04:37:03.513Z",
+    "payload": {
+      "paymentId": "pay_1789706223185_de855c8d",
+      "orderId": "ord_tpl_1789706223053_3exrdf",
+      "orderNumber": "TPL-2026-0029",
+      "customerId": "usr_customer_01",
+      "amount": 95,
+      "currency": "USD",
+      "provider": "webcraft_pay",
+      "providerPaymentId": "pi_webcraft_pay_1789706223185_a244938d1e64",
+      "paidAt": "2026-09-18T04:37:03.427Z"
+    }
+  },
+  {
+    "eventId": "evt_1789706350191_e6n44qu",
+    "eventType": "DEPLOYMENT_STARTED",
+    "actorUserId": "usr_admin_01",
+    "referenceType": "DEPLOYMENT",
+    "referenceId": "dep_1789706350188_aceb5c42",
+    "createdAt": "2026-09-18T04:39:10.191Z",
+    "payload": {
+      "deploymentId": "dep_1789706350188_aceb5c42",
+      "projectId": "prj_1789706002669_5e15c45c",
+      "projectNumber": "PRJ-2026-0011",
+      "customerId": "usr_1789705999540_tuqmu",
+      "versionId": "pver_1789706004149_63744234",
+      "provider": "none",
+      "initiatedBy": "usr_admin_01",
+      "startedAt": "2026-09-18T04:39:10.191Z"
+    }
+  },
+  {
+    "eventId": "evt_1789706350446_tgdog9c",
+    "eventType": "DEPLOYMENT_FAILED",
+    "actorUserId": "usr_admin_01",
+    "referenceType": "DEPLOYMENT",
+    "referenceId": "dep_1789706350188_aceb5c42",
+    "createdAt": "2026-09-18T04:39:10.446Z",
+    "payload": {
+      "deploymentId": "dep_1789706350188_aceb5c42",
+      "projectId": "prj_1789706002669_5e15c45c",
+      "projectNumber": "PRJ-2026-0011",
+      "customerId": "usr_1789705999540_tuqmu",
+      "errorMessage": "No deployment provider is configured. Set DEPLOYMENT_PROVIDER and the required credentials in your environment variables to enable publishing.",
+      "provider": "none",
+      "failedAt": "2026-09-18T04:39:10.446Z"
+    }
+  },
+  {
+    "eventId": "evt_1789706406226_1okigzc",
+    "eventType": "USER_REGISTERED",
+    "actorUserId": "usr_1789706406225_kdy6e",
+    "referenceType": "USER",
+    "referenceId": "usr_1789706406225_kdy6e",
+    "createdAt": "2026-09-18T04:40:06.226Z",
+    "payload": {
+      "userId": "usr_1789706406225_kdy6e",
+      "name": "QA Tester",
+      "email": "qa_audit_1789706405@webcraft.ai",
+      "role": "user",
+      "createdAt": "2026-09-18T04:40:06.225Z"
+    }
+  },
+  {
+    "eventId": "evt_1789706407431_to2pm0h",
+    "eventType": "TEMPLATE_PURCHASED",
+    "actorUserId": "usr_1789706406225_kdy6e",
+    "referenceType": "ORDER",
+    "referenceId": "ord_tpl_1789706407425_ahfm23",
+    "createdAt": "2026-09-18T04:40:07.431Z",
+    "payload": {
+      "orderId": "ord_tpl_1789706407425_ahfm23",
+      "orderNumber": "TPL-2026-0030",
+      "templateId": "tpl_estate_haven07",
+      "templateName": "Haven & Horizon Luxury Real Estate",
+      "customerId": "usr_1789706406225_kdy6e",
+      "vendorId": "usr_vendor_01",
+      "amount": 95,
+      "currency": "USD",
+      "createdAt": "2026-09-18T04:40:07.425Z"
+    }
+  },
+  {
+    "eventId": "evt_1789706407962_48c6uhn",
+    "eventType": "PAYMENT_FAILED",
+    "actorUserId": "usr_1789706406225_kdy6e",
+    "referenceType": "PAYMENT",
+    "referenceId": "pay_1789706407525_f0b61e27",
+    "createdAt": "2026-09-18T04:40:07.962Z",
+    "payload": {
+      "paymentId": "pay_1789706407525_f0b61e27",
+      "orderId": "ord_tpl_1789706407425_ahfm23",
+      "orderNumber": "TPL-2026-0030",
+      "customerId": "usr_1789706406225_kdy6e",
+      "amount": 95,
+      "currency": "USD",
+      "provider": "webcraft_pay",
+      "failureCode": "Payment failed: The transaction was declined by the card issuer.",
+      "failedAt": "2026-09-18T04:40:07.962Z"
+    }
+  },
+  {
+    "eventId": "evt_1789706407985_6z3eip0",
+    "eventType": "TEMPLATE_PURCHASED",
+    "actorUserId": "usr_1789706406225_kdy6e",
+    "referenceType": "ORDER",
+    "referenceId": "ord_tpl_1789706407982_vqk1cv",
+    "createdAt": "2026-09-18T04:40:07.985Z",
+    "payload": {
+      "orderId": "ord_tpl_1789706407982_vqk1cv",
+      "orderNumber": "TPL-2026-0031",
+      "templateId": "tpl_estate_haven07",
+      "templateName": "Haven & Horizon Luxury Real Estate",
+      "customerId": "usr_1789706406225_kdy6e",
+      "vendorId": "usr_vendor_01",
+      "amount": 95,
+      "currency": "USD",
+      "createdAt": "2026-09-18T04:40:07.982Z"
+    }
+  },
+  {
+    "eventId": "evt_1789706408449_bmlnjjc",
+    "eventType": "PAYMENT_SUCCESSFUL",
+    "actorUserId": "usr_1789706406225_kdy6e",
+    "referenceType": "PAYMENT",
+    "referenceId": "pay_1789706408186_98111af8",
+    "createdAt": "2026-09-18T04:40:08.449Z",
+    "payload": {
+      "paymentId": "pay_1789706408186_98111af8",
+      "orderId": "ord_tpl_1789706407982_vqk1cv",
+      "orderNumber": "TPL-2026-0031",
+      "customerId": "usr_1789706406225_kdy6e",
+      "amount": 95,
+      "currency": "USD",
+      "provider": "webcraft_pay",
+      "providerPaymentId": "pi_webcraft_pay_1789706408186_bb39fd58649e",
+      "paidAt": "2026-09-18T04:40:08.409Z"
+    }
+  },
+  {
+    "eventId": "evt_1789706408539_kya0hhv",
+    "eventType": "CUSTOM_WEBSITE_ORDER_CREATED",
+    "actorUserId": "usr_1789706406225_kdy6e",
+    "referenceType": "ORDER",
+    "referenceId": "ord_1789706408537_uegexp",
+    "createdAt": "2026-09-18T04:40:08.539Z",
+    "payload": {
+      "orderId": "ord_1789706408537_uegexp",
+      "orderNumber": "WCW-2026-0032",
+      "customWebsiteOrderId": "ord_1789706408537_uegexp",
+      "customerId": "usr_1789706406225_kdy6e",
+      "businessName": "QA Enterprise 1789706405",
+      "packageId": "pkg_starter",
+      "packageName": "Starter Launch",
+      "amount": 299,
+      "currency": "USD",
+      "createdAt": "2026-09-18T04:40:08.537Z"
+    }
+  },
+  {
+    "eventId": "evt_1789706408761_zbxkmbe",
+    "eventType": "PROJECT_STATUS_CHANGED",
+    "actorUserId": "usr_admin_01",
+    "referenceType": "PROJECT",
+    "referenceId": "prj_1789706408657_5c81f7fb",
+    "createdAt": "2026-09-18T04:40:08.761Z",
+    "payload": {
+      "projectId": "prj_1789706408657_5c81f7fb",
+      "projectNumber": "PRJ-2026-0012",
+      "customerId": "usr_1789706406225_kdy6e",
+      "previousStatus": "PLANNING",
+      "newStatus": "ASSIGNED",
+      "changedBy": "Muqaddas Aslam",
+      "note": "Assigned to development team",
+      "changedAt": "2026-09-18T04:40:08.722Z"
+    }
+  },
+  {
+    "eventId": "evt_1789706409012_79a7jg8",
+    "eventType": "PROJECT_STATUS_CHANGED",
+    "actorUserId": "usr_admin_01",
+    "referenceType": "PROJECT",
+    "referenceId": "prj_1789706408657_5c81f7fb",
+    "createdAt": "2026-09-18T04:40:09.012Z",
+    "payload": {
+      "projectId": "prj_1789706408657_5c81f7fb",
+      "projectNumber": "PRJ-2026-0012",
+      "customerId": "usr_1789706406225_kdy6e",
+      "previousStatus": "ASSIGNED",
+      "newStatus": "IN_PROGRESS",
+      "changedBy": "Muqaddas Aslam",
+      "note": "Development started",
+      "changedAt": "2026-09-18T04:40:08.980Z"
+    }
+  },
+  {
+    "eventId": "evt_1789706409139_p3kmxlk",
+    "eventType": "PROJECT_STATUS_CHANGED",
+    "actorUserId": "usr_admin_01",
+    "referenceType": "PROJECT",
+    "referenceId": "prj_1789706408657_5c81f7fb",
+    "createdAt": "2026-09-18T04:40:09.139Z",
+    "payload": {
+      "projectId": "prj_1789706408657_5c81f7fb",
+      "projectNumber": "PRJ-2026-0012",
+      "customerId": "usr_1789706406225_kdy6e",
+      "previousStatus": "IN_PROGRESS",
+      "newStatus": "ON_HOLD",
+      "changedBy": "Muqaddas Aslam",
+      "note": "Waiting on client brand assets",
+      "changedAt": "2026-09-18T04:40:09.101Z"
+    }
+  },
+  {
+    "eventId": "evt_1789706409285_tujdbrc",
+    "eventType": "PROJECT_STATUS_CHANGED",
+    "actorUserId": "usr_admin_01",
+    "referenceType": "PROJECT",
+    "referenceId": "prj_1789706408657_5c81f7fb",
+    "createdAt": "2026-09-18T04:40:09.285Z",
+    "payload": {
+      "projectId": "prj_1789706408657_5c81f7fb",
+      "projectNumber": "PRJ-2026-0012",
+      "customerId": "usr_1789706406225_kdy6e",
+      "previousStatus": "ON_HOLD",
+      "newStatus": "IN_PROGRESS",
+      "changedBy": "Muqaddas Aslam",
+      "note": "Resumed development with client assets",
+      "changedAt": "2026-09-18T04:40:09.256Z"
+    }
+  },
+  {
+    "eventId": "evt_1789706409412_y6h0t3u",
+    "eventType": "PROJECT_STATUS_CHANGED",
+    "actorUserId": "usr_admin_01",
+    "referenceType": "PROJECT",
+    "referenceId": "prj_1789706408657_5c81f7fb",
+    "createdAt": "2026-09-18T04:40:09.412Z",
+    "payload": {
+      "projectId": "prj_1789706408657_5c81f7fb",
+      "projectNumber": "PRJ-2026-0012",
+      "customerId": "usr_1789706406225_kdy6e",
+      "previousStatus": "IN_PROGRESS",
+      "newStatus": "REVIEW",
+      "changedBy": "Muqaddas Aslam",
+      "note": "Version 1 (\"Version 1.0 - Initial Draft\") submitted for customer review.",
+      "changedAt": "2026-09-18T04:40:09.390Z"
+    }
+  },
+  {
+    "eventId": "evt_1789706409638_yenh7fe",
+    "eventType": "PROJECT_STATUS_CHANGED",
+    "actorUserId": "usr_1789706406225_kdy6e",
+    "referenceType": "PROJECT",
+    "referenceId": "prj_1789706408657_5c81f7fb",
+    "createdAt": "2026-09-18T04:40:09.638Z",
+    "payload": {
+      "projectId": "prj_1789706408657_5c81f7fb",
+      "projectNumber": "PRJ-2026-0012",
+      "customerId": "usr_1789706406225_kdy6e",
+      "previousStatus": "REVIEW",
+      "newStatus": "IN_PROGRESS",
+      "changedBy": "QA Tester",
+      "note": "Revision #1 requested by customer: Please brighten hero background and refine tagline copy",
+      "changedAt": "2026-09-18T04:40:09.590Z"
+    }
+  },
+  {
+    "eventId": "evt_1789706409860_l2fdmne",
+    "eventType": "PROJECT_STATUS_CHANGED",
+    "actorUserId": "usr_admin_01",
+    "referenceType": "PROJECT",
+    "referenceId": "prj_1789706408657_5c81f7fb",
+    "createdAt": "2026-09-18T04:40:09.860Z",
+    "payload": {
+      "projectId": "prj_1789706408657_5c81f7fb",
+      "projectNumber": "PRJ-2026-0012",
+      "customerId": "usr_1789706406225_kdy6e",
+      "previousStatus": "IN_PROGRESS",
+      "newStatus": "REVIEW",
+      "changedBy": "Muqaddas Aslam",
+      "note": "Version 2 (\"Version 2.0 - Revised Draft\") submitted for customer review.",
+      "changedAt": "2026-09-18T04:40:09.815Z"
+    }
+  },
+  {
+    "eventId": "evt_1789706410004_ggqz0fs",
+    "eventType": "PROJECT_STATUS_CHANGED",
+    "actorUserId": "usr_1789706406225_kdy6e",
+    "referenceType": "PROJECT",
+    "referenceId": "prj_1789706408657_5c81f7fb",
+    "createdAt": "2026-09-18T04:40:10.004Z",
+    "payload": {
+      "projectId": "prj_1789706408657_5c81f7fb",
+      "projectNumber": "PRJ-2026-0012",
+      "customerId": "usr_1789706406225_kdy6e",
+      "previousStatus": "REVIEW",
+      "newStatus": "COMPLETED",
+      "changedBy": "QA Tester",
+      "note": "Project approved by customer (Version v2). Feedback: Approved! The design looks outstanding.",
+      "changedAt": "2026-09-18T04:40:09.974Z"
+    }
+  },
+  {
+    "eventId": "evt_1789706410153_a9hp5o8",
+    "eventType": "CUSTOMER_APPROVED",
+    "actorUserId": "usr_1789706406225_kdy6e",
+    "referenceType": "PROJECT",
+    "referenceId": "prj_1789706408657_5c81f7fb",
+    "createdAt": "2026-09-18T04:40:10.153Z",
+    "payload": {
+      "projectId": "prj_1789706408657_5c81f7fb",
+      "projectNumber": "PRJ-2026-0012",
+      "customerId": "usr_1789706406225_kdy6e",
+      "approvedBy": "QA Tester",
+      "approvedAt": "2026-09-18T04:40:09.974Z"
+    }
+  },
+  {
+    "eventId": "evt_1789706410278_jbek39s",
+    "eventType": "PROJECT_STATUS_CHANGED",
+    "actorUserId": "usr_admin_01",
+    "referenceType": "PROJECT",
+    "referenceId": "prj_1789706408657_5c81f7fb",
+    "createdAt": "2026-09-18T04:40:10.278Z",
+    "payload": {
+      "projectId": "prj_1789706408657_5c81f7fb",
+      "projectNumber": "PRJ-2026-0012",
+      "customerId": "usr_1789706406225_kdy6e",
+      "previousStatus": "COMPLETED",
+      "newStatus": "DELIVERED",
+      "changedBy": "Muqaddas Aslam",
+      "note": "Project delivered. Live URL: https://live.webcraftai.com/site-prod. Notes: Production deployment completed and handed over.",
+      "changedAt": "2026-09-18T04:40:10.259Z"
+    }
+  },
+  {
+    "eventId": "evt_1789706410378_9cr08h3",
+    "eventType": "PROJECT_DELIVERED",
+    "actorUserId": "usr_admin_01",
+    "referenceType": "PROJECT",
+    "referenceId": "prj_1789706408657_5c81f7fb",
+    "createdAt": "2026-09-18T04:40:10.378Z",
+    "payload": {
+      "projectId": "prj_1789706408657_5c81f7fb",
+      "projectNumber": "PRJ-2026-0012",
+      "customerId": "usr_1789706406225_kdy6e",
+      "deliveredBy": "Muqaddas Aslam",
+      "deliveredAt": "2026-09-18T04:40:10.259Z"
+    }
+  },
+  {
+    "eventId": "evt_1789706410713_32ngxom",
+    "eventType": "DEPLOYMENT_STARTED",
+    "actorUserId": "usr_admin_01",
+    "referenceType": "DEPLOYMENT",
+    "referenceId": "dep_1789706410710_40322b49",
+    "createdAt": "2026-09-18T04:40:10.713Z",
+    "payload": {
+      "deploymentId": "dep_1789706410710_40322b49",
+      "projectId": "prj_1789706408657_5c81f7fb",
+      "projectNumber": "PRJ-2026-0012",
+      "customerId": "usr_1789706406225_kdy6e",
+      "versionId": "pver_1789706409815_77d4da45",
+      "provider": "none",
+      "initiatedBy": "usr_admin_01",
+      "startedAt": "2026-09-18T04:40:10.712Z"
+    }
+  },
+  {
+    "eventId": "evt_1789706410799_wzw72wt",
+    "eventType": "DEPLOYMENT_FAILED",
+    "actorUserId": "usr_admin_01",
+    "referenceType": "DEPLOYMENT",
+    "referenceId": "dep_1789706410710_40322b49",
+    "createdAt": "2026-09-18T04:40:10.799Z",
+    "payload": {
+      "deploymentId": "dep_1789706410710_40322b49",
+      "projectId": "prj_1789706408657_5c81f7fb",
+      "projectNumber": "PRJ-2026-0012",
+      "customerId": "usr_1789706406225_kdy6e",
+      "errorMessage": "No deployment provider is configured. Set DEPLOYMENT_PROVIDER and the required credentials in your environment variables to enable publishing.",
+      "provider": "none",
+      "failedAt": "2026-09-18T04:40:10.799Z"
+    }
+  },
+  {
+    "eventId": "evt_1789709915563_ht59pme",
+    "eventType": "USER_REGISTERED",
+    "actorUserId": "usr_1789709915561_a9xvq",
+    "referenceType": "USER",
+    "referenceId": "usr_1789709915561_a9xvq",
+    "createdAt": "2026-09-18T05:38:35.563Z",
+    "payload": {
+      "userId": "usr_1789709915561_a9xvq",
+      "name": "Ahmed Javed",
+      "email": "ahmed.jv.911@gmail.com",
+      "role": "user",
+      "createdAt": "2026-09-18T05:38:35.561Z"
+    }
+  }
+]

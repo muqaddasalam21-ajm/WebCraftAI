@@ -1,0 +1,57 @@
+<svg width="480" height="300" viewBox="0 0 480 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="agency-bg" x1="0" y1="0" x2="480" y2="300" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#0F172A"/>
+      <stop offset="100%" stop-color="#1E1B4B"/>
+    </linearGradient>
+    <linearGradient id="cyan-blue" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#06B6D4"/>
+      <stop offset="100%" stop-color="#3B82F6"/>
+    </linearGradient>
+  </defs>
+  <rect width="480" height="300" fill="url(#agency-bg)"/>
+
+  <!-- Browser Header -->
+  <rect width="480" height="32" fill="#1E293B"/>
+  <circle cx="20" cy="16" r="4" fill="#38BDF8"/>
+  <circle cx="34" cy="16" r="4" fill="#818CF8"/>
+  <circle cx="48" cy="16" r="4" fill="#C084FC"/>
+  <rect x="150" y="8" width="180" height="16" rx="8" fill="#0F172A"/>
+  <text x="185" y="20" font-family="Inter, sans-serif" font-size="8" fill="#64748B">nexus-agency.webcraft.ai</text>
+
+  <!-- Navbar -->
+  <rect y="32" width="480" height="36" fill="#0F172A" fill-opacity="0.8"/>
+  <text x="24" y="55" font-family="Inter, sans-serif" font-size="13" font-weight="800" fill="url(#cyan-blue)" letter-spacing="1">NEXUS.AI</text>
+  <text x="160" y="54" font-family="Inter, sans-serif" font-size="9" fill="#94A3B8">Solutions</text>
+  <text x="215" y="54" font-family="Inter, sans-serif" font-size="9" fill="#94A3B8">Case Studies</text>
+  <text x="285" y="54" font-family="Inter, sans-serif" font-size="9" fill="#94A3B8">Pricing</text>
+  <rect x="385" y="42" width="70" height="20" rx="6" fill="url(#cyan-blue)"/>
+  <text x="397" y="55" font-family="Inter, sans-serif" font-size="8" font-weight="700" fill="#FFFFFF">Book Demo</text>
+
+  <!-- Content -->
+  <rect x="24" y="85" width="140" height="18" rx="4" fill="#1E293B" stroke="#0EA5E9"/>
+  <text x="32" y="97" font-family="Inter, sans-serif" font-size="8" font-weight="700" fill="#38BDF8">⚡ NEXT-GEN AI AGENCY</text>
+
+  <text x="24" y="130" font-family="Inter, sans-serif" font-size="20" font-weight="800" fill="#F8FAFC">Scale Your SaaS with<br/>Autonomous Systems</text>
+  <text x="24" y="170" font-family="Inter, sans-serif" font-size="10" fill="#94A3B8">We engineer full-stack AI workflows that convert<br/>traffic into enterprise pipeline.</text>
+
+  <rect x="24" y="198" width="110" height="32" rx="6" fill="url(#cyan-blue)"/>
+  <text x="38" y="218" font-family="Inter, sans-serif" font-size="10" font-weight="700" fill="#FFFFFF">Explore Solutions</text>
+
+  <!-- Visual Workflow Mockup -->
+  <g transform="translate(265, 80)">
+    <rect width="190" height="185" rx="14" fill="#1E293B" stroke="#334155" filter="drop-shadow(0 10px 20px rgba(6,182,212,0.15))"/>
+    <!-- Node 1 -->
+    <rect x="20" y="25" width="60" height="35" rx="6" fill="#0F172A" stroke="#06B6D4"/>
+    <text x="28" y="45" font-family="Inter, sans-serif" font-size="7" font-weight="600" fill="#38BDF8">AI Ingestion</text>
+    <!-- Node 2 -->
+    <rect x="110" y="25" width="60" height="35" rx="6" fill="#0F172A" stroke="#8B5CF6"/>
+    <text x="118" y="45" font-family="Inter, sans-serif" font-size="7" font-weight="600" fill="#A78BFA">Neural Model</text>
+    <!-- Connecting Line -->
+    <line x1="80" y1="42" x2="110" y2="42" stroke="#64748B" stroke-dasharray="2 2"/>
+    <!-- Node 3 Result -->
+    <rect x="40" y="85" width="110" height="45" rx="8" fill="url(#cyan-blue)"/>
+    <text x="50" y="105" font-family="Inter, sans-serif" font-size="8" font-weight="700" fill="#FFFFFF">10x Growth Pipeline</text>
+    <text x="50" y="118" font-family="Inter, sans-serif" font-size="7" fill="#E0F2FE">+340% Conversions</text>
+  </g>
+</svg>

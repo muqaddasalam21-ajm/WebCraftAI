@@ -1,0 +1,14 @@
+[
+  {
+    "id": "mls_1789638932412_b3889a04",
+    "projectId": "prj_1789638932229_bdacfac9",
+    "name": "Phase 1 Design & Prototyping",
+    "description": "Interactive prototype approved",
+    "status": "COMPLETED",
+    "dueDate": "2026-09-30",
+    "sortOrder": 1,
+    "createdAt": "2026-09-17T09:55:32.412Z",
+    "updatedAt": "2026-09-17T09:55:32.437Z",
+    "completedAt": "2026-09-17T09:55:32.437Z"
+  }
+]

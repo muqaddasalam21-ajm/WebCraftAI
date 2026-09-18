@@ -1,0 +1,21 @@
+<svg width="200" height="160" viewBox="0 0 200 160" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="es-g1" x1="20" y1="20" x2="180" y2="140" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#8B5CF6"/>
+      <stop offset="100%" stop-color="#3B82F6"/>
+    </linearGradient>
+  </defs>
+  <ellipse cx="100" cy="130" rx="60" ry="14" fill="#EDE9FE"/>
+  <!-- 3D Folder Base -->
+  <path d="M50 60C50 54.4772 54.4772 50 60 50H85L95 60H140C145.523 60 150 64.4772 150 70V115C150 120.523 145.523 125 140 125H60C54.4772 125 50 120.523 50 115V60Z" fill="#C4B5FD"/>
+  <!-- Front Folder Flap (Isometric angle) -->
+  <path d="M45 75C45 69.4772 49.4772 65 55 65H145C150.523 65 155 69.4772 155 75L145 125C145 130.523 140.523 135 135 135H55C49.4772 135 45 130.523 45 125V75Z" fill="url(#es-g1)"/>
+  <!-- Floating document -->
+  <g transform="translate(75, 30) rotate(-6)">
+    <rect width="50" height="65" rx="6" fill="white" filter="drop-shadow(0 4px 6px rgba(0,0,0,0.1))"/>
+    <rect x="8" y="10" width="20" height="4" rx="2" fill="#8B5CF6"/>
+    <rect x="8" y="18" width="34" height="3" rx="1.5" fill="#E2E8F0"/>
+    <rect x="8" y="24" width="34" height="3" rx="1.5" fill="#E2E8F0"/>
+    <rect x="8" y="30" width="22" height="3" rx="1.5" fill="#E2E8F0"/>
+  </g>
+</svg>

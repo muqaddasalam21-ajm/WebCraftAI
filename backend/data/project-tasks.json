@@ -1,0 +1,68 @@
+[
+  {
+    "id": "tsk_1789638932384_e196aff8",
+    "projectId": "prj_1789638932229_bdacfac9",
+    "title": "Build Architecture & Database Schema",
+    "description": "Create foundational database schemas and routes",
+    "status": "COMPLETED",
+    "priority": "HIGH",
+    "assignedTo": "usr_manager_01",
+    "dueDate": "2026-09-25",
+    "createdBy": "usr_manager_01",
+    "createdAt": "2026-09-17T09:55:32.384Z",
+    "updatedAt": "2026-09-17T09:55:32.395Z",
+    "completedAt": "2026-09-17T09:55:32.395Z"
+  },
+  {
+    "id": "tsk_1789659764164_5ac47c6d",
+    "projectId": "prj_1789659764078_14501b2b",
+    "title": "Build Navigation and Responsive Header",
+    "description": "Implement modern sticky nav with mobile drawer",
+    "status": "TODO",
+    "priority": "HIGH",
+    "assignedTo": "usr_manager_01",
+    "dueDate": "2026-09-22",
+    "createdBy": "usr_admin_01",
+    "createdAt": "2026-09-17T15:42:44.164Z",
+    "updatedAt": "2026-09-17T15:42:44.164Z"
+  },
+  {
+    "id": "tsk_1789663689402_a37e59f5",
+    "projectId": "prj_1789663689255_731cc869",
+    "title": "Build Navigation and Responsive Header",
+    "description": "Implement modern sticky nav with mobile drawer",
+    "status": "TODO",
+    "priority": "HIGH",
+    "assignedTo": "usr_manager_01",
+    "dueDate": "2026-09-22",
+    "createdBy": "usr_admin_01",
+    "createdAt": "2026-09-17T16:48:09.402Z",
+    "updatedAt": "2026-09-17T16:48:09.402Z"
+  },
+  {
+    "id": "tsk_1789665044744_484b219f",
+    "projectId": "prj_1789665044552_dc5df389",
+    "title": "Build Navigation and Responsive Header",
+    "description": "Implement modern sticky nav with mobile drawer",
+    "status": "TODO",
+    "priority": "HIGH",
+    "assignedTo": "usr_manager_01",
+    "dueDate": "2026-09-22",
+    "createdBy": "usr_admin_01",
+    "createdAt": "2026-09-17T17:10:44.744Z",
+    "updatedAt": "2026-09-17T17:10:44.744Z"
+  },
+  {
+    "id": "tsk_1789665144810_40191d49",
+    "projectId": "prj_1789665144585_f8a4f248",
+    "title": "Build Navigation and Responsive Header",
+    "description": "Implement modern sticky nav with mobile drawer",
+    "status": "TODO",
+    "priority": "HIGH",
+    "assignedTo": "usr_manager_01",
+    "dueDate": "2026-09-22",
+    "createdBy": "usr_admin_01",
+    "createdAt": "2026-09-17T17:12:24.810Z",
+    "updatedAt": "2026-09-17T17:12:24.810Z"
+  }
+]

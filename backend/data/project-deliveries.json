@@ -1,0 +1,57 @@
+[
+  {
+    "id": "pdel_1789665025972_529df993",
+    "projectId": "prj_1789665025241_8800d4f6",
+    "approvalId": "papp_1789665025857_74d5f780",
+    "approvedVersionId": "pver_1789665025779_437577ed",
+    "deliveredBy": "usr_admin_01",
+    "deliveredByName": "Alexander Wright",
+    "deliveredUrl": "https://production.webcraft.ai/phase13-client-site",
+    "deliveryNotes": "Domain mapped and SSL certificates provisioned.",
+    "deliveredAt": "2026-09-17T17:10:25.972Z"
+  },
+  {
+    "id": "pdel_1789665145328_f6d5b28c",
+    "projectId": "prj_1789665144585_f8a4f248",
+    "approvalId": "papp_1789665145147_0148a68d",
+    "approvedVersionId": "pver_1789665145046_836e4db5",
+    "deliveredBy": "usr_admin_01",
+    "deliveredByName": "Alexander Wright",
+    "deliveredUrl": "https://client-production.com",
+    "deliveryNotes": "Production deployed, DNS configured, delivered to client.",
+    "deliveredAt": "2026-09-17T17:12:25.328Z"
+  },
+  {
+    "id": "pdel_1789665161019_2ab70854",
+    "projectId": "prj_1789665160098_6438abb8",
+    "approvalId": "papp_1789665160814_35ff815f",
+    "approvedVersionId": "pver_1789665160719_c99ad203",
+    "deliveredBy": "usr_admin_01",
+    "deliveredByName": "Alexander Wright",
+    "deliveredUrl": "https://production.webcraft.ai/phase13-client-site",
+    "deliveryNotes": "Domain mapped and SSL certificates provisioned.",
+    "deliveredAt": "2026-09-17T17:12:41.019Z"
+  },
+  {
+    "id": "pdel_1789706005189_b7fd5425",
+    "projectId": "prj_1789706002669_5e15c45c",
+    "approvalId": "papp_1789706004515_3346fc2b",
+    "approvedVersionId": "pver_1789706004149_63744234",
+    "deliveredBy": "usr_admin_01",
+    "deliveredByName": "Muqaddas Aslam",
+    "deliveredUrl": "https://live.webcraftai.com/site-prod",
+    "deliveryNotes": "Production deployment completed and handed over.",
+    "deliveredAt": "2026-09-18T04:33:25.189Z"
+  },
+  {
+    "id": "pdel_1789706410259_fd858a01",
+    "projectId": "prj_1789706408657_5c81f7fb",
+    "approvalId": "papp_1789706409974_733135b6",
+    "approvedVersionId": "pver_1789706409815_77d4da45",
+    "deliveredBy": "usr_admin_01",
+    "deliveredByName": "Muqaddas Aslam",
+    "deliveredUrl": "https://live.webcraftai.com/site-prod",
+    "deliveryNotes": "Production deployment completed and handed over.",
+    "deliveredAt": "2026-09-18T04:40:10.259Z"
+  }
+]

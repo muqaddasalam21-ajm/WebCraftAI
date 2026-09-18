@@ -1,0 +1,67 @@
+<svg width="480" height="300" viewBox="0 0 480 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="beauty-bg" x1="0" y1="0" x2="480" y2="300" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#FDF2F8"/>
+      <stop offset="50%" stop-color="#FFF1F2"/>
+      <stop offset="100%" stop-color="#FCE7F3"/>
+    </linearGradient>
+    <linearGradient id="rose-grad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#F43F5E"/>
+      <stop offset="100%" stop-color="#BE185D"/>
+    </linearGradient>
+  </defs>
+  <!-- Card Canvas -->
+  <rect width="480" height="300" fill="url(#beauty-bg)"/>
+
+  <!-- Browser header mockup -->
+  <rect width="480" height="32" fill="#FFFFFF"/>
+  <circle cx="20" cy="16" r="4" fill="#FDA4AF"/>
+  <circle cx="34" cy="16" r="4" fill="#FDE047"/>
+  <circle cx="48" cy="16" r="4" fill="#86EFAC"/>
+  <rect x="150" y="8" width="180" height="16" rx="8" fill="#F1F5F9"/>
+  <text x="185" y="20" font-family="Inter, sans-serif" font-size="8" fill="#94A3B8">lumiere-beauty.webcraft.ai</text>
+
+  <!-- Website Navbar -->
+  <rect y="32" width="480" height="36" fill="#FFFFFF" fill-opacity="0.8"/>
+  <text x="24" y="55" font-family="Inter, sans-serif" font-size="14" font-weight="700" fill="#881337" letter-spacing="1">LUMIÈRE</text>
+  <text x="130" y="54" font-family="Inter, sans-serif" font-size="10" fill="#4C0519">Skincare</text>
+  <text x="185" y="54" font-family="Inter, sans-serif" font-size="10" fill="#4C0519">Serums</text>
+  <text x="235" y="54" font-family="Inter, sans-serif" font-size="10" fill="#4C0519">Sets</text>
+  <text x="275" y="54" font-family="Inter, sans-serif" font-size="10" fill="#4C0519">Rituals</text>
+  <rect x="400" y="42" width="56" height="20" rx="10" fill="url(#rose-grad)"/>
+  <text x="412" y="55" font-family="Inter, sans-serif" font-size="9" font-weight="600" fill="#FFFFFF">Shop (3)</text>
+
+  <!-- Hero Banner -->
+  <rect x="24" y="80" width="220" height="18" rx="4" fill="#FCE7F3"/>
+  <text x="32" y="93" font-family="Inter, sans-serif" font-size="9" font-weight="700" fill="#BE185D" letter-spacing="1">100% ORGANIC BOTANICALS</text>
+  <text x="24" y="125" font-family="Inter, sans-serif" font-size="22" font-weight="800" fill="#4C0519">Radiance Serum</text>
+  <text x="24" y="145" font-family="Inter, sans-serif" font-size="11" fill="#9F1239">Enriched with botanical peptides &amp; rose elixir.</text>
+  
+  <!-- Rating -->
+  <g transform="translate(24, 158)">
+    <text font-family="Inter, sans-serif" font-size="10" fill="#E11D48">★★★★★</text>
+    <text x="50" font-family="Inter, sans-serif" font-size="9" fill="#881337">(4.9/5 from 1,280 reviews)</text>
+  </g>
+
+  <!-- CTA Buttons -->
+  <rect x="24" y="180" width="105" height="30" rx="15" fill="url(#rose-grad)"/>
+  <text x="44" y="199" font-family="Inter, sans-serif" font-size="10" font-weight="600" fill="#FFFFFF">Shop Now · $48</text>
+
+  <rect x="138" y="180" width="85" height="30" rx="15" fill="#FFFFFF" stroke="#F43F5E"/>
+  <text x="156" y="199" font-family="Inter, sans-serif" font-size="10" font-weight="600" fill="#E11D48">Explore</text>
+
+  <!-- Visual Hero Product Mockup -->
+  <g transform="translate(280, 75)">
+    <rect width="176" height="195" rx="16" fill="#FFFFFF" filter="drop-shadow(0 12px 24px rgba(244,63,94,0.15))"/>
+    <circle cx="88" cy="90" r="55" fill="#FFF1F2"/>
+    <!-- Serum Bottle Mockup -->
+    <rect x="73" y="45" width="30" height="90" rx="12" fill="url(#rose-grad)"/>
+    <rect x="80" y="32" width="16" height="15" rx="4" fill="#FDE047"/>
+    <rect x="85" y="24" width="6" height="10" fill="#CBD5E1"/>
+    <rect x="78" y="70" width="20" height="35" rx="2" fill="#FFFFFF" fill-opacity="0.9"/>
+    <text x="82" y="88" font-family="Inter, sans-serif" font-size="5" font-weight="800" fill="#BE185D">LUMI</text>
+    <!-- Tag -->
+    <rect x="25" y="150" width="126" height="24" rx="6" fill="#FDF2F8"/>
+    <text x="45" y="165" font-family="Inter, sans-serif" font-size="8" font-weight="700" fill="#9F1239">Rose Gold Essence</text>
+  </g>
+</svg>

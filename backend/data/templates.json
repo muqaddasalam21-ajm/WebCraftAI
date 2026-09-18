@@ -1,0 +1,319 @@
+[
+  {
+    "id": "tpl_1789547390826_crso0",
+    "name": "Modern Restaurant Website",
+    "description": "Sophisticated online presence for fine dining and cafes with table reservation system and responsive menu layouts.",
+    "category": "Restaurant",
+    "price": 59,
+    "thumbnail": "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=800&auto=format&fit=crop&q=80",
+    "previewUrl": "/dashboard/templates/tpl_1789547390826_crso0/preview",
+    "demoUrl": "",
+    "templateFiles": [],
+    "vendorId": "usr_vendor_01",
+    "vendorName": "Elena Rostova",
+    "status": "PUBLISHED",
+    "tags": [
+      "Restaurant",
+      "Fine Dining",
+      "Reservation",
+      "Modern"
+    ],
+    "features": [
+      "Interactive Reservation Form",
+      "Chef Specials Showcase",
+      "Food & Drink Menu Filter"
+    ],
+    "pages": [
+      "Home",
+      "Menu",
+      "About the Chef",
+      "Reservations",
+      "Contact"
+    ],
+    "technology": "React + Tailwind CSS",
+    "version": "1.0.0",
+    "downloadsCount": 13,
+    "rating": 5,
+    "createdAt": "2026-09-16T08:29:50.826Z",
+    "updatedAt": "2026-09-17T17:12:24.013Z"
+  },
+  {
+    "id": "tpl_ecom_luxe01",
+    "name": "Aura Minimalist E-Commerce",
+    "description": "Clean, ultra-fast storefront designed for fashion, lifestyle, and luxury apparel brands with high conversion checkouts.",
+    "category": "E-commerce",
+    "price": 79,
+    "thumbnail": "https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=800&auto=format&fit=crop&q=80",
+    "previewUrl": "/dashboard/templates/tpl_ecom_luxe01/preview",
+    "demoUrl": "",
+    "templateFiles": [],
+    "vendorId": "usr_vendor_01",
+    "vendorName": "Elena Rostova",
+    "status": "PUBLISHED",
+    "tags": [
+      "E-commerce",
+      "Fashion",
+      "Minimalist",
+      "Shopify Ready"
+    ],
+    "features": [
+      "Product Grid & Filter System",
+      "Sticky Slide-Over Cart",
+      "Variant Color/Size Selector",
+      "Customer Review Badges"
+    ],
+    "pages": [
+      "Home",
+      "Shop Catalog",
+      "Product Details",
+      "Cart & Checkout",
+      "Our Story"
+    ],
+    "technology": "Next.js + Tailwind CSS",
+    "version": "1.2.0",
+    "downloadsCount": 47,
+    "rating": 4.9,
+    "createdAt": "2026-09-16T10:00:00.000Z",
+    "updatedAt": "2026-09-17T12:00:00.000Z"
+  },
+  {
+    "id": "tpl_beauty_glow02",
+    "name": "Glow & Serene Cosmetics & Spa",
+    "description": "Elegant and soothing website template for wellness clinics, skincare labels, and beauty salons with booking flows.",
+    "category": "Beauty",
+    "price": 65,
+    "thumbnail": "https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=800&auto=format&fit=crop&q=80",
+    "previewUrl": "/dashboard/templates/tpl_beauty_glow02/preview",
+    "demoUrl": "",
+    "templateFiles": [],
+    "vendorId": "usr_vendor_01",
+    "vendorName": "Elena Rostova",
+    "status": "PUBLISHED",
+    "tags": [
+      "Beauty",
+      "Cosmetics",
+      "Spa",
+      "Wellness",
+      "Organic"
+    ],
+    "features": [
+      "Appointment Booking Widget",
+      "Ingredient Transparency Accordions",
+      "Instagram Feed Integration",
+      "Client Testimonials Slider"
+    ],
+    "pages": [
+      "Home",
+      "Treatments & Services",
+      "Shop Products",
+      "About Clinic",
+      "Book Appointment"
+    ],
+    "technology": "React + Framer Motion",
+    "version": "1.0.4",
+    "downloadsCount": 31,
+    "rating": 4.8,
+    "createdAt": "2026-09-16T11:30:00.000Z",
+    "updatedAt": "2026-09-17T12:00:00.000Z"
+  },
+  {
+    "id": "tpl_furn_nordic03",
+    "name": "Nordic Woodcraft & Living",
+    "description": "Warm, architectural template crafted for boutique furniture makers, interior design studios, and home decor retailers.",
+    "category": "Furniture",
+    "price": 75,
+    "thumbnail": "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=800&auto=format&fit=crop&q=80",
+    "previewUrl": "/dashboard/templates/tpl_furn_nordic03/preview",
+    "demoUrl": "",
+    "templateFiles": [],
+    "vendorId": "usr_vendor_01",
+    "vendorName": "Elena Rostova",
+    "status": "PUBLISHED",
+    "tags": [
+      "Furniture",
+      "Interior Design",
+      "Scandinavian",
+      "Craftsmanship"
+    ],
+    "features": [
+      "High-Resolution 3D Model Previews",
+      "Room Visualizer Grid",
+      "Custom Order Inquiry Builder",
+      "Dimension & Material Guides"
+    ],
+    "pages": [
+      "Home",
+      "Collections",
+      "Custom Projects",
+      "Our Workshop",
+      "Consultation Contact"
+    ],
+    "technology": "React + Tailwind CSS",
+    "version": "1.1.0",
+    "downloadsCount": 29,
+    "rating": 5,
+    "createdAt": "2026-09-16T13:00:00.000Z",
+    "updatedAt": "2026-09-17T12:00:00.000Z"
+  },
+  {
+    "id": "tpl_port_creative04",
+    "name": "Studio Kanso Creative Portfolio",
+    "description": "Bold, typography-driven portfolio for art directors, UI/UX designers, photographers, and freelance creative pros.",
+    "category": "Portfolio",
+    "price": 49,
+    "thumbnail": "https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?w=800&auto=format&fit=crop&q=80",
+    "previewUrl": "/dashboard/templates/tpl_port_creative04/preview",
+    "demoUrl": "",
+    "templateFiles": [],
+    "vendorId": "usr_vendor_01",
+    "vendorName": "Elena Rostova",
+    "status": "PUBLISHED",
+    "tags": [
+      "Portfolio",
+      "Designer",
+      "Creative",
+      "Minimalist",
+      "Dark Mode"
+    ],
+    "features": [
+      "Case Study Detail Templates",
+      "Interactive Project Gallery",
+      "Smooth Scroll Parallax Animations",
+      "Direct Inquiry Modal"
+    ],
+    "pages": [
+      "Work / Selected Projects",
+      "Case Study View",
+      "About / Experience",
+      "Writing / Journal",
+      "Contact"
+    ],
+    "technology": "React + Tailwind CSS",
+    "version": "1.0.0",
+    "downloadsCount": 54,
+    "rating": 4.9,
+    "createdAt": "2026-09-16T14:20:00.000Z",
+    "updatedAt": "2026-09-17T12:00:00.000Z"
+  },
+  {
+    "id": "tpl_agency_nexus05",
+    "name": "Nexus Digital Agency & Growth",
+    "description": "Performance-focused agency template built to convert enterprise leads, showcase client ROI, and attract talent.",
+    "category": "Agency",
+    "price": 89,
+    "thumbnail": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&auto=format&fit=crop&q=80",
+    "previewUrl": "/dashboard/templates/tpl_agency_nexus05/preview",
+    "demoUrl": "",
+    "templateFiles": [],
+    "vendorId": "usr_vendor_01",
+    "vendorName": "Elena Rostova",
+    "status": "PUBLISHED",
+    "tags": [
+      "Agency",
+      "Marketing",
+      "B2B",
+      "Consulting",
+      "SaaS"
+    ],
+    "features": [
+      "ROI Calculator Widget",
+      "Client Logos & Proof Bar",
+      "Service Package Comparer",
+      "Lead Capture Funnels"
+    ],
+    "pages": [
+      "Home",
+      "Services",
+      "Case Studies",
+      "Pricing Calculator",
+      "Careers",
+      "Schedule Discovery Call"
+    ],
+    "technology": "Next.js + Tailwind CSS",
+    "version": "2.0.1",
+    "downloadsCount": 62,
+    "rating": 5,
+    "createdAt": "2026-09-16T15:45:00.000Z",
+    "updatedAt": "2026-09-17T12:00:00.000Z"
+  },
+  {
+    "id": "tpl_edu_academy06",
+    "name": "SkillForge Online Academy & Courses",
+    "description": "Modern educational portal for course creators, bootcamp schools, and tutors with curriculum outlines and enrollment.",
+    "category": "Education",
+    "price": 69,
+    "thumbnail": "https://images.unsplash.com/photo-1501504905252-473c47e087f8?w=800&auto=format&fit=crop&q=80",
+    "previewUrl": "/dashboard/templates/tpl_edu_academy06/preview",
+    "demoUrl": "",
+    "templateFiles": [],
+    "vendorId": "usr_vendor_01",
+    "vendorName": "Elena Rostova",
+    "status": "PUBLISHED",
+    "tags": [
+      "Education",
+      "Course",
+      "LMS",
+      "Academy",
+      "Bootcamp"
+    ],
+    "features": [
+      "Curriculum Lesson Accordion",
+      "Instructor Profile Badges",
+      "Video Preview Player Modal",
+      "Student Testimonial Wall"
+    ],
+    "pages": [
+      "Home",
+      "All Courses",
+      "Course Curriculum",
+      "Instructors",
+      "Pricing & Plans",
+      "Enroll Now"
+    ],
+    "technology": "React + Tailwind CSS",
+    "version": "1.1.2",
+    "downloadsCount": 38,
+    "rating": 4.7,
+    "createdAt": "2026-09-16T16:10:00.000Z",
+    "updatedAt": "2026-09-17T12:00:00.000Z"
+  },
+  {
+    "id": "tpl_estate_haven07",
+    "name": "Haven & Horizon Luxury Real Estate",
+    "description": "High-end real estate brokerage template featuring dynamic property listings, map integrations, and virtual tour triggers.",
+    "category": "Real Estate",
+    "price": 95,
+    "thumbnail": "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&auto=format&fit=crop&q=80",
+    "previewUrl": "/dashboard/templates/tpl_estate_haven07/preview",
+    "demoUrl": "",
+    "templateFiles": [],
+    "vendorId": "usr_vendor_01",
+    "vendorName": "Elena Rostova",
+    "status": "PUBLISHED",
+    "tags": [
+      "Real Estate",
+      "Luxury Homes",
+      "Property Listings",
+      "Brokerage"
+    ],
+    "features": [
+      "Advanced Property Search & Filter",
+      "Virtual Video Tour Embeds",
+      "Mortgage Calculator Tool",
+      "Agent Contact Card"
+    ],
+    "pages": [
+      "Home",
+      "Featured Properties",
+      "Neighborhood Guides",
+      "Our Agents",
+      "Schedule Viewing"
+    ],
+    "technology": "React + Tailwind CSS",
+    "version": "1.3.0",
+    "downloadsCount": 47,
+    "rating": 4.9,
+    "createdAt": "2026-09-16T17:00:00.000Z",
+    "updatedAt": "2026-09-18T04:40:07.982Z"
+  }
+]

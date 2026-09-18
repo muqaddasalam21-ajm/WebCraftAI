@@ -1,0 +1,298 @@
+[
+  {
+    "id": "usr_admin_01",
+    "name": "Muqaddas Aslam",
+    "email": "admin@webcraft.ai",
+    "passwordHash": "$2b$10$HSbPPjQZ93zvLJ9qpdfoV.xaUuAaAms8AI4SVNULKQSs2/3M0davK",
+    "role": "admin",
+    "status": "active",
+    "profile": {
+      "fullName": "Muqaddas Aslam",
+      "phone": "+1 (555) 234-5678",
+      "bio": "Lead Administrator & Platform Architect at WebCraftAI",
+      "company": "WebCraft Global Corp"
+    },
+    "createdAt": "2026-01-15T08:00:00.000Z",
+    "updatedAt": "2026-09-17T17:36:13.039Z"
+  },
+  {
+    "id": "usr_vendor_01",
+    "name": "Elena Rostova",
+    "email": "vendor@webcraft.ai",
+    "passwordHash": "$2b$10$HSbPPjQZ93zvLJ9qpdfoV.xaUuAaAms8AI4SVNULKQSs2/3M0davK",
+    "role": "vendor",
+    "status": "active",
+    "profile": {
+      "fullName": "Elena Rostova",
+      "phone": "+1 (555) 456-7890",
+      "bio": "Curator of modern minimalist website templates & digital goods",
+      "company": "Nordic Studio Designs"
+    },
+    "createdAt": "2026-02-10T10:30:00.000Z",
+    "updatedAt": "2026-02-10T10:30:00.000Z"
+  },
+  {
+    "id": "usr_manager_01",
+    "name": "Marcus Vance",
+    "email": "manager@webcraft.ai",
+    "passwordHash": "$2b$10$HSbPPjQZ93zvLJ9qpdfoV.xaUuAaAms8AI4SVNULKQSs2/3M0davK",
+    "role": "manager",
+    "status": "active",
+    "profile": {
+      "fullName": "Marcus Vance",
+      "phone": "+1 (555) 789-0123",
+      "bio": "Operations & Order Fulfillment Supervisor",
+      "company": "WebCraft Operations"
+    },
+    "createdAt": "2026-02-20T14:15:00.000Z",
+    "updatedAt": "2026-02-20T14:15:00.000Z"
+  },
+  {
+    "id": "usr_customer_01",
+    "name": "Sarah Jenkins",
+    "email": "user@webcraft.ai",
+    "passwordHash": "$2b$10$HSbPPjQZ93zvLJ9qpdfoV.xaUuAaAms8AI4SVNULKQSs2/3M0davK",
+    "role": "user",
+    "status": "active",
+    "profile": {
+      "fullName": "Sarah Jenkins",
+      "phone": "+1 (555) 890-1234",
+      "bio": "E-commerce boutique founder & AI website builder enthusiast",
+      "company": "Lumière Beauty Store"
+    },
+    "createdAt": "2026-03-01T09:45:00.000Z",
+    "updatedAt": "2026-03-01T09:45:00.000Z"
+  },
+  {
+    "id": "usr_1788862768662_6g9t7",
+    "name": "Updated Self Name",
+    "email": "user_edit_1788862768417@example.com",
+    "passwordHash": "$2b$10$5QC4dp34Q5WY6kIO9Gh5muQwPNrKD2uWQxo2IlcTo3jGGbE/wEspO",
+    "role": "vendor",
+    "status": "active",
+    "profile": {
+      "fullName": "Updated Self Name",
+      "phone": "+1 (555) 777-8888",
+      "bio": "My personal bio",
+      "company": ""
+    },
+    "createdAt": "2026-09-08T10:19:28.662Z",
+    "updatedAt": "2026-09-08T10:19:29.652Z"
+  },
+  {
+    "id": "usr_1789641257361_22heo",
+    "name": "Test Customer",
+    "email": "testcustomer_1789641257@example.com",
+    "passwordHash": "$2b$10$ThPVuHjQqIui2RFTzMabg.wtQZHmzd.hAHYZu4FOVMC2Fn8CFNNiy",
+    "role": "user",
+    "status": "active",
+    "profile": {
+      "fullName": "Test Customer",
+      "phone": ""
+    },
+    "createdAt": "2026-09-17T10:34:17.361Z",
+    "updatedAt": "2026-09-17T10:34:17.361Z"
+  },
+  {
+    "id": "usr_1789641349032_zstrq",
+    "name": "Test Customer",
+    "email": "testcustomer_1789641348@example.com",
+    "passwordHash": "$2b$10$wrv2CDEMXBh4o1AK8n.q7OVLDIKjApIlGzqDGCJJ.24.sUd00F2ny",
+    "role": "user",
+    "status": "active",
+    "profile": {
+      "fullName": "Test Customer",
+      "phone": ""
+    },
+    "createdAt": "2026-09-17T10:35:49.032Z",
+    "updatedAt": "2026-09-17T10:35:49.032Z"
+  },
+  {
+    "id": "usr_1789642247927_suhg9",
+    "name": "Test Customer",
+    "email": "testcustomer_1789642247@example.com",
+    "passwordHash": "$2b$10$sEGLk69ALtjUWWJTueNEAeNbcgPoAbiZhoqteNUl9dQnpTBn99hKu",
+    "role": "user",
+    "status": "active",
+    "profile": {
+      "fullName": "Test Customer",
+      "phone": ""
+    },
+    "createdAt": "2026-09-17T10:50:47.927Z",
+    "updatedAt": "2026-09-17T10:50:47.927Z"
+  },
+  {
+    "id": "usr_1789659744090_bx9m9",
+    "name": "Test Signup 59743",
+    "email": "newuser_59743@example.com",
+    "passwordHash": "$2b$10$.2IxEmINJJE8Zat3BmCdt.2.14BG5MG7/QMk4aXPRUjuonn9ttLyK",
+    "role": "user",
+    "status": "active",
+    "profile": {
+      "fullName": "Test Signup 59743",
+      "phone": ""
+    },
+    "createdAt": "2026-09-17T15:42:24.090Z",
+    "updatedAt": "2026-09-17T15:42:24.090Z"
+  },
+  {
+    "id": "usr_1789659763762_6rpul",
+    "name": "Test Signup 59763",
+    "email": "newuser_59763@example.com",
+    "passwordHash": "$2b$10$Vcdf7Y1PHEdKd2mX48yn/uhdIbnwzlvBVDr/hGaHHpcJKeS/qMeze",
+    "role": "user",
+    "status": "active",
+    "profile": {
+      "fullName": "Test Signup 59763",
+      "phone": ""
+    },
+    "createdAt": "2026-09-17T15:42:43.762Z",
+    "updatedAt": "2026-09-17T15:42:43.762Z"
+  },
+  {
+    "id": "usr_1789663688761_809xr",
+    "name": "Test Signup 63688",
+    "email": "newuser_63688@example.com",
+    "passwordHash": "$2b$10$k1XdoH7UGBVhs3uQRTL4Re.a114K8DMvU56aqrc13TO3JrMIXBYuq",
+    "role": "user",
+    "status": "active",
+    "profile": {
+      "fullName": "Test Signup 63688",
+      "phone": ""
+    },
+    "createdAt": "2026-09-17T16:48:08.761Z",
+    "updatedAt": "2026-09-17T16:48:08.761Z"
+  },
+  {
+    "id": "usr_1789665044013_d11no",
+    "name": "Test Signup 65043",
+    "email": "newuser_65043@example.com",
+    "passwordHash": "$2b$10$Udce7gFiQzEoty5yC6nIwelTMd0tz1P7zjzv/tWjKMV6m99.OkgP6",
+    "role": "user",
+    "status": "active",
+    "profile": {
+      "fullName": "Test Signup 65043",
+      "phone": ""
+    },
+    "createdAt": "2026-09-17T17:10:44.013Z",
+    "updatedAt": "2026-09-17T17:10:44.013Z"
+  },
+  {
+    "id": "usr_1789665143858_sjyzx",
+    "name": "Test Signup 65143",
+    "email": "newuser_65143@example.com",
+    "passwordHash": "$2b$10$KKmmfKwSj0vLYl90zxveFeKJAh5fBcFeskOWGi9.0iX47ItN1enS.",
+    "role": "user",
+    "status": "active",
+    "profile": {
+      "fullName": "Test Signup 65143",
+      "phone": ""
+    },
+    "createdAt": "2026-09-17T17:12:23.858Z",
+    "updatedAt": "2026-09-17T17:12:23.858Z"
+  },
+  {
+    "id": "usr_1789666382685_w3t0i",
+    "name": "Muqaddas Aslam",
+    "email": "muqaddasaslam198@gmail.com",
+    "passwordHash": "$2b$10$zUz2SSOLhKt4Q6fJ6YoVHuynT3PB4lBMoxsMW8LdEh3Uz.D5yYWzy",
+    "role": "admin",
+    "status": "active",
+    "profile": {
+      "fullName": "Muqaddas Aslam",
+      "phone": "+1 (555) 234-5678",
+      "bio": "Platform Administrator & Owner at WebCraftAI",
+      "company": "WebCraftAI"
+    },
+    "createdAt": "2026-09-17T17:33:02.685Z",
+    "updatedAt": "2026-09-18T10:32:00.000Z"
+  },
+  {
+    "id": "usr_1789682644914_xgfe4",
+    "name": "Ahmed Javed",
+    "email": "customer@webcraft.ai",
+    "passwordHash": "$2b$10$nPhV8ofIqXUJ2rIEsUuvzOAllg9teexyUDwasdEKcglDAYp.O7EKq",
+    "role": "user",
+    "status": "active",
+    "profile": {
+      "fullName": "Ahmed Javed",
+      "phone": "03240882130",
+      "bio": "software engineering student",
+      "company": "dha suffa university"
+    },
+    "createdAt": "2026-09-17T22:04:04.914Z",
+    "updatedAt": "2026-09-17T22:05:39.291Z"
+  },
+  {
+    "id": "usr_1789683287735_pdi8q",
+    "name": "QA Tester",
+    "email": "qa_audit_1789683287@webcraft.ai",
+    "passwordHash": "$2b$10$fFI.Xn6aZT0du0sKZfbeFOFdxgDTFqwnMnDbX4kvMe2aE3tj9ePUy",
+    "role": "user",
+    "status": "active",
+    "profile": {
+      "fullName": "QA Tester",
+      "phone": ""
+    },
+    "createdAt": "2026-09-17T22:14:47.734Z",
+    "updatedAt": "2026-09-17T22:14:47.734Z"
+  },
+  {
+    "id": "usr_1789683601262_ih561",
+    "name": "QA Tester",
+    "email": "qa_audit_1789683600@webcraft.ai",
+    "passwordHash": "$2b$10$YiiIaKoAeyf9usCsyaDQHu8f0fLMmtHwHDNP/8rJ0YUVgLs.CWI72",
+    "role": "user",
+    "status": "active",
+    "profile": {
+      "fullName": "QA Tester",
+      "phone": ""
+    },
+    "createdAt": "2026-09-17T22:20:01.262Z",
+    "updatedAt": "2026-09-17T22:20:01.262Z"
+  },
+  {
+    "id": "usr_1789705999540_tuqmu",
+    "name": "QA Tester",
+    "email": "qa_audit_1789705999@webcraft.ai",
+    "passwordHash": "$2b$10$IdMG0qcnF6i36BjTkIbhuO0t944GwKdTd2VZf8UuLhwye7nUvnale",
+    "role": "user",
+    "status": "active",
+    "profile": {
+      "fullName": "QA Tester",
+      "phone": ""
+    },
+    "createdAt": "2026-09-18T04:33:19.540Z",
+    "updatedAt": "2026-09-18T04:33:19.540Z"
+  },
+  {
+    "id": "usr_1789706406225_kdy6e",
+    "name": "QA Tester",
+    "email": "qa_audit_1789706405@webcraft.ai",
+    "passwordHash": "$2b$10$WMrfLYtVKLkmDI.ov3zLL.hpk4RjPLaPcngbC5dwC3Q6A0EKiE8Ui",
+    "role": "user",
+    "status": "active",
+    "profile": {
+      "fullName": "QA Tester",
+      "phone": ""
+    },
+    "createdAt": "2026-09-18T04:40:06.225Z",
+    "updatedAt": "2026-09-18T04:40:06.225Z"
+  },
+  {
+    "id": "usr_1789709915561_a9xvq",
+    "name": "Ahmed Javed",
+    "email": "ahmed.jv.911@gmail.com",
+    "passwordHash": "$2b$10$mFwK7ZwBf/f/ZPKGT4OTUeC2ZrX0cSFQVyYnSsr0a9TvwYpM3mBuK",
+    "role": "user",
+    "status": "active",
+    "profile": {
+      "fullName": "Ahmed Javed",
+      "phone": "03240882130",
+      "bio": "Software engineering",
+      "company": "dha suffa university"
+    },
+    "createdAt": "2026-09-18T05:38:35.561Z",
+    "updatedAt": "2026-09-18T05:39:50.388Z"
+  }
+]

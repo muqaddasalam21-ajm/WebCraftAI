@@ -1,0 +1,25 @@
+<svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="logo-g1" x1="4" y1="4" x2="44" y2="44" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#8B5CF6"/>
+      <stop offset="50%" stop-color="#6366F1"/>
+      <stop offset="100%" stop-color="#06B6D4"/>
+    </linearGradient>
+    <linearGradient id="logo-g2" x1="12" y1="12" x2="36" y2="36" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#EC4899"/>
+      <stop offset="100%" stop-color="#8B5CF6"/>
+    </linearGradient>
+    <filter id="logo-glow" x="0" y="0" width="48" height="48" filterUnits="userSpaceOnUse">
+      <feGaussianBlur stdDeviation="2" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+  </defs>
+  <rect x="4" y="4" width="40" height="40" rx="12" fill="url(#logo-g1)"/>
+  <!-- 3D Layered facets -->
+  <path d="M24 10L38 18V30L24 38L10 30V18L24 10Z" fill="white" fill-opacity="0.2"/>
+  <path d="M24 10L38 18L24 26L10 18L24 10Z" fill="white" fill-opacity="0.4"/>
+  <path d="M24 26V38L10 30V18L24 26Z" fill="white" fill-opacity="0.15"/>
+  <path d="M24 26V38L38 30V18L24 26Z" fill="white" fill-opacity="0.3"/>
+  <!-- Sparkle AI center -->
+  <path d="M24 17L26 22L31 24L26 26L24 31L22 26L17 24L22 22L24 17Z" fill="url(#logo-g2)" filter="url(#logo-glow)"/>
+</svg>

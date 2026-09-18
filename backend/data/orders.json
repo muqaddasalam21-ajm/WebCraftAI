@@ -1,0 +1,1938 @@
+[
+  {
+    "id": "ord_tpl_1789547391018_tj59qi",
+    "orderNumber": "TPL-2026-0001",
+    "type": "template",
+    "customerId": "usr_customer_01",
+    "customerName": "Sarah Jenkins",
+    "customerEmail": "user@webcraft.ai",
+    "vendorId": "usr_vendor_01",
+    "templateDetails": {
+      "templateId": "tpl_1789547390826_crso0",
+      "templateName": "Modern Restaurant Website",
+      "templateCategory": "Restaurant",
+      "templateThumbnail": "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=800&auto=format&fit=crop&q=80",
+      "vendorId": "usr_vendor_01",
+      "vendorName": "Elena Rostova",
+      "technology": "React + Tailwind CSS",
+      "version": "1.0.0"
+    },
+    "status": "IN_PROGRESS",
+    "statusHistory": [
+      {
+        "id": "hist_1789547391018_1",
+        "fromStatus": "NONE",
+        "toStatus": "CONFIRMED",
+        "changedByUserId": "usr_customer_01",
+        "changedByUserName": "Sarah Jenkins",
+        "changedByUserRole": "customer",
+        "notes": "Template marketplace order initiated for Modern Restaurant Website.",
+        "timestamp": "2026-09-16T08:29:51.018Z"
+      },
+      {
+        "id": "hist_1789641525786_gehh",
+        "fromStatus": "CONFIRMED",
+        "toStatus": "IN_PROGRESS",
+        "changedByUserId": "usr_admin_01",
+        "changedByUserName": "Alexander Wright",
+        "changedByUserRole": "admin",
+        "notes": "Status changed from CONFIRMED to IN_PROGRESS",
+        "timestamp": "2026-09-17T10:38:45.786Z"
+      },
+      {
+        "id": "hist_1789642240005_s8yh",
+        "fromStatus": "IN_PROGRESS",
+        "toStatus": "IN_PROGRESS",
+        "changedByUserId": "usr_admin_01",
+        "changedByUserName": "Alexander Wright",
+        "changedByUserRole": "admin",
+        "notes": "Status changed from IN_PROGRESS to IN_PROGRESS",
+        "timestamp": "2026-09-17T10:50:40.005Z"
+      }
+    ],
+    "paymentStatus": "PAID",
+    "amount": 59,
+    "previewUrl": "https://preview.webcraft.ai/restaurant-luxe",
+    "createdAt": "2026-09-16T08:29:51.018Z",
+    "updatedAt": "2026-09-17T10:50:40.005Z"
+  },
+  {
+    "id": "ord_1789638932181_txmvrc",
+    "orderNumber": "WCW-2026-0002",
+    "type": "custom_website",
+    "customerId": "usr_customer_01",
+    "customerName": "Sarah Jenkins",
+    "customerEmail": "user@webcraft.ai",
+    "businessInfo": {
+      "businessName": "QA Real Enterprise Ltd",
+      "businessType": "Technology",
+      "businessDescription": "Automated QA Verification",
+      "industryCategory": "IT",
+      "websitePurpose": "Showcase enterprise software",
+      "location": "New York, USA",
+      "businessHours": "9am-5pm",
+      "contactEmail": "contact@qareal.com",
+      "contactPhone": "+1-555-0199",
+      "whatsappNumber": "+1-555-0199",
+      "socialLinks": []
+    },
+    "requirements": {
+      "requiredPages": [
+        "Home",
+        "About",
+        "Services",
+        "Contact"
+      ],
+      "requiredSections": [
+        "Hero",
+        "Features",
+        "Testimonials"
+      ],
+      "servicesOffered": [
+        "Cloud Consulting"
+      ],
+      "productsOffered": [],
+      "featuresNeeded": [
+        "Responsive UI",
+        "Contact Form"
+      ],
+      "targetAudience": "B2B Clients",
+      "additionalNotes": "Phase 8 QA Test Order"
+    },
+    "designPreferences": {
+      "preferredColors": [
+        "#0052FF",
+        "#FFFFFF"
+      ],
+      "preferredStyle": "Modern Minimalist",
+      "preferredTypography": "Inter",
+      "websiteMood": "Professional and crisp",
+      "referenceWebsiteUrl": "",
+      "logoUrl": "",
+      "assetUrls": [],
+      "additionalDesignNotes": ""
+    },
+    "package": {
+      "packageId": "pkg_business",
+      "packageName": "Professional Business",
+      "price": 699,
+      "currency": "USD"
+    },
+    "status": "NEW",
+    "statusHistory": [
+      {
+        "id": "hist_1789638932181_1",
+        "fromStatus": "NONE",
+        "toStatus": "NEW",
+        "changedByUserId": "usr_customer_01",
+        "changedByUserName": "Sarah Jenkins",
+        "changedByUserRole": "customer",
+        "notes": "Custom website service order submitted and placed into queue.",
+        "timestamp": "2026-09-17T09:55:32.181Z"
+      }
+    ],
+    "paymentStatus": "UNPAID",
+    "amount": 699,
+    "createdAt": "2026-09-17T09:55:32.181Z",
+    "updatedAt": "2026-09-17T09:55:32.181Z"
+  },
+  {
+    "id": "ord_tpl_1789656496031_wnqa7z",
+    "orderNumber": "TPL-2026-0003",
+    "type": "template",
+    "customerId": "usr_customer_01",
+    "customerName": "Sarah Jenkins",
+    "customerEmail": "user@webcraft.ai",
+    "vendorId": "usr_vendor_01",
+    "templateDetails": {
+      "templateId": "tpl_1789547390826_crso0",
+      "templateName": "Modern Restaurant Website",
+      "templateCategory": "Restaurant",
+      "templateThumbnail": "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=800&auto=format&fit=crop&q=80",
+      "vendorId": "usr_vendor_01",
+      "vendorName": "Elena Rostova",
+      "technology": "React + Tailwind CSS",
+      "version": "1.0.0"
+    },
+    "status": "CONFIRMED",
+    "statusHistory": [
+      {
+        "id": "hist_1789656496031_1",
+        "fromStatus": "NONE",
+        "toStatus": "CONFIRMED",
+        "changedByUserId": "usr_customer_01",
+        "changedByUserName": "Sarah Jenkins",
+        "changedByUserRole": "customer",
+        "notes": "Template marketplace order initiated for Modern Restaurant Website.",
+        "timestamp": "2026-09-17T14:48:16.031Z"
+      },
+      {
+        "id": "hist_1789656496181_pay",
+        "fromStatus": "CONFIRMED",
+        "toStatus": "CONFIRMED",
+        "changedByUserId": "system_payment_gateway",
+        "changedByUserName": "Payment Gateway (webcraft_pay)",
+        "changedByUserRole": "system",
+        "notes": "Verified payment confirmed via webcraft_pay (Ref: pi_webcraft_pay_1789656496145_5898d532a008). Amount: $59.",
+        "timestamp": "2026-09-17T14:48:16.181Z"
+      }
+    ],
+    "paymentStatus": "PAID",
+    "amount": 59,
+    "previewUrl": "https://preview.webcraft.ai/restaurant-luxe",
+    "createdAt": "2026-09-17T14:48:16.031Z",
+    "updatedAt": "2026-09-17T14:48:16.181Z",
+    "paymentProvider": "webcraft_pay",
+    "paymentReference": "pi_webcraft_pay_1789656496145_5898d532a008"
+  },
+  {
+    "id": "ord_tpl_1789656509292_v9v2at",
+    "orderNumber": "TPL-2026-0004",
+    "type": "template",
+    "customerId": "usr_customer_01",
+    "customerName": "Sarah Jenkins",
+    "customerEmail": "user@webcraft.ai",
+    "vendorId": "usr_vendor_01",
+    "templateDetails": {
+      "templateId": "tpl_1789547390826_crso0",
+      "templateName": "Modern Restaurant Website",
+      "templateCategory": "Restaurant",
+      "templateThumbnail": "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=800&auto=format&fit=crop&q=80",
+      "vendorId": "usr_vendor_01",
+      "vendorName": "Elena Rostova",
+      "technology": "React + Tailwind CSS",
+      "version": "1.0.0"
+    },
+    "status": "CONFIRMED",
+    "statusHistory": [
+      {
+        "id": "hist_1789656509292_1",
+        "fromStatus": "NONE",
+        "toStatus": "CONFIRMED",
+        "changedByUserId": "usr_customer_01",
+        "changedByUserName": "Sarah Jenkins",
+        "changedByUserRole": "customer",
+        "notes": "Template marketplace order initiated for Modern Restaurant Website.",
+        "timestamp": "2026-09-17T14:48:29.292Z"
+      },
+      {
+        "id": "hist_1789656509374_pay",
+        "fromStatus": "CONFIRMED",
+        "toStatus": "CONFIRMED",
+        "changedByUserId": "system_payment_gateway",
+        "changedByUserName": "Payment Gateway (webcraft_pay)",
+        "changedByUserRole": "system",
+        "notes": "Verified payment confirmed via webcraft_pay (Ref: pi_webcraft_pay_1789656509351_39ba64cb075d). Amount: $59.",
+        "timestamp": "2026-09-17T14:48:29.374Z"
+      }
+    ],
+    "paymentStatus": "PAID",
+    "amount": 59,
+    "previewUrl": "https://preview.webcraft.ai/restaurant-luxe",
+    "createdAt": "2026-09-17T14:48:29.292Z",
+    "updatedAt": "2026-09-17T14:48:29.374Z",
+    "paymentProvider": "webcraft_pay",
+    "paymentReference": "pi_webcraft_pay_1789656509351_39ba64cb075d"
+  },
+  {
+    "id": "ord_tpl_1789656539810_n1qtvk",
+    "orderNumber": "TPL-2026-0005",
+    "type": "template",
+    "customerId": "usr_customer_01",
+    "customerName": "Sarah Jenkins",
+    "customerEmail": "user@webcraft.ai",
+    "vendorId": "usr_vendor_01",
+    "templateDetails": {
+      "templateId": "tpl_1789547390826_crso0",
+      "templateName": "Modern Restaurant Website",
+      "templateCategory": "Restaurant",
+      "templateThumbnail": "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=800&auto=format&fit=crop&q=80",
+      "vendorId": "usr_vendor_01",
+      "vendorName": "Elena Rostova",
+      "technology": "React + Tailwind CSS",
+      "version": "1.0.0"
+    },
+    "status": "CONFIRMED",
+    "statusHistory": [
+      {
+        "id": "hist_1789656539810_1",
+        "fromStatus": "NONE",
+        "toStatus": "CONFIRMED",
+        "changedByUserId": "usr_customer_01",
+        "changedByUserName": "Sarah Jenkins",
+        "changedByUserRole": "customer",
+        "notes": "Template marketplace order initiated for Modern Restaurant Website.",
+        "timestamp": "2026-09-17T14:48:59.810Z"
+      },
+      {
+        "id": "hist_1789656539891_pay",
+        "fromStatus": "CONFIRMED",
+        "toStatus": "CONFIRMED",
+        "changedByUserId": "system_payment_gateway",
+        "changedByUserName": "Payment Gateway (webcraft_pay)",
+        "changedByUserRole": "system",
+        "notes": "Verified payment confirmed via webcraft_pay (Ref: pi_webcraft_pay_1789656539871_68638e6412fe). Amount: $59.",
+        "timestamp": "2026-09-17T14:48:59.891Z"
+      }
+    ],
+    "paymentStatus": "PAID",
+    "amount": 59,
+    "previewUrl": "https://preview.webcraft.ai/restaurant-luxe",
+    "createdAt": "2026-09-17T14:48:59.810Z",
+    "updatedAt": "2026-09-17T14:48:59.891Z",
+    "paymentProvider": "webcraft_pay",
+    "paymentReference": "pi_webcraft_pay_1789656539871_68638e6412fe"
+  },
+  {
+    "id": "ord_tpl_1789656754854_8iisko",
+    "orderNumber": "TPL-2026-0006",
+    "type": "template",
+    "customerId": "usr_customer_01",
+    "customerName": "Sarah Jenkins",
+    "customerEmail": "user@webcraft.ai",
+    "vendorId": "usr_vendor_01",
+    "templateDetails": {
+      "templateId": "tpl_1789547390826_crso0",
+      "templateName": "Modern Restaurant Website",
+      "templateCategory": "Restaurant",
+      "templateThumbnail": "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=800&auto=format&fit=crop&q=80",
+      "vendorId": "usr_vendor_01",
+      "vendorName": "Elena Rostova",
+      "technology": "React + Tailwind CSS",
+      "version": "1.0.0"
+    },
+    "status": "CONFIRMED",
+    "statusHistory": [
+      {
+        "id": "hist_1789656754854_1",
+        "fromStatus": "NONE",
+        "toStatus": "CONFIRMED",
+        "changedByUserId": "usr_customer_01",
+        "changedByUserName": "Sarah Jenkins",
+        "changedByUserRole": "customer",
+        "notes": "Template marketplace order initiated for Modern Restaurant Website.",
+        "timestamp": "2026-09-17T14:52:34.853Z"
+      },
+      {
+        "id": "hist_1789656754955_pay",
+        "fromStatus": "CONFIRMED",
+        "toStatus": "CONFIRMED",
+        "changedByUserId": "system_payment_gateway",
+        "changedByUserName": "Payment Gateway (webcraft_pay)",
+        "changedByUserRole": "system",
+        "notes": "Verified payment confirmed via webcraft_pay (Ref: pi_webcraft_pay_1789656754927_9329d660ae27). Amount: $59.",
+        "timestamp": "2026-09-17T14:52:34.955Z"
+      }
+    ],
+    "paymentStatus": "PAID",
+    "amount": 59,
+    "previewUrl": "https://preview.webcraft.ai/restaurant-luxe",
+    "createdAt": "2026-09-17T14:52:34.853Z",
+    "updatedAt": "2026-09-17T14:52:34.955Z",
+    "paymentProvider": "webcraft_pay",
+    "paymentReference": "pi_webcraft_pay_1789656754927_9329d660ae27"
+  },
+  {
+    "id": "ord_tpl_1789659744184_jezeg4",
+    "orderNumber": "TPL-2026-0007",
+    "type": "template",
+    "customerId": "usr_customer_01",
+    "customerName": "Sarah Jenkins",
+    "customerEmail": "user@webcraft.ai",
+    "vendorId": "usr_vendor_01",
+    "templateDetails": {
+      "templateId": "tpl_1789547390826_crso0",
+      "templateName": "Modern Restaurant Website",
+      "templateCategory": "Restaurant",
+      "templateThumbnail": "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=800&auto=format&fit=crop&q=80",
+      "vendorId": "usr_vendor_01",
+      "vendorName": "Elena Rostova",
+      "technology": "React + Tailwind CSS",
+      "version": "1.0.0"
+    },
+    "status": "CONFIRMED",
+    "statusHistory": [
+      {
+        "id": "hist_1789659744184_1",
+        "fromStatus": "NONE",
+        "toStatus": "CONFIRMED",
+        "changedByUserId": "usr_customer_01",
+        "changedByUserName": "Sarah Jenkins",
+        "changedByUserRole": "customer",
+        "notes": "Template marketplace order initiated for Modern Restaurant Website.",
+        "timestamp": "2026-09-17T15:42:24.184Z"
+      },
+      {
+        "id": "hist_1789659744267_pay",
+        "fromStatus": "CONFIRMED",
+        "toStatus": "CONFIRMED",
+        "changedByUserId": "system_payment_gateway",
+        "changedByUserName": "Payment Gateway (webcraft_pay)",
+        "changedByUserRole": "system",
+        "notes": "Verified payment confirmed via webcraft_pay (Ref: pi_webcraft_pay_1789659744236_988d274525bb). Amount: $59.",
+        "timestamp": "2026-09-17T15:42:24.267Z"
+      }
+    ],
+    "paymentStatus": "PAID",
+    "amount": 59,
+    "previewUrl": "https://preview.webcraft.ai/restaurant-luxe",
+    "createdAt": "2026-09-17T15:42:24.184Z",
+    "updatedAt": "2026-09-17T15:42:24.267Z",
+    "paymentProvider": "webcraft_pay",
+    "paymentReference": "pi_webcraft_pay_1789659744236_988d274525bb"
+  },
+  {
+    "id": "ord_tpl_1789659763841_kyu3gs",
+    "orderNumber": "TPL-2026-0008",
+    "type": "template",
+    "customerId": "usr_customer_01",
+    "customerName": "Sarah Jenkins",
+    "customerEmail": "user@webcraft.ai",
+    "vendorId": "usr_vendor_01",
+    "templateDetails": {
+      "templateId": "tpl_1789547390826_crso0",
+      "templateName": "Modern Restaurant Website",
+      "templateCategory": "Restaurant",
+      "templateThumbnail": "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=800&auto=format&fit=crop&q=80",
+      "vendorId": "usr_vendor_01",
+      "vendorName": "Elena Rostova",
+      "technology": "React + Tailwind CSS",
+      "version": "1.0.0"
+    },
+    "status": "CONFIRMED",
+    "statusHistory": [
+      {
+        "id": "hist_1789659763841_1",
+        "fromStatus": "NONE",
+        "toStatus": "CONFIRMED",
+        "changedByUserId": "usr_customer_01",
+        "changedByUserName": "Sarah Jenkins",
+        "changedByUserRole": "customer",
+        "notes": "Template marketplace order initiated for Modern Restaurant Website.",
+        "timestamp": "2026-09-17T15:42:43.841Z"
+      },
+      {
+        "id": "hist_1789659763955_pay",
+        "fromStatus": "CONFIRMED",
+        "toStatus": "CONFIRMED",
+        "changedByUserId": "system_payment_gateway",
+        "changedByUserName": "Payment Gateway (webcraft_pay)",
+        "changedByUserRole": "system",
+        "notes": "Verified payment confirmed via webcraft_pay (Ref: pi_webcraft_pay_1789659763923_f2d4f7ddef0b). Amount: $59.",
+        "timestamp": "2026-09-17T15:42:43.955Z"
+      }
+    ],
+    "paymentStatus": "PAID",
+    "amount": 59,
+    "previewUrl": "https://preview.webcraft.ai/restaurant-luxe",
+    "createdAt": "2026-09-17T15:42:43.841Z",
+    "updatedAt": "2026-09-17T15:42:43.955Z",
+    "paymentProvider": "webcraft_pay",
+    "paymentReference": "pi_webcraft_pay_1789659763923_f2d4f7ddef0b"
+  },
+  {
+    "id": "ord_1789659764048_j142sy",
+    "orderNumber": "WCW-2026-0009",
+    "type": "custom_website",
+    "customerId": "usr_customer_01",
+    "customerName": "Sarah Jenkins",
+    "customerEmail": "user@webcraft.ai",
+    "businessInfo": {
+      "businessName": "Apex Dynamics 59763",
+      "businessType": "Technology Consulting",
+      "businessDescription": "Next-generation engineering solutions",
+      "industryCategory": "Technology",
+      "websitePurpose": "Lead generation",
+      "location": "San Francisco, CA",
+      "businessHours": "9am-5pm PST",
+      "contactEmail": "info@apexdynamics.test",
+      "contactPhone": "555-0199",
+      "whatsappNumber": "555-0199",
+      "socialLinks": []
+    },
+    "requirements": {
+      "requiredPages": [
+        "Home",
+        "About",
+        "Services",
+        "Contact"
+      ],
+      "requiredSections": [
+        "Hero",
+        "Features",
+        "Pricing",
+        "CTA"
+      ],
+      "servicesOffered": [
+        "Cloud Architecture"
+      ],
+      "productsOffered": [],
+      "featuresNeeded": [
+        "Contact Form"
+      ],
+      "targetAudience": "Enterprise CTOs",
+      "additionalNotes": ""
+    },
+    "designPreferences": {
+      "preferredColors": [
+        "#4F46E5",
+        "#06B6D4"
+      ],
+      "preferredStyle": "Modern Minimalist",
+      "preferredTypography": "Inter",
+      "websiteMood": "Professional",
+      "referenceWebsiteUrl": "",
+      "logoUrl": "",
+      "assetUrls": [],
+      "additionalDesignNotes": ""
+    },
+    "package": {
+      "packageId": "pkg_starter",
+      "packageName": "Starter Launch",
+      "price": 299,
+      "currency": "USD"
+    },
+    "status": "CUSTOMER_APPROVED",
+    "statusHistory": [
+      {
+        "id": "hist_1789659764048_1",
+        "fromStatus": "NONE",
+        "toStatus": "NEW",
+        "changedByUserId": "usr_customer_01",
+        "changedByUserName": "Sarah Jenkins",
+        "changedByUserRole": "customer",
+        "notes": "Custom website service order submitted and placed into queue.",
+        "timestamp": "2026-09-17T15:42:44.048Z"
+      },
+      {
+        "id": "hist_1789659764193_j3ta",
+        "fromStatus": "NEW",
+        "toStatus": "CUSTOMER_APPROVED",
+        "changedByUserId": "usr_customer_01",
+        "changedByUserName": "Sarah Jenkins",
+        "changedByUserRole": "user",
+        "notes": "Designs and layouts look fantastic, approved for deployment!",
+        "timestamp": "2026-09-17T15:42:44.193Z"
+      }
+    ],
+    "paymentStatus": "UNPAID",
+    "amount": 299,
+    "createdAt": "2026-09-17T15:42:44.048Z",
+    "updatedAt": "2026-09-17T15:42:44.193Z"
+  },
+  {
+    "id": "ord_tpl_1789663688827_b9d1wb",
+    "orderNumber": "TPL-2026-0010",
+    "type": "template",
+    "customerId": "usr_customer_01",
+    "customerName": "Sarah Jenkins",
+    "customerEmail": "user@webcraft.ai",
+    "vendorId": "usr_vendor_01",
+    "templateDetails": {
+      "templateId": "tpl_1789547390826_crso0",
+      "templateName": "Modern Restaurant Website",
+      "templateCategory": "Restaurant",
+      "templateThumbnail": "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=800&auto=format&fit=crop&q=80",
+      "vendorId": "usr_vendor_01",
+      "vendorName": "Elena Rostova",
+      "technology": "React + Tailwind CSS",
+      "version": "1.0.0"
+    },
+    "status": "CONFIRMED",
+    "statusHistory": [
+      {
+        "id": "hist_1789663688827_1",
+        "fromStatus": "NONE",
+        "toStatus": "CONFIRMED",
+        "changedByUserId": "usr_customer_01",
+        "changedByUserName": "Sarah Jenkins",
+        "changedByUserRole": "customer",
+        "notes": "Template marketplace order initiated for Modern Restaurant Website.",
+        "timestamp": "2026-09-17T16:48:08.827Z"
+      },
+      {
+        "id": "hist_1789663689047_pay",
+        "fromStatus": "CONFIRMED",
+        "toStatus": "CONFIRMED",
+        "changedByUserId": "system_payment_gateway",
+        "changedByUserName": "Payment Gateway (webcraft_pay)",
+        "changedByUserRole": "system",
+        "notes": "Verified payment confirmed via webcraft_pay (Ref: pi_webcraft_pay_1789663689020_7cb7d3d51690). Amount: $59.",
+        "timestamp": "2026-09-17T16:48:09.047Z"
+      }
+    ],
+    "paymentStatus": "PAID",
+    "amount": 59,
+    "previewUrl": "https://preview.webcraft.ai/restaurant-luxe",
+    "createdAt": "2026-09-17T16:48:08.827Z",
+    "updatedAt": "2026-09-17T16:48:09.047Z",
+    "paymentProvider": "webcraft_pay",
+    "paymentReference": "pi_webcraft_pay_1789663689020_7cb7d3d51690"
+  },
+  {
+    "id": "ord_1789663689139_l8wv73",
+    "orderNumber": "WCW-2026-0011",
+    "type": "custom_website",
+    "customerId": "usr_customer_01",
+    "customerName": "Sarah Jenkins",
+    "customerEmail": "user@webcraft.ai",
+    "businessInfo": {
+      "businessName": "Apex Dynamics 63688",
+      "businessType": "Technology Consulting",
+      "businessDescription": "Next-generation engineering solutions",
+      "industryCategory": "Technology",
+      "websitePurpose": "Lead generation",
+      "location": "San Francisco, CA",
+      "businessHours": "9am-5pm PST",
+      "contactEmail": "info@apexdynamics.test",
+      "contactPhone": "555-0199",
+      "whatsappNumber": "555-0199",
+      "socialLinks": []
+    },
+    "requirements": {
+      "requiredPages": [
+        "Home",
+        "About",
+        "Services",
+        "Contact"
+      ],
+      "requiredSections": [
+        "Hero",
+        "Features",
+        "Pricing",
+        "CTA"
+      ],
+      "servicesOffered": [
+        "Cloud Architecture"
+      ],
+      "productsOffered": [],
+      "featuresNeeded": [
+        "Contact Form"
+      ],
+      "targetAudience": "Enterprise CTOs",
+      "additionalNotes": ""
+    },
+    "designPreferences": {
+      "preferredColors": [
+        "#4F46E5",
+        "#06B6D4"
+      ],
+      "preferredStyle": "Modern Minimalist",
+      "preferredTypography": "Inter",
+      "websiteMood": "Professional",
+      "referenceWebsiteUrl": "",
+      "logoUrl": "",
+      "assetUrls": [],
+      "additionalDesignNotes": ""
+    },
+    "package": {
+      "packageId": "pkg_starter",
+      "packageName": "Starter Launch",
+      "price": 299,
+      "currency": "USD"
+    },
+    "status": "CUSTOMER_APPROVED",
+    "statusHistory": [
+      {
+        "id": "hist_1789663689140_1",
+        "fromStatus": "NONE",
+        "toStatus": "NEW",
+        "changedByUserId": "usr_customer_01",
+        "changedByUserName": "Sarah Jenkins",
+        "changedByUserRole": "customer",
+        "notes": "Custom website service order submitted and placed into queue.",
+        "timestamp": "2026-09-17T16:48:09.139Z"
+      },
+      {
+        "id": "hist_1789663689470_2pm5",
+        "fromStatus": "NEW",
+        "toStatus": "CUSTOMER_APPROVED",
+        "changedByUserId": "usr_customer_01",
+        "changedByUserName": "Sarah Jenkins",
+        "changedByUserRole": "user",
+        "notes": "Designs and layouts look fantastic, approved for deployment!",
+        "timestamp": "2026-09-17T16:48:09.470Z"
+      }
+    ],
+    "paymentStatus": "UNPAID",
+    "amount": 299,
+    "createdAt": "2026-09-17T16:48:09.139Z",
+    "updatedAt": "2026-09-17T16:48:09.470Z"
+  },
+  {
+    "id": "ord_tpl_1789663711986_zhpo50",
+    "orderNumber": "TPL-2026-0012",
+    "type": "template",
+    "customerId": "usr_customer_01",
+    "customerName": "Sarah Jenkins",
+    "customerEmail": "user@webcraft.ai",
+    "vendorId": "usr_vendor_01",
+    "templateDetails": {
+      "templateId": "tpl_1789547390826_crso0",
+      "templateName": "Modern Restaurant Website",
+      "templateCategory": "Restaurant",
+      "templateThumbnail": "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=800&auto=format&fit=crop&q=80",
+      "vendorId": "usr_vendor_01",
+      "vendorName": "Elena Rostova",
+      "technology": "React + Tailwind CSS",
+      "version": "1.0.0"
+    },
+    "status": "CONFIRMED",
+    "statusHistory": [
+      {
+        "id": "hist_1789663711986_1",
+        "fromStatus": "NONE",
+        "toStatus": "CONFIRMED",
+        "changedByUserId": "usr_customer_01",
+        "changedByUserName": "Sarah Jenkins",
+        "changedByUserRole": "customer",
+        "notes": "Template marketplace order initiated for Modern Restaurant Website.",
+        "timestamp": "2026-09-17T16:48:31.986Z"
+      },
+      {
+        "id": "hist_1789663712249_pay",
+        "fromStatus": "CONFIRMED",
+        "toStatus": "CONFIRMED",
+        "changedByUserId": "system_payment_gateway",
+        "changedByUserName": "Payment Gateway (webcraft_pay)",
+        "changedByUserRole": "system",
+        "notes": "Verified payment confirmed via webcraft_pay (Ref: pi_webcraft_pay_1789663712223_da5708020873). Amount: $59.",
+        "timestamp": "2026-09-17T16:48:32.249Z"
+      }
+    ],
+    "paymentStatus": "PAID",
+    "amount": 59,
+    "previewUrl": "https://preview.webcraft.ai/restaurant-luxe",
+    "createdAt": "2026-09-17T16:48:31.986Z",
+    "updatedAt": "2026-09-17T16:48:32.249Z",
+    "paymentProvider": "webcraft_pay",
+    "paymentReference": "pi_webcraft_pay_1789663712223_da5708020873"
+  },
+  {
+    "id": "ord_tpl_1789663848235_1y5b0w",
+    "orderNumber": "TPL-2026-0013",
+    "type": "template",
+    "customerId": "usr_customer_01",
+    "customerName": "Sarah Jenkins",
+    "customerEmail": "user@webcraft.ai",
+    "vendorId": "usr_vendor_01",
+    "templateDetails": {
+      "templateId": "tpl_1789547390826_crso0",
+      "templateName": "Modern Restaurant Website",
+      "templateCategory": "Restaurant",
+      "templateThumbnail": "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=800&auto=format&fit=crop&q=80",
+      "vendorId": "usr_vendor_01",
+      "vendorName": "Elena Rostova",
+      "technology": "React + Tailwind CSS",
+      "version": "1.0.0"
+    },
+    "status": "CONFIRMED",
+    "statusHistory": [
+      {
+        "id": "hist_1789663848236_1",
+        "fromStatus": "NONE",
+        "toStatus": "CONFIRMED",
+        "changedByUserId": "usr_customer_01",
+        "changedByUserName": "Sarah Jenkins",
+        "changedByUserRole": "customer",
+        "notes": "Template marketplace order initiated for Modern Restaurant Website.",
+        "timestamp": "2026-09-17T16:50:48.235Z"
+      },
+      {
+        "id": "hist_1789663848494_pay",
+        "fromStatus": "CONFIRMED",
+        "toStatus": "CONFIRMED",
+        "changedByUserId": "system_payment_gateway",
+        "changedByUserName": "Payment Gateway (webcraft_pay)",
+        "changedByUserRole": "system",
+        "notes": "Verified payment confirmed via webcraft_pay (Ref: pi_webcraft_pay_1789663848466_9e3f3ca2f13a). Amount: $59.",
+        "timestamp": "2026-09-17T16:50:48.494Z"
+      }
+    ],
+    "paymentStatus": "PAID",
+    "amount": 59,
+    "previewUrl": "https://preview.webcraft.ai/restaurant-luxe",
+    "createdAt": "2026-09-17T16:50:48.235Z",
+    "updatedAt": "2026-09-17T16:50:48.494Z",
+    "paymentProvider": "webcraft_pay",
+    "paymentReference": "pi_webcraft_pay_1789663848466_9e3f3ca2f13a"
+  },
+  {
+    "id": "ord_1789665025085_91lhle",
+    "orderNumber": "WCW-2026-0014",
+    "type": "custom_website",
+    "customerId": "usr_customer_01",
+    "customerName": "Sarah Jenkins",
+    "customerEmail": "user@webcraft.ai",
+    "businessInfo": {
+      "businessName": "Phase 13 Test Co 1789665025",
+      "industry": "Technology",
+      "businessDescription": "Testing Phase 13 review and transition invariants",
+      "websitePurpose": "Lead generation",
+      "businessType": "General Business",
+      "industryCategory": "Other",
+      "location": "",
+      "businessHours": "",
+      "contactEmail": "user@webcraft.ai",
+      "contactPhone": "",
+      "whatsappNumber": "",
+      "socialLinks": []
+    },
+    "requirements": {
+      "targetAudience": "Enterprises",
+      "requiredPages": [
+        "Home",
+        "About",
+        "Contact"
+      ],
+      "requiredSections": [],
+      "servicesOffered": [],
+      "productsOffered": [],
+      "featuresNeeded": [],
+      "additionalNotes": ""
+    },
+    "designPreferences": {
+      "preferredColors": [
+        "#3B82F6",
+        "#1E293B"
+      ],
+      "preferredStyle": "Modern Minimalist",
+      "preferredTypography": "Inter Sans",
+      "websiteMood": "Clean, Trustworthy & High Converting",
+      "referenceWebsiteUrl": "",
+      "logoUrl": "",
+      "assetUrls": [],
+      "additionalDesignNotes": ""
+    },
+    "package": {
+      "packageId": "pkg_starter",
+      "packageName": "Starter Launch",
+      "price": 299,
+      "currency": "USD"
+    },
+    "status": "NEW",
+    "statusHistory": [
+      {
+        "id": "hist_1789665025085_1",
+        "fromStatus": "NONE",
+        "toStatus": "NEW",
+        "changedByUserId": "usr_customer_01",
+        "changedByUserName": "Sarah Jenkins",
+        "changedByUserRole": "customer",
+        "notes": "Custom website service order submitted and placed into queue.",
+        "timestamp": "2026-09-17T17:10:25.085Z"
+      }
+    ],
+    "paymentStatus": "UNPAID",
+    "amount": 299,
+    "createdAt": "2026-09-17T17:10:25.085Z",
+    "updatedAt": "2026-09-17T17:10:25.085Z"
+  },
+  {
+    "id": "ord_1789665026183_iwn65a",
+    "orderNumber": "WCW-2026-0015",
+    "type": "custom_website",
+    "customerId": "usr_customer_01",
+    "customerName": "Sarah Jenkins",
+    "customerEmail": "user@webcraft.ai",
+    "businessInfo": {
+      "businessName": "Cancellation Test Co",
+      "industry": "Retail",
+      "businessDescription": "Testing cancellation",
+      "websitePurpose": "Portfolio",
+      "businessType": "General Business",
+      "industryCategory": "Other",
+      "location": "",
+      "businessHours": "",
+      "contactEmail": "user@webcraft.ai",
+      "contactPhone": "",
+      "whatsappNumber": "",
+      "socialLinks": []
+    },
+    "requirements": {
+      "targetAudience": "Shoppers",
+      "requiredPages": [
+        "Home",
+        "About"
+      ],
+      "requiredSections": [],
+      "servicesOffered": [],
+      "productsOffered": [],
+      "featuresNeeded": [],
+      "additionalNotes": ""
+    },
+    "designPreferences": {
+      "preferredColors": [
+        "#000000"
+      ],
+      "preferredStyle": "Modern Minimalist",
+      "preferredTypography": "Inter Sans",
+      "websiteMood": "Clean, Trustworthy & High Converting",
+      "referenceWebsiteUrl": "",
+      "logoUrl": "",
+      "assetUrls": [],
+      "additionalDesignNotes": ""
+    },
+    "package": {
+      "packageId": "pkg_starter",
+      "packageName": "Starter Launch",
+      "price": 299,
+      "currency": "USD"
+    },
+    "status": "NEW",
+    "statusHistory": [
+      {
+        "id": "hist_1789665026183_1",
+        "fromStatus": "NONE",
+        "toStatus": "NEW",
+        "changedByUserId": "usr_customer_01",
+        "changedByUserName": "Sarah Jenkins",
+        "changedByUserRole": "customer",
+        "notes": "Custom website service order submitted and placed into queue.",
+        "timestamp": "2026-09-17T17:10:26.183Z"
+      }
+    ],
+    "paymentStatus": "UNPAID",
+    "amount": 299,
+    "createdAt": "2026-09-17T17:10:26.183Z",
+    "updatedAt": "2026-09-17T17:10:26.183Z"
+  },
+  {
+    "id": "ord_tpl_1789665036939_rqtuf2",
+    "orderNumber": "TPL-2026-0016",
+    "type": "template",
+    "customerId": "usr_customer_01",
+    "customerName": "Sarah Jenkins",
+    "customerEmail": "user@webcraft.ai",
+    "vendorId": "usr_vendor_01",
+    "templateDetails": {
+      "templateId": "tpl_1789547390826_crso0",
+      "templateName": "Modern Restaurant Website",
+      "templateCategory": "Restaurant",
+      "templateThumbnail": "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=800&auto=format&fit=crop&q=80",
+      "vendorId": "usr_vendor_01",
+      "vendorName": "Elena Rostova",
+      "technology": "React + Tailwind CSS",
+      "version": "1.0.0"
+    },
+    "status": "CONFIRMED",
+    "statusHistory": [
+      {
+        "id": "hist_1789665036939_1",
+        "fromStatus": "NONE",
+        "toStatus": "CONFIRMED",
+        "changedByUserId": "usr_customer_01",
+        "changedByUserName": "Sarah Jenkins",
+        "changedByUserRole": "customer",
+        "notes": "Template marketplace order initiated for Modern Restaurant Website.",
+        "timestamp": "2026-09-17T17:10:36.939Z"
+      },
+      {
+        "id": "hist_1789665037260_pay",
+        "fromStatus": "CONFIRMED",
+        "toStatus": "CONFIRMED",
+        "changedByUserId": "system_payment_gateway",
+        "changedByUserName": "Payment Gateway (webcraft_pay)",
+        "changedByUserRole": "system",
+        "notes": "Verified payment confirmed via webcraft_pay (Ref: pi_webcraft_pay_1789665037229_a3f33c7abafe). Amount: $59.",
+        "timestamp": "2026-09-17T17:10:37.260Z"
+      }
+    ],
+    "paymentStatus": "PAID",
+    "amount": 59,
+    "previewUrl": "https://preview.webcraft.ai/restaurant-luxe",
+    "createdAt": "2026-09-17T17:10:36.939Z",
+    "updatedAt": "2026-09-17T17:10:37.260Z",
+    "paymentProvider": "webcraft_pay",
+    "paymentReference": "pi_webcraft_pay_1789665037229_a3f33c7abafe"
+  },
+  {
+    "id": "ord_tpl_1789665044118_h6afvh",
+    "orderNumber": "TPL-2026-0017",
+    "type": "template",
+    "customerId": "usr_customer_01",
+    "customerName": "Sarah Jenkins",
+    "customerEmail": "user@webcraft.ai",
+    "vendorId": "usr_vendor_01",
+    "templateDetails": {
+      "templateId": "tpl_1789547390826_crso0",
+      "templateName": "Modern Restaurant Website",
+      "templateCategory": "Restaurant",
+      "templateThumbnail": "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=800&auto=format&fit=crop&q=80",
+      "vendorId": "usr_vendor_01",
+      "vendorName": "Elena Rostova",
+      "technology": "React + Tailwind CSS",
+      "version": "1.0.0"
+    },
+    "status": "CONFIRMED",
+    "statusHistory": [
+      {
+        "id": "hist_1789665044118_1",
+        "fromStatus": "NONE",
+        "toStatus": "CONFIRMED",
+        "changedByUserId": "usr_customer_01",
+        "changedByUserName": "Sarah Jenkins",
+        "changedByUserRole": "customer",
+        "notes": "Template marketplace order initiated for Modern Restaurant Website.",
+        "timestamp": "2026-09-17T17:10:44.118Z"
+      },
+      {
+        "id": "hist_1789665044351_pay",
+        "fromStatus": "CONFIRMED",
+        "toStatus": "CONFIRMED",
+        "changedByUserId": "system_payment_gateway",
+        "changedByUserName": "Payment Gateway (webcraft_pay)",
+        "changedByUserRole": "system",
+        "notes": "Verified payment confirmed via webcraft_pay (Ref: pi_webcraft_pay_1789665044322_db11996340a6). Amount: $59.",
+        "timestamp": "2026-09-17T17:10:44.351Z"
+      }
+    ],
+    "paymentStatus": "PAID",
+    "amount": 59,
+    "previewUrl": "https://preview.webcraft.ai/restaurant-luxe",
+    "createdAt": "2026-09-17T17:10:44.118Z",
+    "updatedAt": "2026-09-17T17:10:44.351Z",
+    "paymentProvider": "webcraft_pay",
+    "paymentReference": "pi_webcraft_pay_1789665044322_db11996340a6"
+  },
+  {
+    "id": "ord_1789665044424_byn65n",
+    "orderNumber": "WCW-2026-0018",
+    "type": "custom_website",
+    "customerId": "usr_customer_01",
+    "customerName": "Sarah Jenkins",
+    "customerEmail": "user@webcraft.ai",
+    "businessInfo": {
+      "businessName": "Apex Dynamics 65043",
+      "businessType": "Technology Consulting",
+      "businessDescription": "Next-generation engineering solutions",
+      "industryCategory": "Technology",
+      "websitePurpose": "Lead generation",
+      "location": "San Francisco, CA",
+      "businessHours": "9am-5pm PST",
+      "contactEmail": "info@apexdynamics.test",
+      "contactPhone": "555-0199",
+      "whatsappNumber": "555-0199",
+      "socialLinks": []
+    },
+    "requirements": {
+      "requiredPages": [
+        "Home",
+        "About",
+        "Services",
+        "Contact"
+      ],
+      "requiredSections": [
+        "Hero",
+        "Features",
+        "Pricing",
+        "CTA"
+      ],
+      "servicesOffered": [
+        "Cloud Architecture"
+      ],
+      "productsOffered": [],
+      "featuresNeeded": [
+        "Contact Form"
+      ],
+      "targetAudience": "Enterprise CTOs",
+      "additionalNotes": ""
+    },
+    "designPreferences": {
+      "preferredColors": [
+        "#4F46E5",
+        "#06B6D4"
+      ],
+      "preferredStyle": "Modern Minimalist",
+      "preferredTypography": "Inter",
+      "websiteMood": "Professional",
+      "referenceWebsiteUrl": "",
+      "logoUrl": "",
+      "assetUrls": [],
+      "additionalDesignNotes": ""
+    },
+    "package": {
+      "packageId": "pkg_starter",
+      "packageName": "Starter Launch",
+      "price": 299,
+      "currency": "USD"
+    },
+    "status": "CUSTOMER_APPROVED",
+    "statusHistory": [
+      {
+        "id": "hist_1789665044424_1",
+        "fromStatus": "NONE",
+        "toStatus": "NEW",
+        "changedByUserId": "usr_customer_01",
+        "changedByUserName": "Sarah Jenkins",
+        "changedByUserRole": "customer",
+        "notes": "Custom website service order submitted and placed into queue.",
+        "timestamp": "2026-09-17T17:10:44.424Z"
+      },
+      {
+        "id": "hist_1789665044836_ff4b",
+        "fromStatus": "NEW",
+        "toStatus": "CUSTOMER_APPROVED",
+        "changedByUserId": "usr_customer_01",
+        "changedByUserName": "Sarah Jenkins",
+        "changedByUserRole": "user",
+        "notes": "Designs and layouts look fantastic, approved for deployment!",
+        "timestamp": "2026-09-17T17:10:44.836Z"
+      }
+    ],
+    "paymentStatus": "UNPAID",
+    "amount": 299,
+    "createdAt": "2026-09-17T17:10:44.424Z",
+    "updatedAt": "2026-09-17T17:10:44.836Z"
+  },
+  {
+    "id": "ord_tpl_1789665144013_l1y7fe",
+    "orderNumber": "TPL-2026-0019",
+    "type": "template",
+    "customerId": "usr_customer_01",
+    "customerName": "Sarah Jenkins",
+    "customerEmail": "user@webcraft.ai",
+    "vendorId": "usr_vendor_01",
+    "templateDetails": {
+      "templateId": "tpl_1789547390826_crso0",
+      "templateName": "Modern Restaurant Website",
+      "templateCategory": "Restaurant",
+      "templateThumbnail": "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=800&auto=format&fit=crop&q=80",
+      "vendorId": "usr_vendor_01",
+      "vendorName": "Elena Rostova",
+      "technology": "React + Tailwind CSS",
+      "version": "1.0.0"
+    },
+    "status": "CONFIRMED",
+    "statusHistory": [
+      {
+        "id": "hist_1789665144013_1",
+        "fromStatus": "NONE",
+        "toStatus": "CONFIRMED",
+        "changedByUserId": "usr_customer_01",
+        "changedByUserName": "Sarah Jenkins",
+        "changedByUserRole": "customer",
+        "notes": "Template marketplace order initiated for Modern Restaurant Website.",
+        "timestamp": "2026-09-17T17:12:24.013Z"
+      },
+      {
+        "id": "hist_1789665144319_pay",
+        "fromStatus": "CONFIRMED",
+        "toStatus": "CONFIRMED",
+        "changedByUserId": "system_payment_gateway",
+        "changedByUserName": "Payment Gateway (webcraft_pay)",
+        "changedByUserRole": "system",
+        "notes": "Verified payment confirmed via webcraft_pay (Ref: pi_webcraft_pay_1789665144288_11ff9aa64386). Amount: $59.",
+        "timestamp": "2026-09-17T17:12:24.319Z"
+      }
+    ],
+    "paymentStatus": "PAID",
+    "amount": 59,
+    "previewUrl": "https://preview.webcraft.ai/restaurant-luxe",
+    "createdAt": "2026-09-17T17:12:24.013Z",
+    "updatedAt": "2026-09-17T17:12:24.319Z",
+    "paymentProvider": "webcraft_pay",
+    "paymentReference": "pi_webcraft_pay_1789665144288_11ff9aa64386"
+  },
+  {
+    "id": "ord_1789665144436_8tlyfr",
+    "orderNumber": "WCW-2026-0020",
+    "type": "custom_website",
+    "customerId": "usr_customer_01",
+    "customerName": "Sarah Jenkins",
+    "customerEmail": "user@webcraft.ai",
+    "businessInfo": {
+      "businessName": "Apex Dynamics 65143",
+      "businessType": "Technology Consulting",
+      "businessDescription": "Next-generation engineering solutions",
+      "industryCategory": "Technology",
+      "websitePurpose": "Lead generation",
+      "location": "San Francisco, CA",
+      "businessHours": "9am-5pm PST",
+      "contactEmail": "info@apexdynamics.test",
+      "contactPhone": "555-0199",
+      "whatsappNumber": "555-0199",
+      "socialLinks": []
+    },
+    "requirements": {
+      "requiredPages": [
+        "Home",
+        "About",
+        "Services",
+        "Contact"
+      ],
+      "requiredSections": [
+        "Hero",
+        "Features",
+        "Pricing",
+        "CTA"
+      ],
+      "servicesOffered": [
+        "Cloud Architecture"
+      ],
+      "productsOffered": [],
+      "featuresNeeded": [
+        "Contact Form"
+      ],
+      "targetAudience": "Enterprise CTOs",
+      "additionalNotes": ""
+    },
+    "designPreferences": {
+      "preferredColors": [
+        "#4F46E5",
+        "#06B6D4"
+      ],
+      "preferredStyle": "Modern Minimalist",
+      "preferredTypography": "Inter",
+      "websiteMood": "Professional",
+      "referenceWebsiteUrl": "",
+      "logoUrl": "",
+      "assetUrls": [],
+      "additionalDesignNotes": ""
+    },
+    "package": {
+      "packageId": "pkg_starter",
+      "packageName": "Starter Launch",
+      "price": 299,
+      "currency": "USD"
+    },
+    "status": "CUSTOMER_APPROVED",
+    "statusHistory": [
+      {
+        "id": "hist_1789665144437_1",
+        "fromStatus": "NONE",
+        "toStatus": "NEW",
+        "changedByUserId": "usr_customer_01",
+        "changedByUserName": "Sarah Jenkins",
+        "changedByUserRole": "customer",
+        "notes": "Custom website service order submitted and placed into queue.",
+        "timestamp": "2026-09-17T17:12:24.436Z"
+      },
+      {
+        "id": "hist_1789665144921_8t6j",
+        "fromStatus": "NEW",
+        "toStatus": "CUSTOMER_APPROVED",
+        "changedByUserId": "usr_customer_01",
+        "changedByUserName": "Sarah Jenkins",
+        "changedByUserRole": "user",
+        "notes": "Designs and layouts look fantastic, approved for deployment!",
+        "timestamp": "2026-09-17T17:12:24.921Z"
+      }
+    ],
+    "paymentStatus": "UNPAID",
+    "amount": 299,
+    "createdAt": "2026-09-17T17:12:24.436Z",
+    "updatedAt": "2026-09-17T17:12:24.921Z"
+  },
+  {
+    "id": "ord_1789665160000_pxifcb",
+    "orderNumber": "WCW-2026-0021",
+    "type": "custom_website",
+    "customerId": "usr_customer_01",
+    "customerName": "Sarah Jenkins",
+    "customerEmail": "user@webcraft.ai",
+    "businessInfo": {
+      "businessName": "Phase 13 Test Co 1789665160",
+      "industry": "Technology",
+      "businessDescription": "Testing Phase 13 review and transition invariants",
+      "websitePurpose": "Lead generation",
+      "businessType": "General Business",
+      "industryCategory": "Other",
+      "location": "",
+      "businessHours": "",
+      "contactEmail": "user@webcraft.ai",
+      "contactPhone": "",
+      "whatsappNumber": "",
+      "socialLinks": []
+    },
+    "requirements": {
+      "targetAudience": "Enterprises",
+      "requiredPages": [
+        "Home",
+        "About",
+        "Contact"
+      ],
+      "requiredSections": [],
+      "servicesOffered": [],
+      "productsOffered": [],
+      "featuresNeeded": [],
+      "additionalNotes": ""
+    },
+    "designPreferences": {
+      "preferredColors": [
+        "#3B82F6",
+        "#1E293B"
+      ],
+      "preferredStyle": "Modern Minimalist",
+      "preferredTypography": "Inter Sans",
+      "websiteMood": "Clean, Trustworthy & High Converting",
+      "referenceWebsiteUrl": "",
+      "logoUrl": "",
+      "assetUrls": [],
+      "additionalDesignNotes": ""
+    },
+    "package": {
+      "packageId": "pkg_starter",
+      "packageName": "Starter Launch",
+      "price": 299,
+      "currency": "USD"
+    },
+    "status": "NEW",
+    "statusHistory": [
+      {
+        "id": "hist_1789665160000_1",
+        "fromStatus": "NONE",
+        "toStatus": "NEW",
+        "changedByUserId": "usr_customer_01",
+        "changedByUserName": "Sarah Jenkins",
+        "changedByUserRole": "customer",
+        "notes": "Custom website service order submitted and placed into queue.",
+        "timestamp": "2026-09-17T17:12:40.000Z"
+      }
+    ],
+    "paymentStatus": "UNPAID",
+    "amount": 299,
+    "createdAt": "2026-09-17T17:12:40.000Z",
+    "updatedAt": "2026-09-17T17:12:40.000Z"
+  },
+  {
+    "id": "ord_1789665161256_zbq93z",
+    "orderNumber": "WCW-2026-0022",
+    "type": "custom_website",
+    "customerId": "usr_customer_01",
+    "customerName": "Sarah Jenkins",
+    "customerEmail": "user@webcraft.ai",
+    "businessInfo": {
+      "businessName": "Cancellation Test Co",
+      "industry": "Retail",
+      "businessDescription": "Testing cancellation",
+      "websitePurpose": "Portfolio",
+      "businessType": "General Business",
+      "industryCategory": "Other",
+      "location": "",
+      "businessHours": "",
+      "contactEmail": "user@webcraft.ai",
+      "contactPhone": "",
+      "whatsappNumber": "",
+      "socialLinks": []
+    },
+    "requirements": {
+      "targetAudience": "Shoppers",
+      "requiredPages": [
+        "Home",
+        "About"
+      ],
+      "requiredSections": [],
+      "servicesOffered": [],
+      "productsOffered": [],
+      "featuresNeeded": [],
+      "additionalNotes": ""
+    },
+    "designPreferences": {
+      "preferredColors": [
+        "#000000"
+      ],
+      "preferredStyle": "Modern Minimalist",
+      "preferredTypography": "Inter Sans",
+      "websiteMood": "Clean, Trustworthy & High Converting",
+      "referenceWebsiteUrl": "",
+      "logoUrl": "",
+      "assetUrls": [],
+      "additionalDesignNotes": ""
+    },
+    "package": {
+      "packageId": "pkg_starter",
+      "packageName": "Starter Launch",
+      "price": 299,
+      "currency": "USD"
+    },
+    "status": "NEW",
+    "statusHistory": [
+      {
+        "id": "hist_1789665161256_1",
+        "fromStatus": "NONE",
+        "toStatus": "NEW",
+        "changedByUserId": "usr_customer_01",
+        "changedByUserName": "Sarah Jenkins",
+        "changedByUserRole": "customer",
+        "notes": "Custom website service order submitted and placed into queue.",
+        "timestamp": "2026-09-17T17:12:41.256Z"
+      }
+    ],
+    "paymentStatus": "UNPAID",
+    "amount": 299,
+    "createdAt": "2026-09-17T17:12:41.256Z",
+    "updatedAt": "2026-09-17T17:12:41.256Z"
+  },
+  {
+    "id": "ord_tpl_1789683602885_rtgrho",
+    "orderNumber": "TPL-2026-0023",
+    "type": "template",
+    "customerId": "usr_1789683601262_ih561",
+    "customerName": "QA Tester",
+    "customerEmail": "qa_audit_1789683600@webcraft.ai",
+    "vendorId": "usr_vendor_01",
+    "templateDetails": {
+      "templateId": "tpl_estate_haven07",
+      "templateName": "Haven & Horizon Luxury Real Estate",
+      "templateCategory": "Real Estate",
+      "templateThumbnail": "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&auto=format&fit=crop&q=80",
+      "vendorId": "usr_vendor_01",
+      "vendorName": "Elena Rostova",
+      "technology": "React + Tailwind CSS",
+      "version": "1.3.0"
+    },
+    "status": "CONFIRMED",
+    "statusHistory": [
+      {
+        "id": "hist_1789683602885_1",
+        "fromStatus": "NONE",
+        "toStatus": "CONFIRMED",
+        "changedByUserId": "usr_1789683601262_ih561",
+        "changedByUserName": "QA Tester",
+        "changedByUserRole": "customer",
+        "notes": "Template marketplace order initiated for Haven & Horizon Luxury Real Estate.",
+        "timestamp": "2026-09-17T22:20:02.885Z"
+      },
+      {
+        "id": "hist_1789683603652_pay",
+        "fromStatus": "CONFIRMED",
+        "toStatus": "CONFIRMED",
+        "changedByUserId": "system_payment_gateway",
+        "changedByUserName": "Payment Gateway (webcraft_pay)",
+        "changedByUserRole": "system",
+        "notes": "Verified payment confirmed via webcraft_pay (Ref: pi_webcraft_pay_1789683603045_d609ca074dc6). Amount: $95.",
+        "timestamp": "2026-09-17T22:20:03.652Z"
+      }
+    ],
+    "paymentStatus": "PAID",
+    "amount": 95,
+    "previewUrl": "https://preview.webcraft.ai/haven-realestate",
+    "createdAt": "2026-09-17T22:20:02.885Z",
+    "updatedAt": "2026-09-17T22:20:03.652Z",
+    "paymentProvider": "webcraft_pay",
+    "paymentReference": "pi_webcraft_pay_1789683603045_d609ca074dc6"
+  },
+  {
+    "id": "ord_1789683604117_zu4eex",
+    "orderNumber": "WCW-2026-0024",
+    "type": "custom_website",
+    "customerId": "usr_1789683601262_ih561",
+    "customerName": "QA Tester",
+    "customerEmail": "qa_audit_1789683600@webcraft.ai",
+    "businessInfo": {
+      "businessName": "QA Audit Enterprise 1789683600",
+      "industry": "technology",
+      "websitePurpose": "Online client acquisition and showcase platform",
+      "businessType": "General Business",
+      "businessDescription": "",
+      "industryCategory": "Other",
+      "location": "",
+      "businessHours": "",
+      "contactEmail": "qa_audit_1789683600@webcraft.ai",
+      "contactPhone": "",
+      "whatsappNumber": "",
+      "socialLinks": []
+    },
+    "requirements": {
+      "requiredPages": [
+        "Home",
+        "About",
+        "Services",
+        "Contact"
+      ],
+      "features": [
+        "Auth",
+        "Payments",
+        "Dashboard"
+      ],
+      "requiredSections": [],
+      "servicesOffered": [],
+      "productsOffered": [],
+      "featuresNeeded": [],
+      "targetAudience": "General public & customers",
+      "additionalNotes": ""
+    },
+    "designPreferences": {
+      "preferredColors": [
+        "#4F46E5",
+        "#06B6D4"
+      ],
+      "preferredStyle": "Modern Minimalist",
+      "preferredTypography": "Inter Sans",
+      "websiteMood": "Clean, Trustworthy & High Converting",
+      "referenceWebsiteUrl": "",
+      "logoUrl": "",
+      "assetUrls": [],
+      "additionalDesignNotes": ""
+    },
+    "package": {
+      "packageId": "pkg_starter",
+      "packageName": "Starter Launch",
+      "price": 299,
+      "currency": "USD"
+    },
+    "status": "NEW",
+    "statusHistory": [
+      {
+        "id": "hist_1789683604120_1",
+        "fromStatus": "NONE",
+        "toStatus": "NEW",
+        "changedByUserId": "usr_1789683601262_ih561",
+        "changedByUserName": "QA Tester",
+        "changedByUserRole": "customer",
+        "notes": "Custom website service order submitted and placed into queue.",
+        "timestamp": "2026-09-17T22:20:04.117Z"
+      }
+    ],
+    "paymentStatus": "UNPAID",
+    "amount": 299,
+    "createdAt": "2026-09-17T22:20:04.117Z",
+    "updatedAt": "2026-09-17T22:20:04.117Z"
+  },
+  {
+    "id": "ord_1789683746647_yh88gz",
+    "orderNumber": "WCW-2026-0025",
+    "type": "custom_website",
+    "customerId": "usr_customer_01",
+    "customerName": "Sarah Jenkins",
+    "customerEmail": "user@webcraft.ai",
+    "businessInfo": {
+      "businessName": "QA Ent",
+      "industry": "tech",
+      "websitePurpose": "Showcase",
+      "businessType": "General Business",
+      "businessDescription": "",
+      "industryCategory": "Other",
+      "location": "",
+      "businessHours": "",
+      "contactEmail": "user@webcraft.ai",
+      "contactPhone": "",
+      "whatsappNumber": "",
+      "socialLinks": []
+    },
+    "requirements": {
+      "requiredPages": [
+        "Home",
+        "About"
+      ],
+      "requiredSections": [],
+      "servicesOffered": [],
+      "productsOffered": [],
+      "featuresNeeded": [],
+      "targetAudience": "General public & customers",
+      "additionalNotes": ""
+    },
+    "designPreferences": {
+      "preferredColors": [
+        "#4F46E5",
+        "#06B6D4"
+      ],
+      "preferredStyle": "Modern Minimalist",
+      "preferredTypography": "Inter Sans",
+      "websiteMood": "Clean, Trustworthy & High Converting",
+      "referenceWebsiteUrl": "",
+      "logoUrl": "",
+      "assetUrls": [],
+      "additionalDesignNotes": ""
+    },
+    "package": {
+      "packageId": "pkg_starter",
+      "packageName": "Starter Launch",
+      "price": 299,
+      "currency": "USD"
+    },
+    "status": "NEW",
+    "statusHistory": [
+      {
+        "id": "hist_1789683746647_1",
+        "fromStatus": "NONE",
+        "toStatus": "NEW",
+        "changedByUserId": "usr_customer_01",
+        "changedByUserName": "Sarah Jenkins",
+        "changedByUserRole": "customer",
+        "notes": "Custom website service order submitted and placed into queue.",
+        "timestamp": "2026-09-17T22:22:26.647Z"
+      }
+    ],
+    "paymentStatus": "UNPAID",
+    "amount": 299,
+    "createdAt": "2026-09-17T22:22:26.647Z",
+    "updatedAt": "2026-09-17T22:22:26.647Z"
+  },
+  {
+    "id": "ord_tpl_1789706001194_gohwnm",
+    "orderNumber": "TPL-2026-0026",
+    "type": "template",
+    "customerId": "usr_1789705999540_tuqmu",
+    "customerName": "QA Tester",
+    "customerEmail": "qa_audit_1789705999@webcraft.ai",
+    "vendorId": "usr_vendor_01",
+    "templateDetails": {
+      "templateId": "tpl_estate_haven07",
+      "templateName": "Haven & Horizon Luxury Real Estate",
+      "templateCategory": "Real Estate",
+      "templateThumbnail": "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&auto=format&fit=crop&q=80",
+      "vendorId": "usr_vendor_01",
+      "vendorName": "Elena Rostova",
+      "technology": "React + Tailwind CSS",
+      "version": "1.3.0"
+    },
+    "status": "CONFIRMED",
+    "statusHistory": [
+      {
+        "id": "hist_1789706001195_1",
+        "fromStatus": "NONE",
+        "toStatus": "CONFIRMED",
+        "changedByUserId": "usr_1789705999540_tuqmu",
+        "changedByUserName": "QA Tester",
+        "changedByUserRole": "customer",
+        "notes": "Template marketplace order initiated for Haven & Horizon Luxury Real Estate.",
+        "timestamp": "2026-09-18T04:33:21.194Z"
+      }
+    ],
+    "paymentStatus": "UNPAID",
+    "amount": 95,
+    "previewUrl": "https://preview.webcraft.ai/haven-realestate",
+    "createdAt": "2026-09-18T04:33:21.194Z",
+    "updatedAt": "2026-09-18T04:33:21.194Z"
+  },
+  {
+    "id": "ord_tpl_1789706001738_h6b76x",
+    "orderNumber": "TPL-2026-0027",
+    "type": "template",
+    "customerId": "usr_1789705999540_tuqmu",
+    "customerName": "QA Tester",
+    "customerEmail": "qa_audit_1789705999@webcraft.ai",
+    "vendorId": "usr_vendor_01",
+    "templateDetails": {
+      "templateId": "tpl_estate_haven07",
+      "templateName": "Haven & Horizon Luxury Real Estate",
+      "templateCategory": "Real Estate",
+      "templateThumbnail": "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&auto=format&fit=crop&q=80",
+      "vendorId": "usr_vendor_01",
+      "vendorName": "Elena Rostova",
+      "technology": "React + Tailwind CSS",
+      "version": "1.3.0"
+    },
+    "status": "CONFIRMED",
+    "statusHistory": [
+      {
+        "id": "hist_1789706001738_1",
+        "fromStatus": "NONE",
+        "toStatus": "CONFIRMED",
+        "changedByUserId": "usr_1789705999540_tuqmu",
+        "changedByUserName": "QA Tester",
+        "changedByUserRole": "customer",
+        "notes": "Template marketplace order initiated for Haven & Horizon Luxury Real Estate.",
+        "timestamp": "2026-09-18T04:33:21.738Z"
+      },
+      {
+        "id": "hist_1789706002135_pay",
+        "fromStatus": "CONFIRMED",
+        "toStatus": "CONFIRMED",
+        "changedByUserId": "system_payment_gateway",
+        "changedByUserName": "Payment Gateway (webcraft_pay)",
+        "changedByUserRole": "system",
+        "notes": "Verified payment confirmed via webcraft_pay (Ref: pi_webcraft_pay_1789706001850_4ee15d36c28a). Amount: $95.",
+        "timestamp": "2026-09-18T04:33:22.135Z"
+      }
+    ],
+    "paymentStatus": "PAID",
+    "amount": 95,
+    "previewUrl": "https://preview.webcraft.ai/haven-realestate",
+    "createdAt": "2026-09-18T04:33:21.738Z",
+    "updatedAt": "2026-09-18T04:33:22.135Z",
+    "paymentProvider": "webcraft_pay",
+    "paymentReference": "pi_webcraft_pay_1789706001850_4ee15d36c28a"
+  },
+  {
+    "id": "ord_1789706002445_48f7n4",
+    "orderNumber": "WCW-2026-0028",
+    "type": "custom_website",
+    "customerId": "usr_1789705999540_tuqmu",
+    "customerName": "QA Tester",
+    "customerEmail": "qa_audit_1789705999@webcraft.ai",
+    "businessInfo": {
+      "businessName": "QA Enterprise 1789705999",
+      "industry": "technology",
+      "websitePurpose": "Online client acquisition and showcase platform",
+      "businessType": "General Business",
+      "businessDescription": "",
+      "industryCategory": "Other",
+      "location": "",
+      "businessHours": "",
+      "contactEmail": "qa_audit_1789705999@webcraft.ai",
+      "contactPhone": "",
+      "whatsappNumber": "",
+      "socialLinks": []
+    },
+    "requirements": {
+      "requiredPages": [
+        "Home",
+        "About",
+        "Services",
+        "Contact"
+      ],
+      "features": [
+        "Auth",
+        "Payments",
+        "Dashboard"
+      ],
+      "requiredSections": [],
+      "servicesOffered": [],
+      "productsOffered": [],
+      "featuresNeeded": [],
+      "targetAudience": "General public & customers",
+      "additionalNotes": ""
+    },
+    "designPreferences": {
+      "preferredColors": [
+        "#4F46E5",
+        "#06B6D4"
+      ],
+      "preferredStyle": "Modern Minimalist",
+      "preferredTypography": "Inter Sans",
+      "websiteMood": "Clean, Trustworthy & High Converting",
+      "referenceWebsiteUrl": "",
+      "logoUrl": "",
+      "assetUrls": [],
+      "additionalDesignNotes": ""
+    },
+    "package": {
+      "packageId": "pkg_starter",
+      "packageName": "Starter Launch",
+      "price": 299,
+      "currency": "USD"
+    },
+    "status": "NEW",
+    "statusHistory": [
+      {
+        "id": "hist_1789706002445_1",
+        "fromStatus": "NONE",
+        "toStatus": "NEW",
+        "changedByUserId": "usr_1789705999540_tuqmu",
+        "changedByUserName": "QA Tester",
+        "changedByUserRole": "customer",
+        "notes": "Custom website service order submitted and placed into queue.",
+        "timestamp": "2026-09-18T04:33:22.445Z"
+      }
+    ],
+    "paymentStatus": "UNPAID",
+    "amount": 299,
+    "createdAt": "2026-09-18T04:33:22.445Z",
+    "updatedAt": "2026-09-18T04:33:22.445Z"
+  },
+  {
+    "id": "ord_tpl_1789706223053_3exrdf",
+    "orderNumber": "TPL-2026-0029",
+    "type": "template",
+    "customerId": "usr_customer_01",
+    "customerName": "Sarah Jenkins",
+    "customerEmail": "user@webcraft.ai",
+    "vendorId": "usr_vendor_01",
+    "templateDetails": {
+      "templateId": "tpl_estate_haven07",
+      "templateName": "Haven & Horizon Luxury Real Estate",
+      "templateCategory": "Real Estate",
+      "templateThumbnail": "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&auto=format&fit=crop&q=80",
+      "vendorId": "usr_vendor_01",
+      "vendorName": "Elena Rostova",
+      "technology": "React + Tailwind CSS",
+      "version": "1.3.0"
+    },
+    "status": "CONFIRMED",
+    "statusHistory": [
+      {
+        "id": "hist_1789706223053_1",
+        "fromStatus": "NONE",
+        "toStatus": "CONFIRMED",
+        "changedByUserId": "usr_customer_01",
+        "changedByUserName": "Sarah Jenkins",
+        "changedByUserRole": "customer",
+        "notes": "Template marketplace order initiated for Haven & Horizon Luxury Real Estate.",
+        "timestamp": "2026-09-18T04:37:03.053Z"
+      },
+      {
+        "id": "hist_1789706223448_pay",
+        "fromStatus": "CONFIRMED",
+        "toStatus": "CONFIRMED",
+        "changedByUserId": "system_payment_gateway",
+        "changedByUserName": "Payment Gateway (webcraft_pay)",
+        "changedByUserRole": "system",
+        "notes": "Verified payment confirmed via webcraft_pay (Ref: pi_webcraft_pay_1789706223185_a244938d1e64). Amount: $95.",
+        "timestamp": "2026-09-18T04:37:03.448Z"
+      }
+    ],
+    "paymentStatus": "PAID",
+    "amount": 95,
+    "previewUrl": "https://preview.webcraft.ai/haven-realestate",
+    "createdAt": "2026-09-18T04:37:03.053Z",
+    "updatedAt": "2026-09-18T04:37:03.448Z",
+    "paymentProvider": "webcraft_pay",
+    "paymentReference": "pi_webcraft_pay_1789706223185_a244938d1e64"
+  },
+  {
+    "id": "ord_tpl_1789706407425_ahfm23",
+    "orderNumber": "TPL-2026-0030",
+    "type": "template",
+    "customerId": "usr_1789706406225_kdy6e",
+    "customerName": "QA Tester",
+    "customerEmail": "qa_audit_1789706405@webcraft.ai",
+    "vendorId": "usr_vendor_01",
+    "templateDetails": {
+      "templateId": "tpl_estate_haven07",
+      "templateName": "Haven & Horizon Luxury Real Estate",
+      "templateCategory": "Real Estate",
+      "templateThumbnail": "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&auto=format&fit=crop&q=80",
+      "vendorId": "usr_vendor_01",
+      "vendorName": "Elena Rostova",
+      "technology": "React + Tailwind CSS",
+      "version": "1.3.0"
+    },
+    "status": "CONFIRMED",
+    "statusHistory": [
+      {
+        "id": "hist_1789706407425_1",
+        "fromStatus": "NONE",
+        "toStatus": "CONFIRMED",
+        "changedByUserId": "usr_1789706406225_kdy6e",
+        "changedByUserName": "QA Tester",
+        "changedByUserRole": "customer",
+        "notes": "Template marketplace order initiated for Haven & Horizon Luxury Real Estate.",
+        "timestamp": "2026-09-18T04:40:07.425Z"
+      }
+    ],
+    "paymentStatus": "UNPAID",
+    "amount": 95,
+    "previewUrl": "https://preview.webcraft.ai/haven-realestate",
+    "createdAt": "2026-09-18T04:40:07.425Z",
+    "updatedAt": "2026-09-18T04:40:07.425Z"
+  },
+  {
+    "id": "ord_tpl_1789706407982_vqk1cv",
+    "orderNumber": "TPL-2026-0031",
+    "type": "template",
+    "customerId": "usr_1789706406225_kdy6e",
+    "customerName": "QA Tester",
+    "customerEmail": "qa_audit_1789706405@webcraft.ai",
+    "vendorId": "usr_vendor_01",
+    "templateDetails": {
+      "templateId": "tpl_estate_haven07",
+      "templateName": "Haven & Horizon Luxury Real Estate",
+      "templateCategory": "Real Estate",
+      "templateThumbnail": "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&auto=format&fit=crop&q=80",
+      "vendorId": "usr_vendor_01",
+      "vendorName": "Elena Rostova",
+      "technology": "React + Tailwind CSS",
+      "version": "1.3.0"
+    },
+    "status": "CONFIRMED",
+    "statusHistory": [
+      {
+        "id": "hist_1789706407982_1",
+        "fromStatus": "NONE",
+        "toStatus": "CONFIRMED",
+        "changedByUserId": "usr_1789706406225_kdy6e",
+        "changedByUserName": "QA Tester",
+        "changedByUserRole": "customer",
+        "notes": "Template marketplace order initiated for Haven & Horizon Luxury Real Estate.",
+        "timestamp": "2026-09-18T04:40:07.982Z"
+      },
+      {
+        "id": "hist_1789706408434_pay",
+        "fromStatus": "CONFIRMED",
+        "toStatus": "CONFIRMED",
+        "changedByUserId": "system_payment_gateway",
+        "changedByUserName": "Payment Gateway (webcraft_pay)",
+        "changedByUserRole": "system",
+        "notes": "Verified payment confirmed via webcraft_pay (Ref: pi_webcraft_pay_1789706408186_bb39fd58649e). Amount: $95.",
+        "timestamp": "2026-09-18T04:40:08.434Z"
+      }
+    ],
+    "paymentStatus": "PAID",
+    "amount": 95,
+    "previewUrl": "https://preview.webcraft.ai/haven-realestate",
+    "createdAt": "2026-09-18T04:40:07.982Z",
+    "updatedAt": "2026-09-18T04:40:08.434Z",
+    "paymentProvider": "webcraft_pay",
+    "paymentReference": "pi_webcraft_pay_1789706408186_bb39fd58649e"
+  },
+  {
+    "id": "ord_1789706408537_uegexp",
+    "orderNumber": "WCW-2026-0032",
+    "type": "custom_website",
+    "customerId": "usr_1789706406225_kdy6e",
+    "customerName": "QA Tester",
+    "customerEmail": "qa_audit_1789706405@webcraft.ai",
+    "businessInfo": {
+      "businessName": "QA Enterprise 1789706405",
+      "industry": "technology",
+      "websitePurpose": "Online client acquisition and showcase platform",
+      "businessType": "General Business",
+      "businessDescription": "",
+      "industryCategory": "Other",
+      "location": "",
+      "businessHours": "",
+      "contactEmail": "qa_audit_1789706405@webcraft.ai",
+      "contactPhone": "",
+      "whatsappNumber": "",
+      "socialLinks": []
+    },
+    "requirements": {
+      "requiredPages": [
+        "Home",
+        "About",
+        "Services",
+        "Contact"
+      ],
+      "features": [
+        "Auth",
+        "Payments",
+        "Dashboard"
+      ],
+      "requiredSections": [],
+      "servicesOffered": [],
+      "productsOffered": [],
+      "featuresNeeded": [],
+      "targetAudience": "General public & customers",
+      "additionalNotes": ""
+    },
+    "designPreferences": {
+      "preferredColors": [
+        "#4F46E5",
+        "#06B6D4"
+      ],
+      "preferredStyle": "Modern Minimalist",
+      "preferredTypography": "Inter Sans",
+      "websiteMood": "Clean, Trustworthy & High Converting",
+      "referenceWebsiteUrl": "",
+      "logoUrl": "",
+      "assetUrls": [],
+      "additionalDesignNotes": ""
+    },
+    "package": {
+      "packageId": "pkg_starter",
+      "packageName": "Starter Launch",
+      "price": 299,
+      "currency": "USD"
+    },
+    "status": "NEW",
+    "statusHistory": [
+      {
+        "id": "hist_1789706408537_1",
+        "fromStatus": "NONE",
+        "toStatus": "NEW",
+        "changedByUserId": "usr_1789706406225_kdy6e",
+        "changedByUserName": "QA Tester",
+        "changedByUserRole": "customer",
+        "notes": "Custom website service order submitted and placed into queue.",
+        "timestamp": "2026-09-18T04:40:08.537Z"
+      }
+    ],
+    "paymentStatus": "UNPAID",
+    "amount": 299,
+    "createdAt": "2026-09-18T04:40:08.537Z",
+    "updatedAt": "2026-09-18T04:40:08.537Z"
+  }
+]

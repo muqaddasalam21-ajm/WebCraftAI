@@ -1,0 +1,53 @@
+<svg width="480" height="300" viewBox="0 0 480 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="rest-bg" x1="0" y1="0" x2="480" y2="300" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#0F172A"/>
+      <stop offset="100%" stop-color="#020617"/>
+    </linearGradient>
+    <linearGradient id="gold-grad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#FCD34D"/>
+      <stop offset="100%" stop-color="#D97706"/>
+    </linearGradient>
+  </defs>
+  <!-- Card Canvas -->
+  <rect width="480" height="300" fill="url(#rest-bg)"/>
+
+  <!-- Browser Header -->
+  <rect width="480" height="32" fill="#1E293B"/>
+  <circle cx="20" cy="16" r="4" fill="#475569"/>
+  <circle cx="34" cy="16" r="4" fill="#475569"/>
+  <circle cx="48" cy="16" r="4" fill="#475569"/>
+  <rect x="150" y="8" width="180" height="16" rx="8" fill="#0F172A"/>
+  <text x="180" y="20" font-family="Inter, sans-serif" font-size="8" fill="#64748B">atelier-dining.webcraft.ai</text>
+
+  <!-- Website Navbar -->
+  <rect y="32" width="480" height="36" fill="#0F172A" fill-opacity="0.8"/>
+  <text x="24" y="55" font-family="Inter, sans-serif" font-size="13" font-weight="700" fill="url(#gold-grad)" letter-spacing="3">ATELIER · NOIR</text>
+  <text x="190" y="54" font-family="Inter, sans-serif" font-size="9" fill="#94A3B8">Menu</text>
+  <text x="235" y="54" font-family="Inter, sans-serif" font-size="9" fill="#94A3B8">Wine List</text>
+  <text x="290" y="54" font-family="Inter, sans-serif" font-size="9" fill="#94A3B8">Private Dining</text>
+  <rect x="380" y="42" width="76" height="20" rx="4" fill="url(#gold-grad)"/>
+  <text x="390" y="55" font-family="Inter, sans-serif" font-size="8" font-weight="700" fill="#0F172A">Book Table</text>
+
+  <!-- Hero Content -->
+  <text x="24" y="105" font-family="Inter, sans-serif" font-size="9" font-weight="600" fill="#FBBF24" letter-spacing="2">MICHELIN STAR GASTRONOMY</text>
+  <text x="24" y="138" font-family="Inter, sans-serif" font-size="22" font-weight="800" fill="#F8FAFC">A Symphony of<br/>Seasonal Flavors</text>
+  <text x="24" y="180" font-family="Inter, sans-serif" font-size="10" fill="#94A3B8">Experience modern French dining reimagined<br/>with rare seasonal harvests.</text>
+
+  <rect x="24" y="205" width="120" height="32" rx="6" fill="url(#gold-grad)"/>
+  <text x="36" y="225" font-family="Inter, sans-serif" font-size="10" font-weight="700" fill="#0F172A">Reserve for Tonight</text>
+
+  <!-- Culinary Visual Mockup -->
+  <g transform="translate(270, 80)">
+    <rect width="185" height="185" rx="14" fill="#1E293B" stroke="#334155"/>
+    <!-- Plate Mockup -->
+    <circle cx="92" cy="92" r="68" fill="#0F172A" stroke="#334155" stroke-width="2"/>
+    <circle cx="92" cy="92" r="48" fill="#1E293B"/>
+    <!-- Gourmet dish art -->
+    <ellipse cx="92" cy="92" rx="28" ry="18" fill="url(#gold-grad)" opacity="0.8"/>
+    <circle cx="85" cy="85" r="8" fill="#10B981"/>
+    <circle cx="102" cy="96" r="6" fill="#F43F5E"/>
+    <path d="M78 95 Q92 105 106 90" stroke="#FDE047" stroke-width="2" fill="none"/>
+    <text x="25" y="170" font-family="Inter, sans-serif" font-size="8" font-weight="600" fill="#E2E8F0">Tasting Menu · 7 Courses</text>
+  </g>
+</svg>

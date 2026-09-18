@@ -1,0 +1,16 @@
+[
+  {
+    "id": "prod_1789682335358_itmvr",
+    "name": "perfume",
+    "description": "",
+    "category": "Beauty & Skincare",
+    "price": 5000,
+    "image": "https://share.google/yGIjaAND9GGXdVcTG",
+    "stock": 33,
+    "vendorId": "usr_admin_01",
+    "vendorName": "Muqaddas Aslam",
+    "status": "published",
+    "createdAt": "2026-09-17T21:58:55.357Z",
+    "updatedAt": "2026-09-17T21:58:55.357Z"
+  }
+]

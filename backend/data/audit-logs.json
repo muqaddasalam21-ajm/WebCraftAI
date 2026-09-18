@@ -1,0 +1,4144 @@
+[
+  {
+    "id": "adt_1789709915672_978ac1bd",
+    "action": "USER_REGISTERED",
+    "userId": "usr_1789709915561_a9xvq",
+    "userName": "Ahmed Javed",
+    "userRole": "user",
+    "targetId": "usr_1789709915561_a9xvq",
+    "targetType": "USER",
+    "details": "User Ahmed Javed (ahmed.jv.911@gmail.com) registered.",
+    "createdAt": "2026-09-18T05:38:35.672Z"
+  },
+  {
+    "id": "adt_1789706411345_ef0d3a4c",
+    "action": "SYSTEM_ALERT",
+    "userId": "usr_admin_01",
+    "userName": "Muqaddas Aslam",
+    "userRole": "admin",
+    "targetId": "sales",
+    "targetType": "REPORT_EXPORT",
+    "details": "User Muqaddas Aslam exported sales report (last30days).",
+    "metadata": {
+      "reportType": "sales",
+      "dateRange": "last30days"
+    },
+    "createdAt": "2026-09-18T04:40:11.345Z"
+  },
+  {
+    "id": "adt_1789706410871_0fd9d2a1",
+    "action": "DEPLOYMENT_FAILED",
+    "userId": "usr_admin_01",
+    "userName": "QA Tester",
+    "userRole": "admin",
+    "targetId": "dep_1789706410710_40322b49",
+    "targetType": "DEPLOYMENT",
+    "details": "Deployment failed for project PRJ-2026-0012: No deployment provider is configured. Set DEPLOYMENT_PROVIDER and the required credentials in your environment variables to enable publishing.",
+    "createdAt": "2026-09-18T04:40:10.871Z"
+  },
+  {
+    "id": "adt_1789706410768_11fd9bde",
+    "action": "DEPLOYMENT_STARTED",
+    "userId": "usr_admin_01",
+    "userName": "QA Tester",
+    "userRole": "admin",
+    "targetId": "dep_1789706410710_40322b49",
+    "targetType": "DEPLOYMENT",
+    "details": "Deployment started for project PRJ-2026-0012 via none.",
+    "createdAt": "2026-09-18T04:40:10.768Z"
+  },
+  {
+    "id": "adt_1789706410688_94f8f035",
+    "action": "PROJECT_STATUS_CHANGED",
+    "userId": "Muqaddas Aslam",
+    "userName": "Staff",
+    "userRole": "staff",
+    "targetId": "prj_1789706408657_5c81f7fb",
+    "targetType": "PROJECT",
+    "details": "Project PRJ-2026-0012 status transitioned to DELIVERED.",
+    "createdAt": "2026-09-18T04:40:10.688Z"
+  },
+  {
+    "id": "adt_1789706410679_7a94068f",
+    "action": "PROJECT_DELIVERED",
+    "userId": "usr_admin_01",
+    "userName": "Muqaddas Aslam",
+    "userRole": "admin",
+    "targetId": "pdel_1789706410259_fd858a01",
+    "targetType": "project_delivery",
+    "details": "Project PRJ-2026-0012 delivered with live URL: https://live.webcraftai.com/site-prod.",
+    "metadata": {
+      "projectId": "prj_1789706408657_5c81f7fb",
+      "deliveryId": "pdel_1789706410259_fd858a01",
+      "deliveredUrl": "https://live.webcraftai.com/site-prod"
+    },
+    "createdAt": "2026-09-18T04:40:10.679Z"
+  },
+  {
+    "id": "adt_1789706410268_30f3a3b8",
+    "action": "PROJECT_STATUS_CHANGED",
+    "userId": "usr_admin_01",
+    "userName": "Muqaddas Aslam",
+    "userRole": "admin",
+    "targetId": "prj_1789706408657_5c81f7fb",
+    "targetType": "project",
+    "details": "Project PRJ-2026-0012 status changed to DELIVERED. Note: Project delivered. Live URL: https://live.webcraftai.com/site-prod. Notes: Production deployment completed and handed over.",
+    "metadata": {
+      "projectNumber": "PRJ-2026-0012",
+      "prevStatus": "COMPLETED",
+      "newStatus": "DELIVERED",
+      "note": "Project delivered. Live URL: https://live.webcraftai.com/site-prod. Notes: Production deployment completed and handed over."
+    },
+    "createdAt": "2026-09-18T04:40:10.268Z"
+  },
+  {
+    "id": "adt_1789706410245_f152e507",
+    "action": "PROJECT_STATUS_CHANGED",
+    "userId": "QA Tester",
+    "userName": "Staff",
+    "userRole": "staff",
+    "targetId": "prj_1789706408657_5c81f7fb",
+    "targetType": "PROJECT",
+    "details": "Project PRJ-2026-0012 status transitioned to COMPLETED.",
+    "createdAt": "2026-09-18T04:40:10.245Z"
+  },
+  {
+    "id": "adt_1789706410150_fe58a268",
+    "action": "PROJECT_APPROVED",
+    "userId": "usr_1789706406225_kdy6e",
+    "userName": "QA Tester",
+    "userRole": "user",
+    "targetId": "papp_1789706409974_733135b6",
+    "targetType": "project_approval",
+    "details": "Project PRJ-2026-0012 approved by customer (version v2).",
+    "metadata": {
+      "projectId": "prj_1789706408657_5c81f7fb",
+      "approvalId": "papp_1789706409974_733135b6",
+      "versionNumber": 2
+    },
+    "createdAt": "2026-09-18T04:40:10.150Z"
+  },
+  {
+    "id": "adt_1789706410001_90590224",
+    "action": "PROJECT_STATUS_CHANGED",
+    "userId": "usr_1789706406225_kdy6e",
+    "userName": "QA Tester",
+    "userRole": "user",
+    "targetId": "prj_1789706408657_5c81f7fb",
+    "targetType": "project",
+    "details": "Project PRJ-2026-0012 status changed to COMPLETED. Note: Project approved by customer (Version v2). Feedback: Approved! The design looks outstanding.",
+    "metadata": {
+      "projectNumber": "PRJ-2026-0012",
+      "prevStatus": "REVIEW",
+      "newStatus": "COMPLETED",
+      "note": "Project approved by customer (Version v2). Feedback: Approved! The design looks outstanding."
+    },
+    "createdAt": "2026-09-18T04:40:10.001Z"
+  },
+  {
+    "id": "adt_1789706409967_138135ef",
+    "action": "PROJECT_STATUS_CHANGED",
+    "userId": "Muqaddas Aslam",
+    "userName": "Staff",
+    "userRole": "staff",
+    "targetId": "prj_1789706408657_5c81f7fb",
+    "targetType": "PROJECT",
+    "details": "Project PRJ-2026-0012 status transitioned to REVIEW.",
+    "createdAt": "2026-09-18T04:40:09.967Z"
+  },
+  {
+    "id": "adt_1789706409962_825ecfbe",
+    "action": "PROJECT_VERSION_CREATED",
+    "userId": "usr_admin_01",
+    "userName": "Muqaddas Aslam",
+    "userRole": "admin",
+    "targetId": "pver_1789706409815_77d4da45",
+    "targetType": "project_version",
+    "details": "Created version v2 for project PRJ-2026-0012.",
+    "metadata": {
+      "projectId": "prj_1789706408657_5c81f7fb",
+      "versionId": "pver_1789706409815_77d4da45",
+      "versionNumber": 2
+    },
+    "createdAt": "2026-09-18T04:40:09.962Z"
+  },
+  {
+    "id": "adt_1789706409827_80333ea6",
+    "action": "PROJECT_STATUS_CHANGED",
+    "userId": "usr_admin_01",
+    "userName": "Muqaddas Aslam",
+    "userRole": "admin",
+    "targetId": "prj_1789706408657_5c81f7fb",
+    "targetType": "project",
+    "details": "Project PRJ-2026-0012 status changed to REVIEW. Note: Version 2 (\"Version 2.0 - Revised Draft\") submitted for customer review.",
+    "metadata": {
+      "projectNumber": "PRJ-2026-0012",
+      "prevStatus": "IN_PROGRESS",
+      "newStatus": "REVIEW",
+      "note": "Version 2 (\"Version 2.0 - Revised Draft\") submitted for customer review."
+    },
+    "createdAt": "2026-09-18T04:40:09.827Z"
+  },
+  {
+    "id": "adt_1789706409806_f1409faa",
+    "action": "PROJECT_STATUS_CHANGED",
+    "userId": "QA Tester",
+    "userName": "Staff",
+    "userRole": "staff",
+    "targetId": "prj_1789706408657_5c81f7fb",
+    "targetType": "PROJECT",
+    "details": "Project PRJ-2026-0012 status transitioned to IN_PROGRESS.",
+    "createdAt": "2026-09-18T04:40:09.807Z"
+  },
+  {
+    "id": "adt_1789706409799_fe1d28e5",
+    "action": "PROJECT_REVISION_REQUESTED",
+    "userId": "usr_1789706406225_kdy6e",
+    "userName": "QA Tester",
+    "userRole": "user",
+    "targetId": "prev_1789706409590_bced0ee3",
+    "targetType": "project_revision",
+    "details": "Revision #1 requested for project PRJ-2026-0012.",
+    "metadata": {
+      "projectId": "prj_1789706408657_5c81f7fb",
+      "revisionId": "prev_1789706409590_bced0ee3",
+      "revisionNumber": 1
+    },
+    "createdAt": "2026-09-18T04:40:09.799Z"
+  },
+  {
+    "id": "adt_1789706409619_22f8d76f",
+    "action": "PROJECT_STATUS_CHANGED",
+    "userId": "usr_1789706406225_kdy6e",
+    "userName": "QA Tester",
+    "userRole": "user",
+    "targetId": "prj_1789706408657_5c81f7fb",
+    "targetType": "project",
+    "details": "Project PRJ-2026-0012 status changed to IN_PROGRESS. Note: Revision #1 requested by customer: Please brighten hero background and refine tagline copy",
+    "metadata": {
+      "projectNumber": "PRJ-2026-0012",
+      "prevStatus": "REVIEW",
+      "newStatus": "IN_PROGRESS",
+      "note": "Revision #1 requested by customer: Please brighten hero background and refine tagline copy"
+    },
+    "createdAt": "2026-09-18T04:40:09.619Z"
+  },
+  {
+    "id": "adt_1789706409581_a8aac8e3",
+    "action": "PROJECT_STATUS_CHANGED",
+    "userId": "Muqaddas Aslam",
+    "userName": "Staff",
+    "userRole": "staff",
+    "targetId": "prj_1789706408657_5c81f7fb",
+    "targetType": "PROJECT",
+    "details": "Project PRJ-2026-0012 status transitioned to REVIEW.",
+    "createdAt": "2026-09-18T04:40:09.581Z"
+  },
+  {
+    "id": "adt_1789706409577_a4de5c30",
+    "action": "PROJECT_VERSION_CREATED",
+    "userId": "usr_admin_01",
+    "userName": "Muqaddas Aslam",
+    "userRole": "admin",
+    "targetId": "pver_1789706409390_e97cc674",
+    "targetType": "project_version",
+    "details": "Created version v1 for project PRJ-2026-0012.",
+    "metadata": {
+      "projectId": "prj_1789706408657_5c81f7fb",
+      "versionId": "pver_1789706409390_e97cc674",
+      "versionNumber": 1
+    },
+    "createdAt": "2026-09-18T04:40:09.577Z"
+  },
+  {
+    "id": "adt_1789706409399_bf36df00",
+    "action": "PROJECT_STATUS_CHANGED",
+    "userId": "usr_admin_01",
+    "userName": "Muqaddas Aslam",
+    "userRole": "admin",
+    "targetId": "prj_1789706408657_5c81f7fb",
+    "targetType": "project",
+    "details": "Project PRJ-2026-0012 status changed to REVIEW. Note: Version 1 (\"Version 1.0 - Initial Draft\") submitted for customer review.",
+    "metadata": {
+      "projectNumber": "PRJ-2026-0012",
+      "prevStatus": "IN_PROGRESS",
+      "newStatus": "REVIEW",
+      "note": "Version 1 (\"Version 1.0 - Initial Draft\") submitted for customer review."
+    },
+    "createdAt": "2026-09-18T04:40:09.399Z"
+  },
+  {
+    "id": "adt_1789706409384_d500cf83",
+    "action": "PROJECT_STATUS_CHANGED",
+    "userId": "Muqaddas Aslam",
+    "userName": "Staff",
+    "userRole": "staff",
+    "targetId": "prj_1789706408657_5c81f7fb",
+    "targetType": "PROJECT",
+    "details": "Project PRJ-2026-0012 status transitioned to IN_PROGRESS.",
+    "createdAt": "2026-09-18T04:40:09.384Z"
+  },
+  {
+    "id": "adt_1789706409267_f3e4fc6b",
+    "action": "PROJECT_STATUS_CHANGED",
+    "userId": "usr_admin_01",
+    "userName": "Muqaddas Aslam",
+    "userRole": "admin",
+    "targetId": "prj_1789706408657_5c81f7fb",
+    "targetType": "project",
+    "details": "Project PRJ-2026-0012 status changed to IN_PROGRESS. Note: Resumed development with client assets",
+    "metadata": {
+      "projectNumber": "PRJ-2026-0012",
+      "prevStatus": "ON_HOLD",
+      "newStatus": "IN_PROGRESS",
+      "note": "Resumed development with client assets"
+    },
+    "createdAt": "2026-09-18T04:40:09.267Z"
+  },
+  {
+    "id": "adt_1789706409250_01184c3e",
+    "action": "PROJECT_STATUS_CHANGED",
+    "userId": "Muqaddas Aslam",
+    "userName": "Staff",
+    "userRole": "staff",
+    "targetId": "prj_1789706408657_5c81f7fb",
+    "targetType": "PROJECT",
+    "details": "Project PRJ-2026-0012 status transitioned to ON_HOLD.",
+    "createdAt": "2026-09-18T04:40:09.250Z"
+  },
+  {
+    "id": "adt_1789706409113_edd4a6c6",
+    "action": "PROJECT_STATUS_CHANGED",
+    "userId": "usr_admin_01",
+    "userName": "Muqaddas Aslam",
+    "userRole": "admin",
+    "targetId": "prj_1789706408657_5c81f7fb",
+    "targetType": "project",
+    "details": "Project PRJ-2026-0012 status changed to ON_HOLD. Note: Waiting on client brand assets",
+    "metadata": {
+      "projectNumber": "PRJ-2026-0012",
+      "prevStatus": "IN_PROGRESS",
+      "newStatus": "ON_HOLD",
+      "note": "Waiting on client brand assets"
+    },
+    "createdAt": "2026-09-18T04:40:09.113Z"
+  },
+  {
+    "id": "adt_1789706409094_18677078",
+    "action": "PROJECT_STATUS_CHANGED",
+    "userId": "Muqaddas Aslam",
+    "userName": "Staff",
+    "userRole": "staff",
+    "targetId": "prj_1789706408657_5c81f7fb",
+    "targetType": "PROJECT",
+    "details": "Project PRJ-2026-0012 status transitioned to IN_PROGRESS.",
+    "createdAt": "2026-09-18T04:40:09.095Z"
+  },
+  {
+    "id": "adt_1789706408990_d1388d08",
+    "action": "PROJECT_STATUS_CHANGED",
+    "userId": "usr_admin_01",
+    "userName": "Muqaddas Aslam",
+    "userRole": "admin",
+    "targetId": "prj_1789706408657_5c81f7fb",
+    "targetType": "project",
+    "details": "Project PRJ-2026-0012 status changed to IN_PROGRESS. Note: Development started",
+    "metadata": {
+      "projectNumber": "PRJ-2026-0012",
+      "prevStatus": "ASSIGNED",
+      "newStatus": "IN_PROGRESS",
+      "note": "Development started"
+    },
+    "createdAt": "2026-09-18T04:40:08.991Z"
+  },
+  {
+    "id": "adt_1789706408962_6d0ffef1",
+    "action": "PROJECT_STATUS_CHANGED",
+    "userId": "Muqaddas Aslam",
+    "userName": "Staff",
+    "userRole": "staff",
+    "targetId": "prj_1789706408657_5c81f7fb",
+    "targetType": "PROJECT",
+    "details": "Project PRJ-2026-0012 status transitioned to ASSIGNED.",
+    "createdAt": "2026-09-18T04:40:08.963Z"
+  },
+  {
+    "id": "adt_1789706408731_69618655",
+    "action": "PROJECT_STATUS_CHANGED",
+    "userId": "usr_admin_01",
+    "userName": "Muqaddas Aslam",
+    "userRole": "admin",
+    "targetId": "prj_1789706408657_5c81f7fb",
+    "targetType": "project",
+    "details": "Project PRJ-2026-0012 status changed to ASSIGNED. Note: Assigned to development team",
+    "metadata": {
+      "projectNumber": "PRJ-2026-0012",
+      "prevStatus": "PLANNING",
+      "newStatus": "ASSIGNED",
+      "note": "Assigned to development team"
+    },
+    "createdAt": "2026-09-18T04:40:08.731Z"
+  },
+  {
+    "id": "adt_1789706408669_0b587c42",
+    "action": "PROJECT_CREATED",
+    "userId": "usr_admin_01",
+    "userName": "Muqaddas Aslam",
+    "userRole": "admin",
+    "targetId": "prj_1789706408657_5c81f7fb",
+    "targetType": "project",
+    "details": "Created project PRJ-2026-0012 (QA Audit Project 1789706405) from Order WCW-2026-0032.",
+    "metadata": {
+      "projectNumber": "PRJ-2026-0012",
+      "orderId": "ord_1789706408537_uegexp",
+      "status": "PLANNING"
+    },
+    "createdAt": "2026-09-18T04:40:08.669Z"
+  },
+  {
+    "id": "adt_1789706408652_1a6e14f7",
+    "action": "CUSTOM_WEBSITE_ORDER_CREATED",
+    "userId": "usr_1789706406225_kdy6e",
+    "userName": "QA Tester",
+    "userRole": "customer",
+    "targetId": "ord_1789706408537_uegexp",
+    "targetType": "ORDER",
+    "details": "Custom website request WCW-2026-0032 placed for QA Enterprise 1789706405.",
+    "createdAt": "2026-09-18T04:40:08.652Z"
+  },
+  {
+    "id": "adt_1789706408639_3dbab6f2",
+    "action": "CUSTOM_WEBSITE_ORDER_CREATED",
+    "userId": "usr_1789706406225_kdy6e",
+    "userName": "QA Tester",
+    "userRole": "user",
+    "targetId": "ord_1789706408537_uegexp",
+    "targetType": "ORDER",
+    "details": "Custom website order WCW-2026-0032 placed by QA Tester ($299).",
+    "createdAt": "2026-09-18T04:40:08.639Z"
+  },
+  {
+    "id": "adt_1789706408517_a7e5d540",
+    "action": "AI_WEBSITE_GENERATED",
+    "userId": "usr_1789706406225_kdy6e",
+    "userName": "QA Tester",
+    "userRole": "user",
+    "targetId": "aiw_1789706408489_8b8e9538",
+    "targetType": "ai_website",
+    "details": "Generated canonical AI website specification for \"Alpha Tech 1789706405 | Official Website\" (technology).",
+    "metadata": {
+      "websiteId": "aiw_1789706408489_8b8e9538",
+      "provider": "webcraft-engine",
+      "version": 1
+    },
+    "createdAt": "2026-09-18T04:40:08.517Z"
+  },
+  {
+    "id": "adt_1789706408410_ed214e81",
+    "action": "PAYMENT_SUCCESS",
+    "userId": "usr_1789706406225_kdy6e",
+    "userName": "QA Tester",
+    "userRole": "customer",
+    "targetId": "pay_1789706408186_98111af8",
+    "targetType": "PAYMENT",
+    "details": "Payment pay_1789706408186_98111af8 status updated to PAID for order TPL-2026-0031.",
+    "metadata": {
+      "paymentId": "pay_1789706408186_98111af8",
+      "orderId": "ord_tpl_1789706407982_vqk1cv",
+      "status": "PAID"
+    },
+    "createdAt": "2026-09-18T04:40:08.411Z"
+  },
+  {
+    "id": "adt_1789706408403_7ce11c7b",
+    "action": "TEMPLATE_PURCHASED",
+    "userId": "usr_1789706406225_kdy6e",
+    "userName": "QA Tester",
+    "userRole": "customer",
+    "targetId": "ord_tpl_1789706407982_vqk1cv",
+    "targetType": "ORDER",
+    "details": "Template Haven & Horizon Luxury Real Estate purchased for $95.",
+    "createdAt": "2026-09-18T04:40:08.403Z"
+  },
+  {
+    "id": "adt_1789706408187_72a5d706",
+    "action": "PAYMENT_INITIATED",
+    "userId": "usr_1789706406225_kdy6e",
+    "userName": "QA Tester",
+    "userRole": "customer",
+    "targetId": "pay_1789706408186_98111af8",
+    "targetType": "PAYMENT",
+    "details": "Payment initiated for order TPL-2026-0031 ($95 USD) via webcraft_pay.",
+    "metadata": {
+      "paymentId": "pay_1789706408186_98111af8",
+      "orderId": "ord_tpl_1789706407982_vqk1cv",
+      "provider": "webcraft_pay"
+    },
+    "createdAt": "2026-09-18T04:40:08.188Z"
+  },
+  {
+    "id": "adt_1789706407959_6fd4337a",
+    "action": "PAYMENT_FAILED",
+    "userId": "usr_1789706406225_kdy6e",
+    "userName": "QA Tester",
+    "userRole": "customer",
+    "targetId": "pay_1789706407525_f0b61e27",
+    "targetType": "PAYMENT",
+    "details": "Payment pay_1789706407525_f0b61e27 status updated to FAILED for order TPL-2026-0030.",
+    "metadata": {
+      "paymentId": "pay_1789706407525_f0b61e27",
+      "orderId": "ord_tpl_1789706407425_ahfm23",
+      "status": "FAILED"
+    },
+    "createdAt": "2026-09-18T04:40:07.959Z"
+  },
+  {
+    "id": "adt_1789706407950_ca8782c2",
+    "action": "TEMPLATE_PURCHASED",
+    "userId": "usr_1789706406225_kdy6e",
+    "userName": "QA Tester",
+    "userRole": "customer",
+    "targetId": "ord_tpl_1789706407425_ahfm23",
+    "targetType": "ORDER",
+    "details": "Template Haven & Horizon Luxury Real Estate purchased for $95.",
+    "createdAt": "2026-09-18T04:40:07.950Z"
+  },
+  {
+    "id": "adt_1789706407527_88af7970",
+    "action": "PAYMENT_INITIATED",
+    "userId": "usr_1789706406225_kdy6e",
+    "userName": "QA Tester",
+    "userRole": "customer",
+    "targetId": "pay_1789706407525_f0b61e27",
+    "targetType": "PAYMENT",
+    "details": "Payment initiated for order TPL-2026-0030 ($95 USD) via webcraft_pay.",
+    "metadata": {
+      "paymentId": "pay_1789706407525_f0b61e27",
+      "orderId": "ord_tpl_1789706407425_ahfm23",
+      "provider": "webcraft_pay"
+    },
+    "createdAt": "2026-09-18T04:40:07.527Z"
+  },
+  {
+    "id": "adt_1789706406426_40c4d631",
+    "action": "USER_REGISTERED",
+    "userId": "usr_1789706406225_kdy6e",
+    "userName": "QA Tester",
+    "userRole": "user",
+    "targetId": "usr_1789706406225_kdy6e",
+    "targetType": "USER",
+    "details": "User QA Tester (qa_audit_1789706405@webcraft.ai) registered.",
+    "createdAt": "2026-09-18T04:40:06.426Z"
+  },
+  {
+    "id": "adt_1789706350464_5df7190c",
+    "action": "DEPLOYMENT_FAILED",
+    "userId": "usr_admin_01",
+    "userName": "QA Tester",
+    "userRole": "admin",
+    "targetId": "dep_1789706350188_aceb5c42",
+    "targetType": "DEPLOYMENT",
+    "details": "Deployment failed for project PRJ-2026-0011: No deployment provider is configured. Set DEPLOYMENT_PROVIDER and the required credentials in your environment variables to enable publishing.",
+    "createdAt": "2026-09-18T04:39:10.464Z"
+  },
+  {
+    "id": "adt_1789706350261_5a99ff28",
+    "action": "DEPLOYMENT_STARTED",
+    "userId": "usr_admin_01",
+    "userName": "QA Tester",
+    "userRole": "admin",
+    "targetId": "dep_1789706350188_aceb5c42",
+    "targetType": "DEPLOYMENT",
+    "details": "Deployment started for project PRJ-2026-0011 via none.",
+    "createdAt": "2026-09-18T04:39:10.261Z"
+  },
+  {
+    "id": "adt_1789706223428_ecdbe781",
+    "action": "PAYMENT_SUCCESS",
+    "userId": "usr_customer_01",
+    "userName": "Sarah Jenkins",
+    "userRole": "customer",
+    "targetId": "pay_1789706223185_de855c8d",
+    "targetType": "PAYMENT",
+    "details": "Payment pay_1789706223185_de855c8d status updated to PAID for order TPL-2026-0029.",
+    "metadata": {
+      "paymentId": "pay_1789706223185_de855c8d",
+      "orderId": "ord_tpl_1789706223053_3exrdf",
+      "status": "PAID"
+    },
+    "createdAt": "2026-09-18T04:37:03.428Z"
+  },
+  {
+    "id": "adt_1789706223421_01f80fe9",
+    "action": "TEMPLATE_PURCHASED",
+    "userId": "usr_customer_01",
+    "userName": "Sarah Jenkins",
+    "userRole": "customer",
+    "targetId": "ord_tpl_1789706223053_3exrdf",
+    "targetType": "ORDER",
+    "details": "Template Haven & Horizon Luxury Real Estate purchased for $95.",
+    "createdAt": "2026-09-18T04:37:03.421Z"
+  },
+  {
+    "id": "adt_1789706223187_a6e8bffb",
+    "action": "PAYMENT_INITIATED",
+    "userId": "usr_customer_01",
+    "userName": "Sarah Jenkins",
+    "userRole": "customer",
+    "targetId": "pay_1789706223185_de855c8d",
+    "targetType": "PAYMENT",
+    "details": "Payment initiated for order TPL-2026-0029 ($95 USD) via webcraft_pay.",
+    "metadata": {
+      "paymentId": "pay_1789706223185_de855c8d",
+      "orderId": "ord_tpl_1789706223053_3exrdf",
+      "provider": "webcraft_pay"
+    },
+    "createdAt": "2026-09-18T04:37:03.187Z"
+  },
+  {
+    "id": "adt_1789706005586_b158be4a",
+    "action": "SYSTEM_ALERT",
+    "userId": "usr_admin_01",
+    "userName": "Muqaddas Aslam",
+    "userRole": "admin",
+    "targetId": "sales",
+    "targetType": "REPORT_EXPORT",
+    "details": "User Muqaddas Aslam exported sales report (last30days).",
+    "metadata": {
+      "reportType": "sales",
+      "dateRange": "last30days"
+    },
+    "createdAt": "2026-09-18T04:33:25.586Z"
+  },
+  {
+    "id": "adt_1789706005482_af908eca",
+    "action": "PROJECT_STATUS_CHANGED",
+    "userId": "Muqaddas Aslam",
+    "userName": "Staff",
+    "userRole": "staff",
+    "targetId": "prj_1789706002669_5e15c45c",
+    "targetType": "PROJECT",
+    "details": "Project PRJ-2026-0011 status transitioned to DELIVERED.",
+    "createdAt": "2026-09-18T04:33:25.482Z"
+  },
+  {
+    "id": "adt_1789706005471_45bace0f",
+    "action": "PROJECT_DELIVERED",
+    "userId": "usr_admin_01",
+    "userName": "Muqaddas Aslam",
+    "userRole": "admin",
+    "targetId": "pdel_1789706005189_b7fd5425",
+    "targetType": "project_delivery",
+    "details": "Project PRJ-2026-0011 delivered with live URL: https://live.webcraftai.com/site-prod.",
+    "metadata": {
+      "projectId": "prj_1789706002669_5e15c45c",
+      "deliveryId": "pdel_1789706005189_b7fd5425",
+      "deliveredUrl": "https://live.webcraftai.com/site-prod"
+    },
+    "createdAt": "2026-09-18T04:33:25.471Z"
+  },
+  {
+    "id": "adt_1789706005199_848da7a3",
+    "action": "PROJECT_STATUS_CHANGED",
+    "userId": "usr_admin_01",
+    "userName": "Muqaddas Aslam",
+    "userRole": "admin",
+    "targetId": "prj_1789706002669_5e15c45c",
+    "targetType": "project",
+    "details": "Project PRJ-2026-0011 status changed to DELIVERED. Note: Project delivered. Live URL: https://live.webcraftai.com/site-prod. Notes: Production deployment completed and handed over.",
+    "metadata": {
+      "projectNumber": "PRJ-2026-0011",
+      "prevStatus": "COMPLETED",
+      "newStatus": "DELIVERED",
+      "note": "Project delivered. Live URL: https://live.webcraftai.com/site-prod. Notes: Production deployment completed and handed over."
+    },
+    "createdAt": "2026-09-18T04:33:25.199Z"
+  },
+  {
+    "id": "adt_1789706005178_539b397f",
+    "action": "PROJECT_STATUS_CHANGED",
+    "userId": "QA Tester",
+    "userName": "Staff",
+    "userRole": "staff",
+    "targetId": "prj_1789706002669_5e15c45c",
+    "targetType": "PROJECT",
+    "details": "Project PRJ-2026-0011 status transitioned to COMPLETED.",
+    "createdAt": "2026-09-18T04:33:25.178Z"
+  },
+  {
+    "id": "adt_1789706004941_5a36e79a",
+    "action": "PROJECT_APPROVED",
+    "userId": "usr_1789705999540_tuqmu",
+    "userName": "QA Tester",
+    "userRole": "user",
+    "targetId": "papp_1789706004515_3346fc2b",
+    "targetType": "project_approval",
+    "details": "Project PRJ-2026-0011 approved by customer (version v2).",
+    "metadata": {
+      "projectId": "prj_1789706002669_5e15c45c",
+      "approvalId": "papp_1789706004515_3346fc2b",
+      "versionNumber": 2
+    },
+    "createdAt": "2026-09-18T04:33:24.941Z"
+  },
+  {
+    "id": "adt_1789706004570_e450717c",
+    "action": "PROJECT_STATUS_CHANGED",
+    "userId": "usr_1789705999540_tuqmu",
+    "userName": "QA Tester",
+    "userRole": "user",
+    "targetId": "prj_1789706002669_5e15c45c",
+    "targetType": "project",
+    "details": "Project PRJ-2026-0011 status changed to COMPLETED. Note: Project approved by customer (Version v2). Feedback: Approved! The design looks outstanding.",
+    "metadata": {
+      "projectNumber": "PRJ-2026-0011",
+      "prevStatus": "REVIEW",
+      "newStatus": "COMPLETED",
+      "note": "Project approved by customer (Version v2). Feedback: Approved! The design looks outstanding."
+    },
+    "createdAt": "2026-09-18T04:33:24.570Z"
+  },
+  {
+    "id": "adt_1789706004509_0dc69615",
+    "action": "PROJECT_STATUS_CHANGED",
+    "userId": "Muqaddas Aslam",
+    "userName": "Staff",
+    "userRole": "staff",
+    "targetId": "prj_1789706002669_5e15c45c",
+    "targetType": "PROJECT",
+    "details": "Project PRJ-2026-0011 status transitioned to REVIEW.",
+    "createdAt": "2026-09-18T04:33:24.510Z"
+  },
+  {
+    "id": "adt_1789706004506_a5e3e534",
+    "action": "PROJECT_VERSION_CREATED",
+    "userId": "usr_admin_01",
+    "userName": "Muqaddas Aslam",
+    "userRole": "admin",
+    "targetId": "pver_1789706004149_63744234",
+    "targetType": "project_version",
+    "details": "Created version v2 for project PRJ-2026-0011.",
+    "metadata": {
+      "projectId": "prj_1789706002669_5e15c45c",
+      "versionId": "pver_1789706004149_63744234",
+      "versionNumber": 2
+    },
+    "createdAt": "2026-09-18T04:33:24.506Z"
+  },
+  {
+    "id": "adt_1789706004199_bc7c304a",
+    "action": "PROJECT_STATUS_CHANGED",
+    "userId": "usr_admin_01",
+    "userName": "Muqaddas Aslam",
+    "userRole": "admin",
+    "targetId": "prj_1789706002669_5e15c45c",
+    "targetType": "project",
+    "details": "Project PRJ-2026-0011 status changed to REVIEW. Note: Version 2 (\"Version 2.0 - Revised Draft\") submitted for customer review.",
+    "metadata": {
+      "projectNumber": "PRJ-2026-0011",
+      "prevStatus": "IN_PROGRESS",
+      "newStatus": "REVIEW",
+      "note": "Version 2 (\"Version 2.0 - Revised Draft\") submitted for customer review."
+    },
+    "createdAt": "2026-09-18T04:33:24.199Z"
+  },
+  {
+    "id": "adt_1789706004139_cca33824",
+    "action": "PROJECT_STATUS_CHANGED",
+    "userId": "QA Tester",
+    "userName": "Staff",
+    "userRole": "staff",
+    "targetId": "prj_1789706002669_5e15c45c",
+    "targetType": "PROJECT",
+    "details": "Project PRJ-2026-0011 status transitioned to IN_PROGRESS.",
+    "createdAt": "2026-09-18T04:33:24.139Z"
+  },
+  {
+    "id": "adt_1789706004125_d729f47c",
+    "action": "PROJECT_REVISION_REQUESTED",
+    "userId": "usr_1789705999540_tuqmu",
+    "userName": "QA Tester",
+    "userRole": "user",
+    "targetId": "prev_1789706003986_15f45ac4",
+    "targetType": "project_revision",
+    "details": "Revision #1 requested for project PRJ-2026-0011.",
+    "metadata": {
+      "projectId": "prj_1789706002669_5e15c45c",
+      "revisionId": "prev_1789706003986_15f45ac4",
+      "revisionNumber": 1
+    },
+    "createdAt": "2026-09-18T04:33:24.125Z"
+  },
+  {
+    "id": "adt_1789706004027_320e33d4",
+    "action": "PROJECT_STATUS_CHANGED",
+    "userId": "usr_1789705999540_tuqmu",
+    "userName": "QA Tester",
+    "userRole": "user",
+    "targetId": "prj_1789706002669_5e15c45c",
+    "targetType": "project",
+    "details": "Project PRJ-2026-0011 status changed to IN_PROGRESS. Note: Revision #1 requested by customer: Please brighten hero background and refine tagline copy",
+    "metadata": {
+      "projectNumber": "PRJ-2026-0011",
+      "prevStatus": "REVIEW",
+      "newStatus": "IN_PROGRESS",
+      "note": "Revision #1 requested by customer: Please brighten hero background and refine tagline copy"
+    },
+    "createdAt": "2026-09-18T04:33:24.027Z"
+  },
+  {
+    "id": "adt_1789706003979_0c328903",
+    "action": "PROJECT_STATUS_CHANGED",
+    "userId": "Muqaddas Aslam",
+    "userName": "Staff",
+    "userRole": "staff",
+    "targetId": "prj_1789706002669_5e15c45c",
+    "targetType": "PROJECT",
+    "details": "Project PRJ-2026-0011 status transitioned to REVIEW.",
+    "createdAt": "2026-09-18T04:33:23.979Z"
+  },
+  {
+    "id": "adt_1789706003975_f2b13fc8",
+    "action": "PROJECT_VERSION_CREATED",
+    "userId": "usr_admin_01",
+    "userName": "Muqaddas Aslam",
+    "userRole": "admin",
+    "targetId": "pver_1789706003796_d146cfcd",
+    "targetType": "project_version",
+    "details": "Created version v1 for project PRJ-2026-0011.",
+    "metadata": {
+      "projectId": "prj_1789706002669_5e15c45c",
+      "versionId": "pver_1789706003796_d146cfcd",
+      "versionNumber": 1
+    },
+    "createdAt": "2026-09-18T04:33:23.975Z"
+  },
+  {
+    "id": "adt_1789706003807_86bc4739",
+    "action": "PROJECT_STATUS_CHANGED",
+    "userId": "usr_admin_01",
+    "userName": "Muqaddas Aslam",
+    "userRole": "admin",
+    "targetId": "prj_1789706002669_5e15c45c",
+    "targetType": "project",
+    "details": "Project PRJ-2026-0011 status changed to REVIEW. Note: Version 1 (\"Version 1.0 - Initial Draft\") submitted for customer review.",
+    "metadata": {
+      "projectNumber": "PRJ-2026-0011",
+      "prevStatus": "IN_PROGRESS",
+      "newStatus": "REVIEW",
+      "note": "Version 1 (\"Version 1.0 - Initial Draft\") submitted for customer review."
+    },
+    "createdAt": "2026-09-18T04:33:23.807Z"
+  },
+  {
+    "id": "adt_1789706003790_184e23e0",
+    "action": "PROJECT_STATUS_CHANGED",
+    "userId": "Muqaddas Aslam",
+    "userName": "Staff",
+    "userRole": "staff",
+    "targetId": "prj_1789706002669_5e15c45c",
+    "targetType": "PROJECT",
+    "details": "Project PRJ-2026-0011 status transitioned to IN_PROGRESS.",
+    "createdAt": "2026-09-18T04:33:23.790Z"
+  },
+  {
+    "id": "adt_1789706003638_7777e37c",
+    "action": "PROJECT_STATUS_CHANGED",
+    "userId": "usr_admin_01",
+    "userName": "Muqaddas Aslam",
+    "userRole": "admin",
+    "targetId": "prj_1789706002669_5e15c45c",
+    "targetType": "project",
+    "details": "Project PRJ-2026-0011 status changed to IN_PROGRESS. Note: Resumed development with client assets",
+    "metadata": {
+      "projectNumber": "PRJ-2026-0011",
+      "prevStatus": "ON_HOLD",
+      "newStatus": "IN_PROGRESS",
+      "note": "Resumed development with client assets"
+    },
+    "createdAt": "2026-09-18T04:33:23.638Z"
+  },
+  {
+    "id": "adt_1789706003613_e22ddb1d",
+    "action": "PROJECT_STATUS_CHANGED",
+    "userId": "Muqaddas Aslam",
+    "userName": "Staff",
+    "userRole": "staff",
+    "targetId": "prj_1789706002669_5e15c45c",
+    "targetType": "PROJECT",
+    "details": "Project PRJ-2026-0011 status transitioned to ON_HOLD.",
+    "createdAt": "2026-09-18T04:33:23.613Z"
+  },
+  {
+    "id": "adt_1789706003486_b51d54ba",
+    "action": "PROJECT_STATUS_CHANGED",
+    "userId": "usr_admin_01",
+    "userName": "Muqaddas Aslam",
+    "userRole": "admin",
+    "targetId": "prj_1789706002669_5e15c45c",
+    "targetType": "project",
+    "details": "Project PRJ-2026-0011 status changed to ON_HOLD. Note: Waiting on client brand assets",
+    "metadata": {
+      "projectNumber": "PRJ-2026-0011",
+      "prevStatus": "IN_PROGRESS",
+      "newStatus": "ON_HOLD",
+      "note": "Waiting on client brand assets"
+    },
+    "createdAt": "2026-09-18T04:33:23.486Z"
+  },
+  {
+    "id": "adt_1789706003472_c8d34366",
+    "action": "PROJECT_STATUS_CHANGED",
+    "userId": "Muqaddas Aslam",
+    "userName": "Staff",
+    "userRole": "staff",
+    "targetId": "prj_1789706002669_5e15c45c",
+    "targetType": "PROJECT",
+    "details": "Project PRJ-2026-0011 status transitioned to IN_PROGRESS.",
+    "createdAt": "2026-09-18T04:33:23.472Z"
+  },
+  {
+    "id": "adt_1789706003248_fb24f66f",
+    "action": "PROJECT_STATUS_CHANGED",
+    "userId": "usr_admin_01",
+    "userName": "Muqaddas Aslam",
+    "userRole": "admin",
+    "targetId": "prj_1789706002669_5e15c45c",
+    "targetType": "project",
+    "details": "Project PRJ-2026-0011 status changed to IN_PROGRESS. Note: Development started",
+    "metadata": {
+      "projectNumber": "PRJ-2026-0011",
+      "prevStatus": "ASSIGNED",
+      "newStatus": "IN_PROGRESS",
+      "note": "Development started"
+    },
+    "createdAt": "2026-09-18T04:33:23.248Z"
+  },
+  {
+    "id": "adt_1789706003144_dc45b949",
+    "action": "PROJECT_STATUS_CHANGED",
+    "userId": "Muqaddas Aslam",
+    "userName": "Staff",
+    "userRole": "staff",
+    "targetId": "prj_1789706002669_5e15c45c",
+    "targetType": "PROJECT",
+    "details": "Project PRJ-2026-0011 status transitioned to ASSIGNED.",
+    "createdAt": "2026-09-18T04:33:23.144Z"
+  },
+  {
+    "id": "adt_1789706002970_6d14da3e",
+    "action": "PROJECT_STATUS_CHANGED",
+    "userId": "usr_admin_01",
+    "userName": "Muqaddas Aslam",
+    "userRole": "admin",
+    "targetId": "prj_1789706002669_5e15c45c",
+    "targetType": "project",
+    "details": "Project PRJ-2026-0011 status changed to ASSIGNED. Note: Assigned to development team",
+    "metadata": {
+      "projectNumber": "PRJ-2026-0011",
+      "prevStatus": "PLANNING",
+      "newStatus": "ASSIGNED",
+      "note": "Assigned to development team"
+    },
+    "createdAt": "2026-09-18T04:33:22.970Z"
+  },
+  {
+    "id": "adt_1789706002795_533c9b53",
+    "action": "PROJECT_CREATED",
+    "userId": "usr_admin_01",
+    "userName": "Muqaddas Aslam",
+    "userRole": "admin",
+    "targetId": "prj_1789706002669_5e15c45c",
+    "targetType": "project",
+    "details": "Created project PRJ-2026-0011 (QA Audit Project 1789705999) from Order WCW-2026-0028.",
+    "metadata": {
+      "projectNumber": "PRJ-2026-0011",
+      "orderId": "ord_1789706002445_48f7n4",
+      "status": "PLANNING"
+    },
+    "createdAt": "2026-09-18T04:33:22.795Z"
+  },
+  {
+    "id": "adt_1789706002590_a5089009",
+    "action": "CUSTOM_WEBSITE_ORDER_CREATED",
+    "userId": "usr_1789705999540_tuqmu",
+    "userName": "QA Tester",
+    "userRole": "customer",
+    "targetId": "ord_1789706002445_48f7n4",
+    "targetType": "ORDER",
+    "details": "Custom website request WCW-2026-0028 placed for QA Enterprise 1789705999.",
+    "createdAt": "2026-09-18T04:33:22.594Z"
+  },
+  {
+    "id": "adt_1789706002583_404f877e",
+    "action": "CUSTOM_WEBSITE_ORDER_CREATED",
+    "userId": "usr_1789705999540_tuqmu",
+    "userName": "QA Tester",
+    "userRole": "user",
+    "targetId": "ord_1789706002445_48f7n4",
+    "targetType": "ORDER",
+    "details": "Custom website order WCW-2026-0028 placed by QA Tester ($299).",
+    "createdAt": "2026-09-18T04:33:22.584Z"
+  },
+  {
+    "id": "adt_1789706002363_0851f8c9",
+    "action": "AI_WEBSITE_GENERATED",
+    "userId": "usr_1789705999540_tuqmu",
+    "userName": "QA Tester",
+    "userRole": "user",
+    "targetId": "aiw_1789706002276_300cfcf1",
+    "targetType": "ai_website",
+    "details": "Generated canonical AI website specification for \"Alpha Tech 1789705999 | Official Website\" (technology).",
+    "metadata": {
+      "websiteId": "aiw_1789706002276_300cfcf1",
+      "provider": "webcraft-engine",
+      "version": 1
+    },
+    "createdAt": "2026-09-18T04:33:22.363Z"
+  },
+  {
+    "id": "adt_1789706002090_295ab194",
+    "action": "PAYMENT_SUCCESS",
+    "userId": "usr_1789705999540_tuqmu",
+    "userName": "QA Tester",
+    "userRole": "customer",
+    "targetId": "pay_1789706001850_b174d12b",
+    "targetType": "PAYMENT",
+    "details": "Payment pay_1789706001850_b174d12b status updated to PAID for order TPL-2026-0027.",
+    "metadata": {
+      "paymentId": "pay_1789706001850_b174d12b",
+      "orderId": "ord_tpl_1789706001738_h6b76x",
+      "status": "PAID"
+    },
+    "createdAt": "2026-09-18T04:33:22.090Z"
+  },
+  {
+    "id": "adt_1789706002078_d655ca21",
+    "action": "TEMPLATE_PURCHASED",
+    "userId": "usr_1789705999540_tuqmu",
+    "userName": "QA Tester",
+    "userRole": "customer",
+    "targetId": "ord_tpl_1789706001738_h6b76x",
+    "targetType": "ORDER",
+    "details": "Template Haven & Horizon Luxury Real Estate purchased for $95.",
+    "createdAt": "2026-09-18T04:33:22.079Z"
+  },
+  {
+    "id": "adt_1789706001851_bdd892a0",
+    "action": "PAYMENT_INITIATED",
+    "userId": "usr_1789705999540_tuqmu",
+    "userName": "QA Tester",
+    "userRole": "customer",
+    "targetId": "pay_1789706001850_b174d12b",
+    "targetType": "PAYMENT",
+    "details": "Payment initiated for order TPL-2026-0027 ($95 USD) via webcraft_pay.",
+    "metadata": {
+      "paymentId": "pay_1789706001850_b174d12b",
+      "orderId": "ord_tpl_1789706001738_h6b76x",
+      "provider": "webcraft_pay"
+    },
+    "createdAt": "2026-09-18T04:33:21.852Z"
+  },
+  {
+    "id": "adt_1789706001702_f2194703",
+    "action": "PAYMENT_FAILED",
+    "userId": "usr_1789705999540_tuqmu",
+    "userName": "QA Tester",
+    "userRole": "customer",
+    "targetId": "pay_1789706001363_58d9a602",
+    "targetType": "PAYMENT",
+    "details": "Payment pay_1789706001363_58d9a602 status updated to FAILED for order TPL-2026-0026.",
+    "metadata": {
+      "paymentId": "pay_1789706001363_58d9a602",
+      "orderId": "ord_tpl_1789706001194_gohwnm",
+      "status": "FAILED"
+    },
+    "createdAt": "2026-09-18T04:33:21.702Z"
+  },
+  {
+    "id": "adt_1789706001694_44d1d018",
+    "action": "TEMPLATE_PURCHASED",
+    "userId": "usr_1789705999540_tuqmu",
+    "userName": "QA Tester",
+    "userRole": "customer",
+    "targetId": "ord_tpl_1789706001194_gohwnm",
+    "targetType": "ORDER",
+    "details": "Template Haven & Horizon Luxury Real Estate purchased for $95.",
+    "createdAt": "2026-09-18T04:33:21.694Z"
+  },
+  {
+    "id": "adt_1789706001365_eb15aba3",
+    "action": "PAYMENT_INITIATED",
+    "userId": "usr_1789705999540_tuqmu",
+    "userName": "QA Tester",
+    "userRole": "customer",
+    "targetId": "pay_1789706001363_58d9a602",
+    "targetType": "PAYMENT",
+    "details": "Payment initiated for order TPL-2026-0026 ($95 USD) via webcraft_pay.",
+    "metadata": {
+      "paymentId": "pay_1789706001363_58d9a602",
+      "orderId": "ord_tpl_1789706001194_gohwnm",
+      "provider": "webcraft_pay"
+    },
+    "createdAt": "2026-09-18T04:33:21.365Z"
+  },
+  {
+    "id": "adt_1789705999654_a21b14aa",
+    "action": "USER_REGISTERED",
+    "userId": "usr_1789705999540_tuqmu",
+    "userName": "QA Tester",
+    "userRole": "user",
+    "targetId": "usr_1789705999540_tuqmu",
+    "targetType": "USER",
+    "details": "User QA Tester (qa_audit_1789705999@webcraft.ai) registered.",
+    "createdAt": "2026-09-18T04:33:19.655Z"
+  },
+  {
+    "id": "adt_1789683788605_63d5d0a7",
+    "action": "PROJECT_ASSIGNED",
+    "userId": "Muqaddas Aslam",
+    "userName": "Staff",
+    "userRole": "staff",
+    "targetId": "prj_1789683788417_91fd143b",
+    "targetType": "PROJECT",
+    "details": "Project PRJ-2026-0010 assigned to Muqaddas Aslam.",
+    "createdAt": "2026-09-17T22:23:08.605Z"
+  },
+  {
+    "id": "adt_1789683788452_33c04835",
+    "action": "PROJECT_ASSIGNED",
+    "userId": "usr_admin_01",
+    "userName": "Muqaddas Aslam",
+    "userRole": "admin",
+    "targetId": "prj_1789683788417_91fd143b",
+    "targetType": "project",
+    "details": "Assigned project PRJ-2026-0010 to Muqaddas Aslam.",
+    "metadata": {
+      "projectNumber": "PRJ-2026-0010",
+      "assignedTo": "usr_admin_01"
+    },
+    "createdAt": "2026-09-17T22:23:08.452Z"
+  },
+  {
+    "id": "adt_1789683788446_e3f88b8d",
+    "action": "PROJECT_CREATED",
+    "userId": "usr_admin_01",
+    "userName": "Muqaddas Aslam",
+    "userRole": "admin",
+    "targetId": "prj_1789683788417_91fd143b",
+    "targetType": "project",
+    "details": "Created project PRJ-2026-0010 (Test Project) from Order WCW-2026-0025.",
+    "metadata": {
+      "projectNumber": "PRJ-2026-0010",
+      "orderId": "ord_1789683746647_yh88gz",
+      "status": "ASSIGNED"
+    },
+    "createdAt": "2026-09-17T22:23:08.446Z"
+  },
+  {
+    "id": "adt_1789683746783_ff9ae7a6",
+    "action": "CUSTOM_WEBSITE_ORDER_CREATED",
+    "userId": "usr_customer_01",
+    "userName": "Sarah Jenkins",
+    "userRole": "customer",
+    "targetId": "ord_1789683746647_yh88gz",
+    "targetType": "ORDER",
+    "details": "Custom website request WCW-2026-0025 placed for QA Ent.",
+    "createdAt": "2026-09-17T22:22:26.783Z"
+  },
+  {
+    "id": "adt_1789683746779_2557dbed",
+    "action": "CUSTOM_WEBSITE_ORDER_CREATED",
+    "userId": "usr_customer_01",
+    "userName": "Sarah Jenkins",
+    "userRole": "user",
+    "targetId": "ord_1789683746647_yh88gz",
+    "targetType": "ORDER",
+    "details": "Custom website order WCW-2026-0025 placed by Sarah Jenkins ($299).",
+    "createdAt": "2026-09-17T22:22:26.779Z"
+  },
+  {
+    "id": "adt_1789683604369_a2dc4c97",
+    "action": "CUSTOM_WEBSITE_ORDER_CREATED",
+    "userId": "usr_1789683601262_ih561",
+    "userName": "QA Tester",
+    "userRole": "customer",
+    "targetId": "ord_1789683604117_zu4eex",
+    "targetType": "ORDER",
+    "details": "Custom website request WCW-2026-0024 placed for QA Audit Enterprise 1789683600.",
+    "createdAt": "2026-09-17T22:20:04.369Z"
+  },
+  {
+    "id": "adt_1789683604357_24246739",
+    "action": "CUSTOM_WEBSITE_ORDER_CREATED",
+    "userId": "usr_1789683601262_ih561",
+    "userName": "QA Tester",
+    "userRole": "user",
+    "targetId": "ord_1789683604117_zu4eex",
+    "targetType": "ORDER",
+    "details": "Custom website order WCW-2026-0024 placed by QA Tester ($299).",
+    "createdAt": "2026-09-17T22:20:04.357Z"
+  },
+  {
+    "id": "adt_1789683604032_7274a36b",
+    "action": "AI_WEBSITE_GENERATED",
+    "userId": "usr_1789683601262_ih561",
+    "userName": "QA Tester",
+    "userRole": "user",
+    "targetId": "aiw_1789683603878_53ebf11c",
+    "targetType": "ai_website",
+    "details": "Generated canonical AI website specification for \"Alpha Tech 1789683600 | Official Website\" (technology).",
+    "metadata": {
+      "websiteId": "aiw_1789683603878_53ebf11c",
+      "provider": "webcraft-engine",
+      "version": 1
+    },
+    "createdAt": "2026-09-17T22:20:04.032Z"
+  },
+  {
+    "id": "adt_1789683603649_ce1e6a90",
+    "action": "PAYMENT_SUCCESS",
+    "userId": "usr_1789683601262_ih561",
+    "userName": "QA Tester",
+    "userRole": "customer",
+    "targetId": "pay_1789683603045_c938230c",
+    "targetType": "PAYMENT",
+    "details": "Payment pay_1789683603045_c938230c status updated to PAID for order TPL-2026-0023.",
+    "metadata": {
+      "paymentId": "pay_1789683603045_c938230c",
+      "orderId": "ord_tpl_1789683602885_rtgrho",
+      "status": "PAID"
+    },
+    "createdAt": "2026-09-17T22:20:03.649Z"
+  },
+  {
+    "id": "adt_1789683603542_59c31910",
+    "action": "PAYMENT_FAILED",
+    "userId": "usr_1789683601262_ih561",
+    "userName": "QA Tester",
+    "userRole": "customer",
+    "targetId": "pay_1789683603045_c938230c",
+    "targetType": "PAYMENT",
+    "details": "Payment pay_1789683603045_c938230c status updated to FAILED for order TPL-2026-0023.",
+    "metadata": {
+      "paymentId": "pay_1789683603045_c938230c",
+      "orderId": "ord_tpl_1789683602885_rtgrho",
+      "status": "FAILED"
+    },
+    "createdAt": "2026-09-17T22:20:03.542Z"
+  },
+  {
+    "id": "adt_1789683603485_1aa5ee58",
+    "action": "TEMPLATE_PURCHASED",
+    "userId": "usr_1789683601262_ih561",
+    "userName": "QA Tester",
+    "userRole": "customer",
+    "targetId": "ord_tpl_1789683602885_rtgrho",
+    "targetType": "ORDER",
+    "details": "Template Haven & Horizon Luxury Real Estate purchased for $95.",
+    "createdAt": "2026-09-17T22:20:03.485Z"
+  },
+  {
+    "id": "adt_1789683603048_b2bff595",
+    "action": "PAYMENT_INITIATED",
+    "userId": "usr_1789683601262_ih561",
+    "userName": "QA Tester",
+    "userRole": "customer",
+    "targetId": "pay_1789683603045_c938230c",
+    "targetType": "PAYMENT",
+    "details": "Payment initiated for order TPL-2026-0023 ($95 USD) via webcraft_pay.",
+    "metadata": {
+      "paymentId": "pay_1789683603045_c938230c",
+      "orderId": "ord_tpl_1789683602885_rtgrho",
+      "provider": "webcraft_pay"
+    },
+    "createdAt": "2026-09-17T22:20:03.048Z"
+  },
+  {
+    "id": "adt_1789683601634_bc77f3ec",
+    "action": "USER_REGISTERED",
+    "userId": "usr_1789683601262_ih561",
+    "userName": "QA Tester",
+    "userRole": "user",
+    "targetId": "usr_1789683601262_ih561",
+    "targetType": "USER",
+    "details": "User QA Tester (qa_audit_1789683600@webcraft.ai) registered.",
+    "createdAt": "2026-09-17T22:20:01.634Z"
+  },
+  {
+    "id": "adt_1789683287849_8a480a7b",
+    "action": "USER_REGISTERED",
+    "userId": "usr_1789683287735_pdi8q",
+    "userName": "QA Tester",
+    "userRole": "user",
+    "targetId": "usr_1789683287735_pdi8q",
+    "targetType": "USER",
+    "details": "User QA Tester (qa_audit_1789683287@webcraft.ai) registered.",
+    "createdAt": "2026-09-17T22:14:47.849Z"
+  },
+  {
+    "id": "adt_1789682645037_2f84865b",
+    "action": "USER_REGISTERED",
+    "userId": "usr_1789682644914_xgfe4",
+    "userName": "Ahmed Javed",
+    "userRole": "user",
+    "targetId": "usr_1789682644914_xgfe4",
+    "targetType": "USER",
+    "details": "User Ahmed Javed (customer@webcraft.ai) registered.",
+    "createdAt": "2026-09-17T22:04:05.037Z"
+  },
+  {
+    "id": "adt_1789682014065_6e0050b6",
+    "action": "SYSTEM_ALERT",
+    "userId": "usr_admin_01",
+    "userName": "Muqaddas Aslam",
+    "userRole": "admin",
+    "targetId": "deployments",
+    "targetType": "REPORT_EXPORT",
+    "details": "User Muqaddas Aslam exported deployments report (last30days).",
+    "metadata": {
+      "reportType": "deployments",
+      "dateRange": "last30days"
+    },
+    "createdAt": "2026-09-17T21:53:34.066Z"
+  },
+  {
+    "id": "adt_1789681996420_a775cf98",
+    "action": "SYSTEM_ALERT",
+    "userId": "usr_admin_01",
+    "userName": "Muqaddas Aslam",
+    "userRole": "admin",
+    "targetId": "projects",
+    "targetType": "REPORT_EXPORT",
+    "details": "User Muqaddas Aslam exported projects report (last30days).",
+    "metadata": {
+      "reportType": "projects",
+      "dateRange": "last30days"
+    },
+    "createdAt": "2026-09-17T21:53:16.421Z"
+  },
+  {
+    "id": "adt_1789681963141_a316620f",
+    "action": "SYSTEM_ALERT",
+    "userId": "usr_admin_01",
+    "userName": "Muqaddas Aslam",
+    "userRole": "admin",
+    "targetId": "sales",
+    "targetType": "REPORT_EXPORT",
+    "details": "User Muqaddas Aslam exported sales report (last30days).",
+    "metadata": {
+      "reportType": "sales",
+      "dateRange": "last30days"
+    },
+    "createdAt": "2026-09-17T21:52:43.141Z"
+  },
+  {
+    "id": "adt_1789681962158_302846d6",
+    "action": "SYSTEM_ALERT",
+    "userId": "usr_admin_01",
+    "userName": "Muqaddas Aslam",
+    "userRole": "admin",
+    "targetId": "sales",
+    "targetType": "REPORT_EXPORT",
+    "details": "User Muqaddas Aslam exported sales report (last30days).",
+    "metadata": {
+      "reportType": "sales",
+      "dateRange": "last30days"
+    },
+    "createdAt": "2026-09-17T21:52:42.158Z"
+  },
+  {
+    "id": "adt_1789681699406_91f01c88",
+    "action": "SYSTEM_ALERT",
+    "userId": "usr_admin_01",
+    "userName": "Muqaddas Aslam",
+    "userRole": "admin",
+    "targetId": "deployments",
+    "targetType": "REPORT_EXPORT",
+    "details": "User Muqaddas Aslam exported deployments report (last30days).",
+    "metadata": {
+      "reportType": "deployments",
+      "dateRange": "last30days"
+    },
+    "createdAt": "2026-09-17T21:48:19.406Z"
+  },
+  {
+    "id": "adt_1789681699376_cd70ed27",
+    "action": "SYSTEM_ALERT",
+    "userId": "usr_admin_01",
+    "userName": "Muqaddas Aslam",
+    "userRole": "admin",
+    "targetId": "projects",
+    "targetType": "REPORT_EXPORT",
+    "details": "User Muqaddas Aslam exported projects report (last30days).",
+    "metadata": {
+      "reportType": "projects",
+      "dateRange": "last30days"
+    },
+    "createdAt": "2026-09-17T21:48:19.376Z"
+  },
+  {
+    "id": "adt_1789681699352_b2a01720",
+    "action": "SYSTEM_ALERT",
+    "userId": "usr_admin_01",
+    "userName": "Muqaddas Aslam",
+    "userRole": "admin",
+    "targetId": "revenue",
+    "targetType": "REPORT_EXPORT",
+    "details": "User Muqaddas Aslam exported revenue report (last30days).",
+    "metadata": {
+      "reportType": "revenue",
+      "dateRange": "last30days"
+    },
+    "createdAt": "2026-09-17T21:48:19.352Z"
+  },
+  {
+    "id": "adt_1789681699340_3fba1bdc",
+    "action": "SYSTEM_ALERT",
+    "userId": "usr_admin_01",
+    "userName": "Muqaddas Aslam",
+    "userRole": "admin",
+    "targetId": "sales",
+    "targetType": "REPORT_EXPORT",
+    "details": "User Muqaddas Aslam exported sales report (last30days).",
+    "metadata": {
+      "reportType": "sales",
+      "dateRange": "last30days"
+    },
+    "createdAt": "2026-09-17T21:48:19.340Z"
+  },
+  {
+    "id": "adt_1789666382812_bcb9f0d9",
+    "action": "USER_REGISTERED",
+    "userId": "usr_1789666382685_w3t0i",
+    "userName": "muqaddas aslam",
+    "userRole": "user",
+    "targetId": "usr_1789666382685_w3t0i",
+    "targetType": "USER",
+    "details": "User muqaddas aslam (muqaddasaslam198@gmail.com) registered.",
+    "createdAt": "2026-09-17T17:33:02.812Z"
+  },
+  {
+    "id": "adt_1789665161486_f64408f2",
+    "action": "PROJECT_STATUS_CHANGED",
+    "userId": "Alexander Wright",
+    "userName": "Staff",
+    "userRole": "staff",
+    "targetId": "prj_1789665161371_e1288466",
+    "targetType": "PROJECT",
+    "details": "Project PRJ-2026-0009 status transitioned to CANCELLED.",
+    "createdAt": "2026-09-17T17:12:41.486Z"
+  },
+  {
+    "id": "adt_1789665161410_9f529201",
+    "action": "PROJECT_STATUS_CHANGED",
+    "userId": "usr_admin_01",
+    "userName": "Alexander Wright",
+    "userRole": "admin",
+    "targetId": "prj_1789665161371_e1288466",
+    "targetType": "project",
+    "details": "Project PRJ-2026-0009 status changed to CANCELLED. Note: Customer decided not to proceed",
+    "metadata": {
+      "projectNumber": "PRJ-2026-0009",
+      "prevStatus": "PLANNING",
+      "newStatus": "CANCELLED",
+      "note": "Customer decided not to proceed"
+    },
+    "createdAt": "2026-09-17T17:12:41.410Z"
+  },
+  {
+    "id": "adt_1789665161382_bdde7176",
+    "action": "PROJECT_CREATED",
+    "userId": "usr_admin_01",
+    "userName": "Alexander Wright",
+    "userRole": "admin",
+    "targetId": "prj_1789665161371_e1288466",
+    "targetType": "project",
+    "details": "Created project PRJ-2026-0009 (Cancellation Test Co) from Order WCW-2026-0022.",
+    "metadata": {
+      "projectNumber": "PRJ-2026-0009",
+      "orderId": "ord_1789665161256_zbq93z",
+      "status": "PLANNING"
+    },
+    "createdAt": "2026-09-17T17:12:41.382Z"
+  },
+  {
+    "id": "adt_1789665161366_79f6f5e1",
+    "action": "CUSTOM_WEBSITE_ORDER_CREATED",
+    "userId": "usr_customer_01",
+    "userName": "Sarah Jenkins",
+    "userRole": "customer",
+    "targetId": "ord_1789665161256_zbq93z",
+    "targetType": "ORDER",
+    "details": "Custom website request WCW-2026-0022 placed for Cancellation Test Co.",
+    "createdAt": "2026-09-17T17:12:41.366Z"
+  },
+  {
+    "id": "adt_1789665161362_2d075111",
+    "action": "CUSTOM_WEBSITE_ORDER_CREATED",
+    "userId": "usr_customer_01",
+    "userName": "Sarah Jenkins",
+    "userRole": "user",
+    "targetId": "ord_1789665161256_zbq93z",
+    "targetType": "ORDER",
+    "details": "Custom website order WCW-2026-0022 placed by Sarah Jenkins ($299).",
+    "createdAt": "2026-09-17T17:12:41.363Z"
+  },
+  {
+    "id": "adt_1789665161197_73eaffd1",
+    "action": "PROJECT_STATUS_CHANGED",
+    "userId": "Alexander Wright",
+    "userName": "Staff",
+    "userRole": "staff",
+    "targetId": "prj_1789665160098_6438abb8",
+    "targetType": "PROJECT",
+    "details": "Project PRJ-2026-0008 status transitioned to DELIVERED.",
+    "createdAt": "2026-09-17T17:12:41.197Z"
+  },
+  {
+    "id": "adt_1789665161191_bce59f79",
+    "action": "PROJECT_DELIVERED",
+    "userId": "usr_admin_01",
+    "userName": "Alexander Wright",
+    "userRole": "admin",
+    "targetId": "pdel_1789665161019_2ab70854",
+    "targetType": "project_delivery",
+    "details": "Project PRJ-2026-0008 delivered with live URL: https://production.webcraft.ai/phase13-client-site.",
+    "metadata": {
+      "projectId": "prj_1789665160098_6438abb8",
+      "deliveryId": "pdel_1789665161019_2ab70854",
+      "deliveredUrl": "https://production.webcraft.ai/phase13-client-site"
+    },
+    "createdAt": "2026-09-17T17:12:41.191Z"
+  },
+  {
+    "id": "adt_1789665161028_b00425d7",
+    "action": "PROJECT_STATUS_CHANGED",
+    "userId": "usr_admin_01",
+    "userName": "Alexander Wright",
+    "userRole": "admin",
+    "targetId": "prj_1789665160098_6438abb8",
+    "targetType": "project",
+    "details": "Project PRJ-2026-0008 status changed to DELIVERED. Note: Project delivered. Live URL: https://production.webcraft.ai/phase13-client-site. Notes: Domain mapped and SSL certificates provisioned.",
+    "metadata": {
+      "projectNumber": "PRJ-2026-0008",
+      "prevStatus": "COMPLETED",
+      "newStatus": "DELIVERED",
+      "note": "Project delivered. Live URL: https://production.webcraft.ai/phase13-client-site. Notes: Domain mapped and SSL certificates provisioned."
+    },
+    "createdAt": "2026-09-17T17:12:41.028Z"
+  },
+  {
+    "id": "adt_1789665160985_8698989e",
+    "action": "PROJECT_STATUS_CHANGED",
+    "userId": "Sarah Jenkins",
+    "userName": "Staff",
+    "userRole": "staff",
+    "targetId": "prj_1789665160098_6438abb8",
+    "targetType": "PROJECT",
+    "details": "Project PRJ-2026-0008 status transitioned to COMPLETED.",
+    "createdAt": "2026-09-17T17:12:40.985Z"
+  },
+  {
+    "id": "adt_1789665160905_abe8f140",
+    "action": "PROJECT_APPROVED",
+    "userId": "usr_customer_01",
+    "userName": "Sarah Jenkins",
+    "userRole": "user",
+    "targetId": "papp_1789665160814_35ff815f",
+    "targetType": "project_approval",
+    "details": "Project PRJ-2026-0008 approved by customer (version v2).",
+    "metadata": {
+      "projectId": "prj_1789665160098_6438abb8",
+      "approvalId": "papp_1789665160814_35ff815f",
+      "versionNumber": 2
+    },
+    "createdAt": "2026-09-17T17:12:40.906Z"
+  },
+  {
+    "id": "adt_1789665160831_497752aa",
+    "action": "PROJECT_STATUS_CHANGED",
+    "userId": "usr_customer_01",
+    "userName": "Sarah Jenkins",
+    "userRole": "user",
+    "targetId": "prj_1789665160098_6438abb8",
+    "targetType": "project",
+    "details": "Project PRJ-2026-0008 status changed to COMPLETED. Note: Project approved by customer (Version v2). Feedback: Everything looks outstanding! Ready for production deployment.",
+    "metadata": {
+      "projectNumber": "PRJ-2026-0008",
+      "prevStatus": "REVIEW",
+      "newStatus": "COMPLETED",
+      "note": "Project approved by customer (Version v2). Feedback: Everything looks outstanding! Ready for production deployment."
+    },
+    "createdAt": "2026-09-17T17:12:40.831Z"
+  },
+  {
+    "id": "adt_1789665160809_664b8030",
+    "action": "PROJECT_STATUS_CHANGED",
+    "userId": "Alexander Wright",
+    "userName": "Staff",
+    "userRole": "staff",
+    "targetId": "prj_1789665160098_6438abb8",
+    "targetType": "PROJECT",
+    "details": "Project PRJ-2026-0008 status transitioned to REVIEW.",
+    "createdAt": "2026-09-17T17:12:40.809Z"
+  },
+  {
+    "id": "adt_1789665160805_e8f01696",
+    "action": "PROJECT_VERSION_CREATED",
+    "userId": "usr_admin_01",
+    "userName": "Alexander Wright",
+    "userRole": "admin",
+    "targetId": "pver_1789665160719_c99ad203",
+    "targetType": "project_version",
+    "details": "Created version v2 for project PRJ-2026-0008.",
+    "metadata": {
+      "projectId": "prj_1789665160098_6438abb8",
+      "versionId": "pver_1789665160719_c99ad203",
+      "versionNumber": 2
+    },
+    "createdAt": "2026-09-17T17:12:40.805Z"
+  },
+  {
+    "id": "adt_1789665160728_1fbef0d3",
+    "action": "PROJECT_STATUS_CHANGED",
+    "userId": "usr_admin_01",
+    "userName": "Alexander Wright",
+    "userRole": "admin",
+    "targetId": "prj_1789665160098_6438abb8",
+    "targetType": "project",
+    "details": "Project PRJ-2026-0008 status changed to REVIEW. Note: Version 2 (\"Alpha Design v2 (Color Updates)\") submitted for customer review.",
+    "metadata": {
+      "projectNumber": "PRJ-2026-0008",
+      "prevStatus": "IN_PROGRESS",
+      "newStatus": "REVIEW",
+      "note": "Version 2 (\"Alpha Design v2 (Color Updates)\") submitted for customer review."
+    },
+    "createdAt": "2026-09-17T17:12:40.728Z"
+  },
+  {
+    "id": "adt_1789665160706_b63407d9",
+    "action": "PROJECT_STATUS_CHANGED",
+    "userId": "Sarah Jenkins",
+    "userName": "Staff",
+    "userRole": "staff",
+    "targetId": "prj_1789665160098_6438abb8",
+    "targetType": "PROJECT",
+    "details": "Project PRJ-2026-0008 status transitioned to IN_PROGRESS.",
+    "createdAt": "2026-09-17T17:12:40.707Z"
+  },
+  {
+    "id": "adt_1789665160703_02afe9ec",
+    "action": "PROJECT_REVISION_REQUESTED",
+    "userId": "usr_customer_01",
+    "userName": "Sarah Jenkins",
+    "userRole": "user",
+    "targetId": "prev_1789665160615_b0de7a3a",
+    "targetType": "project_revision",
+    "details": "Revision #1 requested for project PRJ-2026-0008.",
+    "metadata": {
+      "projectId": "prj_1789665160098_6438abb8",
+      "revisionId": "prev_1789665160615_b0de7a3a",
+      "revisionNumber": 1
+    },
+    "createdAt": "2026-09-17T17:12:40.703Z"
+  },
+  {
+    "id": "adt_1789665160634_a3059797",
+    "action": "PROJECT_STATUS_CHANGED",
+    "userId": "usr_customer_01",
+    "userName": "Sarah Jenkins",
+    "userRole": "user",
+    "targetId": "prj_1789665160098_6438abb8",
+    "targetType": "project",
+    "details": "Project PRJ-2026-0008 status changed to IN_PROGRESS. Note: Revision #1 requested by customer: Please change header typography and primary color to blue.",
+    "metadata": {
+      "projectNumber": "PRJ-2026-0008",
+      "prevStatus": "REVIEW",
+      "newStatus": "IN_PROGRESS",
+      "note": "Revision #1 requested by customer: Please change header typography and primary color to blue."
+    },
+    "createdAt": "2026-09-17T17:12:40.634Z"
+  },
+  {
+    "id": "adt_1789665160602_efd9b926",
+    "action": "PROJECT_STATUS_CHANGED",
+    "userId": "Alexander Wright",
+    "userName": "Staff",
+    "userRole": "staff",
+    "targetId": "prj_1789665160098_6438abb8",
+    "targetType": "PROJECT",
+    "details": "Project PRJ-2026-0008 status transitioned to REVIEW.",
+    "createdAt": "2026-09-17T17:12:40.602Z"
+  },
+  {
+    "id": "adt_1789665160599_4f07544b",
+    "action": "PROJECT_VERSION_CREATED",
+    "userId": "usr_admin_01",
+    "userName": "Alexander Wright",
+    "userRole": "admin",
+    "targetId": "pver_1789665160497_c41ac8fa",
+    "targetType": "project_version",
+    "details": "Created version v1 for project PRJ-2026-0008.",
+    "metadata": {
+      "projectId": "prj_1789665160098_6438abb8",
+      "versionId": "pver_1789665160497_c41ac8fa",
+      "versionNumber": 1
+    },
+    "createdAt": "2026-09-17T17:12:40.599Z"
+  },
+  {
+    "id": "adt_1789665160506_90c2b453",
+    "action": "PROJECT_STATUS_CHANGED",
+    "userId": "usr_admin_01",
+    "userName": "Alexander Wright",
+    "userRole": "admin",
+    "targetId": "prj_1789665160098_6438abb8",
+    "targetType": "project",
+    "details": "Project PRJ-2026-0008 status changed to REVIEW. Note: Version 1 (\"Alpha Design v1\") submitted for customer review.",
+    "metadata": {
+      "projectNumber": "PRJ-2026-0008",
+      "prevStatus": "IN_PROGRESS",
+      "newStatus": "REVIEW",
+      "note": "Version 1 (\"Alpha Design v1\") submitted for customer review."
+    },
+    "createdAt": "2026-09-17T17:12:40.506Z"
+  },
+  {
+    "id": "adt_1789665160492_3070b7e1",
+    "action": "PROJECT_STATUS_CHANGED",
+    "userId": "Alexander Wright",
+    "userName": "Staff",
+    "userRole": "staff",
+    "targetId": "prj_1789665160098_6438abb8",
+    "targetType": "PROJECT",
+    "details": "Project PRJ-2026-0008 status transitioned to IN_PROGRESS.",
+    "createdAt": "2026-09-17T17:12:40.492Z"
+  },
+  {
+    "id": "adt_1789665160421_d1e83b5d",
+    "action": "PROJECT_STATUS_CHANGED",
+    "userId": "usr_admin_01",
+    "userName": "Alexander Wright",
+    "userRole": "admin",
+    "targetId": "prj_1789665160098_6438abb8",
+    "targetType": "project",
+    "details": "Project PRJ-2026-0008 status changed to IN_PROGRESS. Note: Client assets received",
+    "metadata": {
+      "projectNumber": "PRJ-2026-0008",
+      "prevStatus": "ON_HOLD",
+      "newStatus": "IN_PROGRESS",
+      "note": "Client assets received"
+    },
+    "createdAt": "2026-09-17T17:12:40.421Z"
+  },
+  {
+    "id": "adt_1789665160407_004720e4",
+    "action": "PROJECT_STATUS_CHANGED",
+    "userId": "Alexander Wright",
+    "userName": "Staff",
+    "userRole": "staff",
+    "targetId": "prj_1789665160098_6438abb8",
+    "targetType": "PROJECT",
+    "details": "Project PRJ-2026-0008 status transitioned to ON_HOLD.",
+    "createdAt": "2026-09-17T17:12:40.407Z"
+  },
+  {
+    "id": "adt_1789665160331_ae5f704e",
+    "action": "PROJECT_STATUS_CHANGED",
+    "userId": "usr_admin_01",
+    "userName": "Alexander Wright",
+    "userRole": "admin",
+    "targetId": "prj_1789665160098_6438abb8",
+    "targetType": "project",
+    "details": "Project PRJ-2026-0008 status changed to ON_HOLD. Note: Waiting for client assets",
+    "metadata": {
+      "projectNumber": "PRJ-2026-0008",
+      "prevStatus": "IN_PROGRESS",
+      "newStatus": "ON_HOLD",
+      "note": "Waiting for client assets"
+    },
+    "createdAt": "2026-09-17T17:12:40.331Z"
+  },
+  {
+    "id": "adt_1789665160315_2d5f541c",
+    "action": "PROJECT_STATUS_CHANGED",
+    "userId": "Alexander Wright",
+    "userName": "Staff",
+    "userRole": "staff",
+    "targetId": "prj_1789665160098_6438abb8",
+    "targetType": "PROJECT",
+    "details": "Project PRJ-2026-0008 status transitioned to IN_PROGRESS.",
+    "createdAt": "2026-09-17T17:12:40.315Z"
+  },
+  {
+    "id": "adt_1789665160240_7586789b",
+    "action": "PROJECT_STATUS_CHANGED",
+    "userId": "usr_admin_01",
+    "userName": "Alexander Wright",
+    "userRole": "admin",
+    "targetId": "prj_1789665160098_6438abb8",
+    "targetType": "project",
+    "details": "Project PRJ-2026-0008 status changed to IN_PROGRESS.",
+    "metadata": {
+      "projectNumber": "PRJ-2026-0008",
+      "prevStatus": "ASSIGNED",
+      "newStatus": "IN_PROGRESS"
+    },
+    "createdAt": "2026-09-17T17:12:40.240Z"
+  },
+  {
+    "id": "adt_1789665160221_baf7660a",
+    "action": "PROJECT_STATUS_CHANGED",
+    "userId": "Alexander Wright",
+    "userName": "Staff",
+    "userRole": "staff",
+    "targetId": "prj_1789665160098_6438abb8",
+    "targetType": "PROJECT",
+    "details": "Project PRJ-2026-0008 status transitioned to ASSIGNED.",
+    "createdAt": "2026-09-17T17:12:40.221Z"
+  },
+  {
+    "id": "adt_1789665160161_db0c3f3b",
+    "action": "PROJECT_STATUS_CHANGED",
+    "userId": "usr_admin_01",
+    "userName": "Alexander Wright",
+    "userRole": "admin",
+    "targetId": "prj_1789665160098_6438abb8",
+    "targetType": "project",
+    "details": "Project PRJ-2026-0008 status changed to ASSIGNED.",
+    "metadata": {
+      "projectNumber": "PRJ-2026-0008",
+      "prevStatus": "PLANNING",
+      "newStatus": "ASSIGNED"
+    },
+    "createdAt": "2026-09-17T17:12:40.161Z"
+  },
+  {
+    "id": "adt_1789665160111_0414b7f0",
+    "action": "PROJECT_CREATED",
+    "userId": "usr_admin_01",
+    "userName": "Alexander Wright",
+    "userRole": "admin",
+    "targetId": "prj_1789665160098_6438abb8",
+    "targetType": "project",
+    "details": "Created project PRJ-2026-0008 (Phase 13 Validation Project) from Order WCW-2026-0021.",
+    "metadata": {
+      "projectNumber": "PRJ-2026-0008",
+      "orderId": "ord_1789665160000_pxifcb",
+      "status": "PLANNING"
+    },
+    "createdAt": "2026-09-17T17:12:40.111Z"
+  },
+  {
+    "id": "adt_1789665160070_9b703256",
+    "action": "CUSTOM_WEBSITE_ORDER_CREATED",
+    "userId": "usr_customer_01",
+    "userName": "Sarah Jenkins",
+    "userRole": "customer",
+    "targetId": "ord_1789665160000_pxifcb",
+    "targetType": "ORDER",
+    "details": "Custom website request WCW-2026-0021 placed for Phase 13 Test Co 1789665160.",
+    "createdAt": "2026-09-17T17:12:40.070Z"
+  },
+  {
+    "id": "adt_1789665160068_1478a64b",
+    "action": "CUSTOM_WEBSITE_ORDER_CREATED",
+    "userId": "usr_customer_01",
+    "userName": "Sarah Jenkins",
+    "userRole": "user",
+    "targetId": "ord_1789665160000_pxifcb",
+    "targetType": "ORDER",
+    "details": "Custom website order WCW-2026-0021 placed by Sarah Jenkins ($299).",
+    "createdAt": "2026-09-17T17:12:40.068Z"
+  },
+  {
+    "id": "adt_1789665152338_4337d4c5",
+    "action": "TASK_ASSIGNED",
+    "userId": "Staff Lead",
+    "userName": "Staff",
+    "userRole": "staff",
+    "targetId": "task-uuid-1",
+    "targetType": "TASK",
+    "details": "Task \"Design responsive navigation navbar\" assigned to staff-uuid-2.",
+    "createdAt": "2026-09-17T17:12:32.338Z"
+  },
+  {
+    "id": "adt_1789665152303_85fb6ba3",
+    "action": "PROJECT_STATUS_CHANGED",
+    "userId": "Staff Lead",
+    "userName": "Staff",
+    "userRole": "staff",
+    "targetId": "proj-uuid-1",
+    "targetType": "PROJECT",
+    "details": "Project PRJ-5001 status transitioned to IN_PROGRESS.",
+    "createdAt": "2026-09-17T17:12:32.303Z"
+  },
+  {
+    "id": "adt_1789665152283_9b8194a0",
+    "action": "PROJECT_ASSIGNED",
+    "userId": "Admin Lead",
+    "userName": "Staff",
+    "userRole": "staff",
+    "targetId": "proj-uuid-1",
+    "targetType": "PROJECT",
+    "details": "Project PRJ-5001 assigned to staff-uuid-1.",
+    "createdAt": "2026-09-17T17:12:32.283Z"
+  },
+  {
+    "id": "adt_1789665152261_7e1f5de6",
+    "action": "CUSTOM_WEBSITE_ORDER_CREATED",
+    "userId": "user-uuid-1",
+    "userName": "Customer",
+    "userRole": "customer",
+    "targetId": "ord-uuid-3",
+    "targetType": "ORDER",
+    "details": "Custom website request ORD-1003 placed for Nexus AI Labs.",
+    "createdAt": "2026-09-17T17:12:32.261Z"
+  },
+  {
+    "id": "adt_1789665152204_8d4341da",
+    "action": "TEMPLATE_PURCHASED",
+    "userId": "user-uuid-1",
+    "userName": "Customer",
+    "userRole": "customer",
+    "targetId": "ord-uuid-2",
+    "targetType": "ORDER",
+    "details": "Template SaaS Launchpad Pro purchased for $149.",
+    "createdAt": "2026-09-17T17:12:32.204Z"
+  },
+  {
+    "id": "adt_1789665152133_57161e65",
+    "action": "ORDER_CREATED",
+    "userId": "user-uuid-1",
+    "userName": "Customer",
+    "userRole": "user",
+    "targetId": "ord-uuid-1",
+    "targetType": "ORDER",
+    "details": "Order ORD-1001 created for $2999 USD.",
+    "createdAt": "2026-09-17T17:12:32.133Z"
+  },
+  {
+    "id": "adt_1789665152101_304d1c97",
+    "action": "USER_REGISTERED",
+    "userId": "user-uuid-1",
+    "userName": "Jane Tester",
+    "userRole": "user",
+    "targetId": "user-uuid-1",
+    "targetType": "USER",
+    "details": "User Jane Tester (jane@example.com) registered.",
+    "createdAt": "2026-09-17T17:12:32.102Z"
+  },
+  {
+    "id": "adt_1789665145517_ba09793b",
+    "action": "PROJECT_STATUS_CHANGED",
+    "userId": "Alexander Wright",
+    "userName": "Staff",
+    "userRole": "staff",
+    "targetId": "prj_1789665144585_f8a4f248",
+    "targetType": "PROJECT",
+    "details": "Project PRJ-2026-0007 status transitioned to DELIVERED.",
+    "createdAt": "2026-09-17T17:12:25.517Z"
+  },
+  {
+    "id": "adt_1789665145511_f26761dc",
+    "action": "PROJECT_DELIVERED",
+    "userId": "usr_admin_01",
+    "userName": "Alexander Wright",
+    "userRole": "admin",
+    "targetId": "pdel_1789665145328_f6d5b28c",
+    "targetType": "project_delivery",
+    "details": "Project PRJ-2026-0007 delivered with live URL: https://client-production.com.",
+    "metadata": {
+      "projectId": "prj_1789665144585_f8a4f248",
+      "deliveryId": "pdel_1789665145328_f6d5b28c",
+      "deliveredUrl": "https://client-production.com"
+    },
+    "createdAt": "2026-09-17T17:12:25.511Z"
+  },
+  {
+    "id": "adt_1789665145341_a6851d9a",
+    "action": "PROJECT_STATUS_CHANGED",
+    "userId": "usr_admin_01",
+    "userName": "Alexander Wright",
+    "userRole": "admin",
+    "targetId": "prj_1789665144585_f8a4f248",
+    "targetType": "project",
+    "details": "Project PRJ-2026-0007 status changed to DELIVERED. Note: Project delivered. Live URL: https://client-production.com. Notes: Production deployed, DNS configured, delivered to client.",
+    "metadata": {
+      "projectNumber": "PRJ-2026-0007",
+      "prevStatus": "COMPLETED",
+      "newStatus": "DELIVERED",
+      "note": "Project delivered. Live URL: https://client-production.com. Notes: Production deployed, DNS configured, delivered to client."
+    },
+    "createdAt": "2026-09-17T17:12:25.341Z"
+  },
+  {
+    "id": "adt_1789665145321_4ded6a39",
+    "action": "PROJECT_STATUS_CHANGED",
+    "userId": "Sarah Jenkins",
+    "userName": "Staff",
+    "userRole": "staff",
+    "targetId": "prj_1789665144585_f8a4f248",
+    "targetType": "PROJECT",
+    "details": "Project PRJ-2026-0007 status transitioned to COMPLETED.",
+    "createdAt": "2026-09-17T17:12:25.321Z"
+  },
+  {
+    "id": "adt_1789665145239_1fe8a998",
+    "action": "PROJECT_APPROVED",
+    "userId": "usr_customer_01",
+    "userName": "Sarah Jenkins",
+    "userRole": "user",
+    "targetId": "papp_1789665145147_0148a68d",
+    "targetType": "project_approval",
+    "details": "Project PRJ-2026-0007 approved by customer (version v1).",
+    "metadata": {
+      "projectId": "prj_1789665144585_f8a4f248",
+      "approvalId": "papp_1789665145147_0148a68d",
+      "versionNumber": 1
+    },
+    "createdAt": "2026-09-17T17:12:25.239Z"
+  },
+  {
+    "id": "adt_1789665145168_c5bec7f5",
+    "action": "PROJECT_STATUS_CHANGED",
+    "userId": "usr_customer_01",
+    "userName": "Sarah Jenkins",
+    "userRole": "user",
+    "targetId": "prj_1789665144585_f8a4f248",
+    "targetType": "project",
+    "details": "Project PRJ-2026-0007 status changed to COMPLETED. Note: Project approved by customer (Version v1). Feedback: Approved for launch!",
+    "metadata": {
+      "projectNumber": "PRJ-2026-0007",
+      "prevStatus": "REVIEW",
+      "newStatus": "COMPLETED",
+      "note": "Project approved by customer (Version v1). Feedback: Approved for launch!"
+    },
+    "createdAt": "2026-09-17T17:12:25.168Z"
+  },
+  {
+    "id": "adt_1789665145141_ec349aa6",
+    "action": "PROJECT_STATUS_CHANGED",
+    "userId": "Alexander Wright",
+    "userName": "Staff",
+    "userRole": "staff",
+    "targetId": "prj_1789665144585_f8a4f248",
+    "targetType": "PROJECT",
+    "details": "Project PRJ-2026-0007 status transitioned to REVIEW.",
+    "createdAt": "2026-09-17T17:12:25.141Z"
+  },
+  {
+    "id": "adt_1789665145137_270e82aa",
+    "action": "PROJECT_VERSION_CREATED",
+    "userId": "usr_admin_01",
+    "userName": "Alexander Wright",
+    "userRole": "admin",
+    "targetId": "pver_1789665145046_836e4db5",
+    "targetType": "project_version",
+    "details": "Created version v1 for project PRJ-2026-0007.",
+    "metadata": {
+      "projectId": "prj_1789665144585_f8a4f248",
+      "versionId": "pver_1789665145046_836e4db5",
+      "versionNumber": 1
+    },
+    "createdAt": "2026-09-17T17:12:25.137Z"
+  },
+  {
+    "id": "adt_1789665145056_45519e70",
+    "action": "PROJECT_STATUS_CHANGED",
+    "userId": "usr_admin_01",
+    "userName": "Alexander Wright",
+    "userRole": "admin",
+    "targetId": "prj_1789665144585_f8a4f248",
+    "targetType": "project",
+    "details": "Project PRJ-2026-0007 status changed to REVIEW. Note: Version 1 (\"Release Candidate\") submitted for customer review.",
+    "metadata": {
+      "projectNumber": "PRJ-2026-0007",
+      "prevStatus": "IN_PROGRESS",
+      "newStatus": "REVIEW",
+      "note": "Version 1 (\"Release Candidate\") submitted for customer review."
+    },
+    "createdAt": "2026-09-17T17:12:25.056Z"
+  },
+  {
+    "id": "adt_1789665144890_de2908a9",
+    "action": "TASK_ASSIGNED",
+    "userId": "usr_admin_01",
+    "userName": "Staff",
+    "userRole": "staff",
+    "targetId": "tsk_1789665144810_40191d49",
+    "targetType": "TASK",
+    "details": "Task \"Build Navigation and Responsive Header\" assigned to Marcus Vance.",
+    "createdAt": "2026-09-17T17:12:24.890Z"
+  },
+  {
+    "id": "adt_1789665144823_cecaf253",
+    "action": "TASK_ASSIGNED",
+    "userId": "usr_admin_01",
+    "userName": "Alexander Wright",
+    "userRole": "admin",
+    "targetId": "tsk_1789665144810_40191d49",
+    "targetType": "task",
+    "details": "Assigned task \"Build Navigation and Responsive Header\" to Marcus Vance.",
+    "metadata": {
+      "projectId": "prj_1789665144585_f8a4f248",
+      "taskId": "tsk_1789665144810_40191d49",
+      "assignedTo": "usr_manager_01"
+    },
+    "createdAt": "2026-09-17T17:12:24.823Z"
+  },
+  {
+    "id": "adt_1789665144821_6593fa20",
+    "action": "TASK_CREATED",
+    "userId": "usr_admin_01",
+    "userName": "Alexander Wright",
+    "userRole": "admin",
+    "targetId": "tsk_1789665144810_40191d49",
+    "targetType": "task",
+    "details": "Created task \"Build Navigation and Responsive Header\" for project PRJ-2026-0007.",
+    "metadata": {
+      "projectId": "prj_1789665144585_f8a4f248",
+      "taskId": "tsk_1789665144810_40191d49",
+      "priority": "HIGH"
+    },
+    "createdAt": "2026-09-17T17:12:24.821Z"
+  },
+  {
+    "id": "adt_1789665144777_97af0ff1",
+    "action": "PROJECT_STATUS_CHANGED",
+    "userId": "Alexander Wright",
+    "userName": "Staff",
+    "userRole": "staff",
+    "targetId": "prj_1789665144585_f8a4f248",
+    "targetType": "PROJECT",
+    "details": "Project PRJ-2026-0007 status transitioned to IN_PROGRESS.",
+    "createdAt": "2026-09-17T17:12:24.777Z"
+  },
+  {
+    "id": "adt_1789665144710_14598d4f",
+    "action": "PROJECT_STATUS_CHANGED",
+    "userId": "usr_admin_01",
+    "userName": "Alexander Wright",
+    "userRole": "admin",
+    "targetId": "prj_1789665144585_f8a4f248",
+    "targetType": "project",
+    "details": "Project PRJ-2026-0007 status changed to IN_PROGRESS. Note: Wireframing completed; initial layouts are underway.",
+    "metadata": {
+      "projectNumber": "PRJ-2026-0007",
+      "prevStatus": "ASSIGNED",
+      "newStatus": "IN_PROGRESS",
+      "note": "Wireframing completed; initial layouts are underway."
+    },
+    "createdAt": "2026-09-17T17:12:24.710Z"
+  },
+  {
+    "id": "adt_1789665144660_236608ce",
+    "action": "PROJECT_ASSIGNED",
+    "userId": "Alexander Wright",
+    "userName": "Staff",
+    "userRole": "staff",
+    "targetId": "prj_1789665144585_f8a4f248",
+    "targetType": "PROJECT",
+    "details": "Project PRJ-2026-0007 assigned to Marcus Vance.",
+    "createdAt": "2026-09-17T17:12:24.660Z"
+  },
+  {
+    "id": "adt_1789665144599_ade1329f",
+    "action": "PROJECT_ASSIGNED",
+    "userId": "usr_admin_01",
+    "userName": "Alexander Wright",
+    "userRole": "admin",
+    "targetId": "prj_1789665144585_f8a4f248",
+    "targetType": "project",
+    "details": "Assigned project PRJ-2026-0007 to Marcus Vance.",
+    "metadata": {
+      "projectNumber": "PRJ-2026-0007",
+      "assignedTo": "usr_manager_01"
+    },
+    "createdAt": "2026-09-17T17:12:24.599Z"
+  },
+  {
+    "id": "adt_1789665144596_6a80514d",
+    "action": "PROJECT_CREATED",
+    "userId": "usr_admin_01",
+    "userName": "Alexander Wright",
+    "userRole": "admin",
+    "targetId": "prj_1789665144585_f8a4f248",
+    "targetType": "project",
+    "details": "Created project PRJ-2026-0007 (Apex Dynamics Build 65143) from Order WCW-2026-0020.",
+    "metadata": {
+      "projectNumber": "PRJ-2026-0007",
+      "orderId": "ord_1789665144436_8tlyfr",
+      "status": "ASSIGNED"
+    },
+    "createdAt": "2026-09-17T17:12:24.597Z"
+  },
+  {
+    "id": "adt_1789665144538_8e097502",
+    "action": "CUSTOM_WEBSITE_ORDER_CREATED",
+    "userId": "usr_customer_01",
+    "userName": "Sarah Jenkins",
+    "userRole": "customer",
+    "targetId": "ord_1789665144436_8tlyfr",
+    "targetType": "ORDER",
+    "details": "Custom website request WCW-2026-0020 placed for Apex Dynamics 65143.",
+    "createdAt": "2026-09-17T17:12:24.538Z"
+  },
+  {
+    "id": "adt_1789665144535_0680e4fd",
+    "action": "CUSTOM_WEBSITE_ORDER_CREATED",
+    "userId": "usr_customer_01",
+    "userName": "Sarah Jenkins",
+    "userRole": "user",
+    "targetId": "ord_1789665144436_8tlyfr",
+    "targetType": "ORDER",
+    "details": "Custom website order WCW-2026-0020 placed by Sarah Jenkins ($299).",
+    "createdAt": "2026-09-17T17:12:24.535Z"
+  },
+  {
+    "id": "adt_1789665144310_0d0b7459",
+    "action": "PAYMENT_SUCCESS",
+    "userId": "usr_customer_01",
+    "userName": "Sarah Jenkins",
+    "userRole": "customer",
+    "targetId": "pay_1789665144288_d63490ba",
+    "targetType": "PAYMENT",
+    "details": "Payment pay_1789665144288_d63490ba status updated to PAID for order TPL-2026-0019.",
+    "metadata": {
+      "paymentId": "pay_1789665144288_d63490ba",
+      "orderId": "ord_tpl_1789665144013_l1y7fe",
+      "status": "PAID"
+    },
+    "createdAt": "2026-09-17T17:12:24.311Z"
+  },
+  {
+    "id": "adt_1789665144290_3053bc9d",
+    "action": "PAYMENT_INITIATED",
+    "userId": "usr_customer_01",
+    "userName": "Sarah Jenkins",
+    "userRole": "customer",
+    "targetId": "pay_1789665144288_d63490ba",
+    "targetType": "PAYMENT",
+    "details": "Payment initiated for order TPL-2026-0019 ($59 USD) via webcraft_pay.",
+    "metadata": {
+      "paymentId": "pay_1789665144288_d63490ba",
+      "orderId": "ord_tpl_1789665144013_l1y7fe",
+      "provider": "webcraft_pay"
+    },
+    "createdAt": "2026-09-17T17:12:24.290Z"
+  },
+  {
+    "id": "adt_1789665144255_5ad8a5c9",
+    "action": "TEMPLATE_PURCHASED",
+    "userId": "usr_customer_01",
+    "userName": "Sarah Jenkins",
+    "userRole": "customer",
+    "targetId": "ord_tpl_1789665144013_l1y7fe",
+    "targetType": "ORDER",
+    "details": "Template Modern Restaurant Website purchased for $59.",
+    "createdAt": "2026-09-17T17:12:24.255Z"
+  },
+  {
+    "id": "adt_1789665144105_fc739af3",
+    "action": "TEMPLATE_PURCHASED",
+    "userId": "usr_customer_01",
+    "userName": "Sarah Jenkins",
+    "userRole": "user",
+    "targetId": "ord_tpl_1789665144013_l1y7fe",
+    "targetType": "ORDER",
+    "details": "Template order TPL-2026-0019 placed for Modern Restaurant Website ($59).",
+    "createdAt": "2026-09-17T17:12:24.105Z"
+  },
+  {
+    "id": "adt_1789665143957_6735beb0",
+    "action": "USER_REGISTERED",
+    "userId": "usr_1789665143858_sjyzx",
+    "userName": "Test Signup 65143",
+    "userRole": "user",
+    "targetId": "usr_1789665143858_sjyzx",
+    "targetType": "USER",
+    "details": "User Test Signup 65143 (newuser_65143@example.com) registered.",
+    "createdAt": "2026-09-17T17:12:23.958Z"
+  },
+  {
+    "id": "adt_1789665044805_1e24b6ba",
+    "action": "TASK_ASSIGNED",
+    "userId": "usr_admin_01",
+    "userName": "Staff",
+    "userRole": "staff",
+    "targetId": "tsk_1789665044744_484b219f",
+    "targetType": "TASK",
+    "details": "Task \"Build Navigation and Responsive Header\" assigned to Marcus Vance.",
+    "createdAt": "2026-09-17T17:10:44.805Z"
+  },
+  {
+    "id": "adt_1789665044754_82c3de01",
+    "action": "TASK_ASSIGNED",
+    "userId": "usr_admin_01",
+    "userName": "Alexander Wright",
+    "userRole": "admin",
+    "targetId": "tsk_1789665044744_484b219f",
+    "targetType": "task",
+    "details": "Assigned task \"Build Navigation and Responsive Header\" to Marcus Vance.",
+    "metadata": {
+      "projectId": "prj_1789665044552_dc5df389",
+      "taskId": "tsk_1789665044744_484b219f",
+      "assignedTo": "usr_manager_01"
+    },
+    "createdAt": "2026-09-17T17:10:44.754Z"
+  },
+  {
+    "id": "adt_1789665044752_0edbd096",
+    "action": "TASK_CREATED",
+    "userId": "usr_admin_01",
+    "userName": "Alexander Wright",
+    "userRole": "admin",
+    "targetId": "tsk_1789665044744_484b219f",
+    "targetType": "task",
+    "details": "Created task \"Build Navigation and Responsive Header\" for project PRJ-2026-0006.",
+    "metadata": {
+      "projectId": "prj_1789665044552_dc5df389",
+      "taskId": "tsk_1789665044744_484b219f",
+      "priority": "HIGH"
+    },
+    "createdAt": "2026-09-17T17:10:44.752Z"
+  },
+  {
+    "id": "adt_1789665044718_60a718e8",
+    "action": "PROJECT_STATUS_CHANGED",
+    "userId": "Alexander Wright",
+    "userName": "Staff",
+    "userRole": "staff",
+    "targetId": "prj_1789665044552_dc5df389",
+    "targetType": "PROJECT",
+    "details": "Project PRJ-2026-0006 status transitioned to IN_PROGRESS.",
+    "createdAt": "2026-09-17T17:10:44.718Z"
+  },
+  {
+    "id": "adt_1789665044666_36e05269",
+    "action": "PROJECT_STATUS_CHANGED",
+    "userId": "usr_admin_01",
+    "userName": "Alexander Wright",
+    "userRole": "admin",
+    "targetId": "prj_1789665044552_dc5df389",
+    "targetType": "project",
+    "details": "Project PRJ-2026-0006 status changed to IN_PROGRESS. Note: Wireframing completed; initial layouts are underway.",
+    "metadata": {
+      "projectNumber": "PRJ-2026-0006",
+      "prevStatus": "ASSIGNED",
+      "newStatus": "IN_PROGRESS",
+      "note": "Wireframing completed; initial layouts are underway."
+    },
+    "createdAt": "2026-09-17T17:10:44.666Z"
+  },
+  {
+    "id": "adt_1789665044632_0513a318",
+    "action": "PROJECT_ASSIGNED",
+    "userId": "Alexander Wright",
+    "userName": "Staff",
+    "userRole": "staff",
+    "targetId": "prj_1789665044552_dc5df389",
+    "targetType": "PROJECT",
+    "details": "Project PRJ-2026-0006 assigned to Marcus Vance.",
+    "createdAt": "2026-09-17T17:10:44.632Z"
+  },
+  {
+    "id": "adt_1789665044564_be7be2df",
+    "action": "PROJECT_ASSIGNED",
+    "userId": "usr_admin_01",
+    "userName": "Alexander Wright",
+    "userRole": "admin",
+    "targetId": "prj_1789665044552_dc5df389",
+    "targetType": "project",
+    "details": "Assigned project PRJ-2026-0006 to Marcus Vance.",
+    "metadata": {
+      "projectNumber": "PRJ-2026-0006",
+      "assignedTo": "usr_manager_01"
+    },
+    "createdAt": "2026-09-17T17:10:44.564Z"
+  },
+  {
+    "id": "adt_1789665044561_48ec0293",
+    "action": "PROJECT_CREATED",
+    "userId": "usr_admin_01",
+    "userName": "Alexander Wright",
+    "userRole": "admin",
+    "targetId": "prj_1789665044552_dc5df389",
+    "targetType": "project",
+    "details": "Created project PRJ-2026-0006 (Apex Dynamics Build 65043) from Order WCW-2026-0018.",
+    "metadata": {
+      "projectNumber": "PRJ-2026-0006",
+      "orderId": "ord_1789665044424_byn65n",
+      "status": "ASSIGNED"
+    },
+    "createdAt": "2026-09-17T17:10:44.562Z"
+  },
+  {
+    "id": "adt_1789665044508_4f342e69",
+    "action": "CUSTOM_WEBSITE_ORDER_CREATED",
+    "userId": "usr_customer_01",
+    "userName": "Sarah Jenkins",
+    "userRole": "customer",
+    "targetId": "ord_1789665044424_byn65n",
+    "targetType": "ORDER",
+    "details": "Custom website request WCW-2026-0018 placed for Apex Dynamics 65043.",
+    "createdAt": "2026-09-17T17:10:44.508Z"
+  },
+  {
+    "id": "adt_1789665044504_9126f03e",
+    "action": "CUSTOM_WEBSITE_ORDER_CREATED",
+    "userId": "usr_customer_01",
+    "userName": "Sarah Jenkins",
+    "userRole": "user",
+    "targetId": "ord_1789665044424_byn65n",
+    "targetType": "ORDER",
+    "details": "Custom website order WCW-2026-0018 placed by Sarah Jenkins ($299).",
+    "createdAt": "2026-09-17T17:10:44.504Z"
+  },
+  {
+    "id": "adt_1789665044347_5bb032df",
+    "action": "PAYMENT_SUCCESS",
+    "userId": "usr_customer_01",
+    "userName": "Sarah Jenkins",
+    "userRole": "customer",
+    "targetId": "pay_1789665044322_a4dec0e2",
+    "targetType": "PAYMENT",
+    "details": "Payment pay_1789665044322_a4dec0e2 status updated to PAID for order TPL-2026-0017.",
+    "metadata": {
+      "paymentId": "pay_1789665044322_a4dec0e2",
+      "orderId": "ord_tpl_1789665044118_h6afvh",
+      "status": "PAID"
+    },
+    "createdAt": "2026-09-17T17:10:44.347Z"
+  },
+  {
+    "id": "adt_1789665044323_51da4b6f",
+    "action": "PAYMENT_INITIATED",
+    "userId": "usr_customer_01",
+    "userName": "Sarah Jenkins",
+    "userRole": "customer",
+    "targetId": "pay_1789665044322_a4dec0e2",
+    "targetType": "PAYMENT",
+    "details": "Payment initiated for order TPL-2026-0017 ($59 USD) via webcraft_pay.",
+    "metadata": {
+      "paymentId": "pay_1789665044322_a4dec0e2",
+      "orderId": "ord_tpl_1789665044118_h6afvh",
+      "provider": "webcraft_pay"
+    },
+    "createdAt": "2026-09-17T17:10:44.324Z"
+  },
+  {
+    "id": "adt_1789665044294_8fcb6196",
+    "action": "TEMPLATE_PURCHASED",
+    "userId": "usr_customer_01",
+    "userName": "Sarah Jenkins",
+    "userRole": "customer",
+    "targetId": "ord_tpl_1789665044118_h6afvh",
+    "targetType": "ORDER",
+    "details": "Template Modern Restaurant Website purchased for $59.",
+    "createdAt": "2026-09-17T17:10:44.295Z"
+  },
+  {
+    "id": "adt_1789665044151_dc8b4aea",
+    "action": "TEMPLATE_PURCHASED",
+    "userId": "usr_customer_01",
+    "userName": "Sarah Jenkins",
+    "userRole": "user",
+    "targetId": "ord_tpl_1789665044118_h6afvh",
+    "targetType": "ORDER",
+    "details": "Template order TPL-2026-0017 placed for Modern Restaurant Website ($59).",
+    "createdAt": "2026-09-17T17:10:44.151Z"
+  },
+  {
+    "id": "adt_1789665044079_221f61f7",
+    "action": "USER_REGISTERED",
+    "userId": "usr_1789665044013_d11no",
+    "userName": "Test Signup 65043",
+    "userRole": "user",
+    "targetId": "usr_1789665044013_d11no",
+    "targetType": "USER",
+    "details": "User Test Signup 65043 (newuser_65043@example.com) registered.",
+    "createdAt": "2026-09-17T17:10:44.079Z"
+  },
+  {
+    "id": "adt_1789665037251_03b1b5b9",
+    "action": "PAYMENT_SUCCESS",
+    "userId": "usr_customer_01",
+    "userName": "Sarah Jenkins",
+    "userRole": "customer",
+    "targetId": "pay_1789665037229_a3185bef",
+    "targetType": "PAYMENT",
+    "details": "Payment pay_1789665037229_a3185bef status updated to PAID for order TPL-2026-0016.",
+    "metadata": {
+      "paymentId": "pay_1789665037229_a3185bef",
+      "orderId": "ord_tpl_1789665036939_rqtuf2",
+      "status": "PAID"
+    },
+    "createdAt": "2026-09-17T17:10:37.251Z"
+  },
+  {
+    "id": "adt_1789665037230_07f39767",
+    "action": "PAYMENT_INITIATED",
+    "userId": "usr_customer_01",
+    "userName": "Sarah Jenkins",
+    "userRole": "customer",
+    "targetId": "pay_1789665037229_a3185bef",
+    "targetType": "PAYMENT",
+    "details": "Payment initiated for order TPL-2026-0016 ($59 USD) via webcraft_pay.",
+    "metadata": {
+      "paymentId": "pay_1789665037229_a3185bef",
+      "orderId": "ord_tpl_1789665036939_rqtuf2",
+      "provider": "webcraft_pay"
+    },
+    "createdAt": "2026-09-17T17:10:37.230Z"
+  },
+  {
+    "id": "adt_1789665037202_a740408e",
+    "action": "PAYMENT_FAILED",
+    "userId": "usr_customer_01",
+    "userName": "Sarah Jenkins",
+    "userRole": "customer",
+    "targetId": "pay_1789665037032_810be484",
+    "targetType": "PAYMENT",
+    "details": "Payment pay_1789665037032_810be484 status updated to FAILED for order TPL-2026-0016.",
+    "metadata": {
+      "paymentId": "pay_1789665037032_810be484",
+      "orderId": "ord_tpl_1789665036939_rqtuf2",
+      "status": "FAILED"
+    },
+    "createdAt": "2026-09-17T17:10:37.202Z"
+  },
+  {
+    "id": "adt_1789665037187_5986d5b4",
+    "action": "TEMPLATE_PURCHASED",
+    "userId": "usr_customer_01",
+    "userName": "Sarah Jenkins",
+    "userRole": "customer",
+    "targetId": "ord_tpl_1789665036939_rqtuf2",
+    "targetType": "ORDER",
+    "details": "Template Modern Restaurant Website purchased for $59.",
+    "createdAt": "2026-09-17T17:10:37.187Z"
+  },
+  {
+    "id": "adt_1789665037034_1a1e854c",
+    "action": "PAYMENT_INITIATED",
+    "userId": "usr_customer_01",
+    "userName": "Sarah Jenkins",
+    "userRole": "customer",
+    "targetId": "pay_1789665037032_810be484",
+    "targetType": "PAYMENT",
+    "details": "Payment initiated for order TPL-2026-0016 ($59 USD) via webcraft_pay.",
+    "metadata": {
+      "paymentId": "pay_1789665037032_810be484",
+      "orderId": "ord_tpl_1789665036939_rqtuf2",
+      "provider": "webcraft_pay"
+    },
+    "createdAt": "2026-09-17T17:10:37.034Z"
+  },
+  {
+    "id": "adt_1789665026376_6a3ec43b",
+    "action": "PROJECT_STATUS_CHANGED",
+    "userId": "Alexander Wright",
+    "userName": "Staff",
+    "userRole": "staff",
+    "targetId": "prj_1789665026293_11af767d",
+    "targetType": "PROJECT",
+    "details": "Project PRJ-2026-0005 status transitioned to CANCELLED.",
+    "createdAt": "2026-09-17T17:10:26.376Z"
+  },
+  {
+    "id": "adt_1789665026338_51f3c1f6",
+    "action": "PROJECT_STATUS_CHANGED",
+    "userId": "usr_admin_01",
+    "userName": "Alexander Wright",
+    "userRole": "admin",
+    "targetId": "prj_1789665026293_11af767d",
+    "targetType": "project",
+    "details": "Project PRJ-2026-0005 status changed to CANCELLED. Note: Customer decided not to proceed",
+    "metadata": {
+      "projectNumber": "PRJ-2026-0005",
+      "prevStatus": "PLANNING",
+      "newStatus": "CANCELLED",
+      "note": "Customer decided not to proceed"
+    },
+    "createdAt": "2026-09-17T17:10:26.338Z"
+  },
+  {
+    "id": "adt_1789665026303_ca143557",
+    "action": "PROJECT_CREATED",
+    "userId": "usr_admin_01",
+    "userName": "Alexander Wright",
+    "userRole": "admin",
+    "targetId": "prj_1789665026293_11af767d",
+    "targetType": "project",
+    "details": "Created project PRJ-2026-0005 (Cancellation Test Co) from Order WCW-2026-0015.",
+    "metadata": {
+      "projectNumber": "PRJ-2026-0005",
+      "orderId": "ord_1789665026183_iwn65a",
+      "status": "PLANNING"
+    },
+    "createdAt": "2026-09-17T17:10:26.303Z"
+  },
+  {
+    "id": "adt_1789665026259_6b97ce4d",
+    "action": "CUSTOM_WEBSITE_ORDER_CREATED",
+    "userId": "usr_customer_01",
+    "userName": "Sarah Jenkins",
+    "userRole": "customer",
+    "targetId": "ord_1789665026183_iwn65a",
+    "targetType": "ORDER",
+    "details": "Custom website request WCW-2026-0015 placed for Cancellation Test Co.",
+    "createdAt": "2026-09-17T17:10:26.260Z"
+  },
+  {
+    "id": "adt_1789665026256_f6600d55",
+    "action": "CUSTOM_WEBSITE_ORDER_CREATED",
+    "userId": "usr_customer_01",
+    "userName": "Sarah Jenkins",
+    "userRole": "user",
+    "targetId": "ord_1789665026183_iwn65a",
+    "targetType": "ORDER",
+    "details": "Custom website order WCW-2026-0015 placed by Sarah Jenkins ($299).",
+    "createdAt": "2026-09-17T17:10:26.257Z"
+  },
+  {
+    "id": "adt_1789665026119_18d97ae9",
+    "action": "PROJECT_STATUS_CHANGED",
+    "userId": "Alexander Wright",
+    "userName": "Staff",
+    "userRole": "staff",
+    "targetId": "prj_1789665025241_8800d4f6",
+    "targetType": "PROJECT",
+    "details": "Project PRJ-2026-0004 status transitioned to DELIVERED.",
+    "createdAt": "2026-09-17T17:10:26.119Z"
+  },
+  {
+    "id": "adt_1789665026114_087907bc",
+    "action": "PROJECT_DELIVERED",
+    "userId": "usr_admin_01",
+    "userName": "Alexander Wright",
+    "userRole": "admin",
+    "targetId": "pdel_1789665025972_529df993",
+    "targetType": "project_delivery",
+    "details": "Project PRJ-2026-0004 delivered with live URL: https://production.webcraft.ai/phase13-client-site.",
+    "metadata": {
+      "projectId": "prj_1789665025241_8800d4f6",
+      "deliveryId": "pdel_1789665025972_529df993",
+      "deliveredUrl": "https://production.webcraft.ai/phase13-client-site"
+    },
+    "createdAt": "2026-09-17T17:10:26.114Z"
+  },
+  {
+    "id": "adt_1789665025981_521f4c21",
+    "action": "PROJECT_STATUS_CHANGED",
+    "userId": "usr_admin_01",
+    "userName": "Alexander Wright",
+    "userRole": "admin",
+    "targetId": "prj_1789665025241_8800d4f6",
+    "targetType": "project",
+    "details": "Project PRJ-2026-0004 status changed to DELIVERED. Note: Project delivered. Live URL: https://production.webcraft.ai/phase13-client-site. Notes: Domain mapped and SSL certificates provisioned.",
+    "metadata": {
+      "projectNumber": "PRJ-2026-0004",
+      "prevStatus": "COMPLETED",
+      "newStatus": "DELIVERED",
+      "note": "Project delivered. Live URL: https://production.webcraft.ai/phase13-client-site. Notes: Domain mapped and SSL certificates provisioned."
+    },
+    "createdAt": "2026-09-17T17:10:25.981Z"
+  },
+  {
+    "id": "adt_1789665025942_9519fc09",
+    "action": "PROJECT_STATUS_CHANGED",
+    "userId": "Sarah Jenkins",
+    "userName": "Staff",
+    "userRole": "staff",
+    "targetId": "prj_1789665025241_8800d4f6",
+    "targetType": "PROJECT",
+    "details": "Project PRJ-2026-0004 status transitioned to COMPLETED.",
+    "createdAt": "2026-09-17T17:10:25.942Z"
+  },
+  {
+    "id": "adt_1789665025939_b8cec407",
+    "action": "PROJECT_APPROVED",
+    "userId": "usr_customer_01",
+    "userName": "Sarah Jenkins",
+    "userRole": "user",
+    "targetId": "papp_1789665025857_74d5f780",
+    "targetType": "project_approval",
+    "details": "Project PRJ-2026-0004 approved by customer (version v2).",
+    "metadata": {
+      "projectId": "prj_1789665025241_8800d4f6",
+      "approvalId": "papp_1789665025857_74d5f780",
+      "versionNumber": 2
+    },
+    "createdAt": "2026-09-17T17:10:25.939Z"
+  },
+  {
+    "id": "adt_1789665025875_36045a47",
+    "action": "PROJECT_STATUS_CHANGED",
+    "userId": "usr_customer_01",
+    "userName": "Sarah Jenkins",
+    "userRole": "user",
+    "targetId": "prj_1789665025241_8800d4f6",
+    "targetType": "project",
+    "details": "Project PRJ-2026-0004 status changed to COMPLETED. Note: Project approved by customer (Version v2). Feedback: Everything looks outstanding! Ready for production deployment.",
+    "metadata": {
+      "projectNumber": "PRJ-2026-0004",
+      "prevStatus": "REVIEW",
+      "newStatus": "COMPLETED",
+      "note": "Project approved by customer (Version v2). Feedback: Everything looks outstanding! Ready for production deployment."
+    },
+    "createdAt": "2026-09-17T17:10:25.875Z"
+  },
+  {
+    "id": "adt_1789665025851_ddd0b4e5",
+    "action": "PROJECT_STATUS_CHANGED",
+    "userId": "Alexander Wright",
+    "userName": "Staff",
+    "userRole": "staff",
+    "targetId": "prj_1789665025241_8800d4f6",
+    "targetType": "PROJECT",
+    "details": "Project PRJ-2026-0004 status transitioned to REVIEW.",
+    "createdAt": "2026-09-17T17:10:25.851Z"
+  },
+  {
+    "id": "adt_1789665025847_d80f709f",
+    "action": "PROJECT_VERSION_CREATED",
+    "userId": "usr_admin_01",
+    "userName": "Alexander Wright",
+    "userRole": "admin",
+    "targetId": "pver_1789665025779_437577ed",
+    "targetType": "project_version",
+    "details": "Created version v2 for project PRJ-2026-0004.",
+    "metadata": {
+      "projectId": "prj_1789665025241_8800d4f6",
+      "versionId": "pver_1789665025779_437577ed",
+      "versionNumber": 2
+    },
+    "createdAt": "2026-09-17T17:10:25.847Z"
+  },
+  {
+    "id": "adt_1789665025787_ab79f7f2",
+    "action": "PROJECT_STATUS_CHANGED",
+    "userId": "usr_admin_01",
+    "userName": "Alexander Wright",
+    "userRole": "admin",
+    "targetId": "prj_1789665025241_8800d4f6",
+    "targetType": "project",
+    "details": "Project PRJ-2026-0004 status changed to REVIEW. Note: Version 2 (\"Alpha Design v2 (Color Updates)\") submitted for customer review.",
+    "metadata": {
+      "projectNumber": "PRJ-2026-0004",
+      "prevStatus": "IN_PROGRESS",
+      "newStatus": "REVIEW",
+      "note": "Version 2 (\"Alpha Design v2 (Color Updates)\") submitted for customer review."
+    },
+    "createdAt": "2026-09-17T17:10:25.788Z"
+  },
+  {
+    "id": "adt_1789665025753_c58657d2",
+    "action": "PROJECT_STATUS_CHANGED",
+    "userId": "Sarah Jenkins",
+    "userName": "Staff",
+    "userRole": "staff",
+    "targetId": "prj_1789665025241_8800d4f6",
+    "targetType": "PROJECT",
+    "details": "Project PRJ-2026-0004 status transitioned to IN_PROGRESS.",
+    "createdAt": "2026-09-17T17:10:25.753Z"
+  },
+  {
+    "id": "adt_1789665025750_bd14c620",
+    "action": "PROJECT_REVISION_REQUESTED",
+    "userId": "usr_customer_01",
+    "userName": "Sarah Jenkins",
+    "userRole": "user",
+    "targetId": "prev_1789665025677_9919bd2f",
+    "targetType": "project_revision",
+    "details": "Revision #1 requested for project PRJ-2026-0004.",
+    "metadata": {
+      "projectId": "prj_1789665025241_8800d4f6",
+      "revisionId": "prev_1789665025677_9919bd2f",
+      "revisionNumber": 1
+    },
+    "createdAt": "2026-09-17T17:10:25.750Z"
+  },
+  {
+    "id": "adt_1789665025686_36c01906",
+    "action": "PROJECT_STATUS_CHANGED",
+    "userId": "usr_customer_01",
+    "userName": "Sarah Jenkins",
+    "userRole": "user",
+    "targetId": "prj_1789665025241_8800d4f6",
+    "targetType": "project",
+    "details": "Project PRJ-2026-0004 status changed to IN_PROGRESS. Note: Revision #1 requested by customer: Please change header typography and primary color to blue.",
+    "metadata": {
+      "projectNumber": "PRJ-2026-0004",
+      "prevStatus": "REVIEW",
+      "newStatus": "IN_PROGRESS",
+      "note": "Revision #1 requested by customer: Please change header typography and primary color to blue."
+    },
+    "createdAt": "2026-09-17T17:10:25.686Z"
+  },
+  {
+    "id": "adt_1789665025664_a1e37f47",
+    "action": "PROJECT_STATUS_CHANGED",
+    "userId": "Alexander Wright",
+    "userName": "Staff",
+    "userRole": "staff",
+    "targetId": "prj_1789665025241_8800d4f6",
+    "targetType": "PROJECT",
+    "details": "Project PRJ-2026-0004 status transitioned to REVIEW.",
+    "createdAt": "2026-09-17T17:10:25.664Z"
+  },
+  {
+    "id": "adt_1789665025662_bb92720e",
+    "action": "PROJECT_VERSION_CREATED",
+    "userId": "usr_admin_01",
+    "userName": "Alexander Wright",
+    "userRole": "admin",
+    "targetId": "pver_1789665025581_b9ab2019",
+    "targetType": "project_version",
+    "details": "Created version v1 for project PRJ-2026-0004.",
+    "metadata": {
+      "projectId": "prj_1789665025241_8800d4f6",
+      "versionId": "pver_1789665025581_b9ab2019",
+      "versionNumber": 1
+    },
+    "createdAt": "2026-09-17T17:10:25.662Z"
+  },
+  {
+    "id": "adt_1789665025589_a7e6be81",
+    "action": "PROJECT_STATUS_CHANGED",
+    "userId": "usr_admin_01",
+    "userName": "Alexander Wright",
+    "userRole": "admin",
+    "targetId": "prj_1789665025241_8800d4f6",
+    "targetType": "project",
+    "details": "Project PRJ-2026-0004 status changed to REVIEW. Note: Version 1 (\"Alpha Design v1\") submitted for customer review.",
+    "metadata": {
+      "projectNumber": "PRJ-2026-0004",
+      "prevStatus": "IN_PROGRESS",
+      "newStatus": "REVIEW",
+      "note": "Version 1 (\"Alpha Design v1\") submitted for customer review."
+    },
+    "createdAt": "2026-09-17T17:10:25.589Z"
+  },
+  {
+    "id": "adt_1789665025574_b944d38e",
+    "action": "PROJECT_STATUS_CHANGED",
+    "userId": "Alexander Wright",
+    "userName": "Staff",
+    "userRole": "staff",
+    "targetId": "prj_1789665025241_8800d4f6",
+    "targetType": "PROJECT",
+    "details": "Project PRJ-2026-0004 status transitioned to IN_PROGRESS.",
+    "createdAt": "2026-09-17T17:10:25.574Z"
+  },
+  {
+    "id": "adt_1789665025508_08efc037",
+    "action": "PROJECT_STATUS_CHANGED",
+    "userId": "usr_admin_01",
+    "userName": "Alexander Wright",
+    "userRole": "admin",
+    "targetId": "prj_1789665025241_8800d4f6",
+    "targetType": "project",
+    "details": "Project PRJ-2026-0004 status changed to IN_PROGRESS. Note: Client assets received",
+    "metadata": {
+      "projectNumber": "PRJ-2026-0004",
+      "prevStatus": "ON_HOLD",
+      "newStatus": "IN_PROGRESS",
+      "note": "Client assets received"
+    },
+    "createdAt": "2026-09-17T17:10:25.508Z"
+  },
+  {
+    "id": "adt_1789665025494_a68fde41",
+    "action": "PROJECT_STATUS_CHANGED",
+    "userId": "Alexander Wright",
+    "userName": "Staff",
+    "userRole": "staff",
+    "targetId": "prj_1789665025241_8800d4f6",
+    "targetType": "PROJECT",
+    "details": "Project PRJ-2026-0004 status transitioned to ON_HOLD.",
+    "createdAt": "2026-09-17T17:10:25.494Z"
+  },
+  {
+    "id": "adt_1789665025435_9ef57b06",
+    "action": "PROJECT_STATUS_CHANGED",
+    "userId": "usr_admin_01",
+    "userName": "Alexander Wright",
+    "userRole": "admin",
+    "targetId": "prj_1789665025241_8800d4f6",
+    "targetType": "project",
+    "details": "Project PRJ-2026-0004 status changed to ON_HOLD. Note: Waiting for client assets",
+    "metadata": {
+      "projectNumber": "PRJ-2026-0004",
+      "prevStatus": "IN_PROGRESS",
+      "newStatus": "ON_HOLD",
+      "note": "Waiting for client assets"
+    },
+    "createdAt": "2026-09-17T17:10:25.435Z"
+  },
+  {
+    "id": "adt_1789665025418_6e1ba058",
+    "action": "PROJECT_STATUS_CHANGED",
+    "userId": "Alexander Wright",
+    "userName": "Staff",
+    "userRole": "staff",
+    "targetId": "prj_1789665025241_8800d4f6",
+    "targetType": "PROJECT",
+    "details": "Project PRJ-2026-0004 status transitioned to IN_PROGRESS.",
+    "createdAt": "2026-09-17T17:10:25.418Z"
+  },
+  {
+    "id": "adt_1789665025372_d16cf08f",
+    "action": "PROJECT_STATUS_CHANGED",
+    "userId": "usr_admin_01",
+    "userName": "Alexander Wright",
+    "userRole": "admin",
+    "targetId": "prj_1789665025241_8800d4f6",
+    "targetType": "project",
+    "details": "Project PRJ-2026-0004 status changed to IN_PROGRESS.",
+    "metadata": {
+      "projectNumber": "PRJ-2026-0004",
+      "prevStatus": "ASSIGNED",
+      "newStatus": "IN_PROGRESS"
+    },
+    "createdAt": "2026-09-17T17:10:25.373Z"
+  },
+  {
+    "id": "adt_1789665025357_852f6d8c",
+    "action": "PROJECT_STATUS_CHANGED",
+    "userId": "Alexander Wright",
+    "userName": "Staff",
+    "userRole": "staff",
+    "targetId": "prj_1789665025241_8800d4f6",
+    "targetType": "PROJECT",
+    "details": "Project PRJ-2026-0004 status transitioned to ASSIGNED.",
+    "createdAt": "2026-09-17T17:10:25.357Z"
+  },
+  {
+    "id": "adt_1789665025305_bf1b5e3a",
+    "action": "PROJECT_STATUS_CHANGED",
+    "userId": "usr_admin_01",
+    "userName": "Alexander Wright",
+    "userRole": "admin",
+    "targetId": "prj_1789665025241_8800d4f6",
+    "targetType": "project",
+    "details": "Project PRJ-2026-0004 status changed to ASSIGNED.",
+    "metadata": {
+      "projectNumber": "PRJ-2026-0004",
+      "prevStatus": "PLANNING",
+      "newStatus": "ASSIGNED"
+    },
+    "createdAt": "2026-09-17T17:10:25.305Z"
+  },
+  {
+    "id": "adt_1789665025254_6fb210fc",
+    "action": "PROJECT_CREATED",
+    "userId": "usr_admin_01",
+    "userName": "Alexander Wright",
+    "userRole": "admin",
+    "targetId": "prj_1789665025241_8800d4f6",
+    "targetType": "project",
+    "details": "Created project PRJ-2026-0004 (Phase 13 Validation Project) from Order WCW-2026-0014.",
+    "metadata": {
+      "projectNumber": "PRJ-2026-0004",
+      "orderId": "ord_1789665025085_91lhle",
+      "status": "PLANNING"
+    },
+    "createdAt": "2026-09-17T17:10:25.254Z"
+  },
+  {
+    "id": "adt_1789665025210_b537fa27",
+    "action": "CUSTOM_WEBSITE_ORDER_CREATED",
+    "userId": "usr_customer_01",
+    "userName": "Sarah Jenkins",
+    "userRole": "customer",
+    "targetId": "ord_1789665025085_91lhle",
+    "targetType": "ORDER",
+    "details": "Custom website request WCW-2026-0014 placed for Phase 13 Test Co 1789665025.",
+    "createdAt": "2026-09-17T17:10:25.210Z"
+  },
+  {
+    "id": "adt_1789665025206_1fbce14c",
+    "action": "CUSTOM_WEBSITE_ORDER_CREATED",
+    "userId": "usr_customer_01",
+    "userName": "Sarah Jenkins",
+    "userRole": "user",
+    "targetId": "ord_1789665025085_91lhle",
+    "targetType": "ORDER",
+    "details": "Custom website order WCW-2026-0014 placed by Sarah Jenkins ($299).",
+    "createdAt": "2026-09-17T17:10:25.206Z"
+  },
+  {
+    "id": "adt_1789663848486_45f47967",
+    "action": "PAYMENT_SUCCESS",
+    "userId": "usr_customer_01",
+    "userName": "Sarah Jenkins",
+    "userRole": "customer",
+    "targetId": "pay_1789663848466_5b9eadf2",
+    "targetType": "PAYMENT",
+    "details": "Payment pay_1789663848466_5b9eadf2 status updated to PAID for order TPL-2026-0013.",
+    "metadata": {
+      "paymentId": "pay_1789663848466_5b9eadf2",
+      "orderId": "ord_tpl_1789663848235_1y5b0w",
+      "status": "PAID"
+    },
+    "createdAt": "2026-09-17T16:50:48.487Z"
+  },
+  {
+    "id": "adt_1789663848467_62151827",
+    "action": "PAYMENT_INITIATED",
+    "userId": "usr_customer_01",
+    "userName": "Sarah Jenkins",
+    "userRole": "customer",
+    "targetId": "pay_1789663848466_5b9eadf2",
+    "targetType": "PAYMENT",
+    "details": "Payment initiated for order TPL-2026-0013 ($59 USD) via webcraft_pay.",
+    "metadata": {
+      "paymentId": "pay_1789663848466_5b9eadf2",
+      "orderId": "ord_tpl_1789663848235_1y5b0w",
+      "provider": "webcraft_pay"
+    },
+    "createdAt": "2026-09-17T16:50:48.468Z"
+  },
+  {
+    "id": "adt_1789663848439_4f4496ef",
+    "action": "PAYMENT_FAILED",
+    "userId": "usr_customer_01",
+    "userName": "Sarah Jenkins",
+    "userRole": "customer",
+    "targetId": "pay_1789663848303_2bdec5b0",
+    "targetType": "PAYMENT",
+    "details": "Payment pay_1789663848303_2bdec5b0 status updated to FAILED for order TPL-2026-0013.",
+    "metadata": {
+      "paymentId": "pay_1789663848303_2bdec5b0",
+      "orderId": "ord_tpl_1789663848235_1y5b0w",
+      "status": "FAILED"
+    },
+    "createdAt": "2026-09-17T16:50:48.440Z"
+  },
+  {
+    "id": "adt_1789663848428_7c65fbb6",
+    "action": "TEMPLATE_PURCHASED",
+    "userId": "usr_customer_01",
+    "userName": "Sarah Jenkins",
+    "userRole": "customer",
+    "targetId": "ord_tpl_1789663848235_1y5b0w",
+    "targetType": "ORDER",
+    "details": "Template Modern Restaurant Website purchased for $59.",
+    "createdAt": "2026-09-17T16:50:48.428Z"
+  },
+  {
+    "id": "adt_1789663848304_2890b201",
+    "action": "PAYMENT_INITIATED",
+    "userId": "usr_customer_01",
+    "userName": "Sarah Jenkins",
+    "userRole": "customer",
+    "targetId": "pay_1789663848303_2bdec5b0",
+    "targetType": "PAYMENT",
+    "details": "Payment initiated for order TPL-2026-0013 ($59 USD) via webcraft_pay.",
+    "metadata": {
+      "paymentId": "pay_1789663848303_2bdec5b0",
+      "orderId": "ord_tpl_1789663848235_1y5b0w",
+      "provider": "webcraft_pay"
+    },
+    "createdAt": "2026-09-17T16:50:48.304Z"
+  },
+  {
+    "id": "adt_1789663712247_619d4027",
+    "action": "PAYMENT_SUCCESS",
+    "userId": "usr_customer_01",
+    "userName": "Sarah Jenkins",
+    "userRole": "customer",
+    "targetId": "pay_1789663712223_dcc0c4fe",
+    "targetType": "PAYMENT",
+    "details": "Payment pay_1789663712223_dcc0c4fe status updated to PAID for order TPL-2026-0012.",
+    "metadata": {
+      "paymentId": "pay_1789663712223_dcc0c4fe",
+      "orderId": "ord_tpl_1789663711986_zhpo50",
+      "status": "PAID"
+    },
+    "createdAt": "2026-09-17T16:48:32.247Z"
+  },
+  {
+    "id": "adt_1789663712224_f6ebe1e5",
+    "action": "PAYMENT_INITIATED",
+    "userId": "usr_customer_01",
+    "userName": "Sarah Jenkins",
+    "userRole": "customer",
+    "targetId": "pay_1789663712223_dcc0c4fe",
+    "targetType": "PAYMENT",
+    "details": "Payment initiated for order TPL-2026-0012 ($59 USD) via webcraft_pay.",
+    "metadata": {
+      "paymentId": "pay_1789663712223_dcc0c4fe",
+      "orderId": "ord_tpl_1789663711986_zhpo50",
+      "provider": "webcraft_pay"
+    },
+    "createdAt": "2026-09-17T16:48:32.224Z"
+  },
+  {
+    "id": "adt_1789663712191_a5f30277",
+    "action": "PAYMENT_FAILED",
+    "userId": "usr_customer_01",
+    "userName": "Sarah Jenkins",
+    "userRole": "customer",
+    "targetId": "pay_1789663712047_b8cb2e50",
+    "targetType": "PAYMENT",
+    "details": "Payment pay_1789663712047_b8cb2e50 status updated to FAILED for order TPL-2026-0012.",
+    "metadata": {
+      "paymentId": "pay_1789663712047_b8cb2e50",
+      "orderId": "ord_tpl_1789663711986_zhpo50",
+      "status": "FAILED"
+    },
+    "createdAt": "2026-09-17T16:48:32.191Z"
+  },
+  {
+    "id": "adt_1789663712179_6d2bff61",
+    "action": "TEMPLATE_PURCHASED",
+    "userId": "usr_customer_01",
+    "userName": "Sarah Jenkins",
+    "userRole": "customer",
+    "targetId": "ord_tpl_1789663711986_zhpo50",
+    "targetType": "ORDER",
+    "details": "Template Modern Restaurant Website purchased for $59.",
+    "createdAt": "2026-09-17T16:48:32.179Z"
+  },
+  {
+    "id": "adt_1789663712049_20d2d0c2",
+    "action": "PAYMENT_INITIATED",
+    "userId": "usr_customer_01",
+    "userName": "Sarah Jenkins",
+    "userRole": "customer",
+    "targetId": "pay_1789663712047_b8cb2e50",
+    "targetType": "PAYMENT",
+    "details": "Payment initiated for order TPL-2026-0012 ($59 USD) via webcraft_pay.",
+    "metadata": {
+      "paymentId": "pay_1789663712047_b8cb2e50",
+      "orderId": "ord_tpl_1789663711986_zhpo50",
+      "provider": "webcraft_pay"
+    },
+    "createdAt": "2026-09-17T16:48:32.050Z"
+  },
+  {
+    "id": "adt_1789663689695_6ffe9a14",
+    "action": "PROJECT_STATUS_CHANGED",
+    "userId": "Alexander Wright",
+    "userName": "Staff",
+    "userRole": "staff",
+    "targetId": "prj_1789663689255_731cc869",
+    "targetType": "PROJECT",
+    "details": "Project PRJ-2026-0003 status transitioned to COMPLETED.",
+    "createdAt": "2026-09-17T16:48:09.696Z"
+  },
+  {
+    "id": "adt_1789663689567_a5e7b1da",
+    "action": "PROJECT_STATUS_CHANGED",
+    "userId": "usr_admin_01",
+    "userName": "Alexander Wright",
+    "userRole": "staff",
+    "targetId": "prj_1789663689255_731cc869",
+    "targetType": "project",
+    "details": "Project PRJ-2026-0003 status changed to COMPLETED. Note: Production deployed, DNS configured, delivered to client.",
+    "metadata": {
+      "projectNumber": "PRJ-2026-0003",
+      "newStatus": "COMPLETED",
+      "note": "Production deployed, DNS configured, delivered to client."
+    },
+    "createdAt": "2026-09-17T16:48:09.567Z"
+  },
+  {
+    "id": "adt_1789663689451_925673a8",
+    "action": "TASK_ASSIGNED",
+    "userId": "usr_admin_01",
+    "userName": "Staff",
+    "userRole": "staff",
+    "targetId": "tsk_1789663689402_a37e59f5",
+    "targetType": "TASK",
+    "details": "Task \"Build Navigation and Responsive Header\" assigned to Marcus Vance.",
+    "createdAt": "2026-09-17T16:48:09.451Z"
+  },
+  {
+    "id": "adt_1789663689408_1c13b844",
+    "action": "TASK_ASSIGNED",
+    "userId": "usr_admin_01",
+    "userName": "Alexander Wright",
+    "userRole": "admin",
+    "targetId": "tsk_1789663689402_a37e59f5",
+    "targetType": "task",
+    "details": "Assigned task \"Build Navigation and Responsive Header\" to Marcus Vance.",
+    "metadata": {
+      "projectId": "prj_1789663689255_731cc869",
+      "taskId": "tsk_1789663689402_a37e59f5",
+      "assignedTo": "usr_manager_01"
+    },
+    "createdAt": "2026-09-17T16:48:09.408Z"
+  },
+  {
+    "id": "adt_1789663689406_98e2ca23",
+    "action": "TASK_CREATED",
+    "userId": "usr_admin_01",
+    "userName": "Alexander Wright",
+    "userRole": "admin",
+    "targetId": "tsk_1789663689402_a37e59f5",
+    "targetType": "task",
+    "details": "Created task \"Build Navigation and Responsive Header\" for project PRJ-2026-0003.",
+    "metadata": {
+      "projectId": "prj_1789663689255_731cc869",
+      "taskId": "tsk_1789663689402_a37e59f5",
+      "priority": "HIGH"
+    },
+    "createdAt": "2026-09-17T16:48:09.406Z"
+  },
+  {
+    "id": "adt_1789663689376_7592dddb",
+    "action": "PROJECT_STATUS_CHANGED",
+    "userId": "Alexander Wright",
+    "userName": "Staff",
+    "userRole": "staff",
+    "targetId": "prj_1789663689255_731cc869",
+    "targetType": "PROJECT",
+    "details": "Project PRJ-2026-0003 status transitioned to IN_PROGRESS.",
+    "createdAt": "2026-09-17T16:48:09.377Z"
+  },
+  {
+    "id": "adt_1789663689344_4eac6ef7",
+    "action": "PROJECT_STATUS_CHANGED",
+    "userId": "usr_admin_01",
+    "userName": "Alexander Wright",
+    "userRole": "staff",
+    "targetId": "prj_1789663689255_731cc869",
+    "targetType": "project",
+    "details": "Project PRJ-2026-0003 status changed to IN_PROGRESS. Note: Wireframing completed; initial layouts are underway.",
+    "metadata": {
+      "projectNumber": "PRJ-2026-0003",
+      "newStatus": "IN_PROGRESS",
+      "note": "Wireframing completed; initial layouts are underway."
+    },
+    "createdAt": "2026-09-17T16:48:09.344Z"
+  },
+  {
+    "id": "adt_1789663689319_6abf1ca3",
+    "action": "PROJECT_ASSIGNED",
+    "userId": "Alexander Wright",
+    "userName": "Staff",
+    "userRole": "staff",
+    "targetId": "prj_1789663689255_731cc869",
+    "targetType": "PROJECT",
+    "details": "Project PRJ-2026-0003 assigned to Marcus Vance.",
+    "createdAt": "2026-09-17T16:48:09.319Z"
+  },
+  {
+    "id": "adt_1789663689263_964f561a",
+    "action": "PROJECT_ASSIGNED",
+    "userId": "usr_admin_01",
+    "userName": "Alexander Wright",
+    "userRole": "admin",
+    "targetId": "prj_1789663689255_731cc869",
+    "targetType": "project",
+    "details": "Assigned project PRJ-2026-0003 to Marcus Vance.",
+    "metadata": {
+      "projectNumber": "PRJ-2026-0003",
+      "assignedTo": "usr_manager_01"
+    },
+    "createdAt": "2026-09-17T16:48:09.263Z"
+  },
+  {
+    "id": "adt_1789663689261_3962316b",
+    "action": "PROJECT_CREATED",
+    "userId": "usr_admin_01",
+    "userName": "Alexander Wright",
+    "userRole": "admin",
+    "targetId": "prj_1789663689255_731cc869",
+    "targetType": "project",
+    "details": "Created project PRJ-2026-0003 (Apex Dynamics Build 63688) from Order WCW-2026-0011.",
+    "metadata": {
+      "projectNumber": "PRJ-2026-0003",
+      "orderId": "ord_1789663689139_l8wv73",
+      "status": "ASSIGNED"
+    },
+    "createdAt": "2026-09-17T16:48:09.261Z"
+  },
+  {
+    "id": "adt_1789663689215_07406a1f",
+    "action": "CUSTOM_WEBSITE_ORDER_CREATED",
+    "userId": "usr_customer_01",
+    "userName": "Sarah Jenkins",
+    "userRole": "customer",
+    "targetId": "ord_1789663689139_l8wv73",
+    "targetType": "ORDER",
+    "details": "Custom website request WCW-2026-0011 placed for Apex Dynamics 63688.",
+    "createdAt": "2026-09-17T16:48:09.215Z"
+  },
+  {
+    "id": "adt_1789663689212_3de4d82f",
+    "action": "CUSTOM_WEBSITE_ORDER_CREATED",
+    "userId": "usr_customer_01",
+    "userName": "Sarah Jenkins",
+    "userRole": "user",
+    "targetId": "ord_1789663689139_l8wv73",
+    "targetType": "ORDER",
+    "details": "Custom website order WCW-2026-0011 placed by Sarah Jenkins ($299).",
+    "createdAt": "2026-09-17T16:48:09.212Z"
+  },
+  {
+    "id": "adt_1789663689044_2d54878f",
+    "action": "PAYMENT_SUCCESS",
+    "userId": "usr_customer_01",
+    "userName": "Sarah Jenkins",
+    "userRole": "customer",
+    "targetId": "pay_1789663689020_1c4bd9b2",
+    "targetType": "PAYMENT",
+    "details": "Payment pay_1789663689020_1c4bd9b2 status updated to PAID for order TPL-2026-0010.",
+    "metadata": {
+      "paymentId": "pay_1789663689020_1c4bd9b2",
+      "orderId": "ord_tpl_1789663688827_b9d1wb",
+      "status": "PAID"
+    },
+    "createdAt": "2026-09-17T16:48:09.044Z"
+  },
+  {
+    "id": "adt_1789663689022_a870c738",
+    "action": "PAYMENT_INITIATED",
+    "userId": "usr_customer_01",
+    "userName": "Sarah Jenkins",
+    "userRole": "customer",
+    "targetId": "pay_1789663689020_1c4bd9b2",
+    "targetType": "PAYMENT",
+    "details": "Payment initiated for order TPL-2026-0010 ($59 USD) via webcraft_pay.",
+    "metadata": {
+      "paymentId": "pay_1789663689020_1c4bd9b2",
+      "orderId": "ord_tpl_1789663688827_b9d1wb",
+      "provider": "webcraft_pay"
+    },
+    "createdAt": "2026-09-17T16:48:09.022Z"
+  },
+  {
+    "id": "adt_1789663689000_cadf4e70",
+    "action": "TEMPLATE_PURCHASED",
+    "userId": "usr_customer_01",
+    "userName": "Sarah Jenkins",
+    "userRole": "customer",
+    "targetId": "ord_tpl_1789663688827_b9d1wb",
+    "targetType": "ORDER",
+    "details": "Template Modern Restaurant Website purchased for $59.",
+    "createdAt": "2026-09-17T16:48:09.000Z"
+  },
+  {
+    "id": "adt_1789663688881_1c359c27",
+    "action": "TEMPLATE_PURCHASED",
+    "userId": "usr_customer_01",
+    "userName": "Sarah Jenkins",
+    "userRole": "user",
+    "targetId": "ord_tpl_1789663688827_b9d1wb",
+    "targetType": "ORDER",
+    "details": "Template order TPL-2026-0010 placed for Modern Restaurant Website ($59).",
+    "createdAt": "2026-09-17T16:48:08.882Z"
+  },
+  {
+    "id": "adt_1789663688801_f161cec7",
+    "action": "USER_REGISTERED",
+    "userId": "usr_1789663688761_809xr",
+    "userName": "Test Signup 63688",
+    "userRole": "user",
+    "targetId": "usr_1789663688761_809xr",
+    "targetType": "USER",
+    "details": "User Test Signup 63688 (newuser_63688@example.com) registered.",
+    "createdAt": "2026-09-17T16:48:08.801Z"
+  },
+  {
+    "id": "adt_1789663680238_6616d89b",
+    "action": "ORDER_CREATED",
+    "userId": "user-uuid-1",
+    "userName": "Customer",
+    "userRole": "user",
+    "targetId": "ord-idemp-1",
+    "targetType": "ORDER",
+    "details": "Order ORD-IDEMP-01 created for $250 USD.",
+    "createdAt": "2026-09-17T16:48:00.239Z"
+  },
+  {
+    "id": "adt_1789663680017_3b7a099f",
+    "action": "TASK_ASSIGNED",
+    "userId": "Staff Lead",
+    "userName": "Staff",
+    "userRole": "staff",
+    "targetId": "task-uuid-1",
+    "targetType": "TASK",
+    "details": "Task \"Design responsive navigation navbar\" assigned to staff-uuid-2.",
+    "createdAt": "2026-09-17T16:48:00.018Z"
+  },
+  {
+    "id": "adt_1789663679996_7a7d8fed",
+    "action": "PROJECT_STATUS_CHANGED",
+    "userId": "Staff Lead",
+    "userName": "Staff",
+    "userRole": "staff",
+    "targetId": "proj-uuid-1",
+    "targetType": "PROJECT",
+    "details": "Project PRJ-5001 status transitioned to IN_PROGRESS.",
+    "createdAt": "2026-09-17T16:47:59.996Z"
+  },
+  {
+    "id": "adt_1789663679951_b3b679b7",
+    "action": "PROJECT_ASSIGNED",
+    "userId": "Admin Lead",
+    "userName": "Staff",
+    "userRole": "staff",
+    "targetId": "proj-uuid-1",
+    "targetType": "PROJECT",
+    "details": "Project PRJ-5001 assigned to staff-uuid-1.",
+    "createdAt": "2026-09-17T16:47:59.951Z"
+  },
+  {
+    "id": "adt_1789663679938_e93dfafe",
+    "action": "CUSTOM_WEBSITE_ORDER_CREATED",
+    "userId": "user-uuid-1",
+    "userName": "Customer",
+    "userRole": "customer",
+    "targetId": "ord-uuid-3",
+    "targetType": "ORDER",
+    "details": "Custom website request ORD-1003 placed for Nexus AI Labs.",
+    "createdAt": "2026-09-17T16:47:59.938Z"
+  },
+  {
+    "id": "adt_1789663679879_820419a0",
+    "action": "TEMPLATE_PURCHASED",
+    "userId": "user-uuid-1",
+    "userName": "Customer",
+    "userRole": "customer",
+    "targetId": "ord-uuid-2",
+    "targetType": "ORDER",
+    "details": "Template SaaS Launchpad Pro purchased for $149.",
+    "createdAt": "2026-09-17T16:47:59.879Z"
+  },
+  {
+    "id": "adt_1789663679760_0d64cffb",
+    "action": "ORDER_CREATED",
+    "userId": "user-uuid-1",
+    "userName": "Customer",
+    "userRole": "user",
+    "targetId": "ord-uuid-1",
+    "targetType": "ORDER",
+    "details": "Order ORD-1001 created for $2999 USD.",
+    "createdAt": "2026-09-17T16:47:59.760Z"
+  },
+  {
+    "id": "adt_1789663679702_7ce344c0",
+    "action": "USER_REGISTERED",
+    "userId": "user-uuid-1",
+    "userName": "Jane Tester",
+    "userRole": "user",
+    "targetId": "user-uuid-1",
+    "targetType": "USER",
+    "details": "User Jane Tester (jane@example.com) registered.",
+    "createdAt": "2026-09-17T16:47:59.703Z"
+  },
+  {
+    "id": "adt_1789659764241_74f18286",
+    "action": "PROJECT_STATUS_CHANGED",
+    "userId": "usr_admin_01",
+    "userName": "Alexander Wright",
+    "userRole": "staff",
+    "targetId": "prj_1789659764078_14501b2b",
+    "targetType": "project",
+    "details": "Project PRJ-2026-0002 status changed to COMPLETED. Note: Production deployed, DNS configured, delivered to client.",
+    "metadata": {
+      "projectNumber": "PRJ-2026-0002",
+      "newStatus": "COMPLETED",
+      "note": "Production deployed, DNS configured, delivered to client."
+    },
+    "createdAt": "2026-09-17T15:42:44.241Z"
+  },
+  {
+    "id": "adt_1789659764171_24e11c3d",
+    "action": "TASK_ASSIGNED",
+    "userId": "usr_admin_01",
+    "userName": "Alexander Wright",
+    "userRole": "admin",
+    "targetId": "tsk_1789659764164_5ac47c6d",
+    "targetType": "task",
+    "details": "Assigned task \"Build Navigation and Responsive Header\" to Marcus Vance.",
+    "metadata": {
+      "projectId": "prj_1789659764078_14501b2b",
+      "taskId": "tsk_1789659764164_5ac47c6d",
+      "assignedTo": "usr_manager_01"
+    },
+    "createdAt": "2026-09-17T15:42:44.171Z"
+  },
+  {
+    "id": "adt_1789659764170_41382ae4",
+    "action": "TASK_CREATED",
+    "userId": "usr_admin_01",
+    "userName": "Alexander Wright",
+    "userRole": "admin",
+    "targetId": "tsk_1789659764164_5ac47c6d",
+    "targetType": "task",
+    "details": "Created task \"Build Navigation and Responsive Header\" for project PRJ-2026-0002.",
+    "metadata": {
+      "projectId": "prj_1789659764078_14501b2b",
+      "taskId": "tsk_1789659764164_5ac47c6d",
+      "priority": "HIGH"
+    },
+    "createdAt": "2026-09-17T15:42:44.170Z"
+  },
+  {
+    "id": "adt_1789659764137_79a871d2",
+    "action": "PROJECT_STATUS_CHANGED",
+    "userId": "usr_admin_01",
+    "userName": "Alexander Wright",
+    "userRole": "staff",
+    "targetId": "prj_1789659764078_14501b2b",
+    "targetType": "project",
+    "details": "Project PRJ-2026-0002 status changed to IN_PROGRESS. Note: Wireframing completed; initial layouts are underway.",
+    "metadata": {
+      "projectNumber": "PRJ-2026-0002",
+      "newStatus": "IN_PROGRESS",
+      "note": "Wireframing completed; initial layouts are underway."
+    },
+    "createdAt": "2026-09-17T15:42:44.137Z"
+  },
+  {
+    "id": "adt_1789659764088_a56ac6c2",
+    "action": "PROJECT_ASSIGNED",
+    "userId": "usr_admin_01",
+    "userName": "Alexander Wright",
+    "userRole": "admin",
+    "targetId": "prj_1789659764078_14501b2b",
+    "targetType": "project",
+    "details": "Assigned project PRJ-2026-0002 to Marcus Vance.",
+    "metadata": {
+      "projectNumber": "PRJ-2026-0002",
+      "assignedTo": "usr_manager_01"
+    },
+    "createdAt": "2026-09-17T15:42:44.088Z"
+  },
+  {
+    "id": "adt_1789659764084_56fd637a",
+    "action": "PROJECT_CREATED",
+    "userId": "usr_admin_01",
+    "userName": "Alexander Wright",
+    "userRole": "admin",
+    "targetId": "prj_1789659764078_14501b2b",
+    "targetType": "project",
+    "details": "Created project PRJ-2026-0002 (Apex Dynamics Build 59763) from Order WCW-2026-0009.",
+    "metadata": {
+      "projectNumber": "PRJ-2026-0002",
+      "orderId": "ord_1789659764048_j142sy",
+      "status": "ASSIGNED"
+    },
+    "createdAt": "2026-09-17T15:42:44.085Z"
+  },
+  {
+    "id": "adt_1789659764062_ed12419c",
+    "action": "CUSTOM_WEBSITE_ORDER_CREATED",
+    "userId": "usr_customer_01",
+    "userName": "Sarah Jenkins",
+    "userRole": "user",
+    "targetId": "ord_1789659764048_j142sy",
+    "targetType": "ORDER",
+    "details": "Custom website order WCW-2026-0009 placed by Sarah Jenkins ($299).",
+    "createdAt": "2026-09-17T15:42:44.062Z"
+  },
+  {
+    "id": "adt_1789659763945_a8c5fc5a",
+    "action": "PAYMENT_SUCCESS",
+    "userId": "usr_customer_01",
+    "userName": "Sarah Jenkins",
+    "userRole": "customer",
+    "targetId": "pay_1789659763923_fe3fa46d",
+    "targetType": "PAYMENT",
+    "details": "Payment pay_1789659763923_fe3fa46d status updated to PAID for order TPL-2026-0008.",
+    "metadata": {
+      "paymentId": "pay_1789659763923_fe3fa46d",
+      "orderId": "ord_tpl_1789659763841_kyu3gs",
+      "status": "PAID"
+    },
+    "createdAt": "2026-09-17T15:42:43.945Z"
+  },
+  {
+    "id": "adt_1789659763925_d47efdba",
+    "action": "PAYMENT_INITIATED",
+    "userId": "usr_customer_01",
+    "userName": "Sarah Jenkins",
+    "userRole": "customer",
+    "targetId": "pay_1789659763923_fe3fa46d",
+    "targetType": "PAYMENT",
+    "details": "Payment initiated for order TPL-2026-0008 ($59 USD) via webcraft_pay.",
+    "metadata": {
+      "paymentId": "pay_1789659763923_fe3fa46d",
+      "orderId": "ord_tpl_1789659763841_kyu3gs",
+      "provider": "webcraft_pay"
+    },
+    "createdAt": "2026-09-17T15:42:43.925Z"
+  },
+  {
+    "id": "adt_1789659763908_f8969f7f",
+    "action": "TEMPLATE_PURCHASED",
+    "userId": "usr_customer_01",
+    "userName": "Sarah Jenkins",
+    "userRole": "user",
+    "targetId": "ord_tpl_1789659763841_kyu3gs",
+    "targetType": "ORDER",
+    "details": "Template order TPL-2026-0008 placed for Modern Restaurant Website ($59).",
+    "createdAt": "2026-09-17T15:42:43.909Z"
+  },
+  {
+    "id": "adt_1789659763765_afe66c88",
+    "action": "USER_REGISTERED",
+    "userId": "usr_1789659763762_6rpul",
+    "userName": "Test Signup 59763",
+    "userRole": "user",
+    "targetId": "usr_1789659763762_6rpul",
+    "targetType": "USER",
+    "details": "New user registered: Test Signup 59763 (newuser_59763@example.com) with role 'user'.",
+    "createdAt": "2026-09-17T15:42:43.765Z"
+  },
+  {
+    "id": "adt_1789659744259_b434eed5",
+    "action": "PAYMENT_SUCCESS",
+    "userId": "usr_customer_01",
+    "userName": "Sarah Jenkins",
+    "userRole": "customer",
+    "targetId": "pay_1789659744236_a592159d",
+    "targetType": "PAYMENT",
+    "details": "Payment pay_1789659744236_a592159d status updated to PAID for order TPL-2026-0007.",
+    "metadata": {
+      "paymentId": "pay_1789659744236_a592159d",
+      "orderId": "ord_tpl_1789659744184_jezeg4",
+      "status": "PAID"
+    },
+    "createdAt": "2026-09-17T15:42:24.259Z"
+  },
+  {
+    "id": "adt_1789659744238_e6d46786",
+    "action": "PAYMENT_INITIATED",
+    "userId": "usr_customer_01",
+    "userName": "Sarah Jenkins",
+    "userRole": "customer",
+    "targetId": "pay_1789659744236_a592159d",
+    "targetType": "PAYMENT",
+    "details": "Payment initiated for order TPL-2026-0007 ($59 USD) via webcraft_pay.",
+    "metadata": {
+      "paymentId": "pay_1789659744236_a592159d",
+      "orderId": "ord_tpl_1789659744184_jezeg4",
+      "provider": "webcraft_pay"
+    },
+    "createdAt": "2026-09-17T15:42:24.238Z"
+  },
+  {
+    "id": "adt_1789659744214_7510085c",
+    "action": "TEMPLATE_PURCHASED",
+    "userId": "usr_customer_01",
+    "userName": "Sarah Jenkins",
+    "userRole": "user",
+    "targetId": "ord_tpl_1789659744184_jezeg4",
+    "targetType": "ORDER",
+    "details": "Template order TPL-2026-0007 placed for Modern Restaurant Website ($59).",
+    "createdAt": "2026-09-17T15:42:24.214Z"
+  },
+  {
+    "id": "adt_1789659744094_7687b60b",
+    "action": "USER_REGISTERED",
+    "userId": "usr_1789659744090_bx9m9",
+    "userName": "Test Signup 59743",
+    "userRole": "user",
+    "targetId": "usr_1789659744090_bx9m9",
+    "targetType": "USER",
+    "details": "New user registered: Test Signup 59743 (newuser_59743@example.com) with role 'user'.",
+    "createdAt": "2026-09-17T15:42:24.094Z"
+  },
+  {
+    "id": "adt_1789656754953_858b921c",
+    "action": "PAYMENT_SUCCESS",
+    "userId": "usr_customer_01",
+    "userName": "Sarah Jenkins",
+    "userRole": "customer",
+    "targetId": "pay_1789656754927_ff0bc732",
+    "targetType": "PAYMENT",
+    "details": "Payment pay_1789656754927_ff0bc732 status updated to PAID for order TPL-2026-0006.",
+    "metadata": {
+      "paymentId": "pay_1789656754927_ff0bc732",
+      "orderId": "ord_tpl_1789656754854_8iisko",
+      "status": "PAID"
+    },
+    "createdAt": "2026-09-17T14:52:34.953Z"
+  },
+  {
+    "id": "adt_1789656754928_a287ea71",
+    "action": "PAYMENT_INITIATED",
+    "userId": "usr_customer_01",
+    "userName": "Sarah Jenkins",
+    "userRole": "customer",
+    "targetId": "pay_1789656754927_ff0bc732",
+    "targetType": "PAYMENT",
+    "details": "Payment initiated for order TPL-2026-0006 ($59 USD) via webcraft_pay.",
+    "metadata": {
+      "paymentId": "pay_1789656754927_ff0bc732",
+      "orderId": "ord_tpl_1789656754854_8iisko",
+      "provider": "webcraft_pay"
+    },
+    "createdAt": "2026-09-17T14:52:34.929Z"
+  },
+  {
+    "id": "adt_1789656754894_555d2b15",
+    "action": "PAYMENT_FAILED",
+    "userId": "usr_customer_01",
+    "userName": "Sarah Jenkins",
+    "userRole": "customer",
+    "targetId": "pay_1789656754863_56794e6a",
+    "targetType": "PAYMENT",
+    "details": "Payment pay_1789656754863_56794e6a status updated to FAILED for order TPL-2026-0006.",
+    "metadata": {
+      "paymentId": "pay_1789656754863_56794e6a",
+      "orderId": "ord_tpl_1789656754854_8iisko",
+      "status": "FAILED"
+    },
+    "createdAt": "2026-09-17T14:52:34.894Z"
+  },
+  {
+    "id": "adt_1789656754867_7f992a60",
+    "action": "PAYMENT_INITIATED",
+    "userId": "usr_customer_01",
+    "userName": "Sarah Jenkins",
+    "userRole": "customer",
+    "targetId": "pay_1789656754863_56794e6a",
+    "targetType": "PAYMENT",
+    "details": "Payment initiated for order TPL-2026-0006 ($59 USD) via webcraft_pay.",
+    "metadata": {
+      "paymentId": "pay_1789656754863_56794e6a",
+      "orderId": "ord_tpl_1789656754854_8iisko",
+      "provider": "webcraft_pay"
+    },
+    "createdAt": "2026-09-17T14:52:34.868Z"
+  },
+  {
+    "id": "adt_1789656539887_eed08e73",
+    "action": "PAYMENT_SUCCESS",
+    "userId": "usr_customer_01",
+    "userName": "Sarah Jenkins",
+    "userRole": "customer",
+    "targetId": "pay_1789656539871_111862b6",
+    "targetType": "PAYMENT",
+    "details": "Payment pay_1789656539871_111862b6 status updated to PAID for order TPL-2026-0005.",
+    "metadata": {
+      "paymentId": "pay_1789656539871_111862b6",
+      "orderId": "ord_tpl_1789656539810_n1qtvk",
+      "status": "PAID"
+    },
+    "createdAt": "2026-09-17T14:48:59.887Z"
+  },
+  {
+    "id": "adt_1789656539872_2a55c47d",
+    "action": "PAYMENT_INITIATED",
+    "userId": "usr_customer_01",
+    "userName": "Sarah Jenkins",
+    "userRole": "customer",
+    "targetId": "pay_1789656539871_111862b6",
+    "targetType": "PAYMENT",
+    "details": "Payment initiated for order TPL-2026-0005 ($59 USD) via webcraft_pay.",
+    "metadata": {
+      "paymentId": "pay_1789656539871_111862b6",
+      "orderId": "ord_tpl_1789656539810_n1qtvk",
+      "provider": "webcraft_pay"
+    },
+    "createdAt": "2026-09-17T14:48:59.872Z"
+  },
+  {
+    "id": "adt_1789656539841_195d285d",
+    "action": "PAYMENT_FAILED",
+    "userId": "usr_customer_01",
+    "userName": "Sarah Jenkins",
+    "userRole": "customer",
+    "targetId": "pay_1789656539818_b868b137",
+    "targetType": "PAYMENT",
+    "details": "Payment pay_1789656539818_b868b137 status updated to FAILED for order TPL-2026-0005.",
+    "metadata": {
+      "paymentId": "pay_1789656539818_b868b137",
+      "orderId": "ord_tpl_1789656539810_n1qtvk",
+      "status": "FAILED"
+    },
+    "createdAt": "2026-09-17T14:48:59.841Z"
+  },
+  {
+    "id": "adt_1789656539821_93f4548e",
+    "action": "PAYMENT_INITIATED",
+    "userId": "usr_customer_01",
+    "userName": "Sarah Jenkins",
+    "userRole": "customer",
+    "targetId": "pay_1789656539818_b868b137",
+    "targetType": "PAYMENT",
+    "details": "Payment initiated for order TPL-2026-0005 ($59 USD) via webcraft_pay.",
+    "metadata": {
+      "paymentId": "pay_1789656539818_b868b137",
+      "orderId": "ord_tpl_1789656539810_n1qtvk",
+      "provider": "webcraft_pay"
+    },
+    "createdAt": "2026-09-17T14:48:59.821Z"
+  },
+  {
+    "id": "adt_1789656509369_80f004fa",
+    "action": "PAYMENT_SUCCESS",
+    "userId": "usr_customer_01",
+    "userName": "Sarah Jenkins",
+    "userRole": "customer",
+    "targetId": "pay_1789656509351_7c956214",
+    "targetType": "PAYMENT",
+    "details": "Payment pay_1789656509351_7c956214 status updated to PAID for order TPL-2026-0004.",
+    "metadata": {
+      "paymentId": "pay_1789656509351_7c956214",
+      "orderId": "ord_tpl_1789656509292_v9v2at",
+      "status": "PAID"
+    },
+    "createdAt": "2026-09-17T14:48:29.369Z"
+  },
+  {
+    "id": "adt_1789656509353_c2ad4253",
+    "action": "PAYMENT_INITIATED",
+    "userId": "usr_customer_01",
+    "userName": "Sarah Jenkins",
+    "userRole": "customer",
+    "targetId": "pay_1789656509351_7c956214",
+    "targetType": "PAYMENT",
+    "details": "Payment initiated for order TPL-2026-0004 ($59 USD) via webcraft_pay.",
+    "metadata": {
+      "paymentId": "pay_1789656509351_7c956214",
+      "orderId": "ord_tpl_1789656509292_v9v2at",
+      "provider": "webcraft_pay"
+    },
+    "createdAt": "2026-09-17T14:48:29.353Z"
+  },
+  {
+    "id": "adt_1789656509323_b72edb84",
+    "action": "PAYMENT_FAILED",
+    "userId": "usr_customer_01",
+    "userName": "Sarah Jenkins",
+    "userRole": "customer",
+    "targetId": "pay_1789656509299_5bc1e4da",
+    "targetType": "PAYMENT",
+    "details": "Payment pay_1789656509299_5bc1e4da status updated to FAILED for order TPL-2026-0004.",
+    "metadata": {
+      "paymentId": "pay_1789656509299_5bc1e4da",
+      "orderId": "ord_tpl_1789656509292_v9v2at",
+      "status": "FAILED"
+    },
+    "createdAt": "2026-09-17T14:48:29.324Z"
+  },
+  {
+    "id": "adt_1789656509301_883198ea",
+    "action": "PAYMENT_INITIATED",
+    "userId": "usr_customer_01",
+    "userName": "Sarah Jenkins",
+    "userRole": "customer",
+    "targetId": "pay_1789656509299_5bc1e4da",
+    "targetType": "PAYMENT",
+    "details": "Payment initiated for order TPL-2026-0004 ($59 USD) via webcraft_pay.",
+    "metadata": {
+      "paymentId": "pay_1789656509299_5bc1e4da",
+      "orderId": "ord_tpl_1789656509292_v9v2at",
+      "provider": "webcraft_pay"
+    },
+    "createdAt": "2026-09-17T14:48:29.302Z"
+  },
+  {
+    "id": "adt_1789656496172_555596da",
+    "action": "PAYMENT_SUCCESS",
+    "userId": "usr_customer_01",
+    "userName": "Sarah Jenkins",
+    "userRole": "customer",
+    "targetId": "pay_1789656496145_4d4e1716",
+    "targetType": "PAYMENT",
+    "details": "Payment pay_1789656496145_4d4e1716 status updated to PAID for order TPL-2026-0003.",
+    "metadata": {
+      "paymentId": "pay_1789656496145_4d4e1716",
+      "orderId": "ord_tpl_1789656496031_wnqa7z",
+      "status": "PAID"
+    },
+    "createdAt": "2026-09-17T14:48:16.172Z"
+  },
+  {
+    "id": "adt_1789656496152_1b3fc26f",
+    "action": "PAYMENT_INITIATED",
+    "userId": "usr_customer_01",
+    "userName": "Sarah Jenkins",
+    "userRole": "customer",
+    "targetId": "pay_1789656496145_4d4e1716",
+    "targetType": "PAYMENT",
+    "details": "Payment initiated for order TPL-2026-0003 ($59 USD) via webcraft_pay.",
+    "metadata": {
+      "paymentId": "pay_1789656496145_4d4e1716",
+      "orderId": "ord_tpl_1789656496031_wnqa7z",
+      "provider": "webcraft_pay"
+    },
+    "createdAt": "2026-09-17T14:48:16.152Z"
+  },
+  {
+    "id": "adt_1789656496097_1db6e8aa",
+    "action": "PAYMENT_FAILED",
+    "userId": "usr_customer_01",
+    "userName": "Sarah Jenkins",
+    "userRole": "customer",
+    "targetId": "pay_1789656496062_e53749cc",
+    "targetType": "PAYMENT",
+    "details": "Payment pay_1789656496062_e53749cc status updated to FAILED for order TPL-2026-0003.",
+    "metadata": {
+      "paymentId": "pay_1789656496062_e53749cc",
+      "orderId": "ord_tpl_1789656496031_wnqa7z",
+      "status": "FAILED"
+    },
+    "createdAt": "2026-09-17T14:48:16.097Z"
+  },
+  {
+    "id": "adt_1789656496065_e8c9761b",
+    "action": "PAYMENT_INITIATED",
+    "userId": "usr_customer_01",
+    "userName": "Sarah Jenkins",
+    "userRole": "customer",
+    "targetId": "pay_1789656496062_e53749cc",
+    "targetType": "PAYMENT",
+    "details": "Payment initiated for order TPL-2026-0003 ($59 USD) via webcraft_pay.",
+    "metadata": {
+      "paymentId": "pay_1789656496062_e53749cc",
+      "orderId": "ord_tpl_1789656496031_wnqa7z",
+      "provider": "webcraft_pay"
+    },
+    "createdAt": "2026-09-17T14:48:16.065Z"
+  },
+  {
+    "id": "adt_1789655369022_fd0bc42f",
+    "action": "AI_WEBSITE_REGENERATED",
+    "userId": "usr_customer_01",
+    "userName": "Sarah Jenkins",
+    "userRole": "user",
+    "targetId": "aiw_1789655368894_e3f02de7",
+    "targetType": "ai_website",
+    "details": "Restored website specification \"Aura Kinetic Studio | Official Website\" to revision v1 (now v4).",
+    "metadata": {
+      "websiteId": "aiw_1789655368894_e3f02de7",
+      "restoredFromVersion": 1,
+      "newVersion": 4
+    },
+    "createdAt": "2026-09-17T14:29:29.022Z"
+  },
+  {
+    "id": "adt_1789655368987_d390d8ab",
+    "action": "AI_WEBSITE_REGENERATED",
+    "userId": "usr_customer_01",
+    "userName": "Sarah Jenkins",
+    "userRole": "user",
+    "targetId": "aiw_1789655368894_e3f02de7",
+    "targetType": "ai_website",
+    "details": "Regenerated AI website specification for \"Aura Kinetic Studio | Official Website\" (v3).",
+    "metadata": {
+      "websiteId": "aiw_1789655368894_e3f02de7",
+      "version": 3
+    },
+    "createdAt": "2026-09-17T14:29:28.987Z"
+  },
+  {
+    "id": "adt_1789655368909_8a9f61ef",
+    "action": "AI_WEBSITE_GENERATED",
+    "userId": "usr_customer_01",
+    "userName": "Sarah Jenkins",
+    "userRole": "user",
+    "targetId": "aiw_1789655368894_e3f02de7",
+    "targetType": "ai_website",
+    "details": "Generated canonical AI website specification for \"Aura Kinetic Studio | Official Website\" (Architecture & Industrial Design).",
+    "metadata": {
+      "websiteId": "aiw_1789655368894_e3f02de7",
+      "provider": "webcraft-engine",
+      "version": 1
+    },
+    "createdAt": "2026-09-17T14:29:28.909Z"
+  },
+  {
+    "id": "adt_1789655224770_3f1c8680",
+    "action": "AI_WEBSITE_REGENERATED",
+    "userId": "usr_customer_01",
+    "userName": "Sarah Jenkins",
+    "userRole": "user",
+    "targetId": "aiw_1789655224639_c9e3af2b",
+    "targetType": "ai_website",
+    "details": "Restored website specification \"Aura Kinetic Studio | Official Website\" to revision v1 (now v4).",
+    "metadata": {
+      "websiteId": "aiw_1789655224639_c9e3af2b",
+      "restoredFromVersion": 1,
+      "newVersion": 4
+    },
+    "createdAt": "2026-09-17T14:27:04.770Z"
+  },
+  {
+    "id": "adt_1789655224735_5640cc5c",
+    "action": "AI_WEBSITE_REGENERATED",
+    "userId": "usr_customer_01",
+    "userName": "Sarah Jenkins",
+    "userRole": "user",
+    "targetId": "aiw_1789655224639_c9e3af2b",
+    "targetType": "ai_website",
+    "details": "Regenerated AI website specification for \"Aura Kinetic Studio | Official Website\" (v3).",
+    "metadata": {
+      "websiteId": "aiw_1789655224639_c9e3af2b",
+      "version": 3
+    },
+    "createdAt": "2026-09-17T14:27:04.736Z"
+  },
+  {
+    "id": "adt_1789655224657_7564a37a",
+    "action": "AI_WEBSITE_GENERATED",
+    "userId": "usr_customer_01",
+    "userName": "Sarah Jenkins",
+    "userRole": "user",
+    "targetId": "aiw_1789655224639_c9e3af2b",
+    "targetType": "ai_website",
+    "details": "Generated canonical AI website specification for \"Aura Kinetic Studio | Official Website\" (Architecture & Industrial Design).",
+    "metadata": {
+      "websiteId": "aiw_1789655224639_c9e3af2b",
+      "provider": "webcraft-engine",
+      "version": 1
+    },
+    "createdAt": "2026-09-17T14:27:04.658Z"
+  },
+  {
+    "id": "adt_1789655129878_fadc34ce",
+    "action": "AI_WEBSITE_GENERATED",
+    "userId": "usr_customer_01",
+    "userName": "Sarah Jenkins",
+    "userRole": "user",
+    "targetId": "aiw_1789655129859_0bec1f89",
+    "targetType": "ai_website",
+    "details": "Generated canonical AI website specification for \"Verdant Craft Organics | Official Website\" (Health, Wellness & Fitness).",
+    "metadata": {
+      "websiteId": "aiw_1789655129859_0bec1f89",
+      "provider": "webcraft-engine",
+      "version": 1
+    },
+    "createdAt": "2026-09-17T14:25:29.878Z"
+  },
+  {
+    "id": "adt_1789655123320_9ffc2be1",
+    "action": "AI_WEBSITE_REGENERATED",
+    "userId": "usr_customer_01",
+    "userName": "Sarah Jenkins",
+    "userRole": "user",
+    "targetId": "aiw_1789655123169_367267e0",
+    "targetType": "ai_website",
+    "details": "Restored website specification \"Aura Kinetic Studio | Official Website\" to revision v1 (now v4).",
+    "metadata": {
+      "websiteId": "aiw_1789655123169_367267e0",
+      "restoredFromVersion": 1,
+      "newVersion": 4
+    },
+    "createdAt": "2026-09-17T14:25:23.322Z"
+  },
+  {
+    "id": "adt_1789655123270_fec725c0",
+    "action": "AI_WEBSITE_REGENERATED",
+    "userId": "usr_customer_01",
+    "userName": "Sarah Jenkins",
+    "userRole": "user",
+    "targetId": "aiw_1789655123169_367267e0",
+    "targetType": "ai_website",
+    "details": "Regenerated AI website specification for \"Aura Kinetic Studio | Official Website\" (v3).",
+    "metadata": {
+      "websiteId": "aiw_1789655123169_367267e0",
+      "version": 3
+    },
+    "createdAt": "2026-09-17T14:25:23.271Z"
+  },
+  {
+    "id": "adt_1789655123187_f486810a",
+    "action": "AI_WEBSITE_GENERATED",
+    "userId": "usr_customer_01",
+    "userName": "Sarah Jenkins",
+    "userRole": "user",
+    "targetId": "aiw_1789655123169_367267e0",
+    "targetType": "ai_website",
+    "details": "Generated canonical AI website specification for \"Aura Kinetic Studio | Official Website\" (Architecture & Industrial Design).",
+    "metadata": {
+      "websiteId": "aiw_1789655123169_367267e0",
+      "provider": "webcraft-engine",
+      "version": 1
+    },
+    "createdAt": "2026-09-17T14:25:23.187Z"
+  },
+  {
+    "id": "adt_1789643028529_8952b57a",
+    "action": "AI_WEBSITE_REGENERATED",
+    "userId": "usr_customer_01",
+    "userName": "Sarah Jenkins",
+    "userRole": "user",
+    "targetId": "aiw_1789643028455_3d710804",
+    "targetType": "ai_website",
+    "details": "Regenerated AI website specification for \"Verdant Craft Organics | Official Website\" (v2).",
+    "metadata": {
+      "websiteId": "aiw_1789643028455_3d710804",
+      "version": 2
+    },
+    "createdAt": "2026-09-17T11:03:48.529Z"
+  },
+  {
+    "id": "adt_1789643028461_47d92357",
+    "action": "AI_WEBSITE_GENERATED",
+    "userId": "usr_customer_01",
+    "userName": "Sarah Jenkins",
+    "userRole": "user",
+    "targetId": "aiw_1789643028455_3d710804",
+    "targetType": "ai_website",
+    "details": "Generated AI website specification for \"Verdant Craft Organics | Official Website\" (Health, Wellness & Fitness).",
+    "metadata": {
+      "websiteId": "aiw_1789643028455_3d710804",
+      "provider": "webcraft-engine",
+      "version": 1
+    },
+    "createdAt": "2026-09-17T11:03:48.462Z"
+  },
+  {
+    "id": "adt_1789642952421_3e077bf6",
+    "action": "AI_WEBSITE_GENERATED",
+    "userId": "usr_customer_01",
+    "userName": "Sarah Jenkins",
+    "userRole": "user",
+    "targetId": "aiw_1789642952417_6d06c06b",
+    "targetType": "ai_website",
+    "details": "Generated AI website specification for \"Verdant Craft Organics | Official Website\" (Health, Wellness & Fitness).",
+    "metadata": {
+      "websiteId": "aiw_1789642952417_6d06c06b",
+      "provider": "webcraft-engine",
+      "version": 1
+    },
+    "createdAt": "2026-09-17T11:02:32.421Z"
+  },
+  {
+    "id": "adt_1789642247930_365092b6",
+    "action": "USER_REGISTERED",
+    "userId": "usr_1789642247927_suhg9",
+    "userName": "Test Customer",
+    "userRole": "user",
+    "targetId": "usr_1789642247927_suhg9",
+    "targetType": "USER",
+    "details": "New user registered: Test Customer (testcustomer_1789642247@example.com) with role 'user'.",
+    "createdAt": "2026-09-17T10:50:47.931Z"
+  },
+  {
+    "id": "adt_1789641349034_843b65f6",
+    "action": "USER_REGISTERED",
+    "userId": "usr_1789641349032_zstrq",
+    "userName": "Test Customer",
+    "userRole": "user",
+    "targetId": "usr_1789641349032_zstrq",
+    "targetType": "USER",
+    "details": "New user registered: Test Customer (testcustomer_1789641348@example.com) with role 'user'.",
+    "createdAt": "2026-09-17T10:35:49.034Z"
+  },
+  {
+    "id": "adt_1789641257363_1f07543b",
+    "action": "USER_REGISTERED",
+    "userId": "usr_1789641257361_22heo",
+    "userName": "Test Customer",
+    "userRole": "user",
+    "targetId": "usr_1789641257361_22heo",
+    "targetType": "USER",
+    "details": "New user registered: Test Customer (testcustomer_1789641257@example.com) with role 'user'.",
+    "createdAt": "2026-09-17T10:34:17.363Z"
+  }
+]

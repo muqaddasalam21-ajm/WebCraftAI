@@ -1,0 +1,43 @@
+<svg width="240" height="240" viewBox="0 0 240 240" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="ai-g1" x1="20" y1="20" x2="220" y2="220" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#8B5CF6"/>
+      <stop offset="50%" stop-color="#EC4899"/>
+      <stop offset="100%" stop-color="#06B6D4"/>
+    </linearGradient>
+    <filter id="ai-glow" x="0" y="0" width="240" height="240" filterUnits="userSpaceOnUse">
+      <feGaussianBlur stdDeviation="12" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+  </defs>
+
+  <!-- Glowing Aura -->
+  <circle cx="120" cy="120" r="80" fill="url(#ai-g1)" opacity="0.25" filter="url(#ai-glow)"/>
+
+  <!-- 3D AI Assistant Core Sphere -->
+  <circle cx="120" cy="115" r="55" fill="url(#ai-g1)" filter="drop-shadow(0 15px 25px rgba(139,92,246,0.4))"/>
+
+  <!-- Futuristic Glass Face Mask -->
+  <rect x="85" y="95" width="70" height="38" rx="19" fill="#0F172A" opacity="0.85"/>
+
+  <!-- Friendly Glowing Eyes -->
+  <ellipse cx="105" cy="114" rx="6" ry="8" fill="#06B6D4"/>
+  <circle cx="107" cy="111" r="2.5" fill="white"/>
+
+  <ellipse cx="135" cy="114" rx="6" ry="8" fill="#06B6D4"/>
+  <circle cx="137" cy="111" r="2.5" fill="white"/>
+
+  <!-- Floating Sparkles and Creativity Rings -->
+  <circle cx="120" cy="115" r="75" stroke="#DDD6FE" stroke-width="2" stroke-dasharray="8 8" opacity="0.7"/>
+
+  <!-- Satellite elements -->
+  <g transform="translate(180, 70)">
+    <circle cx="12" cy="12" r="12" fill="#EC4899" filter="drop-shadow(0 4px 8px rgba(236,72,153,0.4))"/>
+    <path d="M12 5L13 9.5L18 10.5L13 11.5L12 16L11 11.5L6 10.5L11 9.5L12 5Z" fill="white"/>
+  </g>
+
+  <g transform="translate(35, 140)">
+    <circle cx="14" cy="14" r="14" fill="#06B6D4" filter="drop-shadow(0 4px 8px rgba(6,182,212,0.4))"/>
+    <rect x="7" y="7" width="14" height="14" rx="3" fill="none" stroke="white" stroke-width="2"/>
+  </g>
+</svg>

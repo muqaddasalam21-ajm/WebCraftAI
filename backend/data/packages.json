@@ -1,0 +1,55 @@
+[
+  {
+    "id": "pkg_starter",
+    "name": "Starter Launch",
+    "badge": "Fast & Clean",
+    "price": 299,
+    "description": "Perfect for small local businesses, personal portfolios, or single-service landing pages.",
+    "pageLimit": "1 - 3 Pages",
+    "turnaround": "3 - 5 Business Days",
+    "features": [
+      "Responsive mobile-first layout",
+      "Contact & WhatsApp integration",
+      "Basic SEO & social meta tags",
+      "Standard SSL & domain setup guidance",
+      "1 revision round included"
+    ],
+    "popular": false
+  },
+  {
+    "id": "pkg_business",
+    "name": "Professional Business",
+    "badge": "Most Popular",
+    "price": 699,
+    "description": "Comprehensive web presence for established companies, consultants, and service providers.",
+    "pageLimit": "4 - 8 Pages",
+    "turnaround": "5 - 10 Business Days",
+    "features": [
+      "Custom corporate branding & typography",
+      "Service catalog & inquiry workflows",
+      "Advanced SEO & Google Business readiness",
+      "WhatsApp direct lead chat widget",
+      "Photo gallery & client testimonial showcase",
+      "2 revision rounds included"
+    ],
+    "popular": true
+  },
+  {
+    "id": "pkg_enterprise",
+    "name": "Custom Enterprise Suite",
+    "badge": "Full Scale",
+    "price": 1299,
+    "description": "High-performance tailored web solution with custom section architecture and VIP turnaround.",
+    "pageLimit": "Up to 15 Pages",
+    "turnaround": "10 - 15 Business Days",
+    "features": [
+      "Bespoke visual identity & design system",
+      "Multi-section dynamic showcase & catalogs",
+      "Priority dedicated designer & manager assignment",
+      "Speed optimization & CDN asset delivery",
+      "Full analytics & lead tracking integration",
+      "Unlimited revisions until preview approval"
+    ],
+    "popular": false
+  }
+]
