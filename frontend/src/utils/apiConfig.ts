@@ -65,10 +65,13 @@ export async function safeApiRequest<T = any>(
 ): Promise<T> {
   const targetUrl = buildApiUrl(endpoint);
   const isDev = Boolean((import.meta as any)?.env?.DEV);
-  let response: Response;
+  let response: Response | null = null;
+  let text = '';
+  let data: any = {};
 
   try {
     response = await fetch(targetUrl, options);
+    text = await response.text();
   } catch (err: any) {
     // ONLY in local development mode (DEV) and NEVER in production:
     // If Vite proxy dropped connection, attempt dev fallback to local port 5000
@@ -80,31 +83,21 @@ export async function safeApiRequest<T = any>(
       try {
         const devFallbackUrl = `http://127.0.0.1:5000${targetUrl.startsWith('/') ? targetUrl : '/' + targetUrl}`;
         response = await fetch(devFallbackUrl, options);
+        text = await response.text();
       } catch {
-        throw new Error('Unable to connect to local WebCraftAI backend server. Please verify it is running.');
+        throw new Error('Unable to connect to local WebCraftAI backend server. Please verify it is running on port 5000.');
       }
     } else {
       throw new Error('Unable to connect to the server. Please check your internet connection.');
     }
   }
 
-  // Safe parsing: Read raw text first to avoid "Unexpected end of JSON input" on empty responses
-  const text = await response.text();
-  let data: any = {};
+  // Detect HTML response (e.g. Vite SPA history fallback when proxy misses or fails)
+  const isHtml = text.trim().startsWith('<!DOCTYPE') || text.trim().startsWith('<!doctype') || text.trim().startsWith('<html');
 
-  if (text && text.trim().length > 0) {
-    try {
-      data = JSON.parse(text);
-    } catch {
-      // Non-JSON response (e.g. HTML error page or plain text)
-      data = { error: text.length < 200 ? text : `Server returned non-JSON response (status ${response.status})` };
-    }
-  }
-
-  // Dev-only fallback for empty proxy failure responses
+  // If in local dev and Vite returned HTML for an API endpoint, Vite proxy missed: fallback to backend on 127.0.0.1:5000
   if (
-    !response.ok &&
-    (response.status === 502 || response.status === 504 || !text) &&
+    isHtml &&
     isDev &&
     !targetUrl.startsWith('http://127.0.0.1:5000') &&
     !targetUrl.startsWith('http://localhost:5000')
@@ -113,35 +106,39 @@ export async function safeApiRequest<T = any>(
       const devFallbackUrl = `http://127.0.0.1:5000${targetUrl.startsWith('/') ? targetUrl : '/' + targetUrl}`;
       const devRes = await fetch(devFallbackUrl, options);
       const devText = await devRes.text();
-      let devData: any = {};
-      if (devText && devText.trim().length > 0) {
-        try {
-          devData = JSON.parse(devText);
-        } catch {
-          devData = { error: devText };
-        }
+      if (devText && !devText.trim().startsWith('<!')) {
+        response = devRes;
+        text = devText;
       }
-      if (!devRes.ok) {
-        throw new Error(devData.error || devData.message || `Server error (${devRes.status})`);
-      }
-      return devData as T;
-    } catch (fbErr: any) {
-      if (fbErr?.message && !fbErr.message.includes('fetch')) {
-        throw fbErr;
-      }
+    } catch {
+      // Keep existing response
     }
   }
 
-  if (!response.ok) {
+  if (text && text.trim().length > 0) {
+    try {
+      data = JSON.parse(text);
+    } catch {
+      // Non-JSON response (e.g. HTML error page or plain text)
+      data = { error: text.length < 200 ? text : `Server returned non-JSON response (status ${response?.status})` };
+    }
+  }
+
+  if (!response || !response.ok) {
     const errorMsg =
       data?.error ||
       data?.message ||
-      (response.status === 404
+      (response?.status === 404
         ? 'Endpoint not found (404).'
-        : response.status === 500
+        : response?.status === 500
         ? 'Internal server error (500).'
-        : `Request failed with status ${response.status}`);
+        : `Request failed with status ${response?.status}`);
     throw new Error(errorMsg);
+  }
+
+  // If status is 200 but parsing produced an error object (e.g. unexpected HTML)
+  if (data?.error && (!data.user && !data.token && !data.message && !data.status && !data.id && !Array.isArray(data))) {
+    throw new Error(data.error);
   }
 
   return data as T;
