@@ -11,10 +11,13 @@
  * - Always safely reads response text before parsing JSON to prevent "Unexpected end of JSON input".
  */
 
-export function getApiBaseUrl(): string {
-  const metaEnv = (import.meta as any)?.env;
+export const PRODUCTION_FALLBACK_API_URL = 'https://webcraftai-back.onrender.com/api';
 
-  // 1. Environment variable from Vite build / Render environment
+export function getApiBaseUrl(): string {
+  const metaEnv = import.meta.env;
+  const isDev = Boolean(metaEnv?.DEV);
+
+  // 1. Environment variable from Vite build / Render environment (highest priority)
   const envUrl = (metaEnv?.VITE_API_URL as string | undefined)?.trim();
   if (envUrl) {
     const cleaned = envUrl.replace(/\/+$/, '');
@@ -30,9 +33,15 @@ export function getApiBaseUrl(): string {
     }
   }
 
-  // 3. Default for same-origin routing (standard for Render co-hosted or reverse proxy setups)
-  return '/api';
+  // 3. Local development mode: use '/api' to route through Vite proxy to http://127.0.0.1:5000
+  if (isDev) {
+    return '/api';
+  }
+
+  // 4. Production fallback for Render split architecture when VITE_API_URL is missing
+  return PRODUCTION_FALLBACK_API_URL;
 }
+
 
 export function buildApiUrl(endpoint: string): string {
   // If already an absolute URL (http/https), return as is
