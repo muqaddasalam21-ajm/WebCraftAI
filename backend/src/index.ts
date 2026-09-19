@@ -1,6 +1,7 @@
 import express, { Request, Response } from 'express';
 import cors from 'cors';
 import path from 'path';
+import fs from 'fs';
 import { config } from './config';
 import { aiRouter } from './routes/aiRoutes';
 import { authRouter } from './routes/authRoutes';
@@ -66,7 +67,18 @@ app.use('/api/ai-builder', aiWebsiteRouter);
 app.use('/api/checkout', checkoutRouter);
 app.use('/api/events', eventRouter);
 
-app.listen(config.port, () => {
+// Serve frontend static build in production (e.g. Render single web service)
+const frontendDist = path.join(__dirname, '../../frontend/dist');
+if (fs.existsSync(frontendDist)) {
+  app.use(express.static(frontendDist));
+  app.get('*', (req: Request, res: Response) => {
+    if (!req.path.startsWith('/api') && !req.path.startsWith('/uploads')) {
+      res.sendFile(path.join(frontendDist, 'index.html'));
+    }
+  });
+}
+
+app.listen(config.port, '0.0.0.0', () => {
   console.log(`🚀 WebCraftAI Backend API running on http://localhost:${config.port}`);
   console.log(`🤖 AI Provider: ${config.geminiApiKey ? 'Google Gemini' : config.openaiApiKey ? 'OpenAI' : 'WebCraft Engine'}`);
   console.log(`📦 Real Products & Real Vendors Engine: Active (v0.4.0)`);

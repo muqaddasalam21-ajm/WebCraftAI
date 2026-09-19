@@ -41,6 +41,7 @@ export const normalizeRole = (role: string): 'Admin' | 'User' | 'Vendor' | 'Mana
 };
 
 import { getAuthToken } from '../utils/token';
+import { safeApiRequest } from '../utils/apiConfig';
 
 export const authService = {
   getToken(): string | null {
@@ -90,30 +91,28 @@ export const authService = {
   },
 
   async login(email: string, password: string): Promise<AuthenticatedUser> {
-    const res = await fetch('/api/auth/login', {
+    const data = await safeApiRequest('/api/auth/login', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ email, password })
+      body: JSON.stringify({ email: email.trim(), password })
     });
 
-    const data = await res.json();
-    if (!res.ok) {
-      throw new Error(data.error || 'Invalid email or password.');
+    if (!data.user || !data.token) {
+      throw new Error('Invalid authentication response from server.');
     }
 
     return this.setSession(data.user, data.token);
   },
 
   async signup(name: string, email: string, password: string, confirmPassword?: string): Promise<AuthenticatedUser> {
-    const res = await fetch('/api/auth/signup', {
+    const data = await safeApiRequest('/api/auth/signup', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ name, email, password, confirmPassword })
+      body: JSON.stringify({ name: name.trim(), email: email.trim(), password, confirmPassword })
     });
 
-    const data = await res.json();
-    if (!res.ok) {
-      throw new Error(data.error || 'Registration failed. Please check your details.');
+    if (!data.user || !data.token) {
+      throw new Error('Registration succeeded, but session could not be established.');
     }
 
     return this.setSession(data.user, data.token);
@@ -127,25 +126,23 @@ export const authService = {
     }
 
     try {
-      const res = await fetch('/api/auth/me', {
+      const data = await safeApiRequest('/api/auth/me', {
         headers: {
           Authorization: `Bearer ${token}`
         }
       });
 
-      if (!res.ok) {
-        this.clearSession();
-        return null;
+      const user = data.user;
+      if (!user) {
+        return this.getCurrentUser();
       }
 
-      const data = await res.json();
-      const user = data.user;
       const safeUser: AuthenticatedUser = {
         id: user.id,
         name: user.name,
         email: user.email,
         role: normalizeRole(user.role),
-        status: user.status,
+        status: user.status || 'active',
         createdAt: user.createdAt
       };
       localStorage.setItem(USER_KEY, JSON.stringify(safeUser));
@@ -159,7 +156,7 @@ export const authService = {
     const token = this.getToken();
     try {
       if (token) {
-        await fetch('/api/auth/logout', {
+        await safeApiRequest('/api/auth/logout', {
           method: 'POST',
           headers: { Authorization: `Bearer ${token}` }
         });

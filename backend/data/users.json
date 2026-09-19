@@ -294,5 +294,61 @@
     },
     "createdAt": "2026-09-18T05:38:35.561Z",
     "updatedAt": "2026-09-18T05:39:50.388Z"
+  },
+  {
+    "id": "usr_1789759717022_ek25o",
+    "name": "Test User",
+    "email": "testuser999@example.com",
+    "passwordHash": "$2b$10$/BSVSvUFc93/ldUPD6ScEeLL55cRzjtJk.y8F2DFVHxqtK0LikN.S",
+    "role": "user",
+    "status": "active",
+    "profile": {
+      "fullName": "Test User",
+      "phone": ""
+    },
+    "createdAt": "2026-09-18T19:28:37.021Z",
+    "updatedAt": "2026-09-18T19:28:37.021Z"
+  },
+  {
+    "id": "usr_1789762415746_u2uhj",
+    "name": "Ayesha Khan",
+    "email": "customer_1789762415@example.com",
+    "passwordHash": "$2b$10$nbVliiiKKIWZ3otdCUXU0OwgKIRpvwpdBuCbqk7szLUnN31sly6DS",
+    "role": "user",
+    "status": "active",
+    "profile": {
+      "fullName": "Ayesha Khan",
+      "phone": ""
+    },
+    "createdAt": "2026-09-18T20:13:35.746Z",
+    "updatedAt": "2026-09-18T20:13:35.746Z"
+  },
+  {
+    "id": "usr_1789834081228_h28a5",
+    "name": "Local Test User",
+    "email": "cust_local_1789834080@webcraft.ai",
+    "passwordHash": "$2b$10$F.cEThqxST55IpNuTSv5OeUNpsFX8Zw4aC5MdxZe6uOQLimEqh7oi",
+    "role": "user",
+    "status": "active",
+    "profile": {
+      "fullName": "Local Test User",
+      "phone": ""
+    },
+    "createdAt": "2026-09-19T16:08:01.228Z",
+    "updatedAt": "2026-09-19T16:08:01.228Z"
+  },
+  {
+    "id": "usr_1789834088061_cfpci",
+    "name": "Production Customer",
+    "email": "cust_prod_1789834085@webcraft.ai",
+    "passwordHash": "$2b$10$sygd4oZQdH.FrHpeTEnTQOLMXSeE4OeSup2xcKIb4fdA/MxmZpr9u",
+    "role": "user",
+    "status": "active",
+    "profile": {
+      "fullName": "Production Customer",
+      "phone": ""
+    },
+    "createdAt": "2026-09-19T16:08:08.061Z",
+    "updatedAt": "2026-09-19T16:08:08.061Z"
   }
 ]

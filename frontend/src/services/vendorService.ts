@@ -1,6 +1,7 @@
 import { getAuthToken } from '../utils/token';
+import { buildApiUrl } from '../utils/apiConfig';
 
-const API_URL = 'http://localhost:5000/api';
+const API_URL = buildApiUrl('/api');
 
 function getToken(): string | null {
   return getAuthToken();

@@ -2523,5 +2523,65 @@
       "role": "user",
       "createdAt": "2026-09-18T05:38:35.561Z"
     }
+  },
+  {
+    "eventId": "evt_1789759717039_mpngmti",
+    "eventType": "USER_REGISTERED",
+    "actorUserId": "usr_1789759717022_ek25o",
+    "referenceType": "USER",
+    "referenceId": "usr_1789759717022_ek25o",
+    "createdAt": "2026-09-18T19:28:37.039Z",
+    "payload": {
+      "userId": "usr_1789759717022_ek25o",
+      "name": "Test User",
+      "email": "testuser999@example.com",
+      "role": "user",
+      "createdAt": "2026-09-18T19:28:37.021Z"
+    }
+  },
+  {
+    "eventId": "evt_1789762415750_lfxz4s3",
+    "eventType": "USER_REGISTERED",
+    "actorUserId": "usr_1789762415746_u2uhj",
+    "referenceType": "USER",
+    "referenceId": "usr_1789762415746_u2uhj",
+    "createdAt": "2026-09-18T20:13:35.750Z",
+    "payload": {
+      "userId": "usr_1789762415746_u2uhj",
+      "name": "Ayesha Khan",
+      "email": "customer_1789762415@example.com",
+      "role": "user",
+      "createdAt": "2026-09-18T20:13:35.746Z"
+    }
+  },
+  {
+    "eventId": "evt_1789834081230_5zrwu7c",
+    "eventType": "USER_REGISTERED",
+    "actorUserId": "usr_1789834081228_h28a5",
+    "referenceType": "USER",
+    "referenceId": "usr_1789834081228_h28a5",
+    "createdAt": "2026-09-19T16:08:01.230Z",
+    "payload": {
+      "userId": "usr_1789834081228_h28a5",
+      "name": "Local Test User",
+      "email": "cust_local_1789834080@webcraft.ai",
+      "role": "user",
+      "createdAt": "2026-09-19T16:08:01.228Z"
+    }
+  },
+  {
+    "eventId": "evt_1789834088062_w9uvpj4",
+    "eventType": "USER_REGISTERED",
+    "actorUserId": "usr_1789834088061_cfpci",
+    "referenceType": "USER",
+    "referenceId": "usr_1789834088061_cfpci",
+    "createdAt": "2026-09-19T16:08:08.062Z",
+    "payload": {
+      "userId": "usr_1789834088061_cfpci",
+      "name": "Production Customer",
+      "email": "cust_prod_1789834085@webcraft.ai",
+      "role": "user",
+      "createdAt": "2026-09-19T16:08:08.061Z"
+    }
   }
 ]
