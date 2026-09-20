@@ -1,5 +1,6 @@
 import { authService, normalizeRole } from './authService';
 import { User, UserRole, UserStatus } from '../types';
+import { safeApiRequest } from '../utils/apiConfig';
 
 export interface QueryUsersParams {
   search?: string;
@@ -30,18 +31,14 @@ export const userService = {
     if (params?.page) query.set('page', params.page.toString());
     if (params?.limit) query.set('limit', params.limit.toString());
 
-    const res = await fetch(`/api/users?${query.toString()}`, {
+    const qs = query.toString();
+    const endpoint = `/api/users${qs ? `?${qs}` : ''}`;
+    const data = await safeApiRequest(endpoint, {
       headers: {
         Authorization: `Bearer ${token}`
       }
     });
 
-    if (!res.ok) {
-      const err = await res.json();
-      throw new Error(err.error || 'Failed to fetch users');
-    }
-
-    const data = await res.json();
     return {
       ...data,
       users: data.users.map((u: any): User => ({
@@ -71,7 +68,7 @@ export const userService = {
     company?: string;
   }): Promise<User> {
     const token = authService.getToken();
-    const res = await fetch(`/api/users/${id}`, {
+    const data = await safeApiRequest(`/api/users/${id}`, {
       method: 'PUT',
       headers: {
         'Content-Type': 'application/json',
@@ -79,33 +76,29 @@ export const userService = {
       },
       body: JSON.stringify(updates)
     });
-
-    const data = await res.json();
-    if (!res.ok) throw new Error(data.error || 'Failed to update user');
     return data.user;
   },
 
   async deleteUser(id: string): Promise<void> {
     const token = authService.getToken();
-    const res = await fetch(`/api/users/${id}`, {
+    await safeApiRequest(`/api/users/${id}`, {
       method: 'DELETE',
       headers: {
         Authorization: `Bearer ${token}`
       }
     });
-
-    const data = await res.json();
-    if (!res.ok) throw new Error(data.error || 'Failed to delete user');
   },
 
   async getStats() {
     const token = authService.getToken();
-    const res = await fetch('/api/users/stats', {
-      headers: { Authorization: `Bearer ${token}` }
-    });
-    if (!res.ok) return null;
-    const data = await res.json();
-    return data.stats;
+    try {
+      const data = await safeApiRequest('/api/users/stats', {
+        headers: { Authorization: `Bearer ${token}` }
+      });
+      return data?.stats || null;
+    } catch {
+      return null;
+    }
   },
 
   async getUserDetails(id: string): Promise<{
@@ -118,13 +111,8 @@ export const userService = {
     };
   }> {
     const token = authService.getToken();
-    const res = await fetch(`/api/users/${id}`, {
+    return safeApiRequest(`/api/users/${id}`, {
       headers: { Authorization: `Bearer ${token}` }
     });
-    if (!res.ok) {
-      const err = await res.json();
-      throw new Error(err.error || 'Failed to fetch user details');
-    }
-    return res.json();
   }
 };

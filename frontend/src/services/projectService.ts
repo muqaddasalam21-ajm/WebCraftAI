@@ -14,8 +14,7 @@ import {
 } from '../types';
 
 import { getAuthToken } from '../utils/token';
-
-const API_URL = '/api';
+import { safeApiRequest } from '../utils/apiConfig';
 
 function getToken(): string | null {
   return getAuthToken();
@@ -46,10 +45,11 @@ export const projectService = {
     if (params?.priority && params.priority !== 'All') q.set('priority', params.priority);
     if (params?.search) q.set('search', params.search);
 
-    const res = await fetch(`${API_URL}/projects?${q.toString()}`, { headers: authHeaders() });
-    const data = await res.json();
-    if (!res.ok) throw new Error(data.error || 'Failed to fetch projects');
-    return data;
+    const qs = q.toString();
+    return safeApiRequest<{ projects: WebsiteProject[]; total: number }>(
+      `/api/projects${qs ? `?${qs}` : ''}`,
+      { headers: authHeaders() }
+    );
   },
 
   async getProjectById(id: string): Promise<{
@@ -62,10 +62,7 @@ export const projectService = {
     approval?: ProjectApproval | null;
     delivery?: ProjectDelivery | null;
   }> {
-    const res = await fetch(`${API_URL}/projects/${id}`, { headers: authHeaders() });
-    const data = await res.json();
-    if (!res.ok) throw new Error(data.error || 'Failed to load project details');
-    return data;
+    return safeApiRequest(`/api/projects/${id}`, { headers: authHeaders() });
   },
 
   async createProject(input: {
@@ -77,14 +74,11 @@ export const projectService = {
     startDate?: string;
     estimatedDeliveryDate?: string;
   }): Promise<{ message: string; project: WebsiteProject }> {
-    const res = await fetch(`${API_URL}/projects`, {
+    return safeApiRequest('/api/projects', {
       method: 'POST',
       headers: authHeaders(),
       body: JSON.stringify(input)
     });
-    const data = await res.json();
-    if (!res.ok) throw new Error(data.error || 'Failed to create project');
-    return data;
   },
 
   async updateProject(id: string, input: {
@@ -95,44 +89,32 @@ export const projectService = {
     estimatedDeliveryDate?: string;
     progress?: number;
   }): Promise<{ message: string; project: WebsiteProject }> {
-    const res = await fetch(`${API_URL}/projects/${id}`, {
+    return safeApiRequest(`/api/projects/${id}`, {
       method: 'PUT',
       headers: authHeaders(),
       body: JSON.stringify(input)
     });
-    const data = await res.json();
-    if (!res.ok) throw new Error(data.error || 'Failed to update project');
-    return data;
   },
 
   async updateProjectStatus(id: string, status: ProjectStatus, note?: string): Promise<{ message: string; project: WebsiteProject }> {
-    const res = await fetch(`${API_URL}/projects/${id}/status`, {
+    return safeApiRequest(`/api/projects/${id}/status`, {
       method: 'PATCH',
       headers: authHeaders(),
       body: JSON.stringify({ status, note })
     });
-    const data = await res.json();
-    if (!res.ok) throw new Error(data.error || 'Failed to update project status');
-    return data;
   },
 
   async assignProject(id: string, assignedTo: string | null): Promise<{ message: string; project: WebsiteProject }> {
-    const res = await fetch(`${API_URL}/projects/${id}/assignment`, {
+    return safeApiRequest(`/api/projects/${id}/assignment`, {
       method: 'PATCH',
       headers: authHeaders(),
       body: JSON.stringify({ assignedTo })
     });
-    const data = await res.json();
-    if (!res.ok) throw new Error(data.error || 'Failed to update assignment');
-    return data;
   },
 
   // Tasks
   async getTasks(projectId: string): Promise<{ tasks: ProjectTask[]; total: number }> {
-    const res = await fetch(`${API_URL}/projects/${projectId}/tasks`, { headers: authHeaders() });
-    const data = await res.json();
-    if (!res.ok) throw new Error(data.error || 'Failed to fetch tasks');
-    return data;
+    return safeApiRequest(`/api/projects/${projectId}/tasks`, { headers: authHeaders() });
   },
 
   async createTask(projectId: string, input: {
@@ -142,14 +124,11 @@ export const projectService = {
     assignedTo?: string;
     dueDate?: string;
   }): Promise<{ message: string; task: ProjectTask }> {
-    const res = await fetch(`${API_URL}/projects/${projectId}/tasks`, {
+    return safeApiRequest(`/api/projects/${projectId}/tasks`, {
       method: 'POST',
       headers: authHeaders(),
       body: JSON.stringify(input)
     });
-    const data = await res.json();
-    if (!res.ok) throw new Error(data.error || 'Failed to create task');
-    return data;
   },
 
   async updateTask(taskId: string, input: {
@@ -159,43 +138,31 @@ export const projectService = {
     assignedTo?: string | null;
     dueDate?: string;
   }): Promise<{ message: string; task: ProjectTask }> {
-    const res = await fetch(`${API_URL}/tasks/${taskId}`, {
+    return safeApiRequest(`/api/tasks/${taskId}`, {
       method: 'PUT',
       headers: authHeaders(),
       body: JSON.stringify(input)
     });
-    const data = await res.json();
-    if (!res.ok) throw new Error(data.error || 'Failed to update task');
-    return data;
   },
 
   async updateTaskStatus(taskId: string, status: TaskStatus): Promise<{ message: string; task: ProjectTask }> {
-    const res = await fetch(`${API_URL}/tasks/${taskId}/status`, {
+    return safeApiRequest(`/api/tasks/${taskId}/status`, {
       method: 'PATCH',
       headers: authHeaders(),
       body: JSON.stringify({ status })
     });
-    const data = await res.json();
-    if (!res.ok) throw new Error(data.error || 'Failed to update task status');
-    return data;
   },
 
   async deleteTask(taskId: string): Promise<{ message: string }> {
-    const res = await fetch(`${API_URL}/tasks/${taskId}`, {
+    return safeApiRequest(`/api/tasks/${taskId}`, {
       method: 'DELETE',
       headers: authHeaders()
     });
-    const data = await res.json();
-    if (!res.ok) throw new Error(data.error || 'Failed to delete task');
-    return data;
   },
 
   // Milestones
   async getMilestones(projectId: string): Promise<{ milestones: ProjectMilestone[]; total: number }> {
-    const res = await fetch(`${API_URL}/projects/${projectId}/milestones`, { headers: authHeaders() });
-    const data = await res.json();
-    if (!res.ok) throw new Error(data.error || 'Failed to fetch milestones');
-    return data;
+    return safeApiRequest(`/api/projects/${projectId}/milestones`, { headers: authHeaders() });
   },
 
   async createMilestone(projectId: string, input: {
@@ -204,14 +171,11 @@ export const projectService = {
     dueDate?: string;
     sortOrder?: number;
   }): Promise<{ message: string; milestone: ProjectMilestone }> {
-    const res = await fetch(`${API_URL}/projects/${projectId}/milestones`, {
+    return safeApiRequest(`/api/projects/${projectId}/milestones`, {
       method: 'POST',
       headers: authHeaders(),
       body: JSON.stringify(input)
     });
-    const data = await res.json();
-    if (!res.ok) throw new Error(data.error || 'Failed to create milestone');
-    return data;
   },
 
   async updateMilestone(milestoneId: string, input: {
@@ -220,35 +184,26 @@ export const projectService = {
     dueDate?: string;
     sortOrder?: number;
   }): Promise<{ message: string; milestone: ProjectMilestone }> {
-    const res = await fetch(`${API_URL}/milestones/${milestoneId}`, {
+    return safeApiRequest(`/api/milestones/${milestoneId}`, {
       method: 'PUT',
       headers: authHeaders(),
       body: JSON.stringify(input)
     });
-    const data = await res.json();
-    if (!res.ok) throw new Error(data.error || 'Failed to update milestone');
-    return data;
   },
 
   async updateMilestoneStatus(milestoneId: string, status: MilestoneStatus): Promise<{ message: string; milestone: ProjectMilestone }> {
-    const res = await fetch(`${API_URL}/milestones/${milestoneId}/status`, {
+    return safeApiRequest(`/api/milestones/${milestoneId}/status`, {
       method: 'PATCH',
       headers: authHeaders(),
       body: JSON.stringify({ status })
     });
-    const data = await res.json();
-    if (!res.ok) throw new Error(data.error || 'Failed to update milestone status');
-    return data;
   },
 
   async deleteMilestone(milestoneId: string): Promise<{ message: string }> {
-    const res = await fetch(`${API_URL}/milestones/${milestoneId}`, {
+    return safeApiRequest(`/api/milestones/${milestoneId}`, {
       method: 'DELETE',
       headers: authHeaders()
     });
-    const data = await res.json();
-    if (!res.ok) throw new Error(data.error || 'Failed to delete milestone');
-    return data;
   },
 
   // Phase 13: Review, Versions, Revisions, Approval & Delivery
@@ -258,69 +213,51 @@ export const projectService = {
     previewUrl: string;
     submitForReview?: boolean;
   }): Promise<{ message: string; version: ProjectVersion; project: WebsiteProject }> {
-    const res = await fetch(`${API_URL}/projects/${projectId}/versions`, {
+    return safeApiRequest(`/api/projects/${projectId}/versions`, {
       method: 'POST',
       headers: authHeaders(),
       body: JSON.stringify(input)
     });
-    const data = await res.json();
-    if (!res.ok) throw new Error(data.error || 'Failed to create version');
-    return data;
   },
 
   async getVersions(projectId: string): Promise<{ versions: ProjectVersion[]; total: number }> {
-    const res = await fetch(`${API_URL}/projects/${projectId}/versions`, { headers: authHeaders() });
-    const data = await res.json();
-    if (!res.ok) throw new Error(data.error || 'Failed to fetch versions');
-    return data;
+    return safeApiRequest(`/api/projects/${projectId}/versions`, { headers: authHeaders() });
   },
 
   async requestRevision(projectId: string, input: {
     requestedChanges: string;
     versionId?: string;
   }): Promise<{ message: string; revision: ProjectRevision }> {
-    const res = await fetch(`${API_URL}/projects/${projectId}/revisions`, {
+    return safeApiRequest(`/api/projects/${projectId}/revisions`, {
       method: 'POST',
       headers: authHeaders(),
       body: JSON.stringify(input)
     });
-    const data = await res.json();
-    if (!res.ok) throw new Error(data.error || 'Failed to submit revision request');
-    return data;
   },
 
   async getRevisions(projectId: string): Promise<{ revisions: ProjectRevision[]; total: number }> {
-    const res = await fetch(`${API_URL}/projects/${projectId}/revisions`, { headers: authHeaders() });
-    const data = await res.json();
-    if (!res.ok) throw new Error(data.error || 'Failed to fetch revisions');
-    return data;
+    return safeApiRequest(`/api/projects/${projectId}/revisions`, { headers: authHeaders() });
   },
 
   async approveProject(projectId: string, input?: {
     versionId?: string;
     feedback?: string;
   }): Promise<{ message: string; approval: ProjectApproval }> {
-    const res = await fetch(`${API_URL}/projects/${projectId}/approve`, {
+    return safeApiRequest(`/api/projects/${projectId}/approve`, {
       method: 'POST',
       headers: authHeaders(),
       body: JSON.stringify(input || {})
     });
-    const data = await res.json();
-    if (!res.ok) throw new Error(data.error || 'Failed to approve project');
-    return data;
   },
 
   async deliverProject(projectId: string, input: {
     deliveredUrl: string;
     deliveryNotes?: string;
   }): Promise<{ message: string; delivery: ProjectDelivery }> {
-    const res = await fetch(`${API_URL}/projects/${projectId}/deliver`, {
+    return safeApiRequest(`/api/projects/${projectId}/deliver`, {
       method: 'POST',
       headers: authHeaders(),
       body: JSON.stringify(input)
     });
-    const data = await res.json();
-    if (!res.ok) throw new Error(data.error || 'Failed to deliver project');
-    return data;
   }
 };

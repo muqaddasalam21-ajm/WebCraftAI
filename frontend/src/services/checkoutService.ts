@@ -1,7 +1,6 @@
 import { CheckoutSummary, Payment, PaymentMethod, CustomWebsiteOrder } from '../types';
 import { getAuthToken } from '../utils/token';
-
-const API_URL = '/api/checkout';
+import { safeApiRequest } from '../utils/apiConfig';
 
 function getToken(): string | null {
   return getAuthToken();
@@ -23,14 +22,11 @@ export const checkoutService = {
     itemId?: string;
     quantity?: number;
   }): Promise<{ summary: CheckoutSummary; isPaid: boolean }> {
-    const res = await fetch(`${API_URL}/summary`, {
+    return safeApiRequest<{ summary: CheckoutSummary; isPaid: boolean }>('/api/checkout/summary', {
       method: 'POST',
       headers: authHeaders(),
       body: JSON.stringify(params)
     });
-    const result = await res.json();
-    if (!res.ok) throw new Error(result.error || 'Failed to fetch checkout summary.');
-    return result;
   },
 
   async initiateCheckout(params: {
@@ -40,14 +36,11 @@ export const checkoutService = {
     quantity?: number;
     paymentMethod: PaymentMethod;
   }): Promise<{ message: string; payment: Payment; order: CustomWebsiteOrder }> {
-    const res = await fetch(`${API_URL}/initiate`, {
+    return safeApiRequest<{ message: string; payment: Payment; order: CustomWebsiteOrder }>('/api/checkout/initiate', {
       method: 'POST',
       headers: authHeaders(),
       body: JSON.stringify(params)
     });
-    const result = await res.json();
-    if (!res.ok) throw new Error(result.error || 'Failed to initialize payment.');
-    return result;
   },
 
   async confirmPayment(params: {
@@ -62,22 +55,16 @@ export const checkoutService = {
     };
     paymentToken?: string;
   }): Promise<{ message: string; payment: Payment; order: CustomWebsiteOrder }> {
-    const res = await fetch(`${API_URL}/confirm`, {
+    return safeApiRequest<{ message: string; payment: Payment; order: CustomWebsiteOrder }>('/api/checkout/confirm', {
       method: 'POST',
       headers: authHeaders(),
       body: JSON.stringify(params)
     });
-    const result = await res.json();
-    if (!res.ok) throw new Error(result.error || 'Payment confirmation failed.');
-    return result;
   },
 
   async getPayment(paymentId: string): Promise<{ payment: Payment; order: CustomWebsiteOrder }> {
-    const res = await fetch(`${API_URL}/payment/${paymentId}`, {
+    return safeApiRequest<{ payment: Payment; order: CustomWebsiteOrder }>(`/api/checkout/payment/${paymentId}`, {
       headers: authHeaders()
     });
-    const result = await res.json();
-    if (!res.ok) throw new Error(result.error || 'Failed to fetch payment details.');
-    return result;
   }
 };

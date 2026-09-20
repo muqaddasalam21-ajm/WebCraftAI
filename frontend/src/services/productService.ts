@@ -1,7 +1,5 @@
 import { getAuthToken } from '../utils/token';
-import { buildApiUrl } from '../utils/apiConfig';
-
-const API_URL = buildApiUrl('/api');
+import { safeApiRequest } from '../utils/apiConfig';
 
 function getToken(): string | null {
   return getAuthToken();
@@ -38,52 +36,47 @@ export const productService = {
     if (params?.page) q.set('page', String(params.page));
     if (params?.limit) q.set('limit', String(params.limit));
     if (params?.viewAll) q.set('viewAll', 'true');
-    const res = await fetch(`${API_URL}/products?${q.toString()}`, { headers: authHeaders() });
-    return res.json();
+
+    const qs = q.toString();
+    return safeApiRequest(`/api/products${qs ? `?${qs}` : ''}`, { headers: authHeaders() });
   },
 
   async getStats() {
-    const res = await fetch(`${API_URL}/products/stats`, { headers: authHeaders() });
-    return res.json();
+    return safeApiRequest('/api/products/stats', { headers: authHeaders() });
   },
 
   async getProductById(id: string) {
-    const res = await fetch(`${API_URL}/products/${id}`, { headers: authHeaders() });
-    return res.json();
+    return safeApiRequest(`/api/products/${id}`, { headers: authHeaders() });
   },
 
   async createProduct(data: Record<string, unknown>) {
-    const res = await fetch(`${API_URL}/products`, {
+    return safeApiRequest('/api/products', {
       method: 'POST',
       headers: authHeaders(),
       body: JSON.stringify(data)
     });
-    return res.json();
   },
 
   async updateProduct(id: string, data: Record<string, unknown>) {
-    const res = await fetch(`${API_URL}/products/${id}`, {
+    return safeApiRequest(`/api/products/${id}`, {
       method: 'PUT',
       headers: authHeaders(),
       body: JSON.stringify(data)
     });
-    return res.json();
   },
 
   async deleteProduct(id: string) {
-    const res = await fetch(`${API_URL}/products/${id}`, {
+    return safeApiRequest(`/api/products/${id}`, {
       method: 'DELETE',
       headers: authHeaders()
     });
-    return res.json();
   },
 
   async importCsv(csvData: string) {
-    const res = await fetch(`${API_URL}/products/import-csv`, {
+    return safeApiRequest('/api/products/import-csv', {
       method: 'POST',
       headers: authHeaders(),
       body: JSON.stringify({ csvData })
     });
-    return res.json();
   }
 };

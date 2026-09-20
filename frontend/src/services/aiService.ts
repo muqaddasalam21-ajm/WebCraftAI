@@ -1,4 +1,6 @@
 import { ChatMessage } from '../types';
+import { getAuthToken } from '../utils/token';
+import { safeApiRequest } from '../utils/apiConfig';
 
 export interface SendMessagePayload {
   messages: Array<{ role: 'user' | 'assistant' | 'system'; content: string }>;
@@ -13,28 +15,27 @@ export interface SendMessageResponse {
 }
 
 export class FrontendAIService {
-  private apiUrl = '/api/ai/chat';
-
   /**
    * Send multi-turn messages to the backend AI agent
    */
   public async sendMessage(payload: SendMessagePayload): Promise<SendMessageResponse> {
     try {
-      const response = await fetch(this.apiUrl, {
+      const token = getAuthToken();
+      const headers: Record<string, string> = {
+        'Content-Type': 'application/json',
+        'Accept': 'application/json'
+      };
+
+      if (token) {
+        headers['Authorization'] = `Bearer ${token}`;
+      }
+
+      const data = await safeApiRequest<SendMessageResponse>('/api/ai/chat', {
         method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          'Accept': 'application/json'
-        },
+        headers,
         body: JSON.stringify(payload)
       });
 
-      if (!response.ok) {
-        const errorBody = await response.json().catch(() => ({}));
-        throw new Error(errorBody.error || `Server returned error status ${response.status}`);
-      }
-
-      const data: SendMessageResponse = await response.json();
       return data;
     } catch (error: any) {
       console.error('AI Service communication error:', error);

@@ -3,8 +3,7 @@
  */
 
 import { getAuthToken } from '../utils/token';
-
-const API_URL = '/api/reports';
+import { safeApiRequest, buildApiUrl } from '../utils/apiConfig';
 
 function getToken(): string | null {
   return getAuthToken();
@@ -36,73 +35,54 @@ function buildQuery(params?: Record<string, string | undefined>): string {
 
 export const reportService = {
   async getOverview(params?: DateQuery) {
-    const res = await fetch(`${API_URL}/overview${buildQuery(params as Record<string, string>)}`, {
+    return safeApiRequest(`/api/reports/overview${buildQuery(params as Record<string, string>)}`, {
       headers: authHeaders()
     });
-    const data = await res.json();
-    if (!res.ok) throw new Error(data.error || 'Failed to load overview report.');
-    return data;
   },
 
   async getSales(params?: DateQuery & { orderType?: string; status?: string; packageId?: string; templateId?: string }) {
-    const res = await fetch(`${API_URL}/sales${buildQuery(params as Record<string, string>)}`, {
+    return safeApiRequest(`/api/reports/sales${buildQuery(params as Record<string, string>)}`, {
       headers: authHeaders()
     });
-    const data = await res.json();
-    if (!res.ok) throw new Error(data.error || 'Failed to load sales report.');
-    return data;
   },
 
   async getRevenue(params?: DateQuery) {
-    const res = await fetch(`${API_URL}/revenue${buildQuery(params as Record<string, string>)}`, {
+    return safeApiRequest(`/api/reports/revenue${buildQuery(params as Record<string, string>)}`, {
       headers: authHeaders()
     });
-    const data = await res.json();
-    if (!res.ok) throw new Error(data.error || 'Failed to load revenue report.');
-    return data;
   },
 
   async getProjects(params?: DateQuery & { status?: string; priority?: string; assignedTo?: string }) {
-    const res = await fetch(`${API_URL}/projects${buildQuery(params as Record<string, string>)}`, {
+    return safeApiRequest(`/api/reports/projects${buildQuery(params as Record<string, string>)}`, {
       headers: authHeaders()
     });
-    const data = await res.json();
-    if (!res.ok) throw new Error(data.error || 'Failed to load projects report.');
-    return data;
   },
 
   async getDeployments(params?: DateQuery) {
-    const res = await fetch(`${API_URL}/deployments${buildQuery(params as Record<string, string>)}`, {
+    return safeApiRequest(`/api/reports/deployments${buildQuery(params as Record<string, string>)}`, {
       headers: authHeaders()
     });
-    const data = await res.json();
-    if (!res.ok) throw new Error(data.error || 'Failed to load deployments report.');
-    return data;
   },
 
   async getCustomers(params?: DateQuery) {
-    const res = await fetch(`${API_URL}/customers${buildQuery(params as Record<string, string>)}`, {
+    return safeApiRequest(`/api/reports/customers${buildQuery(params as Record<string, string>)}`, {
       headers: authHeaders()
     });
-    const data = await res.json();
-    if (!res.ok) throw new Error(data.error || 'Failed to load customer analytics.');
-    return data;
   },
 
   async getVendors(params?: DateQuery) {
-    const res = await fetch(`${API_URL}/vendors${buildQuery(params as Record<string, string>)}`, {
+    return safeApiRequest(`/api/reports/vendors${buildQuery(params as Record<string, string>)}`, {
       headers: authHeaders()
     });
-    const data = await res.json();
-    if (!res.ok) throw new Error(data.error || 'Failed to load vendor analytics.');
-    return data;
   },
 
   async downloadExport(type: 'sales' | 'revenue' | 'projects' | 'deployments', params?: DateQuery) {
     const query = buildQuery({ type, ...(params as Record<string, string>) });
-    const res = await fetch(`${API_URL}/export${query}`, {
+    const targetUrl = buildApiUrl(`/api/reports/export${query}`);
+    const token = getToken();
+    const res = await fetch(targetUrl, {
       headers: {
-        ...(getToken() ? { Authorization: `Bearer ${getToken()}` } : {})
+        ...(token ? { Authorization: `Bearer ${token}` } : {})
       }
     });
 

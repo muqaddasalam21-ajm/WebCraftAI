@@ -1,7 +1,5 @@
 import { getAuthToken } from '../utils/token';
-import { buildApiUrl } from '../utils/apiConfig';
-
-const API_URL = buildApiUrl('/api');
+import { safeApiRequest } from '../utils/apiConfig';
 
 function getToken(): string | null {
   return getAuthToken();
@@ -17,12 +15,10 @@ function authHeaders(): Record<string, string> {
 
 export const vendorService = {
   async getVendors() {
-    const res = await fetch(`${API_URL}/vendors`, { headers: authHeaders() });
-    return res.json();
+    return safeApiRequest('/api/vendors', { headers: authHeaders() });
   },
 
   async getVendorProducts(vendorId: string) {
-    const res = await fetch(`${API_URL}/vendors/${vendorId}/products`, { headers: authHeaders() });
-    return res.json();
+    return safeApiRequest(`/api/vendors/${vendorId}/products`, { headers: authHeaders() });
   }
 };

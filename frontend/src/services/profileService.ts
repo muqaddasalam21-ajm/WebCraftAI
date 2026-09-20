@@ -1,15 +1,14 @@
 import { authService, normalizeRole } from './authService';
 import { User, UserRole, UserStatus } from '../types';
+import { safeApiRequest } from '../utils/apiConfig';
 
 export const profileService = {
   async getProfile(): Promise<User> {
     const token = authService.getToken();
-    const res = await fetch('/api/profile', {
+    const data = await safeApiRequest('/api/profile', {
       headers: { Authorization: `Bearer ${token}` }
     });
 
-    const data = await res.json();
-    if (!res.ok) throw new Error(data.error || 'Failed to fetch profile');
     const u = data.user;
     return {
       id: u.id,
@@ -34,7 +33,7 @@ export const profileService = {
     company?: string;
   }): Promise<User> {
     const token = authService.getToken();
-    const res = await fetch('/api/profile', {
+    const data = await safeApiRequest('/api/profile', {
       method: 'PUT',
       headers: {
         'Content-Type': 'application/json',
@@ -43,8 +42,6 @@ export const profileService = {
       body: JSON.stringify(updates)
     });
 
-    const data = await res.json();
-    if (!res.ok) throw new Error(data.error || 'Failed to update profile');
     return data.user;
   },
 
@@ -54,7 +51,7 @@ export const profileService = {
     confirmNewPassword: string;
   }): Promise<void> {
     const token = authService.getToken();
-    const res = await fetch('/api/profile/change-password', {
+    await safeApiRequest('/api/profile/change-password', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -62,8 +59,5 @@ export const profileService = {
       },
       body: JSON.stringify(passwords)
     });
-
-    const data = await res.json();
-    if (!res.ok) throw new Error(data.error || 'Failed to change password');
   }
 };
