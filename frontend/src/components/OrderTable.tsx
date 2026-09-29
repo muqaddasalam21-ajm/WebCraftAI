@@ -4,6 +4,7 @@ import { Order, OrderStatus } from '../types';
 import { Badge, BadgeVariant } from './Badge';
 import { Button } from './Button';
 import { Modal } from './Modal';
+import { formatPKR } from '../utils/currency';
 
 interface OrderTableProps {
   orders: Order[];
@@ -62,7 +63,7 @@ export const OrderTable: React.FC<OrderTableProps> = ({ orders }) => {
                   <span>{order.assignedUser}</span>
                 </td>
                 <td className="py-3.5 px-4 font-bold text-slate-900">
-                  ${order.amount.toFixed(2)}
+                  {formatPKR(order.amount)}
                 </td>
                 <td className="py-3.5 px-4">
                   <Badge variant={getStatusVariant(order.status)} size="sm">
@@ -102,7 +103,7 @@ export const OrderTable: React.FC<OrderTableProps> = ({ orders }) => {
               <div>
                 <span className="text-xs text-slate-500 font-medium">Total Amount</span>
                 <h4 className="text-2xl font-black text-slate-900">
-                  ${selectedOrder.amount.toFixed(2)}
+                  {formatPKR(selectedOrder.amount)}
                 </h4>
               </div>
               <div className="flex gap-2">

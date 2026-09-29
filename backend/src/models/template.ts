@@ -1,4 +1,4 @@
-﻿export type TemplateStatus = 'DRAFT' | 'PUBLISHED' | 'ARCHIVED';
+export type TemplateStatus = 'DRAFT' | 'PUBLISHED' | 'ARCHIVED';
 
 export interface Template {
   id: string;
@@ -6,6 +6,7 @@ export interface Template {
   description: string;
   category: string;
   price: number;
+  currency?: string;
   thumbnail: string;
   previewUrl?: string;
   demoUrl?: string;

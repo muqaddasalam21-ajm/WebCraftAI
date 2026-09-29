@@ -20,6 +20,7 @@ import { templateService } from '../../services/templateService';
 import { Template } from '../../types';
 import { useAuth } from '../../contexts/AuthContext';
 import { Button } from '../../components/Button';
+import { formatPKR } from '../../utils/currency';
 
 export const TemplateDetailsPage: React.FC = () => {
   const { id } = useParams<{ id: string }>();
@@ -227,7 +228,7 @@ export const TemplateDetailsPage: React.FC = () => {
             <div className="pt-4 border-t border-slate-100">
               <div className="flex items-baseline gap-2">
                 <span className="text-3xl font-black text-slate-900">
-                  ${typeof template.price === 'number' ? template.price.toFixed(2) : template.price}
+                  {formatPKR(template.price)}
                 </span>
                 <span className="text-xs text-slate-400 font-medium">one-time license</span>
               </div>

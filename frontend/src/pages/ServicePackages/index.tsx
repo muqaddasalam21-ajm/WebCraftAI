@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { CustomWebsitePackage } from '../../types';
 import { servicePackageService } from '../../services/servicePackageService';
 import { useAuth } from '../../contexts/AuthContext';
+import { formatCurrency } from '../../utils/currency';
 
 const ServicePackagesPage: React.FC = () => {
   const { role } = useAuth();
@@ -131,8 +132,7 @@ const ServicePackagesPage: React.FC = () => {
                 </div>
 
                 <div className="text-3xl font-extrabold text-gray-900 mb-1">
-                  ${pkg.price.toLocaleString()}
-                  <span className="text-base font-normal text-gray-400 ml-1">{pkg.currency}</span>
+                  {formatCurrency(pkg.price, pkg.currency)}
                 </div>
 
                 <div className="grid grid-cols-3 gap-2 mt-3 mb-4">

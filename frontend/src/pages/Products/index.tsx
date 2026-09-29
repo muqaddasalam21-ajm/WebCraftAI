@@ -9,6 +9,7 @@ import { Badge, BadgeVariant } from '../../components/Badge';
 import { Button } from '../../components/Button';
 import { Modal } from '../../components/Modal';
 import { useAuth } from '../../contexts/AuthContext';
+import { formatCurrency } from '../../utils/currency';
 
 const CATEGORIES = ['All', 'Electronics', 'Fashion', 'Beauty & Skincare', 'Furniture', 'Food & Beverage', 'Digital Products', 'Services', 'Other'];
 const STATUSES = ['All', 'draft', 'published', 'archived'];
@@ -214,8 +215,8 @@ export const ProductsPage: React.FC = () => {
       </div>
       <div className="grid grid-cols-2 gap-3">
         <div>
-          <label className="font-bold text-slate-700 block mb-1">Price ($) <span className="text-rose-500">*</span></label>
-          <input type="number" min="0" step="0.01" value={formData.price} onChange={e => setFormData(f => ({ ...f, price: e.target.value }))} placeholder="0.00" className="w-full p-2.5 bg-slate-50 border border-slate-200 rounded-xl text-sm outline-none focus:border-brand-500 focus:ring-2 focus:ring-brand-500/10" />
+          <label className="font-bold text-slate-700 block mb-1">Price (PKR ₨) <span className="text-rose-500">*</span></label>
+          <input type="number" min="0" step="1" value={formData.price} onChange={e => setFormData(f => ({ ...f, price: e.target.value }))} placeholder="0" className="w-full p-2.5 bg-slate-50 border border-slate-200 rounded-xl text-sm outline-none focus:border-brand-500 focus:ring-2 focus:ring-brand-500/10" />
         </div>
         <div>
           <label className="font-bold text-slate-700 block mb-1">Stock (units)</label>
@@ -321,7 +322,7 @@ export const ProductsPage: React.FC = () => {
                     </div>
                   </td>
                   <td className="py-3.5 px-4 text-xs text-slate-600 font-medium">{product.category}</td>
-                  <td className="py-3.5 px-4 text-xs font-bold text-slate-900">${product.price.toFixed(2)}</td>
+                  <td className="py-3.5 px-4 text-xs font-bold text-slate-900">{formatCurrency(product.price, product.currency)}</td>
                   <td className="py-3.5 px-4 text-xs text-slate-600">{product.vendorName}</td>
                   <td className="py-3.5 px-4 text-xs text-slate-600 font-medium">{product.stock} units</td>
                   <td className="py-3.5 px-4">

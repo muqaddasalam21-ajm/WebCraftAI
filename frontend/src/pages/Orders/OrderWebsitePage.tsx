@@ -19,6 +19,7 @@ import { customWebsiteOrderService } from '../../services/customWebsiteOrderServ
 import { servicePackageService } from '../../services/servicePackageService';
 import { CustomWebsitePackage } from '../../types';
 import { Button } from '../../components/Button';
+import { formatCurrency, formatPKR } from '../../utils/currency';
 
 export const OrderWebsitePage: React.FC = () => {
   const navigate = useNavigate();
@@ -815,9 +816,8 @@ export const OrderWebsitePage: React.FC = () => {
                       <div className="pt-2 border-t border-slate-100">
                         <div className="flex items-baseline gap-1">
                           <span className="text-2xl sm:text-3xl font-black text-slate-900">
-                            ${pkg.price.toLocaleString()}
+                            {formatCurrency(pkg.price, pkg.currency)}
                           </span>
-                          <span className="text-xs text-slate-400 font-semibold">{pkg.currency}</span>
                         </div>
                         <div className="mt-2 grid grid-cols-3 gap-1 text-[11px]">
                           <div className={`text-center rounded-lg p-1.5 ${pageWarning ? 'bg-red-50 text-red-600' : 'bg-slate-50 text-slate-600'}`}>
@@ -922,7 +922,7 @@ export const OrderWebsitePage: React.FC = () => {
             <div className="p-4 rounded-xl bg-gradient-to-br from-brand-50 to-indigo-50 border border-brand-200 space-y-2">
               <div className="flex items-center justify-between">
                 <span className="font-bold text-brand-900 text-sm">{selectedPkg?.name}</span>
-                <span className="text-base font-black text-brand-700">${selectedPkg?.price?.toLocaleString()} {selectedPkg?.currency || 'USD'}</span>
+                <span className="text-base font-black text-brand-700">{formatCurrency(selectedPkg?.price, selectedPkg?.currency)}</span>
               </div>
               <p className="text-brand-800 text-[11px]">{selectedPkg?.description}</p>
               <div className="grid grid-cols-3 gap-1 text-[11px]">

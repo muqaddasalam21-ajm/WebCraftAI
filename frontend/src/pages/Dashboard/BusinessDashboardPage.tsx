@@ -24,6 +24,7 @@ import {
 import { useAuth } from '../../contexts/AuthContext';
 import { reportService, DateQuery } from '../../services/reportService';
 import { Button } from '../../components/Button';
+import { formatCurrency, formatPKR } from '../../utils/currency';
 
 export const BusinessDashboardPage: React.FC = () => {
   const { currentUser, role } = useAuth();
@@ -332,12 +333,12 @@ export const BusinessDashboardPage: React.FC = () => {
               </div>
               <div className="mt-3">
                 <div className="text-2xl font-black text-slate-900">
-                  ${overview?.financials?.netRevenue?.toLocaleString() ?? 0}
+                  {formatPKR(overview?.financials?.netRevenue ?? 0)}
                 </div>
                 <div className="flex items-center gap-1 text-[11px] text-slate-500 mt-1">
-                  <span>Gross: ${overview?.financials?.grossRevenue?.toLocaleString() ?? 0}</span>
+                  <span>Gross: {formatPKR(overview?.financials?.grossRevenue ?? 0)}</span>
                   {overview?.financials?.refundedRevenue > 0 && (
-                    <span className="text-red-500">(-${overview?.financials?.refundedRevenue})</span>
+                    <span className="text-red-500">(-{formatPKR(overview?.financials?.refundedRevenue)})</span>
                   )}
                 </div>
               </div>
@@ -357,7 +358,7 @@ export const BusinessDashboardPage: React.FC = () => {
                   <span className="text-xs font-normal text-slate-400 ml-1">/ {overview?.orders?.total ?? 0} total</span>
                 </div>
                 <div className="text-[11px] text-slate-500 mt-1">
-                  AOV: ${overview?.financials?.averageOrderValue ?? 0} USD
+                  AOV: {formatPKR(overview?.financials?.averageOrderValue ?? 0)}
                 </div>
               </div>
             </div>
@@ -447,7 +448,7 @@ export const BusinessDashboardPage: React.FC = () => {
               <div className="p-4 rounded-xl bg-slate-50 border border-slate-100">
                 <span className="text-xs font-semibold text-slate-500">Marketplace Templates</span>
                 <div className="text-xl font-bold text-slate-900 mt-1">
-                  ${overview?.financials?.salesByType?.templates?.revenue?.toLocaleString() ?? 0}
+                  {formatPKR(overview?.financials?.salesByType?.templates?.revenue ?? 0)}
                 </div>
                 <span className="text-xs text-slate-400">
                   {overview?.financials?.salesByType?.templates?.count ?? 0} units purchased
@@ -457,7 +458,7 @@ export const BusinessDashboardPage: React.FC = () => {
               <div className="p-4 rounded-xl bg-slate-50 border border-slate-100">
                 <span className="text-xs font-semibold text-slate-500">Custom Website Packages</span>
                 <div className="text-xl font-bold text-slate-900 mt-1">
-                  ${overview?.financials?.salesByType?.customWebsites?.revenue?.toLocaleString() ?? 0}
+                  {formatPKR(overview?.financials?.salesByType?.customWebsites?.revenue ?? 0)}
                 </div>
                 <span className="text-xs text-slate-400">
                   {overview?.financials?.salesByType?.customWebsites?.count ?? 0} custom builds commissioned
@@ -467,7 +468,7 @@ export const BusinessDashboardPage: React.FC = () => {
               <div className="p-4 rounded-xl bg-slate-50 border border-slate-100">
                 <span className="text-xs font-semibold text-slate-500">Digital Goods &amp; Products</span>
                 <div className="text-xl font-bold text-slate-900 mt-1">
-                  ${overview?.financials?.salesByType?.products?.revenue?.toLocaleString() ?? 0}
+                  {formatPKR(overview?.financials?.salesByType?.products?.revenue ?? 0)}
                 </div>
                 <span className="text-xs text-slate-400">
                   {overview?.financials?.salesByType?.products?.count ?? 0} items purchased
@@ -487,7 +488,7 @@ export const BusinessDashboardPage: React.FC = () => {
               <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
                 <div className="bg-white p-4 rounded-xl border border-slate-200">
                   <span className="text-xs text-slate-500 font-medium">Total Revenue (Paid)</span>
-                  <div className="text-xl font-bold text-emerald-700 mt-1">${sales.summary.totalPaidRevenue}</div>
+                  <div className="text-xl font-bold text-emerald-700 mt-1">{formatPKR(sales.summary.totalPaidRevenue)}</div>
                 </div>
                 <div className="bg-white p-4 rounded-xl border border-slate-200">
                   <span className="text-xs text-slate-500 font-medium">Paid Orders</span>
@@ -524,7 +525,7 @@ export const BusinessDashboardPage: React.FC = () => {
                             }}
                           />
                         </div>
-                        <span className="w-20 font-bold text-slate-900 text-right">${point.grossRevenue}</span>
+                        <span className="w-20 font-bold text-slate-900 text-right">{formatPKR(point.grossRevenue)}</span>
                         <span className="w-16 text-slate-400 text-right">({point.paidCount} paid)</span>
                       </div>
                     ))}
@@ -552,7 +553,7 @@ export const BusinessDashboardPage: React.FC = () => {
                             <td className="py-2.5 font-semibold text-slate-800">{t.name}</td>
                             <td className="py-2.5 text-slate-500">{t.category}</td>
                             <td className="py-2.5 font-medium text-slate-700">{t.unitsSold}</td>
-                            <td className="py-2.5 font-bold text-emerald-700 text-right">${t.totalRevenue}</td>
+                            <td className="py-2.5 font-bold text-emerald-700 text-right">{formatPKR(t.totalRevenue)}</td>
                           </tr>
                         ))}
                       </tbody>
@@ -571,7 +572,7 @@ export const BusinessDashboardPage: React.FC = () => {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
             <div className="bg-white p-5 rounded-2xl border border-green-200/60">
               <span className="text-xs text-slate-500 font-semibold">Gross Processed</span>
-              <div className="text-2xl font-black text-slate-900 mt-1">${revenue.financials.grossRevenue}</div>
+              <div className="text-2xl font-black text-slate-900 mt-1">{formatPKR(revenue.financials.grossRevenue)}</div>
               <span className="text-xs text-emerald-600 font-medium mt-1 block">
                 {revenue.financials.paidTransactionsCount} verified successful payments
               </span>
@@ -579,7 +580,7 @@ export const BusinessDashboardPage: React.FC = () => {
 
             <div className="bg-white p-5 rounded-2xl border border-green-200/60">
               <span className="text-xs text-slate-500 font-semibold">Total Refunded</span>
-              <div className="text-2xl font-black text-red-600 mt-1">-${revenue.financials.refundedRevenue}</div>
+              <div className="text-2xl font-black text-red-600 mt-1">-{formatPKR(revenue.financials.refundedRevenue)}</div>
               <span className="text-xs text-slate-400 mt-1 block">
                 {revenue.financials.refundedTransactionsCount} refund transactions
               </span>
@@ -587,7 +588,7 @@ export const BusinessDashboardPage: React.FC = () => {
 
             <div className="bg-white p-5 rounded-2xl border border-green-200/60">
               <span className="text-xs text-slate-500 font-semibold">Net Realized Revenue</span>
-              <div className="text-2xl font-black text-emerald-700 mt-1">${revenue.financials.netRevenue}</div>
+              <div className="text-2xl font-black text-emerald-700 mt-1">{formatPKR(revenue.financials.netRevenue)}</div>
               <span className="text-xs text-slate-400 mt-1 block">
                 Excludes pending and failed payments
               </span>
@@ -614,7 +615,7 @@ export const BusinessDashboardPage: React.FC = () => {
                     <tr key={t.id} className="hover:bg-slate-50">
                       <td className="py-2.5 font-mono text-slate-500">{t.id}</td>
                       <td className="py-2.5 font-semibold text-slate-800">{t.orderNumber}</td>
-                      <td className="py-2.5 font-bold text-slate-900">${t.amount} {t.currency}</td>
+                      <td className="py-2.5 font-bold text-slate-900">{formatCurrency(t.amount, t.currency)}</td>
                       <td className="py-2.5 uppercase text-slate-600 font-mono text-[11px]">{t.provider}</td>
                       <td className="py-2.5">
                         <span className={`px-2 py-0.5 rounded-md font-bold text-[10px] ${
@@ -822,7 +823,7 @@ export const BusinessDashboardPage: React.FC = () => {
                 </div>
                 <div className="p-4 bg-slate-50 rounded-xl">
                   <span className="text-xs text-slate-500 font-medium">Total Spent</span>
-                  <div className="text-xl font-bold text-emerald-700 mt-1">${customers.metrics.totalSpent}</div>
+                  <div className="text-xl font-bold text-emerald-700 mt-1">{formatPKR(customers.metrics.totalSpent)}</div>
                 </div>
                 <div className="p-4 bg-slate-50 rounded-xl">
                   <span className="text-xs text-slate-500 font-medium">Custom Website Orders</span>
@@ -847,7 +848,7 @@ export const BusinessDashboardPage: React.FC = () => {
                 </div>
                 <div className="bg-white p-4 rounded-xl border border-slate-200">
                   <span className="text-xs text-slate-500 font-medium">Avg Lifetime Spend</span>
-                  <div className="text-xl font-bold text-purple-700 mt-1">${customers.summary.averageSpendPerCustomer}</div>
+                  <div className="text-xl font-bold text-purple-700 mt-1">{formatPKR(customers.summary.averageSpendPerCustomer)}</div>
                 </div>
               </div>
 
@@ -872,7 +873,7 @@ export const BusinessDashboardPage: React.FC = () => {
                           <td className="py-2.5 text-slate-500 font-mono text-[11px]">{c.email}</td>
                           <td className="py-2.5 text-slate-700">{c.totalOrders}</td>
                           <td className="py-2.5 text-emerald-700 font-semibold">{c.paidOrders}</td>
-                          <td className="py-2.5 font-bold text-slate-900 text-right">${c.totalSpent}</td>
+                          <td className="py-2.5 font-bold text-slate-900 text-right">{formatPKR(c.totalSpent)}</td>
                         </tr>
                       ))}
                     </tbody>
@@ -899,7 +900,7 @@ export const BusinessDashboardPage: React.FC = () => {
                     {v.activeListings} Active / {v.totalTemplates} Total Listings
                   </span>
                   <span className="px-2.5 py-1 rounded-lg bg-emerald-50 text-emerald-700 font-bold">
-                    ${v.totalRevenue} Total Sales Revenue
+                    {formatPKR(v.totalRevenue)} Total Sales Revenue
                   </span>
                 </div>
               </div>
@@ -917,8 +918,8 @@ export const BusinessDashboardPage: React.FC = () => {
                       <div key={t.id} className="p-3 rounded-xl bg-slate-50 border border-slate-100">
                         <div className="font-semibold text-xs text-slate-800">{t.name}</div>
                         <div className="flex items-center justify-between mt-2 text-[11px]">
-                          <span className="text-slate-500">${t.price} USD</span>
-                          <span className="font-bold text-emerald-700">{t.salesCount} sold (${t.revenue})</span>
+                          <span className="text-slate-500">{formatPKR(t.price)}</span>
+                          <span className="font-bold text-emerald-700">{t.salesCount} sold ({formatPKR(t.revenue)})</span>
                         </div>
                       </div>
                     ))}

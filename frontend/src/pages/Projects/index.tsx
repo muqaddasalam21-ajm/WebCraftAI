@@ -20,6 +20,7 @@ import { WebsiteProject, ProjectStatus, PriorityLevel } from '../../types';
 import { useAuth } from '../../contexts/AuthContext';
 import { Button } from '../../components/Button';
 import { EmptyState } from '../../components/EmptyState';
+import { formatCurrency } from '../../utils/currency';
 
 const STATUS_TABS: { label: string; value: string }[] = [
   { label: 'All Projects', value: 'All' },
@@ -280,7 +281,7 @@ export const ProjectsPage: React.FC = () => {
                       {p.packageName}
                     </span>
                     <span className="font-bold text-slate-900">
-                      ${p.packagePrice} {p.packageCurrency}
+                      {formatCurrency(p.packagePrice, p.packageCurrency)}
                     </span>
                   </div>
 

@@ -10,6 +10,7 @@ import {
 import { Button } from '../../components/Button';
 import { checkoutService } from '../../services/checkoutService';
 import { Payment } from '../../types';
+import { formatCurrency } from '../../utils/currency';
 
 export const CheckoutFailedPage: React.FC = () => {
   const [searchParams] = useSearchParams();
@@ -65,7 +66,7 @@ export const CheckoutFailedPage: React.FC = () => {
           </div>
           <div className="flex justify-between">
             <span className="text-slate-400">Attempted Amount:</span>
-            <span className="font-bold text-slate-700">${payment.amount.toFixed(2)} USD</span>
+            <span className="font-bold text-slate-700">{formatCurrency(payment.amount, payment.currency)}</span>
           </div>
         </div>
       )}

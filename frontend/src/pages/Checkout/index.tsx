@@ -18,6 +18,7 @@ import { Button } from '../../components/Button';
 import { checkoutService } from '../../services/checkoutService';
 import { CheckoutSummary, PaymentProviderType, PaymentConfigResponse } from '../../types';
 import { useAuth } from '../../contexts/AuthContext';
+import { formatCurrency, formatPKR } from '../../utils/currency';
 
 export const CheckoutPage: React.FC = () => {
   const [searchParams] = useSearchParams();
@@ -213,7 +214,7 @@ export const CheckoutPage: React.FC = () => {
             <div className="flex justify-between text-slate-600 pt-1 border-t border-emerald-200/50">
               <span>Total Paid</span>
               <span className="font-bold text-slate-900">
-                {summary.currency === 'PKR' ? `Rs. ${summary.total.toLocaleString()}` : `$${summary.total.toFixed(2)} USD`}
+                {formatCurrency(summary.total, summary.currency)}
               </span>
             </div>
           )}
@@ -394,7 +395,7 @@ export const CheckoutPage: React.FC = () => {
                       <div className="flex items-center gap-2">
                         <span className="font-bold text-xs text-slate-900">Easypaisa</span>
                         <span className="text-[10px] font-bold text-emerald-700 bg-emerald-100 px-2 py-0.5 rounded-full">
-                          Mobile Account / OTC / QR
+                          🇵🇰 Mobile Account / OTC
                         </span>
                       </div>
                       <p className="text-[11px] text-slate-500 mt-0.5">
@@ -433,7 +434,7 @@ export const CheckoutPage: React.FC = () => {
                       <div className="flex items-center gap-2">
                         <span className="font-bold text-xs text-slate-900">JazzCash</span>
                         <span className="text-[10px] font-bold text-amber-800 bg-amber-100 px-2 py-0.5 rounded-full">
-                          Mobile Account / Voucher
+                          🇵🇰 Mobile Account / Voucher
                         </span>
                       </div>
                       <p className="text-[11px] text-slate-500 mt-0.5">
@@ -472,11 +473,11 @@ export const CheckoutPage: React.FC = () => {
                       <div className="flex items-center gap-2">
                         <span className="font-bold text-xs text-slate-900">Credit / Debit Card</span>
                         <span className="text-[10px] font-bold text-blue-700 bg-blue-100 px-2 py-0.5 rounded-full">
-                          3D-Secure
+                          💳 Visa / Mastercard / PayPak
                         </span>
                       </div>
                       <p className="text-[11px] text-slate-500 mt-0.5">
-                        Visa / Mastercard / PayPak via Bank Hosted Gateway
+                        Visa / Mastercard / PayPak via 3D-Secure Bank Hosted Gateway
                       </p>
                     </div>
                   </div>
@@ -542,7 +543,7 @@ export const CheckoutPage: React.FC = () => {
                 >
                   {processing
                     ? (processingStep || 'Processing...')
-                    : `Proceed to Secure Payment (${summary.currency === 'PKR' ? `Rs. ${summary.total.toLocaleString()}` : `$${summary.total.toFixed(2)} USD`})`
+                    : `Proceed to Secure Payment (${formatCurrency(summary.total, summary.currency)})`
                   }
                 </Button>
                 <p className="text-[11px] text-slate-400 text-center mt-2">
@@ -581,25 +582,30 @@ export const CheckoutPage: React.FC = () => {
               {/* Price Breakdown */}
               <div className="space-y-3 text-xs border-t border-slate-100 pt-4">
                 <div className="flex items-center justify-between text-slate-600">
-                  <span>Subtotal (Trusted server price)</span>
+                  <span>Subtotal</span>
                   <span className="font-semibold text-slate-900">
-                    {summary.currency === 'PKR' ? `Rs. ${summary.subtotal.toLocaleString()}` : `$${summary.subtotal.toFixed(2)}`}
+                    {formatCurrency(summary.subtotal, summary.currency)}
                   </span>
                 </div>
-                <div className="flex items-center justify-between text-slate-600">
-                  <span>Processing &amp; Gateway Fees</span>
-                  <span className="font-semibold text-slate-900">
-                    {summary.currency === 'PKR' ? `Rs. ${summary.fees.toLocaleString()}` : `$${summary.fees.toFixed(2)}`}
-                  </span>
-                </div>
+                {summary.fees > 0 && (
+                  <div className="flex items-center justify-between text-slate-600">
+                    <span>Processing &amp; Gateway Fees</span>
+                    <span className="font-semibold text-slate-900">
+                      {formatCurrency(summary.fees, summary.currency)}
+                    </span>
+                  </div>
+                )}
                 <div className="pt-3 border-t border-slate-200 flex items-baseline justify-between">
-                  <span className="font-bold text-sm text-slate-900">Final Total</span>
+                  <span className="font-bold text-sm text-slate-900">Total</span>
                   <div className="text-right">
                     <span className="text-2xl font-black text-slate-900">
-                      {summary.currency === 'PKR' ? `Rs. ${summary.total.toLocaleString()}` : `$${summary.total.toFixed(2)}`}
+                      {formatCurrency(summary.total, summary.currency)}
                     </span>
-                    <span className="text-xs font-bold text-slate-400 ml-1">{summary.currency || 'USD'}</span>
                   </div>
+                </div>
+                <div className="flex items-center justify-between text-slate-500 text-xs pt-1">
+                  <span>Currency</span>
+                  <span className="font-bold text-slate-800">{summary.currency || 'PKR'}</span>
                 </div>
               </div>
 

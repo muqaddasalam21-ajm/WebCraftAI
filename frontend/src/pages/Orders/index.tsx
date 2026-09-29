@@ -19,6 +19,7 @@ import { OrderStatusBadge } from '../../components/OrderStatusBadge';
 import { Button } from '../../components/Button';
 import { EmptyState } from '../../components/EmptyState';
 import { useAuth } from '../../contexts/AuthContext';
+import { formatCurrency } from '../../utils/currency';
 
 export const OrdersPage: React.FC = () => {
   const navigate = useNavigate();
@@ -235,7 +236,7 @@ export const OrdersPage: React.FC = () => {
                             : (ord.package?.packageName || 'Custom Package')}
                         </span>
                         <span className="text-[11px] font-semibold text-emerald-600">
-                          ${ord.amount} USD
+                          {formatCurrency(ord.amount, ord.currency || ord.package?.currency)}
                         </span>
                       </div>
                     </td>

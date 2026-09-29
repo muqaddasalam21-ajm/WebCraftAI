@@ -69,7 +69,7 @@ export const servicePackageDb = {
       slug,
       description: input.description,
       price: input.price,
-      currency: input.currency || 'USD',
+      currency: input.currency || 'PKR',
       pageLimit: input.pageLimit,
       includedPages: input.includedPages || [],
       features: input.features || [],

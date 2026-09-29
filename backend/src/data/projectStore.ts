@@ -247,7 +247,7 @@ class ProjectDatabase {
 
     const packageName = order.package?.packageName || 'Custom Website';
     const packagePrice = order.package?.price ?? order.amount;
-    const packageCurrency = order.package?.currency || 'USD';
+    const packageCurrency = order.package?.currency || order.currency || 'PKR';
     const projectName = input.name?.trim() || order.businessInfo?.businessName || `Website Project: ${order.orderNumber}`;
     const projectDescription = input.description?.trim() || order.businessInfo?.businessDescription || order.requirements?.additionalNotes || `Project implementation for order ${order.orderNumber}`;
 

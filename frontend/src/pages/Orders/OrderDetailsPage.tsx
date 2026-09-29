@@ -20,6 +20,7 @@ import { CustomWebsiteOrder, CustomWebsiteOrderStatus, User } from '../../types'
 import { OrderStatusBadge } from '../../components/OrderStatusBadge';
 import { Button } from '../../components/Button';
 import { useAuth } from '../../contexts/AuthContext';
+import { formatCurrency } from '../../utils/currency';
 
 export const OrderDetailsPage: React.FC = () => {
   const { id } = useParams<{ id: string }>();
@@ -201,8 +202,7 @@ export const OrderDetailsPage: React.FC = () => {
                 : (order.package?.packageName || 'Custom Build')}
             </span>
             <div className="flex items-baseline gap-1">
-              <span className="text-2xl font-black text-slate-900">${order.amount}</span>
-              <span className="text-xs font-bold text-slate-500">USD</span>
+              <span className="text-2xl font-black text-slate-900">{formatCurrency(order.amount, order.currency || order.package?.currency)}</span>
             </div>
             <div className="flex items-center gap-2">
               <span className={`text-[10px] font-bold px-2 py-0.5 rounded border ${

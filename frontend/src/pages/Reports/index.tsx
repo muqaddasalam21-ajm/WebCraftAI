@@ -4,6 +4,7 @@ import { Download, TrendingUp, DollarSign, ShoppingBag, BarChart3, AlertCircle, 
 import { ChartCard } from '../../components/ChartCard';
 import { Button } from '../../components/Button';
 import { customWebsiteOrderService } from '../../services/customWebsiteOrderService';
+import { formatPKR } from '../../utils/currency';
 
 export const ReportsPage: React.FC = () => {
   const [reportData, setReportData] = useState<{
@@ -43,9 +44,9 @@ export const ReportsPage: React.FC = () => {
 
   const handleExport = () => {
     if (!reportData) return;
-    const headers = 'Month,Revenue,Total Orders,Custom Websites,Templates\n';
+    const headers = 'Month,Revenue (PKR),Total Orders,Custom Websites,Templates\n';
     const rows = reportData.monthlyBreakdown
-      .map(m => `${m.month},$${m.revenue},${m.orders},${m.customWebsites},${m.templates}`)
+      .map(m => `${m.month},${m.revenue},${m.orders},${m.customWebsites},${m.templates}`)
       .join('\n');
     const blob = new Blob([headers + rows], { type: 'text/csv;charset=utf-8;' });
     const url = URL.createObjectURL(blob);
@@ -140,7 +141,7 @@ export const ReportsPage: React.FC = () => {
                 Realized Revenue (PAID Only)
               </span>
               <h3 className="text-2xl font-black text-brand-700">
-                ${reportData.totalRevenue.toLocaleString()}
+                {formatPKR(reportData.totalRevenue)}
               </h3>
               <span className="text-xs text-emerald-600 font-semibold flex items-center mt-2">
                 <CheckCircle2 className="w-3.5 h-3.5 mr-1" /> Verified paid orders
@@ -162,7 +163,7 @@ export const ReportsPage: React.FC = () => {
                 Avg. Paid Order Value
               </span>
               <h3 className="text-2xl font-black text-slate-900">
-                ${reportData.averageOrderValue.toLocaleString()}
+                {formatPKR(reportData.averageOrderValue)}
               </h3>
               <span className="text-xs text-slate-500 font-medium mt-2 block">
                 Per successful checkout

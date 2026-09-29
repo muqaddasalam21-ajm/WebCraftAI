@@ -160,21 +160,21 @@ class OrderDatabase {
           packageId: legacyPkg.id,
           packageName: legacyPkg.name,
           price: legacyPkg.price,
-          currency: 'USD'
+          currency: legacyPkg.currency || 'PKR'
         }
       : selectedPkg
         ? {
             packageId: selectedPkg.id,
             packageName: selectedPkg.name,
             price: selectedPkg.price,
-            currency: selectedPkg.currency,
+            currency: selectedPkg.currency || 'PKR',
             pageLimit: selectedPkg.pageLimit,
             revisionLimit: selectedPkg.revisionLimit,
             deliveryDays: selectedPkg.deliveryDays,
             supportLevel: selectedPkg.supportLevel,
             features: selectedPkg.features
           }
-        : { packageId: data.packageId, packageName: 'Unknown', price: 0, currency: 'USD' };
+        : { packageId: data.packageId, packageName: 'Unknown', price: 0, currency: 'PKR' };
 
     const packagePrice = isLegacyPackage && legacyPkg ? legacyPkg.price : (selectedPkg?.price ?? 0);
     const packageName = isLegacyPackage && legacyPkg ? legacyPkg.name : (selectedPkg?.name ?? 'Unknown');
@@ -225,6 +225,7 @@ class OrderDatabase {
       statusHistory: [initialHistoryEntry],
       paymentStatus: 'UNPAID',
       amount: packagePrice,
+      currency: packageSnapshot.currency || 'PKR',
       createdAt: now,
       updatedAt: now
     };
@@ -247,7 +248,7 @@ class OrderDatabase {
         packageId: data.packageId || 'custom-pkg',
         packageName: packageName,
         amount: packagePrice,
-        currency: 'USD',
+        currency: newOrder.currency || 'PKR',
         createdAt: newOrder.createdAt
       }
     }).catch(err => console.error('[Orders] Failed to publish CUSTOM_WEBSITE_ORDER_CREATED event:', err));
@@ -313,6 +314,7 @@ class OrderDatabase {
       statusHistory: [initialHistoryEntry],
       paymentStatus: 'UNPAID', // NEVER mark PAID without payment provider
       amount: template.price,
+      currency: template.currency || 'PKR',
       previewUrl: template.previewUrl || template.demoUrl || '',
       createdAt: now,
       updatedAt: now
@@ -339,7 +341,7 @@ class OrderDatabase {
         customerId: data.customerId,
         vendorId: template.vendorId,
         amount: newOrder.amount,
-        currency: 'USD',
+        currency: newOrder.currency || 'PKR',
         createdAt: newOrder.createdAt
       }
     }).catch(err => console.error('[Orders] Failed to publish TEMPLATE_PURCHASED event:', err));
@@ -560,6 +562,7 @@ class OrderDatabase {
       statusHistory: [initialHistoryEntry],
       paymentStatus: 'UNPAID',
       amount: totalPrice,
+      currency: (product as any).currency || 'PKR',
       createdAt: now,
       updatedAt: now
     };
@@ -579,7 +582,7 @@ class OrderDatabase {
         customerId: data.customerId,
         orderType: 'PRODUCT',
         amount: totalPrice,
-        currency: 'USD',
+        currency: newOrder.currency || 'PKR',
         createdAt: newOrder.createdAt
       }
     }).catch(err => console.error('[Orders] Failed to publish ORDER_CREATED event:', err));

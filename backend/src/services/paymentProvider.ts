@@ -72,7 +72,7 @@ export class PaymentGatewayService {
       provider: this.provider,
       providerPaymentId,
       amount: order.amount,
-      currency: order.package?.currency || 'USD',
+      currency: order.package?.currency || order.currency || 'PKR',
       status: 'PENDING',
       paymentMethod,
       createdAt: now,

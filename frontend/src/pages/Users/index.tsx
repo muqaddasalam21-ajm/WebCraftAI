@@ -5,6 +5,7 @@ import { Badge, BadgeVariant } from '../../components/Badge';
 import { Button } from '../../components/Button';
 import { Modal } from '../../components/Modal';
 import { userService } from '../../services/userService';
+import { formatCurrency } from '../../utils/currency';
 
 export const UsersPage: React.FC = () => {
   const [users, setUsers] = useState<User[]>([]);
@@ -417,7 +418,7 @@ export const UsersPage: React.FC = () => {
                             <span className="text-slate-600 ml-2 capitalize">({o.type.replace('_', ' ')})</span>
                           </div>
                           <div className="flex items-center gap-2">
-                            <span className="font-bold text-slate-900">${o.amount}</span>
+                            <span className="font-bold text-slate-900">{formatCurrency(o.amount, o.currency || o.package?.currency)}</span>
                             <Badge variant={o.paymentStatus === 'PAID' ? 'success' : 'warning'} size="sm">
                               {o.paymentStatus}
                             </Badge>

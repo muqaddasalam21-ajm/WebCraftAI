@@ -14,6 +14,7 @@ import {
 import { Button } from '../../components/Button';
 import { checkoutService } from '../../services/checkoutService';
 import { Payment, CustomWebsiteOrder } from '../../types';
+import { formatCurrency } from '../../utils/currency';
 
 export const CheckoutSuccessPage: React.FC = () => {
   const [searchParams] = useSearchParams();
@@ -155,7 +156,7 @@ export const CheckoutSuccessPage: React.FC = () => {
           </div>
           <div className="pt-2 border-t border-slate-200/60 flex items-baseline justify-between text-sm">
             <span className="font-bold text-slate-900">Total Charged:</span>
-            <span className="text-xl font-black text-emerald-600">${payment.amount.toFixed(2)} {payment.currency}</span>
+            <span className="text-xl font-black text-emerald-600">{formatCurrency(payment.amount, payment.currency)}</span>
           </div>
         </div>
 

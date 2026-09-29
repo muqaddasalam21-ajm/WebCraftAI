@@ -35,6 +35,7 @@ import {
 } from 'lucide-react';
 import { templateService } from '../../services/templateService';
 import { Template } from '../../types';
+import { formatPKR } from '../../utils/currency';
 
 export const TemplateLivePreviewPage: React.FC = () => {
   const { id } = useParams<{ id: string }>();
@@ -863,7 +864,7 @@ export const TemplateLivePreviewPage: React.FC = () => {
             className="inline-flex items-center gap-2 px-4 py-1.5 bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-bold rounded-lg transition-all shadow-md"
           >
             <ShoppingCart className="w-3.5 h-3.5" />
-            <span>Use Template (${template.price})</span>
+            <span>Use Template ({formatPKR(template.price)})</span>
           </button>
         </div>
       </div>

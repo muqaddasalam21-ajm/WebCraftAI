@@ -5,6 +5,7 @@ import { templateService } from '../services/templateService';
 import { productService } from '../services/productService';
 import { customWebsiteOrderService } from '../services/customWebsiteOrderService';
 import { SearchResultItem } from '../types';
+import { formatPKR, formatCurrency } from '../utils/currency';
 
 interface SearchBarProps {
   placeholder?: string;
@@ -50,7 +51,7 @@ export const SearchBar: React.FC<SearchBarProps> = ({
                 id: t.id,
                 title: t.name,
                 category: 'Template',
-                subtitle: `${t.category} · ${t.price}`,
+                subtitle: `${t.category} · ${formatPKR(t.price)}`,
                 route: `/dashboard/templates/${t.id}/preview`
               }))
             : [];
@@ -61,7 +62,7 @@ export const SearchBar: React.FC<SearchBarProps> = ({
                 id: p.id,
                 title: p.name,
                 category: 'Product',
-                subtitle: `${p.category} · $${Number(p.price || 0).toFixed(2)}`,
+                subtitle: `${p.category} · ${formatCurrency(p.price, p.currency)}`,
                 route: '/dashboard/products'
               }))
             : [];
@@ -72,7 +73,7 @@ export const SearchBar: React.FC<SearchBarProps> = ({
                 id: o.id,
                 title: `${o.orderNumber || o.id} - ${o.businessName || o.customerName || 'Website Order'}`,
                 category: 'Order',
-                subtitle: `${o.businessType || 'Custom Website'} · $${Number(o.amount || 0).toFixed(2)} (${o.status})`,
+                subtitle: `${o.businessType || 'Custom Website'} · ${formatCurrency(o.amount, o.currency || o.package?.currency)} (${o.status})`,
                 route: `/dashboard/orders/${o.id}`
               }))
             : [];

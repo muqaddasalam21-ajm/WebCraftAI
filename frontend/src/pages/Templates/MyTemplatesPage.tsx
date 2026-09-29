@@ -1,4 +1,4 @@
-﻿import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import {
   LayoutTemplate,
@@ -20,6 +20,7 @@ import { templateService } from '../../services/templateService';
 import { Template, TemplateStats } from '../../types';
 import { useAuth } from '../../contexts/AuthContext';
 import { Button } from '../../components/Button';
+import { formatCurrency, formatPKR } from '../../utils/currency';
 
 export const MyTemplatesPage: React.FC = () => {
   const { currentUser, role } = useAuth();
@@ -178,7 +179,7 @@ export const MyTemplatesPage: React.FC = () => {
           <div className="bg-white p-5 rounded-2xl border border-slate-200/80 shadow-xs flex items-center justify-between">
             <div>
               <p className="text-xs text-slate-500 font-medium">Template Sales</p>
-              <p className="text-2xl font-bold text-purple-600 mt-1">${stats.totalTemplateSales.toFixed(2)}</p>
+              <p className="text-2xl font-bold text-purple-600 mt-1">{formatPKR(stats.totalTemplateSales)}</p>
             </div>
             <div className="w-10 h-10 rounded-xl bg-purple-50 text-purple-600 flex items-center justify-center">
               <DollarSign className="w-5 h-5" />
@@ -243,7 +244,7 @@ export const MyTemplatesPage: React.FC = () => {
                       </div>
                     </td>
                     <td className="px-5 py-4 text-slate-600 font-medium">{tpl.category}</td>
-                    <td className="px-5 py-4 font-bold text-slate-900">${typeof tpl.price === 'number' ? tpl.price.toFixed(2) : tpl.price}</td>
+                    <td className="px-5 py-4 font-bold text-slate-900">{formatPKR(tpl.price)}</td>
                     <td className="px-5 py-4">
                       <select
                         value={tpl.status || 'PUBLISHED'}
@@ -345,7 +346,7 @@ export const MyTemplatesPage: React.FC = () => {
                     </div>
 
                     <div className="pt-3 border-t border-slate-100 flex items-center justify-between">
-                      <span className="text-xs font-bold text-slate-900">${order.amount.toFixed(2)}</span>
+                      <span className="text-xs font-bold text-slate-900">{formatCurrency(order.amount, order.currency)}</span>
                       <div className="flex gap-2">
                         <Link
                           to={`/dashboard/orders/${order.id}`}

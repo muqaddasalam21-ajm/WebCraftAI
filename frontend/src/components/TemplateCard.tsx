@@ -5,6 +5,7 @@ import { Template } from '../types';
 import { Badge } from './Badge';
 import { Button } from './Button';
 import { Modal } from './Modal';
+import { formatPKR } from '../utils/currency';
 
 interface TemplateCardProps {
   template: Template;
@@ -68,7 +69,7 @@ export const TemplateCard: React.FC<TemplateCardProps> = ({ template, onUseTempl
                   : 'bg-slate-900 text-white'
               }`}
             >
-              {template.price}
+              {template.isFree ? 'Free' : formatPKR(template.price)}
             </span>
           </div>
         </div>
@@ -129,7 +130,7 @@ export const TemplateCard: React.FC<TemplateCardProps> = ({ template, onUseTempl
         isOpen={isPreviewOpen}
         onClose={() => setIsPreviewOpen(false)}
         title={template.name}
-        subtitle={`${template.category} · ${template.price}`}
+        subtitle={`${template.category} · ${template.isFree ? 'Free' : formatPKR(template.price)}`}
         maxWidth="4xl"
       >
         <div className="space-y-4">

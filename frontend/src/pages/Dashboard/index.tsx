@@ -9,6 +9,7 @@ import { useAuth } from '../../contexts/AuthContext';
 import { userService } from '../../services/userService';
 import { customWebsiteOrderService } from '../../services/customWebsiteOrderService';
 import { CustomWebsiteOrder } from '../../types';
+import { formatCurrency, formatPKR } from '../../utils/currency';
 
 export const DashboardPage: React.FC = () => {
   const navigate = useNavigate();
@@ -62,7 +63,7 @@ export const DashboardPage: React.FC = () => {
     },
     {
       title: 'Realized Revenue',
-      value: reports ? `$${reports.totalRevenue.toLocaleString()}` : '$0',
+      value: reports ? formatPKR(reports.totalRevenue) : '₨0',
       change: 'PAID Orders Only',
       isPositive: true,
       icon: 'DollarSign'
@@ -284,7 +285,7 @@ export const DashboardPage: React.FC = () => {
                       {order.package?.packageName || order.templateDetails?.templateName || 'Standard Order'}
                     </td>
                     <td className="py-3.5 px-4 font-semibold text-slate-900">
-                      ${order.amount.toLocaleString()}
+                      {formatCurrency(order.amount, order.currency || order.package?.currency)}
                     </td>
                     <td className="py-3.5 px-4">
                       <Badge variant={getStatusVariant(order.status)}>

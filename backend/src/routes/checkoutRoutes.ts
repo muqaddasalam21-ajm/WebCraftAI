@@ -63,7 +63,7 @@ checkoutRouter.post('/summary', requireAuth, (req: AuthenticatedRequest, res: Re
         tax: 0,
         fees: 0,
         total: order.amount,
-        currency: order.package?.currency || 'USD',
+        currency: order.package?.currency || order.currency || 'PKR',
         customer: {
           id: user.id,
           name: user.name,
@@ -127,7 +127,7 @@ checkoutRouter.post('/summary', requireAuth, (req: AuthenticatedRequest, res: Re
       tax: 0,
       fees: 0,
       total: trustedPrice,
-      currency: 'USD',
+      currency: 'PKR',
       customer: {
         id: user.id,
         name: user.name,
@@ -201,7 +201,7 @@ checkoutRouter.post('/initiate', requireAuth, async (req: AuthenticatedRequest, 
       targetProvider = 'easypaisa';
     } else if (paymentMethod === 'jazzcash') {
       targetProvider = 'jazzcash';
-    } else if (paymentMethod === 'card' && providerRegistry.get('card')?.isConfigured) {
+    } else if (paymentMethod === 'card') {
       targetProvider = 'card';
     } else {
       targetProvider = 'webcraft_pay';

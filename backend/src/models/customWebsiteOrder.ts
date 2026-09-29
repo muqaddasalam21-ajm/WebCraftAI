@@ -117,6 +117,7 @@ export interface CustomWebsiteOrder {
   paymentProvider?: string;
   paymentReference?: string;
   amount: number;
+  currency?: string;
   previewUrl?: string;
   deliveredUrl?: string;
   createdAt: string;
@@ -128,6 +129,7 @@ export interface OrderPackageOption {
   name: string;
   badge: string;
   price: number;
+  currency?: string;
   description: string;
   pageLimit: string;
   turnaround: string;

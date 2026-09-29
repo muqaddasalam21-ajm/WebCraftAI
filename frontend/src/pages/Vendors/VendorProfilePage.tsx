@@ -20,6 +20,7 @@ import { vendorService } from '../../services/vendorService';
 import { Badge } from '../../components/Badge';
 import { Button } from '../../components/Button';
 import { Template } from '../../types';
+import { formatPKR } from '../../utils/currency';
 
 export const VendorProfilePage: React.FC = () => {
   const { id } = useParams<{ id: string }>();
@@ -238,7 +239,7 @@ export const VendorProfilePage: React.FC = () => {
                       </div>
                       <div className="absolute top-3 right-3">
                         <span className="px-3 py-1 rounded-full text-xs font-extrabold bg-slate-900 text-white shadow-sm">
-                          ${typeof tpl.price === 'number' ? tpl.price.toFixed(2) : tpl.price}
+                          {formatPKR(tpl.price)}
                         </span>
                       </div>
                     </div>
@@ -273,7 +274,7 @@ export const VendorProfilePage: React.FC = () => {
                       to={`/checkout?type=template&id=${tpl.id}`}
                       className="w-full inline-flex items-center justify-center gap-1.5 px-3 py-2 rounded-xl text-xs font-bold bg-brand-600 hover:bg-brand-700 text-white transition-colors"
                     >
-                      Order Template (${typeof tpl.price === 'number' ? tpl.price.toFixed(2) : tpl.price})
+                      Order Template ({formatPKR(tpl.price)})
                     </Link>
                   </div>
                 </div>
@@ -307,7 +308,7 @@ export const VendorProfilePage: React.FC = () => {
                       <p className="text-xs text-slate-400 mt-0.5 capitalize">{prod.category}</p>
                     </div>
                     <span className="font-mono font-bold text-sm text-slate-900">
-                      ${prod.price}
+                      {formatPKR(prod.price)}
                     </span>
                   </div>
                   <p className="text-xs text-slate-500 line-clamp-2 leading-relaxed">

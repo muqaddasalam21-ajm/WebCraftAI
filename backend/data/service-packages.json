@@ -5,7 +5,7 @@
     "slug": "perfume",
     "description": "Top Notes: Bergamot, Coconut, Orange\nMiddle Notes: Berry, Orchid, Vanilla\nBase Notes: Caramel, Moss, Musk\n\nNote: Fragrances are currently available for delivery worldwide",
     "price": 5000,
-    "currency": "USD",
+    "currency": "PKR",
     "pageLimit": 5,
     "includedPages": [
       "home, service, contact ,orders"

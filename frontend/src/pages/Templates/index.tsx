@@ -5,6 +5,7 @@ import { Template, TemplateCategory } from '../../types';
 import { templateService } from '../../services/templateService';
 import { useAuth } from '../../contexts/AuthContext';
 import { Button } from '../../components/Button';
+import { formatPKR } from '../../utils/currency';
 
 export const TemplatesPage: React.FC = () => {
   const navigate = useNavigate();
@@ -219,7 +220,7 @@ export const TemplatesPage: React.FC = () => {
 
                   <div className="absolute top-3 right-3">
                     <span className="px-3 py-1 rounded-full text-xs font-extrabold bg-slate-900 text-white shadow-sm">
-                      ${typeof template.price === 'number' ? template.price.toFixed(2) : template.price}
+                      {formatPKR(template.price)}
                     </span>
                   </div>
                 </div>
@@ -276,7 +277,7 @@ export const TemplatesPage: React.FC = () => {
                   className="w-full inline-flex items-center justify-center gap-1.5 px-3 py-2 rounded-xl text-xs font-bold bg-brand-600 hover:bg-brand-700 text-white shadow-xs transition-colors"
                 >
                   <ShoppingCart className="w-3.5 h-3.5" />
-                  Order Template (${typeof template.price === 'number' ? template.price.toFixed(2) : template.price})
+                  Order Template ({formatPKR(template.price)})
                 </Link>
               </div>
             </div>

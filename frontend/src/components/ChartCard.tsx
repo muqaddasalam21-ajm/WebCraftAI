@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { BarChart3, TrendingUp, Calendar, ArrowUpRight, CheckCircle2 } from 'lucide-react';
 import { SalesReportMonth } from '../types';
+import { formatPKR } from '../utils/currency';
 
 interface ChartCardProps {
   data: SalesReportMonth[];
@@ -70,7 +71,7 @@ export const ChartCard: React.FC<ChartCardProps> = ({
               <div key={item.month} className="flex-1 flex flex-col items-center h-full justify-end group">
                 {/* Tooltip on hover */}
                 <div className="opacity-0 group-hover:opacity-100 transition-opacity mb-2 bg-slate-900 text-white text-[10px] font-bold py-1 px-2 rounded-md shadow-lg pointer-events-none whitespace-nowrap">
-                  ${(item.sales || 0).toLocaleString()} ({item.orders || 0} orders)
+                  {formatPKR(item.sales || 0)} ({item.orders || 0} orders)
                 </div>
 
                 {/* Bar */}
@@ -97,7 +98,7 @@ export const ChartCard: React.FC<ChartCardProps> = ({
             Avg. Monthly Revenue
           </span>
           <span className="text-base font-bold text-slate-900">
-            ${avgMonthly.toLocaleString()}
+            {formatPKR(avgMonthly)}
           </span>
         </div>
         <div className="p-2">

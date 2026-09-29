@@ -14,6 +14,7 @@ import { projectService } from '../../services/projectService';
 import { WebsiteProject, ProjectStatus } from '../../types';
 import { Button } from '../../components/Button';
 import { EmptyState } from '../../components/EmptyState';
+import { formatCurrency } from '../../utils/currency';
 
 export const MyProjectsPage: React.FC = () => {
   const navigate = useNavigate();
@@ -140,7 +141,7 @@ export const MyProjectsPage: React.FC = () => {
                     Package: {p.packageName}
                   </span>
                   <span className="font-bold text-slate-900">
-                    ${p.packagePrice} {p.packageCurrency}
+                    {formatCurrency(p.packagePrice, p.packageCurrency)}
                   </span>
                 </div>
 
