@@ -91,7 +91,7 @@ class PaymentDatabase {
   public updateStatus(
     id: string,
     status: PaymentStatus,
-    details?: { failureReason?: string; receiptUrl?: string; last4?: string; brand?: string }
+    details?: { failureReason?: string; receiptUrl?: string; last4?: string; brand?: string; gatewayTxnRef?: string; gatewayResponseCode?: string; gatewayResponseMessage?: string; verifiedAt?: string }
   ): Payment {
     const payment = this.payments.get(id);
     if (!payment) {
@@ -103,6 +103,10 @@ class PaymentDatabase {
 
     if (details?.failureReason) payment.failureReason = details.failureReason;
     if (details?.receiptUrl) payment.receiptUrl = details.receiptUrl;
+    if (details?.gatewayTxnRef) payment.gatewayTxnRef = details.gatewayTxnRef;
+    if (details?.gatewayResponseCode) payment.gatewayResponseCode = details.gatewayResponseCode;
+    if (details?.gatewayResponseMessage) payment.gatewayResponseMessage = details.gatewayResponseMessage;
+    if (details?.verifiedAt) payment.verifiedAt = details.verifiedAt;
     if (details?.last4 || details?.brand) {
       payment.paymentMethodDetails = {
         ...payment.paymentMethodDetails,

@@ -1,4 +1,4 @@
-import { CheckoutSummary, Payment, PaymentMethod, CustomWebsiteOrder } from '../types';
+import { CheckoutSummary, Payment, PaymentMethod, PaymentProviderType, CustomWebsiteOrder, PaymentConfigResponse, ProviderInitiateResult } from '../types';
 import { getAuthToken } from '../utils/token';
 import { safeApiRequest } from '../utils/apiConfig';
 
@@ -16,6 +16,12 @@ function authHeaders(extra?: Record<string, string>): Record<string, string> {
 }
 
 export const checkoutService = {
+  async getConfig(): Promise<PaymentConfigResponse> {
+    return safeApiRequest<PaymentConfigResponse>('/api/checkout/config', {
+      headers: authHeaders()
+    });
+  },
+
   async getSummary(params: {
     orderId?: string;
     itemType?: 'custom_website' | 'template' | 'product';
@@ -34,9 +40,18 @@ export const checkoutService = {
     itemType?: 'custom_website' | 'template' | 'product';
     itemId?: string;
     quantity?: number;
-    paymentMethod: PaymentMethod;
-  }): Promise<{ message: string; payment: Payment; order: CustomWebsiteOrder }> {
-    return safeApiRequest<{ message: string; payment: Payment; order: CustomWebsiteOrder }>('/api/checkout/initiate', {
+    paymentMethod?: PaymentMethod;
+    provider?: PaymentProviderType;
+    customerPhone?: string;
+    returnUrl?: string;
+    cancelUrl?: string;
+  }): Promise<{
+    message: string;
+    payment: Payment;
+    order: CustomWebsiteOrder;
+    initiateResult?: ProviderInitiateResult;
+  }> {
+    return safeApiRequest<any>('/api/checkout/initiate', {
       method: 'POST',
       headers: authHeaders(),
       body: JSON.stringify(params)
@@ -68,3 +83,4 @@ export const checkoutService = {
     });
   }
 };
+

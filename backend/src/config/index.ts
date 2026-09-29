@@ -16,5 +16,32 @@ export const config = {
 - Conversion optimization & UX recommendations
 - Practical design considerations
 
-Ask useful clarification questions when needed. Never claim that a website has been created, published, purchased, deployed, or modified unless the application actually performed that action.`
+Ask useful clarification questions when needed. Never claim that a website has been created, published, purchased, deployed, or modified unless the application actually performed that action.`,
+
+  // External Payment Integration Configuration
+  appUrl: process.env.APP_URL || 'http://localhost:3000',
+  backendUrl: process.env.BACKEND_URL || 'http://localhost:5000',
+  paymentMode: (process.env.PAYMENT_PROVIDER_MODE as 'sandbox' | 'production') || 'sandbox',
+  easypaisa: {
+    storeId: process.env.EASYPAISA_STORE_ID || '',
+    hashKey: process.env.EASYPAISA_HASH_KEY || '',
+    accountNum: process.env.EASYPAISA_ACCOUNT_NUM || '',
+    password: process.env.EASYPAISA_PASSWORD || '',
+    mode: (process.env.EASYPAISA_MODE as 'sandbox' | 'production') || 'sandbox'
+  },
+  jazzcash: {
+    merchantId: process.env.JAZZCASH_MERCHANT_ID || '',
+    password: process.env.JAZZCASH_PASSWORD || '',
+    integritySalt: process.env.JAZZCASH_INTEGRITY_SALT || '',
+    returnUrl: process.env.JAZZCASH_RETURN_URL || '',
+    mode: (process.env.JAZZCASH_MODE as 'sandbox' | 'production') || 'sandbox'
+  },
+  cardGateway: {
+    provider: process.env.CARD_GATEWAY_PROVIDER || 'hblpay',
+    merchantId: process.env.CARD_GATEWAY_MERCHANT_ID || '',
+    accessKey: process.env.CARD_GATEWAY_ACCESS_KEY || '',
+    secretKey: process.env.CARD_GATEWAY_SECRET_KEY || '',
+    profileId: process.env.CARD_GATEWAY_PROFILE_ID || '',
+    mode: (process.env.CARD_GATEWAY_MODE as 'sandbox' | 'production') || 'sandbox'
+  }
 };

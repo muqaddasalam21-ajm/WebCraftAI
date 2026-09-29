@@ -15,7 +15,13 @@ function authHeaders(): Record<string, string> {
 
 export const vendorService = {
   async getVendors() {
-    return safeApiRequest('/api/vendors', { headers: authHeaders() });
+    return safeApiRequest<{ total: number; vendors: any[] }>('/api/vendors', { headers: authHeaders() });
+  },
+
+  async getVendorById(vendorId: string) {
+    return safeApiRequest<{ success: boolean; vendor?: any; error?: string }>(`/api/vendors/${vendorId}`, {
+      headers: authHeaders()
+    });
   },
 
   async getVendorProducts(vendorId: string) {

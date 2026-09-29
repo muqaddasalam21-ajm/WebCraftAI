@@ -5,9 +5,9 @@
 
 export type PaymentStatus = 'PENDING' | 'PAID' | 'FAILED' | 'REFUNDED' | 'CANCELLED';
 
-export type PaymentMethod = 'card' | 'bank_transfer' | 'digital_wallet';
+export type PaymentMethod = 'easypaisa' | 'jazzcash' | 'card' | 'bank_transfer' | 'digital_wallet';
 
-export type PaymentProviderType = 'webcraft_pay' | 'stripe' | 'paypal';
+export type PaymentProviderType = 'easypaisa' | 'jazzcash' | 'card' | 'webcraft_pay' | 'stripe' | 'paypal';
 
 export interface Payment {
   id: string;
@@ -26,10 +26,16 @@ export interface Payment {
     brand?: string;
     last4?: string;
     walletType?: string;
+    accountTitle?: string;
   };
   failureReason?: string;
   idempotencyKey?: string;
   receiptUrl?: string;
+  gatewayTxnRef?: string;
+  gatewayResponseCode?: string;
+  gatewayResponseMessage?: string;
+  gatewayRedirectUrl?: string;
+  verifiedAt?: string;
   createdAt: string;
   updatedAt: string;
 }
@@ -50,5 +56,24 @@ export interface CheckoutSummary {
     id: string;
     name: string;
     email: string;
+  };
+}
+
+export type ProviderStatusType = 'CONFIGURED' | 'MISSING' | 'INVALID' | 'NOT_SUPPORTED' | 'CONFIGURATION_REQUIRED';
+
+export interface ProviderConfigItem {
+  configured: boolean;
+  status: ProviderStatusType;
+  environment: 'sandbox' | 'production';
+  displayName: string;
+  badge: string;
+  description: string;
+}
+
+export interface PaymentConfigResponse {
+  providers: {
+    easypaisa: ProviderConfigItem;
+    jazzcash: ProviderConfigItem;
+    card: ProviderConfigItem;
   };
 }

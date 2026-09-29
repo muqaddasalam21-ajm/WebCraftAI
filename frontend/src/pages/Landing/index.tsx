@@ -14,12 +14,34 @@ import {
   Globe,
   Star
 } from 'lucide-react';
-import { mockTemplates } from '../../data/mockTemplates';
+import { templateService } from '../../services/templateService';
+import { Template } from '../../types';
 import { TemplateCard } from '../../components/TemplateCard';
 import { Button } from '../../components/Button';
 
 export const LandingPage: React.FC = () => {
   const navigate = useNavigate();
+  const [templates, setTemplates] = React.useState<Template[]>([]);
+  const [totalTemplates, setTotalTemplates] = React.useState<number>(0);
+  const [loadingTemplates, setLoadingTemplates] = React.useState<boolean>(true);
+
+  React.useEffect(() => {
+    let isMounted = true;
+    templateService.getTemplates({ limit: 6, viewAll: false })
+      .then((res) => {
+        if (isMounted && res.success) {
+          setTemplates(res.templates || []);
+          setTotalTemplates(res.total || (res.templates ? res.templates.length : 0));
+        }
+      })
+      .catch((err) => console.error('Failed to load landing templates', err))
+      .finally(() => {
+        if (isMounted) setLoadingTemplates(false);
+      });
+    return () => {
+      isMounted = false;
+    };
+  }, []);
 
   return (
     <div className="min-h-screen bg-white text-slate-900 flex flex-col selection:bg-brand-500 selection:text-white">
@@ -135,7 +157,7 @@ export const LandingPage: React.FC = () => {
                     {'★★★★★'}
                     <span className="font-bold text-slate-800 ml-1">4.9/5</span>
                   </div>
-                  <span>Trusted by 10,000+ creators &amp; studios</span>
+                  <span>Verified creators, agencies &amp; businesses</span>
                 </div>
               </div>
             </div>
@@ -297,14 +319,24 @@ export const LandingPage: React.FC = () => {
               onClick={() => navigate('/dashboard/templates')}
               rightIcon={<ArrowRight className="w-4 h-4" />}
             >
-              View All 8 Templates
+              {totalTemplates > 0 ? `View All ${totalTemplates} Templates` : 'Explore Templates'}
             </Button>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {mockTemplates.slice(0, 6).map((template) => (
-              <TemplateCard key={template.id} template={template} />
-            ))}
+            {templates.length > 0 ? (
+              templates.map((template) => (
+                <TemplateCard key={template.id} template={template} />
+              ))
+            ) : loadingTemplates ? (
+              [1, 2, 3].map((n) => (
+                <div key={n} className="h-64 rounded-2xl bg-slate-100 animate-pulse border border-slate-200/60" />
+              ))
+            ) : (
+              <div className="col-span-full py-12 text-center text-slate-400 text-sm">
+                No templates available at this time.
+              </div>
+            )}
           </div>
         </div>
       </section>

@@ -1,4 +1,5 @@
 import { Router, Response, Request } from 'express';
+import crypto from 'crypto';
 import { requireAuth, AuthenticatedRequest } from '../middleware/authMiddleware';
 import { orderDb } from '../data/orderStore';
 import { templateDb } from '../data/templateStore';
@@ -6,12 +7,24 @@ import { productDb } from '../data/productStore';
 import { servicePackageDb } from '../data/servicePackageStore';
 import { paymentDb } from '../data/paymentStore';
 import { paymentGateway } from '../services/paymentProvider';
+import { providerRegistry } from '../services/paymentProviders';
 import { notificationDb } from '../data/notificationStore';
 import { auditDb } from '../data/auditStore';
 import { eventBus } from '../events/eventBus';
-import { CheckoutSummary, PaymentMethod } from '../models/payment';
+import { config } from '../config';
+import { CheckoutSummary, PaymentMethod, PaymentProviderType, Payment } from '../models/payment';
 
 export const checkoutRouter = Router();
+
+// GET /api/checkout/config - Safe public payment provider configurations
+checkoutRouter.get('/config', (_req: Request, res: Response): void => {
+  try {
+    const safeConfig = providerRegistry.getSafePublicConfig();
+    res.json(safeConfig);
+  } catch (err: any) {
+    res.status(500).json({ error: err.message || 'Failed to retrieve payment configuration.' });
+  }
+});
 
 // POST /api/checkout/summary - Calculate trusted server-side order summary
 checkoutRouter.post('/summary', requireAuth, (req: AuthenticatedRequest, res: Response): void => {
@@ -132,7 +145,7 @@ checkoutRouter.post('/summary', requireAuth, (req: AuthenticatedRequest, res: Re
 checkoutRouter.post('/initiate', requireAuth, async (req: AuthenticatedRequest, res: Response): Promise<void> => {
   try {
     const user = req.user!;
-    const { orderId, itemType, itemId, quantity, paymentMethod } = req.body;
+    const { orderId, itemType, itemId, quantity, paymentMethod, provider } = req.body;
 
     let targetOrder = orderId ? orderDb.findById(orderId) : undefined;
 
@@ -180,9 +193,72 @@ checkoutRouter.post('/initiate', requireAuth, async (req: AuthenticatedRequest, 
       return;
     }
 
-    const method: PaymentMethod = paymentMethod || 'card';
+    // Determine target provider
+    let targetProvider: PaymentProviderType;
+    if (provider) {
+      targetProvider = provider;
+    } else if (paymentMethod === 'easypaisa') {
+      targetProvider = 'easypaisa';
+    } else if (paymentMethod === 'jazzcash') {
+      targetProvider = 'jazzcash';
+    } else if (paymentMethod === 'card' && providerRegistry.get('card')?.isConfigured) {
+      targetProvider = 'card';
+    } else {
+      targetProvider = 'webcraft_pay';
+    }
 
-    // Initialize payment with provider
+    // If external Pakistani provider (easypaisa, jazzcash, card)
+    const externalProvider = providerRegistry.get(targetProvider);
+    if (externalProvider) {
+      if (!externalProvider.isConfigured) {
+        const requirements = externalProvider.getConfigurationRequirements();
+        res.status(400).json({
+          error: 'CONFIGURATION_REQUIRED',
+          message: `Payment provider '${externalProvider.displayName}' is not yet activated on this server. Merchant credentials are required for live payments.`,
+          provider: targetProvider,
+          requirements
+        });
+        return;
+      }
+
+      // Create Payment entry in store
+      const paymentId = `pay_${Date.now()}_${crypto.randomBytes(4).toString('hex')}`;
+      const providerPaymentId = `pi_${targetProvider}_${Date.now()}_${crypto.randomBytes(6).toString('hex')}`;
+      const now = new Date().toISOString();
+
+      const payment: Payment = {
+        id: paymentId,
+        orderId: targetOrder.id,
+        orderNumber: targetOrder.orderNumber,
+        customerId: user.id,
+        customerName: user.name,
+        customerEmail: user.email,
+        provider: targetProvider,
+        providerPaymentId,
+        amount: targetOrder.amount,
+        currency: targetOrder.package?.currency || 'PKR',
+        status: 'PENDING',
+        paymentMethod: (paymentMethod || targetProvider) as PaymentMethod,
+        createdAt: now,
+        updatedAt: now
+      };
+
+      const savedPayment = paymentDb.create(payment);
+
+      // Call provider initiatePayment
+      const initiateResult = await externalProvider.initiatePayment(targetOrder, savedPayment);
+
+      res.status(201).json({
+        message: 'Payment session initiated with provider.',
+        payment: savedPayment,
+        order: targetOrder,
+        initiateResult
+      });
+      return;
+    }
+
+    // Fallback: Legacy / internal gateway for sandbox tests
+    const method: PaymentMethod = paymentMethod || 'card';
     const payment = await paymentGateway.initializePaymentSession(
       targetOrder,
       { id: user.id, name: user.name, email: user.email },
@@ -199,7 +275,7 @@ checkoutRouter.post('/initiate', requireAuth, async (req: AuthenticatedRequest, 
   }
 });
 
-// POST /api/checkout/confirm - Confirm and process real payment
+// POST /api/checkout/confirm - Confirm and process payment
 checkoutRouter.post('/confirm', requireAuth, async (req: AuthenticatedRequest, res: Response): Promise<void> => {
   try {
     const user = req.user!;
@@ -242,7 +318,6 @@ checkoutRouter.post('/confirm', requireAuth, async (req: AuthenticatedRequest, r
     });
 
     if (!result.success) {
-      // Publish canonical PAYMENT_FAILED event (dispatches in-app notification and audit log)
       eventBus.publishEvent({
         eventType: 'PAYMENT_FAILED',
         actorUserId: user.id,
@@ -276,7 +351,7 @@ checkoutRouter.post('/confirm', requireAuth, async (req: AuthenticatedRequest, r
       providerPaymentId: result.payment.providerPaymentId
     });
 
-    // Publish canonical PAYMENT_SUCCESSFUL event (dispatches in-app notification, transactional email, audit log)
+    // Publish canonical PAYMENT_SUCCESSFUL event
     eventBus.publishEvent({
       eventType: 'PAYMENT_SUCCESSFUL',
       actorUserId: user.id,
@@ -329,7 +404,178 @@ checkoutRouter.get('/payment/:id', requireAuth, (req: AuthenticatedRequest, res:
   }
 });
 
-// POST /api/checkout/webhook - Cryptographically signed, idempotent payment provider webhook
+/**
+ * Handle Gateway Callback (Redirect back to WebCraftAI from Easypaisa/JazzCash/Card)
+ */
+const handleProviderCallback = async (req: Request, res: Response): Promise<void> => {
+  try {
+    const providerId = req.params.provider;
+    const provider = providerRegistry.get(providerId);
+
+    if (!provider) {
+      res.status(404).send(`Unknown payment provider: ${providerId}`);
+      return;
+    }
+
+    const callbackData = { ...req.query, ...req.body };
+    const verification = await provider.verifyCallback(callbackData);
+
+    const orderId = verification.orderId || callbackData.orderRefNumber || callbackData.pp_BillReference;
+    const targetOrder = orderId ? orderDb.findById(orderId) : undefined;
+    const payment = targetOrder ? paymentDb.getByOrderId(targetOrder.id).find(p => p.status === 'PENDING' || p.status === 'PAID') : undefined;
+
+    if (!verification.success) {
+      if (payment) {
+        paymentDb.updateStatus(payment.id, 'FAILED', {
+          failureReason: verification.failureReason || 'Provider rejected transaction'
+        });
+        eventBus.publishEvent({
+          eventType: 'PAYMENT_FAILED',
+          actorUserId: 'PROVIDER_CALLBACK',
+          referenceType: 'PAYMENT',
+          referenceId: payment.id,
+          payload: {
+            paymentId: payment.id,
+            orderId: payment.orderId,
+            orderNumber: targetOrder?.orderNumber || 'UNKNOWN',
+            customerId: payment.customerId,
+            amount: payment.amount,
+            currency: payment.currency,
+            provider: providerId,
+            failureCode: verification.failureReason || 'PROVIDER_DECLINED',
+            failedAt: new Date().toISOString()
+          }
+        }).catch(err => console.error('[Callback] Failed to publish PAYMENT_FAILED event:', err));
+      }
+
+      const redirectTarget = `${config.appUrl}/checkout?payment_status=failed&provider=${providerId}&error=${encodeURIComponent(verification.failureReason || 'Payment failed')}`;
+      res.redirect(redirectTarget);
+      return;
+    }
+
+    // Verified SUCCESS
+    if (payment && targetOrder) {
+      // Idempotently mark payment PAID
+      paymentDb.updateStatus(payment.id, 'PAID', {
+        receiptUrl: `/receipts/${payment.id}`,
+        gatewayTxnRef: verification.transactionReference,
+        gatewayResponseCode: verification.gatewayResponseCode,
+        gatewayResponseMessage: verification.gatewayResponseMessage,
+        verifiedAt: new Date().toISOString()
+      });
+
+      // Idempotently mark order PAID
+      orderDb.markOrderPaid({
+        orderId: targetOrder.id,
+        paymentId: payment.id,
+        provider: providerId,
+        providerPaymentId: verification.transactionReference || payment.providerPaymentId
+      });
+
+      // Publish event
+      eventBus.publishEvent({
+        eventType: 'PAYMENT_SUCCESSFUL',
+        actorUserId: 'PROVIDER_CALLBACK',
+        referenceType: 'PAYMENT',
+        referenceId: payment.id,
+        payload: {
+          paymentId: payment.id,
+          orderId: targetOrder.id,
+          orderNumber: targetOrder.orderNumber,
+          customerId: payment.customerId,
+          amount: payment.amount,
+          currency: payment.currency,
+          provider: providerId,
+          providerPaymentId: verification.transactionReference || payment.providerPaymentId,
+          paidAt: new Date().toISOString()
+        }
+      }).catch(err => console.error('[Callback] Failed to publish PAYMENT_SUCCESSFUL event:', err));
+
+      const redirectTarget = `${config.appUrl}/checkout?payment_status=success&orderId=${targetOrder.id}&paymentId=${payment.id}`;
+      res.redirect(redirectTarget);
+      return;
+    }
+
+    res.redirect(`${config.appUrl}/checkout?payment_status=success&ref=${verification.transactionReference || ''}`);
+  } catch (err: any) {
+    console.error('[Provider Callback Error]', err);
+    res.redirect(`${config.appUrl}/checkout?payment_status=error&error=${encodeURIComponent(err.message || 'Callback error')}`);
+  }
+};
+
+checkoutRouter.get('/callbacks/:provider', handleProviderCallback);
+checkoutRouter.post('/callbacks/:provider', handleProviderCallback);
+
+/**
+ * Webhook/IPN endpoint for external Pakistani gateways
+ */
+checkoutRouter.post('/webhooks/:provider', async (req: Request, res: Response): Promise<void> => {
+  try {
+    const providerId = req.params.provider;
+    const provider = providerRegistry.get(providerId);
+
+    if (!provider) {
+      res.status(404).json({ error: `Unknown provider ${providerId}` });
+      return;
+    }
+
+    const signature = (req.headers['x-signature'] as string) || (req.headers['x-postback-signature'] as string);
+    const verification = provider.verifyWebhook
+      ? await provider.verifyWebhook(req.body, signature)
+      : await provider.verifyCallback(req.body, signature);
+
+    if (!verification.success) {
+      res.status(401).json({ error: verification.failureReason || 'Invalid webhook signature or data' });
+      return;
+    }
+
+    const orderId = verification.orderId;
+    if (orderId) {
+      const order = orderDb.findById(orderId);
+      if (order && order.paymentStatus !== 'PAID') {
+        const payment = paymentDb.getByOrderId(order.id).find(p => p.status === 'PENDING');
+        if (payment) {
+          paymentDb.updateStatus(payment.id, 'PAID', {
+            gatewayTxnRef: verification.transactionReference,
+            gatewayResponseCode: verification.gatewayResponseCode,
+            gatewayResponseMessage: verification.gatewayResponseMessage,
+            verifiedAt: new Date().toISOString()
+          });
+        }
+        orderDb.markOrderPaid({
+          orderId: order.id,
+          paymentId: payment?.id || `pay_wh_${Date.now()}`,
+          provider: providerId,
+          providerPaymentId: verification.transactionReference
+        });
+
+        eventBus.publishEvent({
+          eventType: 'PAYMENT_SUCCESSFUL',
+          actorUserId: 'PROVIDER_WEBHOOK',
+          referenceType: 'PAYMENT',
+          referenceId: payment?.id || order.id,
+          payload: {
+            paymentId: payment?.id || '',
+            orderId: order.id,
+            orderNumber: order.orderNumber,
+            customerId: order.customerId,
+            amount: verification.amount || order.amount,
+            currency: verification.currency || 'PKR',
+            provider: providerId,
+            providerPaymentId: verification.transactionReference || 'unknown_ref',
+            paidAt: new Date().toISOString()
+          }
+        }).catch(err => console.error('[Webhook] Failed to publish event:', err));
+      }
+    }
+
+    res.json({ received: true, status: 'PROCESSED' });
+  } catch (err: any) {
+    res.status(500).json({ error: err.message || 'Webhook failed' });
+  }
+});
+
+// POST /api/checkout/webhook - Cryptographically signed, idempotent payment provider webhook (Legacy)
 checkoutRouter.post('/webhook', (req: Request, res: Response): void => {
   try {
     const signature = req.headers['x-webcraft-signature'] as string || req.headers['stripe-signature'] as string;

@@ -15,6 +15,7 @@ import { ReportsPage } from './pages/Reports';
 import { BusinessDashboardPage } from './pages/Dashboard/BusinessDashboardPage';
 import { UsersPage } from './pages/Users';
 import { VendorsPage } from './pages/Vendors';
+import { VendorProfilePage } from './pages/Vendors/VendorProfilePage';
 import { TemplatesPage } from './pages/Templates';
 import { TemplateDetailsPage } from './pages/Templates/TemplateDetailsPage';
 import { TemplateFormPage } from './pages/Templates/TemplateFormPage';
@@ -82,7 +83,7 @@ export const App: React.FC = () => {
           >
             <Route index element={<DashboardPage />} />
             
-            {/* Admin Only: Users & Vendors */}
+            {/* Admin Only: Users */}
             <Route
               path="users"
               element={
@@ -91,14 +92,9 @@ export const App: React.FC = () => {
                 </ProtectedRoute>
               }
             />
-            <Route
-              path="vendors"
-              element={
-                <ProtectedRoute allowedRoles={['Admin']}>
-                  <VendorsPage />
-                </ProtectedRoute>
-              }
-            />
+            {/* Vendors & Vendor Profile: Accessible to authenticated users */}
+            <Route path="vendors" element={<VendorsPage />} />
+            <Route path="vendors/:id" element={<VendorProfilePage />} />
 
             {/* Admin, Manager, Vendor: Products & Reports */}
             <Route

@@ -103,15 +103,15 @@ templateRouter.get('/:id', (req: AuthenticatedRequest, res: Response) => {
     }
 
     // Safe public vendor information (Never expose passwordHash or session tokens)
-    const vendor = userDb.findById(template.vendorId);
+    const vendor = template.vendorId ? userDb.findById(template.vendorId) : undefined;
     const publicVendorInfo = vendor ? {
       id: vendor.id,
-      name: vendor.name,
-      company: vendor.profile.company || '',
-      bio: vendor.profile.bio || ''
+      name: vendor.profile?.fullName || vendor.name,
+      company: vendor.profile?.company || '',
+      bio: vendor.profile?.bio || ''
     } : {
-      id: template.vendorId,
-      name: template.vendorName,
+      id: template.vendorId || '',
+      name: template.vendorName || 'Verified Vendor',
       company: '',
       bio: ''
     };

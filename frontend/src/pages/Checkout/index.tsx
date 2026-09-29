@@ -9,13 +9,14 @@ import {
   ArrowLeft,
   Building2,
   Sparkles,
-  Layers,
+  ExternalLink,
+  Smartphone,
+  Info,
   Check
 } from 'lucide-react';
 import { Button } from '../../components/Button';
-import { Badge } from '../../components/Badge';
 import { checkoutService } from '../../services/checkoutService';
-import { CheckoutSummary, PaymentMethod } from '../../types';
+import { CheckoutSummary, PaymentProviderType, PaymentConfigResponse } from '../../types';
 import { useAuth } from '../../contexts/AuthContext';
 
 export const CheckoutPage: React.FC = () => {
@@ -27,40 +28,63 @@ export const CheckoutPage: React.FC = () => {
   const itemType = (searchParams.get('type') as 'custom_website' | 'template' | 'product') || undefined;
   const itemId = searchParams.get('id') || undefined;
 
+  // Callback query params from payment provider redirect
+  const paymentStatusParam = searchParams.get('payment_status');
+  const paymentErrorParam = searchParams.get('error');
+  const returnPaymentId = searchParams.get('paymentId');
+  const returnOrderId = searchParams.get('orderId');
+
   const [summary, setSummary] = useState<CheckoutSummary | null>(null);
   const [isPaid, setIsPaid] = useState(false);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
-  // Form State
-  const [paymentMethod, setPaymentMethod] = useState<PaymentMethod>('card');
-  const [nameOnCard, setNameOnCard] = useState(currentUser?.name || '');
-  const [cardNumber, setCardNumber] = useState('');
-  const [expMonth, setExpMonth] = useState('12');
-  const [expYear, setExpYear] = useState('2028');
-  const [cvc, setCvc] = useState('');
+  // Gateway config state
+  const [paymentConfig, setPaymentConfig] = useState<PaymentConfigResponse | null>(null);
+  const [selectedProvider, setSelectedProvider] = useState<PaymentProviderType>('easypaisa');
+  const [customerPhone, setCustomerPhone] = useState('');
   const [processing, setProcessing] = useState(false);
   const [processingStep, setProcessingStep] = useState('');
 
   useEffect(() => {
-    const loadSummary = async () => {
+    const init = async () => {
       setLoading(true);
       setError(null);
       try {
-        if (!orderId && (!itemType || !itemId)) {
-          setError('No valid item or order was selected for checkout.');
+        // Fetch safe public gateway configuration
+        try {
+          const cfg = await checkoutService.getConfig();
+          setPaymentConfig(cfg);
+          // Set first available provider as default, or easypaisa
+          if (cfg.providers.easypaisa.configured) {
+            setSelectedProvider('easypaisa');
+          } else if (cfg.providers.jazzcash.configured) {
+            setSelectedProvider('jazzcash');
+          } else if (cfg.providers.card.configured) {
+            setSelectedProvider('card');
+          }
+        } catch (cfgErr) {
+          console.warn('[Checkout] Failed to load payment config:', cfgErr);
+        }
+
+        // If returned from callback with success or failure, we don't need prospective lookup if orderId is in URL
+        const effectiveOrderId = orderId || returnOrderId || undefined;
+        if (!effectiveOrderId && (!itemType || !itemId)) {
+          if (!paymentStatusParam) {
+            setError('No valid item or order was selected for checkout.');
+          }
           setLoading(false);
           return;
         }
 
         const res = await checkoutService.getSummary({
-          orderId,
+          orderId: effectiveOrderId,
           itemType,
           itemId
         });
 
         setSummary(res.summary);
-        setIsPaid(res.isPaid);
+        setIsPaid(res.isPaid || paymentStatusParam === 'success');
       } catch (err: any) {
         setError(err.message || 'Failed to calculate checkout summary.');
       } finally {
@@ -68,8 +92,8 @@ export const CheckoutPage: React.FC = () => {
       }
     };
 
-    loadSummary();
-  }, [orderId, itemType, itemId]);
+    init();
+  }, [orderId, itemType, itemId, paymentStatusParam, returnOrderId]);
 
   const handlePay = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -77,39 +101,65 @@ export const CheckoutPage: React.FC = () => {
 
     setError(null);
     setProcessing(true);
-    setProcessingStep('Initiating trusted checkout session...');
+    setProcessingStep('Connecting to secure payment provider...');
 
     try {
-      // 1. Initiate checkout session
       const initRes = await checkoutService.initiateCheckout({
         orderId: summary.orderId,
         itemType: summary.itemType,
         itemId: summary.itemId,
-        paymentMethod
+        provider: selectedProvider,
+        customerPhone: customerPhone || undefined
       });
 
-      const payment = initRes.payment;
-      setProcessingStep('Cryptographically verifying payment with provider...');
+      const { initiateResult } = initRes;
 
-      // 2. Confirm payment
-      const confirmRes = await checkoutService.confirmPayment({
-        paymentId: payment.id,
-        paymentMethod,
-        cardDetails: paymentMethod === 'card' ? {
-          cardNumber: cardNumber.replace(/\s+/g, ''),
-          expMonth,
-          expYear,
-          cvc,
-          nameOnCard
-        } : undefined
-      });
+      if (!initiateResult) {
+        throw new Error('Payment initialization did not return provider details.');
+      }
 
-      // 3. Redirect to verified success page
-      navigate(`/checkout/success?paymentId=${confirmRes.payment.id}`);
+      if (initiateResult.status === 'CONFIGURATION_REQUIRED') {
+        throw new Error(
+          initiateResult.errorMessage || initiateResult.error ||
+          `Payment provider '${selectedProvider}' is not yet activated on this server. Merchant credentials are required for live payments.`
+        );
+      }
+
+      setProcessingStep('Redirecting to secure payment portal...');
+
+      const targetUrl = initiateResult.checkoutUrl || initiateResult.redirectUrl;
+      const isFormPost = initiateResult.checkoutMethod === 'FORM_POST' || initiateResult.method === 'POST';
+
+      // Handle Form Post (CyberSource / 3D Secure / Hosted form)
+      if (isFormPost && targetUrl && initiateResult.formFields) {
+        const form = document.createElement('form');
+        form.method = 'POST';
+        form.action = targetUrl;
+        form.style.display = 'none';
+
+        for (const [key, value] of Object.entries(initiateResult.formFields)) {
+          const input = document.createElement('input');
+          input.type = 'hidden';
+          input.name = key;
+          input.value = value;
+          form.appendChild(input);
+        }
+
+        document.body.appendChild(form);
+        form.submit();
+        return;
+      }
+
+      // Handle Standard URL Redirect
+      if (targetUrl) {
+        window.location.href = targetUrl;
+        return;
+      }
+
+      throw new Error('Unable to redirect to payment gateway.');
     } catch (err: any) {
-      console.error('Payment failure:', err);
-      setError(err.message || 'Payment failed. Please review your details and try again.');
-    } finally {
+      console.error('Payment checkout initiation failure:', err);
+      setError(err.message || 'Payment initiation failed. Please try again.');
       setProcessing(false);
       setProcessingStep('');
     }
@@ -119,7 +169,114 @@ export const CheckoutPage: React.FC = () => {
     return (
       <div className="min-h-[60vh] flex flex-col items-center justify-center space-y-3">
         <div className="w-8 h-8 border-4 border-brand-600 border-t-transparent rounded-full animate-spin" />
-        <p className="text-xs font-semibold text-slate-600">Calculating trusted server-side order summary...</p>
+        <p className="text-xs font-semibold text-slate-600">Loading secure checkout session...</p>
+      </div>
+    );
+  }
+
+  // Success Screen (from redirect or existing paid status)
+  if (paymentStatusParam === 'success' || (isPaid && summary)) {
+    const displayOrderId = summary?.orderId || returnOrderId || '';
+    const displayOrderNum = summary?.orderNumber || (returnOrderId ? returnOrderId.slice(0, 8) : '');
+
+    return (
+      <div className="max-w-lg mx-auto my-12 bg-white rounded-3xl p-8 border border-emerald-200 text-center space-y-6 shadow-sm">
+        <div className="w-14 h-14 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center mx-auto">
+          <CheckCircle2 className="w-8 h-8" />
+        </div>
+        <div>
+          <h2 className="text-xl font-bold text-slate-900">Payment Verified &amp; Confirmed</h2>
+          <p className="text-xs text-slate-600 mt-2 leading-relaxed">
+            Your transaction has been cryptographically verified and recorded in the database.
+            {displayOrderNum && (
+              <span className="block mt-1 font-semibold text-slate-800">
+                Order Reference: #{displayOrderNum}
+              </span>
+            )}
+          </p>
+        </div>
+
+        <div className="p-4 bg-emerald-50/70 border border-emerald-100 rounded-2xl text-left space-y-2 text-xs">
+          <div className="flex justify-between text-slate-600">
+            <span>Payment Status</span>
+            <span className="font-bold text-emerald-700 bg-emerald-100 px-2 py-0.5 rounded-full text-[11px]">
+              PAID &amp; VERIFIED
+            </span>
+          </div>
+          {returnPaymentId && (
+            <div className="flex justify-between text-slate-600">
+              <span>Transaction Ref</span>
+              <span className="font-mono text-slate-800 font-semibold">{returnPaymentId}</span>
+            </div>
+          )}
+          {summary && (
+            <div className="flex justify-between text-slate-600 pt-1 border-t border-emerald-200/50">
+              <span>Total Paid</span>
+              <span className="font-bold text-slate-900">
+                {summary.currency === 'PKR' ? `Rs. ${summary.total.toLocaleString()}` : `$${summary.total.toFixed(2)} USD`}
+              </span>
+            </div>
+          )}
+        </div>
+
+        <div className="flex flex-col sm:flex-row gap-3 justify-center">
+          {displayOrderId && (
+            <Button
+              variant="primary"
+              size="md"
+              onClick={() => navigate(`/dashboard/orders/${displayOrderId}`)}
+              className="bg-emerald-600 hover:bg-emerald-700"
+            >
+              View Order Details
+            </Button>
+          )}
+          <Button
+            variant="outline"
+            size="md"
+            onClick={() => navigate('/dashboard')}
+          >
+            Go to Dashboard
+          </Button>
+        </div>
+      </div>
+    );
+  }
+
+  // Failed Callback Screen
+  if (paymentStatusParam === 'failed' || paymentStatusParam === 'cancelled') {
+    return (
+      <div className="max-w-lg mx-auto my-12 bg-white rounded-3xl p-8 border border-rose-200 text-center space-y-6 shadow-sm">
+        <div className="w-14 h-14 rounded-full bg-rose-100 text-rose-600 flex items-center justify-center mx-auto">
+          <AlertCircle className="w-8 h-8" />
+        </div>
+        <div>
+          <h2 className="text-xl font-bold text-slate-900">
+            {paymentStatusParam === 'cancelled' ? 'Payment Cancelled' : 'Payment Verification Failed'}
+          </h2>
+          <p className="text-xs text-rose-700 mt-2 leading-relaxed">
+            {paymentErrorParam || 'The payment gateway could not process this transaction. No funds were debited.'}
+          </p>
+        </div>
+
+        <div className="flex flex-col sm:flex-row gap-3 justify-center">
+          <Button
+            variant="primary"
+            size="md"
+            onClick={() => {
+              // Retry by removing the query parameters
+              navigate(`/checkout${summary?.orderId ? `?orderId=${summary.orderId}` : ''}`);
+            }}
+          >
+            Try Again
+          </Button>
+          <Button
+            variant="outline"
+            size="md"
+            onClick={() => navigate('/dashboard/orders')}
+          >
+            Back to Orders
+          </Button>
+        </div>
       </div>
     );
   }
@@ -139,22 +296,11 @@ export const CheckoutPage: React.FC = () => {
     );
   }
 
-  if (isPaid && summary) {
-    return (
-      <div className="max-w-md mx-auto my-12 bg-white rounded-3xl p-8 border border-emerald-200 text-center space-y-4">
-        <div className="w-12 h-12 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center mx-auto">
-          <CheckCircle2 className="w-6 h-6" />
-        </div>
-        <h2 className="text-base font-bold text-slate-900">Order Already Paid</h2>
-        <p className="text-xs text-slate-600 leading-relaxed">
-          Order <span className="font-mono font-bold">#{summary.orderNumber}</span> has already been paid and verified in the database.
-        </p>
-        <Button variant="primary" size="sm" onClick={() => navigate(`/dashboard/orders/${summary.orderId}`)}>
-          View Order Details
-        </Button>
-      </div>
-    );
-  }
+  const anyProviderConfigured = Boolean(
+    paymentConfig?.providers?.easypaisa?.configured ||
+    paymentConfig?.providers?.jazzcash?.configured ||
+    paymentConfig?.providers?.card?.configured
+  );
 
   return (
     <div className="max-w-4xl mx-auto py-8 px-4 sm:px-6 space-y-8">
@@ -177,9 +323,23 @@ export const CheckoutPage: React.FC = () => {
           </div>
         </div>
         <span className="text-[11px] font-bold text-slate-500 bg-slate-100 px-3 py-1 rounded-full flex items-center gap-1.5">
-          <ShieldCheck className="w-3.5 h-3.5 text-emerald-600" /> WebCraft Pay Verified
+          <ShieldCheck className="w-3.5 h-3.5 text-emerald-600" /> Verified Merchant Gateway
         </span>
       </div>
+
+      {/* Global Notice if all providers require merchant activation */}
+      {!anyProviderConfigured && (
+        <div className="p-4 bg-amber-50 border border-amber-200 rounded-2xl flex items-start gap-3 text-xs text-amber-800">
+          <Info className="w-5 h-5 text-amber-600 shrink-0 mt-0.5" />
+          <div className="space-y-1">
+            <span className="font-bold block">Online payment is temporarily unavailable. Please try again later.</span>
+            <p className="text-amber-700 leading-relaxed">
+              Official Pakistani payment gateways (Easypaisa, JazzCash, Card 3D-Secure) are integrated in code. 
+              Live merchant gateway activation is currently in progress.
+            </p>
+          </div>
+        </div>
+      )}
 
       {error && (
         <div className="p-4 bg-rose-50 border border-rose-200 rounded-2xl flex items-start gap-3 text-xs text-rose-800">
@@ -193,7 +353,7 @@ export const CheckoutPage: React.FC = () => {
           {/* Left Col: Payment Method & Details (7 cols) */}
           <div className="lg:col-span-7 space-y-6">
             {/* Customer Information */}
-            <div className="bg-white rounded-2xl border border-slate-200 p-6 space-y-4">
+            <div className="bg-white rounded-2xl border border-slate-200 p-6 space-y-4 shadow-sm">
               <h3 className="text-sm font-bold text-slate-900 uppercase tracking-wider">
                 1. Customer &amp; Billing
               </h3>
@@ -210,143 +370,162 @@ export const CheckoutPage: React.FC = () => {
             </div>
 
             {/* Payment Method Selector */}
-            <form onSubmit={handlePay} className="bg-white rounded-2xl border border-slate-200 p-6 space-y-6">
+            <form onSubmit={handlePay} className="bg-white rounded-2xl border border-slate-200 p-6 space-y-6 shadow-sm">
               <h3 className="text-sm font-bold text-slate-900 uppercase tracking-wider">
                 2. Select Payment Method
               </h3>
 
-              <div className="grid grid-cols-3 gap-3">
+              <div className="space-y-3">
+                {/* 1. Easypaisa */}
                 <button
                   type="button"
-                  onClick={() => setPaymentMethod('card')}
-                  className={`p-3 rounded-2xl border text-left transition-all flex flex-col justify-between ${
-                    paymentMethod === 'card'
-                      ? 'border-brand-600 bg-brand-50/50 text-brand-900 ring-2 ring-brand-500/20'
-                      : 'border-slate-200 bg-white hover:bg-slate-50 text-slate-700'
+                  onClick={() => setSelectedProvider('easypaisa')}
+                  className={`w-full p-4 rounded-2xl border text-left transition-all flex items-center justify-between ${
+                    selectedProvider === 'easypaisa'
+                      ? 'border-emerald-600 bg-emerald-50/50 ring-2 ring-emerald-500/20'
+                      : 'border-slate-200 bg-white hover:bg-slate-50'
                   }`}
                 >
-                  <CreditCard className="w-5 h-5 mb-2 text-brand-600" />
-                  <span className="font-bold text-xs">Credit Card</span>
+                  <div className="flex items-center gap-3">
+                    <div className="w-10 h-10 rounded-xl bg-emerald-100 text-emerald-700 flex items-center justify-center font-bold text-lg">
+                      EP
+                    </div>
+                    <div>
+                      <div className="flex items-center gap-2">
+                        <span className="font-bold text-xs text-slate-900">Easypaisa</span>
+                        <span className="text-[10px] font-bold text-emerald-700 bg-emerald-100 px-2 py-0.5 rounded-full">
+                          Mobile Account / OTC / QR
+                        </span>
+                      </div>
+                      <p className="text-[11px] text-slate-500 mt-0.5">
+                        Telenor Microfinance Bank Merchant Gateway
+                      </p>
+                    </div>
+                  </div>
+                  <div>
+                    {paymentConfig?.providers?.easypaisa?.configured ? (
+                      <span className="text-[10px] font-bold text-emerald-700 bg-emerald-100 px-2.5 py-1 rounded-full">
+                        Available
+                      </span>
+                    ) : (
+                      <span className="text-[10px] font-bold text-amber-700 bg-amber-100 px-2.5 py-1 rounded-full">
+                        Coming after merchant activation
+                      </span>
+                    )}
+                  </div>
                 </button>
 
+                {/* 2. JazzCash */}
                 <button
                   type="button"
-                  onClick={() => setPaymentMethod('digital_wallet')}
-                  className={`p-3 rounded-2xl border text-left transition-all flex flex-col justify-between ${
-                    paymentMethod === 'digital_wallet'
-                      ? 'border-brand-600 bg-brand-50/50 text-brand-900 ring-2 ring-brand-500/20'
-                      : 'border-slate-200 bg-white hover:bg-slate-50 text-slate-700'
+                  onClick={() => setSelectedProvider('jazzcash')}
+                  className={`w-full p-4 rounded-2xl border text-left transition-all flex items-center justify-between ${
+                    selectedProvider === 'jazzcash'
+                      ? 'border-amber-500 bg-amber-50/50 ring-2 ring-amber-500/20'
+                      : 'border-slate-200 bg-white hover:bg-slate-50'
                   }`}
                 >
-                  <Sparkles className="w-5 h-5 mb-2 text-brand-600" />
-                  <span className="font-bold text-xs">Digital Wallet</span>
+                  <div className="flex items-center gap-3">
+                    <div className="w-10 h-10 rounded-xl bg-amber-100 text-amber-800 flex items-center justify-center font-bold text-lg">
+                      JC
+                    </div>
+                    <div>
+                      <div className="flex items-center gap-2">
+                        <span className="font-bold text-xs text-slate-900">JazzCash</span>
+                        <span className="text-[10px] font-bold text-amber-800 bg-amber-100 px-2 py-0.5 rounded-full">
+                          Mobile Account / Voucher
+                        </span>
+                      </div>
+                      <p className="text-[11px] text-slate-500 mt-0.5">
+                        Mobilink Microfinance Bank Merchant Gateway
+                      </p>
+                    </div>
+                  </div>
+                  <div>
+                    {paymentConfig?.providers?.jazzcash?.configured ? (
+                      <span className="text-[10px] font-bold text-emerald-700 bg-emerald-100 px-2.5 py-1 rounded-full">
+                        Available
+                      </span>
+                    ) : (
+                      <span className="text-[10px] font-bold text-amber-700 bg-amber-100 px-2.5 py-1 rounded-full">
+                        Coming after merchant activation
+                      </span>
+                    )}
+                  </div>
                 </button>
 
+                {/* 3. Credit / Debit Card */}
                 <button
                   type="button"
-                  onClick={() => setPaymentMethod('bank_transfer')}
-                  className={`p-3 rounded-2xl border text-left transition-all flex flex-col justify-between ${
-                    paymentMethod === 'bank_transfer'
-                      ? 'border-brand-600 bg-brand-50/50 text-brand-900 ring-2 ring-brand-500/20'
-                      : 'border-slate-200 bg-white hover:bg-slate-50 text-slate-700'
+                  onClick={() => setSelectedProvider('card')}
+                  className={`w-full p-4 rounded-2xl border text-left transition-all flex items-center justify-between ${
+                    selectedProvider === 'card'
+                      ? 'border-blue-600 bg-blue-50/50 ring-2 ring-blue-500/20'
+                      : 'border-slate-200 bg-white hover:bg-slate-50'
                   }`}
                 >
-                  <Building2 className="w-5 h-5 mb-2 text-brand-600" />
-                  <span className="font-bold text-xs">Bank Transfer</span>
+                  <div className="flex items-center gap-3">
+                    <div className="w-10 h-10 rounded-xl bg-blue-100 text-blue-700 flex items-center justify-center font-bold text-lg">
+                      <CreditCard className="w-5 h-5" />
+                    </div>
+                    <div>
+                      <div className="flex items-center gap-2">
+                        <span className="font-bold text-xs text-slate-900">Credit / Debit Card</span>
+                        <span className="text-[10px] font-bold text-blue-700 bg-blue-100 px-2 py-0.5 rounded-full">
+                          3D-Secure
+                        </span>
+                      </div>
+                      <p className="text-[11px] text-slate-500 mt-0.5">
+                        Visa / Mastercard / PayPak via Bank Hosted Gateway
+                      </p>
+                    </div>
+                  </div>
+                  <div>
+                    {paymentConfig?.providers?.card?.configured ? (
+                      <span className="text-[10px] font-bold text-emerald-700 bg-emerald-100 px-2.5 py-1 rounded-full">
+                        Available
+                      </span>
+                    ) : (
+                      <span className="text-[10px] font-bold text-amber-700 bg-amber-100 px-2.5 py-1 rounded-full">
+                        Coming after merchant activation
+                      </span>
+                    )}
+                  </div>
                 </button>
               </div>
 
-              {paymentMethod === 'card' && (
-                <div className="space-y-4 pt-2">
-                  <div>
-                    <label className="block text-xs font-bold text-slate-700 mb-1">
-                      Name on Card
-                    </label>
-                    <input
-                      type="text"
-                      required
-                      value={nameOnCard}
-                      onChange={(e) => setNameOnCard(e.target.value)}
-                      placeholder="Jane Doe"
-                      className="w-full p-2.5 bg-slate-50 border border-slate-200 rounded-xl text-xs outline-none focus:bg-white focus:border-brand-500"
-                    />
+              {/* Provider Details & Requirements */}
+              {selectedProvider === 'card' && (
+                <div className="p-4 rounded-2xl bg-blue-50/60 border border-blue-200 text-xs text-blue-900 space-y-2">
+                  <div className="flex items-center gap-2 font-bold text-blue-800">
+                    <ShieldCheck className="w-4 h-4 text-blue-600" />
+                    <span>100% PCI-DSS Compliant 3D-Secure Processing</span>
                   </div>
+                  <p className="text-[11px] text-blue-700 leading-relaxed">
+                    Card details are never entered, collected, or stored on WebCraftAI servers. 
+                    Upon clicking Proceed, you will be securely redirected to the acquirer bank&apos;s 
+                    PCI-compliant hosted checkout with 3D-Secure OTP verification.
+                  </p>
+                </div>
+              )}
 
+              {(selectedProvider === 'easypaisa' || selectedProvider === 'jazzcash') && (
+                <div className="space-y-3 pt-2">
                   <div>
                     <label className="block text-xs font-bold text-slate-700 mb-1">
-                      Card Number
+                      Account / Mobile Phone Number (Optional)
                     </label>
                     <input
-                      type="text"
-                      required
-                      value={cardNumber}
-                      onChange={(e) => setCardNumber(e.target.value)}
-                      placeholder="4242 •••• •••• 4242"
+                      type="tel"
+                      value={customerPhone}
+                      onChange={(e) => setCustomerPhone(e.target.value)}
+                      placeholder="03001234567"
                       className="w-full p-2.5 bg-slate-50 border border-slate-200 rounded-xl text-xs font-mono outline-none focus:bg-white focus:border-brand-500"
                     />
+                    <p className="text-[11px] text-slate-400 mt-1">
+                      Used for payment SMS verification alerts and transaction receipt.
+                    </p>
                   </div>
-
-                  <div className="grid grid-cols-3 gap-3">
-                    <div>
-                      <label className="block text-xs font-bold text-slate-700 mb-1">
-                        Exp. Month
-                      </label>
-                      <select
-                        value={expMonth}
-                        onChange={(e) => setExpMonth(e.target.value)}
-                        className="w-full p-2.5 bg-slate-50 border border-slate-200 rounded-xl text-xs outline-none"
-                      >
-                        {Array.from({ length: 12 }).map((_, i) => {
-                          const m = String(i + 1).padStart(2, '0');
-                          return <option key={m} value={m}>{m}</option>;
-                        })}
-                      </select>
-                    </div>
-
-                    <div>
-                      <label className="block text-xs font-bold text-slate-700 mb-1">
-                        Exp. Year
-                      </label>
-                      <select
-                        value={expYear}
-                        onChange={(e) => setExpYear(e.target.value)}
-                        className="w-full p-2.5 bg-slate-50 border border-slate-200 rounded-xl text-xs outline-none"
-                      >
-                        {['2026', '2027', '2028', '2029', '2030'].map((y) => (
-                          <option key={y} value={y}>{y}</option>
-                        ))}
-                      </select>
-                    </div>
-
-                    <div>
-                      <label className="block text-xs font-bold text-slate-700 mb-1">
-                        CVC
-                      </label>
-                      <input
-                        type="password"
-                        maxLength={4}
-                        required
-                        value={cvc}
-                        onChange={(e) => setCvc(e.target.value)}
-                        placeholder="123"
-                        className="w-full p-2.5 bg-slate-50 border border-slate-200 rounded-xl text-xs font-mono outline-none focus:bg-white focus:border-brand-500"
-                      />
-                    </div>
-                  </div>
-                </div>
-              )}
-
-              {paymentMethod === 'digital_wallet' && (
-                <div className="p-4 rounded-2xl bg-slate-50 border border-slate-200 text-xs text-slate-600 space-y-2">
-                  <p className="font-semibold text-slate-800">Direct Express Checkout</p>
-                  <p>Apple Pay and Google Pay simulation enabled for instant 1-click verification.</p>
-                </div>
-              )}
-
-              {paymentMethod === 'bank_transfer' && (
-                <div className="p-4 rounded-2xl bg-slate-50 border border-slate-200 text-xs text-slate-600 space-y-2">
-                  <p className="font-semibold text-slate-800">Automated Clearing House (ACH)</p>
-                  <p>Real-time bank verification through secure provider rails.</p>
                 </div>
               )}
 
@@ -358,12 +537,16 @@ export const CheckoutPage: React.FC = () => {
                   size="lg"
                   className="w-full justify-center bg-emerald-600 hover:bg-emerald-700"
                   isLoading={processing}
+                  disabled={processing}
                   leftIcon={<Lock className="w-4 h-4" />}
                 >
-                  {processing ? (processingStep || 'Processing...') : `Confirm & Pay $${summary.total.toFixed(2)} USD`}
+                  {processing
+                    ? (processingStep || 'Processing...')
+                    : `Proceed to Secure Payment (${summary.currency === 'PKR' ? `Rs. ${summary.total.toLocaleString()}` : `$${summary.total.toFixed(2)} USD`})`
+                  }
                 </Button>
                 <p className="text-[11px] text-slate-400 text-center mt-2">
-                  Payment is verified server-side before updating order status to PAID.
+                  Payments are verified server-side through cryptographic signatures before order fulfillment.
                 </p>
               </div>
             </form>
@@ -371,7 +554,7 @@ export const CheckoutPage: React.FC = () => {
 
           {/* Right Col: Trusted Order Summary (5 cols) */}
           <div className="lg:col-span-5 space-y-6">
-            <div className="bg-white rounded-2xl border border-slate-200 p-6 space-y-6 sticky top-6">
+            <div className="bg-white rounded-2xl border border-slate-200 p-6 space-y-6 sticky top-6 shadow-sm">
               <h3 className="text-sm font-bold text-slate-900 uppercase tracking-wider">
                 Order Summary
               </h3>
@@ -399,17 +582,23 @@ export const CheckoutPage: React.FC = () => {
               <div className="space-y-3 text-xs border-t border-slate-100 pt-4">
                 <div className="flex items-center justify-between text-slate-600">
                   <span>Subtotal (Trusted server price)</span>
-                  <span className="font-semibold text-slate-900">${summary.subtotal.toFixed(2)}</span>
+                  <span className="font-semibold text-slate-900">
+                    {summary.currency === 'PKR' ? `Rs. ${summary.subtotal.toLocaleString()}` : `$${summary.subtotal.toFixed(2)}`}
+                  </span>
                 </div>
                 <div className="flex items-center justify-between text-slate-600">
-                  <span>Taxes &amp; Processing Fees</span>
-                  <span className="font-semibold text-slate-900">${summary.fees.toFixed(2)}</span>
+                  <span>Processing &amp; Gateway Fees</span>
+                  <span className="font-semibold text-slate-900">
+                    {summary.currency === 'PKR' ? `Rs. ${summary.fees.toLocaleString()}` : `$${summary.fees.toFixed(2)}`}
+                  </span>
                 </div>
                 <div className="pt-3 border-t border-slate-200 flex items-baseline justify-between">
                   <span className="font-bold text-sm text-slate-900">Final Total</span>
                   <div className="text-right">
-                    <span className="text-2xl font-black text-slate-900">${summary.total.toFixed(2)}</span>
-                    <span className="text-xs font-bold text-slate-400 ml-1">USD</span>
+                    <span className="text-2xl font-black text-slate-900">
+                      {summary.currency === 'PKR' ? `Rs. ${summary.total.toLocaleString()}` : `$${summary.total.toFixed(2)}`}
+                    </span>
+                    <span className="text-xs font-bold text-slate-400 ml-1">{summary.currency || 'USD'}</span>
                   </div>
                 </div>
               </div>
@@ -418,15 +607,15 @@ export const CheckoutPage: React.FC = () => {
               <div className="space-y-2 pt-4 border-t border-slate-100 text-[11px] text-slate-500">
                 <div className="flex items-center gap-2">
                   <Check className="w-3.5 h-3.5 text-emerald-600 shrink-0" />
-                  <span>Verified cryptographic receipt generated on completion</span>
+                  <span>Real server-side signature verification</span>
                 </div>
                 <div className="flex items-center gap-2">
                   <Check className="w-3.5 h-3.5 text-emerald-600 shrink-0" />
-                  <span>No client-side price tampering allowed</span>
+                  <span>Zero raw card credentials stored or collected</span>
                 </div>
                 <div className="flex items-center gap-2">
                   <Check className="w-3.5 h-3.5 text-emerald-600 shrink-0" />
-                  <span>Immediate in-app payment status notification</span>
+                  <span>Instant webhook synchronization and audit logging</span>
                 </div>
               </div>
             </div>

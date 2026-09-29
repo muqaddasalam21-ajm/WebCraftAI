@@ -255,21 +255,29 @@ export const TemplatesPage: React.FC = () => {
               </div>
 
               {/* Card Actions */}
-              <div className="p-5 pt-0">
+              <div className="p-5 pt-0 space-y-2">
                 <div className="pt-3 border-t border-slate-100 grid grid-cols-2 gap-2">
+                  <Link
+                    to={`/templates/${template.id}/preview`}
+                    className="inline-flex items-center justify-center gap-1.5 px-3 py-2 rounded-xl text-xs font-bold border border-slate-200 bg-white hover:bg-slate-50 text-slate-700 transition-colors shadow-2xs"
+                  >
+                    <Eye className="w-3.5 h-3.5 text-slate-500" />
+                    Live Demo
+                  </Link>
                   <Link
                     to={`/dashboard/templates/${template.id}`}
                     className="inline-flex items-center justify-center px-3 py-2 rounded-xl text-xs font-semibold border border-slate-200 hover:bg-slate-50 text-slate-700 transition-colors"
                   >
                     View Details
                   </Link>
-                  <Link
-                    to={`/dashboard/templates/${template.id}`}
-                    className="inline-flex items-center justify-center px-3 py-2 rounded-xl text-xs font-semibold bg-brand-600 hover:bg-brand-700 text-white shadow-xs transition-colors"
-                  >
-                    Order Template
-                  </Link>
                 </div>
+                <Link
+                  to={`/checkout?type=template&id=${template.id}`}
+                  className="w-full inline-flex items-center justify-center gap-1.5 px-3 py-2 rounded-xl text-xs font-bold bg-brand-600 hover:bg-brand-700 text-white shadow-xs transition-colors"
+                >
+                  <ShoppingCart className="w-3.5 h-3.5" />
+                  Order Template (${typeof template.price === 'number' ? template.price.toFixed(2) : template.price})
+                </Link>
               </div>
             </div>
           ))}

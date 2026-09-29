@@ -234,7 +234,7 @@ export const DashboardPage: React.FC = () => {
           <Button
             variant="outline"
             size="sm"
-            onClick={() => navigate(role === 'Admin' || role === 'Manager' ? '/dashboard/orders' : '/dashboard/my-orders')}
+            onClick={() => navigate('/dashboard/orders')}
             rightIcon={<ArrowRight className="w-3.5 h-3.5" />}
           >
             View All Orders
@@ -305,7 +305,7 @@ export const DashboardPage: React.FC = () => {
                     </td>
                     <td className="py-3.5 px-4 text-right">
                       <button
-                        onClick={() => navigate(role === 'Admin' || role === 'Manager' ? '/dashboard/orders' : '/dashboard/my-orders')}
+                        onClick={() => navigate('/dashboard/orders')}
                         className="inline-flex items-center gap-1 text-xs font-semibold text-brand-600 hover:text-brand-700"
                       >
                         <Eye className="w-3.5 h-3.5" /> Details
