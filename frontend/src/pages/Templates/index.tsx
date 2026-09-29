@@ -1,5 +1,5 @@
-﻿import React, { useState, useEffect } from 'react';
-import { Search, Sparkles, Filter, LayoutTemplate, Plus, ArrowUpDown } from 'lucide-react';
+import React, { useState, useEffect } from 'react';
+import { Search, Sparkles, Filter, LayoutTemplate, Plus, ArrowUpDown, Eye, ShoppingCart } from 'lucide-react';
 import { Link, useNavigate } from 'react-router-dom';
 import { Template, TemplateCategory } from '../../types';
 import { templateService } from '../../services/templateService';
